@@ -1,0 +1,348 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alucinaciones auditivas", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aluc","alucin","alucinar","alucinacines","alucinacione","alucinacones","alucinciones","alucnaciones",
+                   "alucinacionea","alucinaciones","alucianciones","alusinaciones","alucinanciones","alucionaciones","aluecionaciones","acepta"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["auditivas","audiivas","auditivsas","auditiva","audtivs","auditivamente","auditivos","auitivas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "alucinaciones de comando", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aluc","alucin","alucinar","alucinacines","alucinacione","alucinacones","alucinciones","alucnaciones",
+                   "alucinacionea","alucinaciones","alucianciones","alusinaciones","alucinanciones","alucionaciones","aluecionaciones"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["de"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["comando"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "auditivas complejas", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["auditivas","audiivas","auditivsas","auditiva","audtivs","auditivamente","auditivos","auitivas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["complejos","simples","simpls"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "visuales y auditivas", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["y","o","u",",","/"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["auditivas","audiivas","auditivsas","auditiva","audtivs","auditivamente","auditivos","auitivas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "escucha voces", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["escucha","escuchar","escuchaba","escuchando","escucho","escuchop","escuchado","ecucho","ecuco",
+                    "oivo","odio","oido","oído","oigo","oi","oí","oye","oyendo",
+                    "siento","siente","sintiendo","senti","sentí"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["voces","voz","vocecitas","vces","voce","voves"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "las voces", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["las","son","esas","muchas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["voces","vocecitas","vces"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "voces que", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["voces","vocecitas","vces"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["son","esas","muchas","dialogantes","aisladas","de","qe","qeu","que"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "una voz le", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["la","una"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["voz"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["de","la","me","le","de","qe","qeu","que"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "alucinaciones que le dicen", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aluc","alucin","alucinar","alucinacines","alucinacione","alucinacones","alucinciones","alucnaciones",
+                   "alucinacionea","alucinaciones","alucianciones","alusinaciones","alucinanciones","alucionaciones","aluecionaciones"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["que"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["llaman","dicen"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "escucha murmullos", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["escucha","escuchar","escuchaba","escuchando","escucho","escuchop","escuchado","ecucho","ecuco",
+                    "oivo","odio","oido","oído","oigo","oi","oí","oye","oyendo",
+                    "siento","siente","sintiendo","senti","sentí"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["murmullos","susuros","cosas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "le dice que se mate", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dice","dicen","escuchaba"]
+          }
+        },
+        {
+          "LOWER": "que"
+        },
+        {
+          "LOWER": {
+            "IN": ["me","se"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["mate","muriera"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "siento como que me llaman", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["escucha","escuchar","escuchaba","escuchando","escucho","escuchop","escuchado","ecucho","ecuco",
+                    "oivo","odio","oido","oído","oigo","oi","oí","oye","oyendo",
+                    "siento","siente","sintiendo","senti","sentí"]
+          }
+        },
+        {
+          "LOWER": "como",
+          "OP":"?"
+        },
+        {
+          "LOWER": "que",
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["me","un","unos","lo","la","le"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["llaman","ruido","ruidos","llamanme","hablaran","hablan","habla"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dios me habla", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["vecina","dios","fallecida","cosas","senora","que"]
+          }
+        },
+        {
+          "LOWER": "como",
+          "OP":"?"
+        },
+        {
+          "LOWER": "que",
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["me","le"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["llaman","ruido","ruidos","llamanme","hablaran","hablan","habla","hable"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "le habla el diablo", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me","le"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["llama","hablaran","hablan","habla","hable"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["el","y"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["no","diablo","dios"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dan ordenes", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["las","dan"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["ordenes"]
+          }
+        }
+      ]
+    }
+  ]
+}

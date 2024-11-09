@@ -1,0 +1,374 @@
+POSSIBLE_EXISTENCE
+{
+  "context_rules": [
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "si tiene o no",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "no tienen conocimiento",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "pero se evidencia",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "niega pero",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "vs",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "puede",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "subjetivamente",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "alparecer",
+      "direction": "FORWARD"
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "al parecer",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "al"
+        },
+        {
+          "LOWER": {
+            "IN":["parecer", "lparecer", "parece"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "no supieron",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": {
+            "IN": ["saben", "supieron"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "question",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN":["¿", "?", "("]
+          }
+        },
+        {
+          "LOWER": "?"
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "aparentemente",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN":["aparente", "aparentemente", "aprentemente", "sospecha", "presunto"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "impresiona",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN":["impresiona", "impresionan", "impresión", "mpresiona", "impreiona", "impreisona", "impresioan"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "no lo impresiona",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "impresiona"
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "ambivalente acerca",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "ambivalente"
+        },
+        {
+          "LOWER": {
+            "IN":["acerca", "con"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "como si fuera",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "como"
+        },
+        {
+          "LOWER": {
+            "IN": ["si", "que"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["fuera","metio"]
+          },
+          "OP": "?"
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "poco claro",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["no", "poco"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["claras", "claro"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "no es claro",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": {
+            "IN": ["es", "son", "hay"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["claramente", "claro", "concluyente", "claras", "claros", "clara"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "no se descarta",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "se",
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sabe", "acuerda", "descartan", "descarto", "descarta", "percioben", "perciben", "percibo"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "no es posible establecer",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": {
+            "IN": ["es", "se"]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["posible", "logra", "logro"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["establecer", "determinar"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "posiblemente",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["posible", "posibles", "posiblemente"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "puede estar",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "puede"
+        },
+        {
+          "LOWER": {
+            "IN": ["estar", "haber"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "puede estar",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "puede"
+        },
+        {
+          "LOWER": {
+            "IN": ["estar", "haber"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "se habia considerado",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "se"
+        },
+        {
+          "LOWER": {
+            "IN": ["había", "habia", "habìa", "ha"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["interrogado", "considerado", "sospechado"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "se sospenchan",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "se"
+        },
+        {
+          "LOWER": {
+            "IN": ["interroga", "interrogan", "percibe", "sospenchan", "visumbrn", "vislumbran", "desconoce"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "sin aparente",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": "sin"
+        },
+        {
+          "LOWER": {
+            "IN": ["aclarar", "aparente", "claras"]
+          }
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "sospecha de",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["sospecha", "sensación"]
+          }
+        },
+        {
+          "LOWER": "de"
+        }
+      ]
+    },
+    {
+      "category": "POSSIBLE_EXISTENCE",
+      "literal": "actuada",
+      "direction": "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["actuadas", "actuada", "actuados", "actuado"]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+

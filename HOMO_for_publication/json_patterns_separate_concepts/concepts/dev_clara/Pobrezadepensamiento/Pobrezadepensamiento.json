@@ -1,0 +1,199 @@
+{
+  "target_rules": [
+    {
+      "literal": "pensamiento concreto",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "muy",
+              "tendencia",
+              "tendencias",
+              "pensamiento"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "concreto",
+              "concretos",
+              "concreta",
+              "concretas",
+              "concretismo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "respuestas monosilabicas",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "repsuestas",
+              "respuestas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "monosilabicas",
+              "monosilábicas",
+              "nonosilabos",
+              "nonosílabos",
+              "cortas",
+              "concretas"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "respuestas monosilabicas FUZZY",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "repsuestas",
+              "respuestas"
+            ]
+          }
+        }
+      },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "monosilabicas",
+              "monosilábicas",
+              "nonosilabos",
+              "monosilabos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "pobreza ideoverbal",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pobreza"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ideativa",
+              "ideoverbal",
+              "ideo",
+              "ideo.verbal",
+              "pensamiento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "lenguaje esacaso",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "lenguaje",
+              "lenaguje"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "esacaso",
+              "pobre"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "lenguaje esacaso FUZZY",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "lenguaje"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "esacaso",
+              "pobre"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "concreto en respuestas",
+      "category": "Pobrezadepensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "concreto",
+              "concreta",
+              "concretismo"
+            ]
+          }
+        },
+        {
+          "IS_PUNCT": false,
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "respuestas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "concreto",
+      "category": "Pobrezadepensamiento"
+    }
+  ]
+}

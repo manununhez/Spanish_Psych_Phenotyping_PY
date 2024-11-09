@@ -1,0 +1,358 @@
+{
+  "target_rules": [
+    {
+      "literal": "cogniciones depresivas",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cogniciones",
+              "cognicioes",
+              "cognición",
+              "cognicions",
+              "cognicoens"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresovas",
+              "depresivas",
+              "depesiva",
+              "depresvias"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "cogniciones depresivas FUZZY",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "cogniciones",
+              "cogniciónes"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "depresiva",
+              "depresivas"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "depresión",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresion",
+              "depresiòn",
+              "depresión",
+              "despresión"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "elementos depresivos",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "elementos",
+              "episodio",
+              "episodios",
+              "contenido",
+              "contenidos",
+              "cortejo",
+              "cuadro",
+              "subtipo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresivos"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "elementos depresivos FUZZY",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "elementos",
+              "episodios",
+              "contenidos",
+              "subtipo"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "depresivo",
+              "depresivos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas de corte depresivo",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "síntomas",
+              "sintomas",
+              "rsintomas",
+              "sinotmas",
+              "sintoma",
+              "síntoma",
+              "sintomatologia",
+              "sintomatologias",
+              "sintomatología",
+              "sintomatologías"
+
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresivas",
+              "depresivos",
+              "depreisvos",
+              "depresiva"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "síntomas de corte depresivo FUZZY",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "síntomas",
+              "sintomas",
+              "síntoma",
+              "sintomatologia",
+              "sintomatologias",
+              "sintomatología",
+              "sintomatologías"
+
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "depresivo",
+              "depresivas",
+              "depresivos",
+              "depresiva"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ideas depresivas",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "fase",
+              "ideas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "depresivas",
+              "tristeza",
+              "tristeza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "trastorno depresivo",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "trastorno",
+              "trastrono",
+              "-trastorno",
+              "-trastrono"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresion",
+              "depresión",
+              "depresivorecurrente"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "trastorno depresivo FUZZY",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "trastorno",
+              "trastornos"
+            ]
+          }
+          }
+        },
+        {
+          "OP": "{,4}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "depresivo",
+              "depresion",
+              "depresión",
+              "depresivorecurrente"
+            ]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "esta muy deprimido",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "esta",
+              "está",
+              "estoy"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "deprimido",
+              "depresiva",
+              "deprimida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me qiero levantar",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiere",
+              "quiero",
+              "qiero"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "levantar",
+              "levanta",
+              "levantarse",
+              "levantarme"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "target_rules": [
+    {
+      "literal": "insomnio",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "insomnio",
+              "insomnioo",
+              "insomnnio"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "insomnio FUZZY",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1" : {
+            "IN": [
+              "insomnio"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "no duerme",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ni",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,6}",
+          "LOWER": {
+            "NOT_IN": [
+              "trastorno",
+              "t.",
+              "trastornos",
+              "dificultad",
+              "dificultades",
+              ","
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "duermo",
+              "dormirme",
+              "duerme",
+              "duermen",
+              "dormir",
+              "durmiendo",
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "deprivación del sueño",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deprivación",
+              "deprivacion",
+              "dificultad",
+              "dificultades"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "deprivación del sueño FUZZY",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "deprivación",
+              "deprivacion",
+              "dificultad",
+              "dificultades"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "mal patrón en la iniciacion del sueño",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "malos",
+              "malo",
+              "malas"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "patrón",
+              "patron",
+              "patrónes",
+              "patrones"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "iniciacion",
+              "iniciación"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "mal patrón en la iniciacion del sueño FUZZY",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "malos",
+              "malo",
+              "malas"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "patrón",
+              "patron",
+              "patrónes",
+              "patrones"
+            ]
+          }
+        }
+      },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "iniciacion",
+              "iniciaciar",
+              "iniciaciando",
+              "iniciación"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

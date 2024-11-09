@@ -1,0 +1,69 @@
+{
+  "target_rules": [
+    {
+      "literal" : "somnolencia", 
+      "category" : "Somnolencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["somnolencia","somnolienta","somnoliento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "somnolencia FUZZY", 
+      "category" : "Somnolencia",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["somnolencia","somnolienta","somnoliento"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "levanta con sueno", 
+      "category" : "Somnolencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["levanta","levanto", "levantarse","levantarme"]
+          }
+        },
+        {
+          "LOWER": "con",
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sueno","sueño"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "siento como dormida", 
+      "category" : "Somnolencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento","sentirse","sentirme"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["como"]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["dormida","dormido"]
+          }
+        }
+      ]
+    }
+  ]
+}

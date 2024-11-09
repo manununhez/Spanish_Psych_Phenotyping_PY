@@ -1,0 +1,287 @@
+{
+  "target_rules": [
+    {
+      "literal" : "no quiere vivir", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["queria","quería","quiere","quiero","tiene"]
+          }
+        },
+        {
+          "OP":"{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": ["vivir","vida"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "mejor estar muerta", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mejor"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["estar"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["muerta","muerte","muerto"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "me quiero morir", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me","se"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["provoca","queria","quería","quieria","quiero","quiere","va","a"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["morirme","morir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ideas sobrevaloradas de muerte", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sobrevalorada","sobrevaloradas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["de"]
+          }
+        },
+        {
+          "OP":"{,6}"
+        },
+        {
+          "LOWER": {
+            "IN": ["muerte","muerte.niega"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ideas de muerte", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["idas","idea","ideaas","ideacion","ideaciòn","ideación","ideas","ideasd","ideasde","iideas",
+              "cogniciones","pensamientos"]
+          }
+        },
+        {
+          "OP":"{,7}"
+        },
+        {
+          "LOWER": {
+            "IN": ["muerte","mueerte","meurte","meurtes","muerteo","muertes","emuerte",
+              "tanaticas","tanatica","tanáticas","tanática"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dormir y no despertarme más", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dormir","dormirme","ojos"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["y","no"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["despertarme","volver"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["más","abrirlos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "he deseado morirme", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["he"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["deseado","pensado"]
+          }
+        },
+        {
+          "OP":"{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": ["morirme","morir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ganas de no vivir", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["de","mejor","ganas","pense"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["vivir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ganas de morirme", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pienso","pioenso","gans","ganas","debería","quiero","quisiera","quiere","va"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["morirme","muerte","emorirme","morirse","morir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "para qué vivir así", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["para"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["que","qué"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["vivir"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["asi","así"]
+          }
+        }
+      ]
+    }
+  ]
+}

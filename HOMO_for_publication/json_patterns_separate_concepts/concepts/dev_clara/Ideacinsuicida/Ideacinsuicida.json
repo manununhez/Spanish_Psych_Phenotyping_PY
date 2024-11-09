@@ -1,0 +1,621 @@
+{
+  "target_rules": [
+    {
+      "literal": "pensamientos suicidas",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "plan",
+              "planes",
+              "planea",
+              "planear",
+              "planeando",
+              "pensamientos",
+              "pensamiento",
+              "riesgo",
+              "riesgos",
+              "conideacion",
+              "conideaciones"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidas",
+              "suicida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "idea",
+              "ideas",
+              "ideacion",
+              "ideación",
+              "ideaciónes",
+              "ideaciones",
+              "desea",
+              "deseos",
+              "deseo"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicida",
+              "suicidio",
+              "suicidios",
+              "suicidarse",
+              "sucida",
+              "suicda",
+              "autolitica",
+              "su8cida",
+              "sucidas",
+              "suicidas",
+              "suicidias",
+              "suicidia"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "ideas de suicidio FUZZY",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "idea",
+              "ideas",
+              "ideacion",
+              "ideación",
+              "ideaciónes",
+              "ideaciones",
+              "desea",
+              "deseos",
+              "deseo"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "suicida",
+              "suicidio",
+              "suicidios",
+              "suicidarse",
+              "autolitica",
+              "suicidas",
+              "suicidias",
+              "suicidia"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ganas de suicidarme",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ganas",
+              "gana",
+              "pensar",
+              "riesgo",
+              "pense",
+              "pienso"
+            ]
+          }
+        },
+        {"OP":"{,3}", "LOWER":{"NOT_IN":[".",";"]}},
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "en"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidarme",
+              "suicidio",
+              "envenenarme",
+              "matarme"
+            ]
+          }
+        }
+      ]
+    },
+        {
+      "literal": "ganas de suicidarme LEMMA",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "pensar",
+              "riesgo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "en"
+            ]
+          },"OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidar él",
+              "suicidar yo",
+              "suicidar",
+              "suicidio",
+              "envenenar",
+              "envenenar él",
+              "envenenar yo",
+              "matar yo",
+              "matar él"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se quería matar",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quería",
+              "queria",
+              "quiere",
+              "querer",
+              "queriendo",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "morir",
+              "morirme",
+              "matar",
+              "matarme",
+              "matarse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas y planes suicidas",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideación",
+              "ideaciónes",
+              "ideaciones",
+              "ideacion",
+              "ideas",
+              "estructuracion",
+              "estructuraciones",
+              "estructuración",
+              "estructuraciónes"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicida",
+              "suicidas",
+              "suicidio",
+              "autolítica",
+              "autolitica",
+              "autolíticas"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "ideas y planes suicidas FUZZY",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "ideación",
+              "ideaciónes",
+              "ideaciones",
+              "ideacion",
+              "estructuracion",
+              "estructuraciones",
+              "estructuración",
+              "estructuraciónes"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "suicida",
+              "suicidas",
+              "suicidio",
+              "autolítica",
+              "autolitica",
+              "autolíticas"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "tirarme a un carro",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "tirarse",
+              "tirarme",
+              "tirar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "carro",
+              "carros",
+              "río",
+              "puente",
+              "edificio",
+              "edificios",
+              "ventana",
+              "ventanas",
+              "calle",
+              "calles"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas de muerte o de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "ideacion",
+              "ideaciones"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "d"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muerte",
+              "muert",
+              "muetre",
+              "emurte",
+              "muetr",
+              "meurte"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "o",
+              "y",
+              "eo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "d"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidio",
+              "suicdiio",
+              "sucidio",
+              "suicdio",
+              "suicidas",
+              "suicido",
+              "suicicio",
+              "suciidio"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "ideas de muerte o de suicidio FUZZY",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "ideacion",
+              "ideaciones"
+            ]
+          }
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "d"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "muerte",
+              "muert",
+              "muetre",
+              "emurte",
+              "muetr",
+              "meurte"
+            ]
+          }
+        }
+      },
+        {
+          "LOWER": {
+            "IN": [
+              "o",
+              "y",
+              "eo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "d"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "suicidio",
+              "suicdiio",
+              "sucidio",
+              "suicdio",
+              "suicidas",
+              "suicido",
+              "suicicio",
+              "suciidio"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "cogniciones depresivas de muerte o de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {"IN" : ["cogniciones","cognicion", "cognición"]}
+        },
+        {
+          "LOWER": {"IN" : ["depresivas","depresiva"]},
+          "OP": "?"
+        },
+
+        {
+          "OP": "{,4}","LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidio",
+              "suicdiio",
+              "sucidio",
+              "suicdio",
+              "suicidas",
+              "suicido",
+              "suicicio",
+              "suciidio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cogniciones depresivas de muerte o de suicidio FUZZY",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {"IN" : ["cogniciones","cognicion", "cognición"]}
+        },
+        {
+          "LOWER": {"IN" : ["depresivas","depresiva"]},
+          "OP": "?"
+        },
+
+        {
+          "OP": "{,4}","LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "suicidio",
+              "suicidas",
+              "suicida"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "atentar contra mi vida",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atentar",
+              "quitarme",
+              "quitar"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "mi"
+            ]
+          }
+        },
+        {
+          "LOWER": "vida"
+        }
+      ]
+    },
+    {
+      "literal": "suicidas",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "de suicidio",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "se va a matar",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "ideas delirantes, de muerte o suicidio",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "ideas de muerte ni de suicidio",
+      "category": "Ideacinsuicida",
+      "attributes": {
+        "is_negated": true
+      },
+      "pattern": [
+        {
+          "LOWER": "ideas"
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "muerte"
+        },
+        {
+          "LOWER": "ni"
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidio",
+              "suicido",
+              "suicidas"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

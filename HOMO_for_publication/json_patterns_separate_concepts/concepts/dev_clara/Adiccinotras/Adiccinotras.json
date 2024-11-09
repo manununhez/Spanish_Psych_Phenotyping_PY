@@ -1,0 +1,137 @@
+{
+  "target_rules": [
+    {
+      "literal" : "jugar maquinitas",
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["jugar","jugo","jugó","juega","jugaba"]
+          }
+        },
+        {
+          "OP" : "{,5}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["maquinitas","casino"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "jugar maquinitas LEMMA",
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["jugar"]
+          }
+        },
+        {
+          "OP" : "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["maquinitas","casino","maquinas", "máquinas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "cafeina", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cafeina","cafeína"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dependencia a zopiclona", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": "dependencia"
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["zopiclona"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "benzodiacepinas", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["benzodiacepinas","benzodiazepinas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "benzodiacepinas FUZZY", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["benzodiacepinas","benzodiazepinas"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "consumo de hongos y otras sustancias", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["consumo","consumir", "consume"]
+          }
+    
+        },
+        {
+          "OP" : "{,4}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["otras"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["sustancias"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "consumo de hongos", 
+      "category" : "Adiccinotras"
+    }
+  ]
+}

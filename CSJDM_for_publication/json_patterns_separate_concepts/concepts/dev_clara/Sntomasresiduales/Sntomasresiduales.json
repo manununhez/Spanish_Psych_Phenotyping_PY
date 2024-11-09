@@ -1,0 +1,123 @@
+{
+  "target_rules": [
+    {
+      "literal": "distorsiones cognitivas residuales",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "distorsiones",
+              "distorsion",
+              "esquizofrenia"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "residuales",
+              "residual"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "distorsiones cognitivas residuales FUZZY",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "distorsiones",
+              "distorsion",
+              "esquizofrenia"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "residuales",
+              "residual"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "enfermedad crónica",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "enfermedad"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER": {
+            "NOT_IN": [
+              "renal",
+              "cardiaca",
+              "cardiovascular",
+              "cv"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "crónica",
+              "cronica"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "enfermedad crónica FUZZY",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "enfermedad"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER": {
+            "NOT_IN": [
+              "renal",
+              "cardiaca",
+              "cardiovascular",
+              "cv"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "crónica",
+              "cronica"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

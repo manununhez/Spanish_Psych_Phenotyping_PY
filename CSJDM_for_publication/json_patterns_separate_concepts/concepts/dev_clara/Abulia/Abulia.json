@@ -1,0 +1,175 @@
+{
+  "target_rules": [
+    {
+      "literal": "falta de energía",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin",
+              "falta"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "FUZZY2": {
+            "IN": [
+              "energia",
+              "energía"
+            ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no quiero hacer nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "logro",
+              "puedo"
+            ]
+          },
+          "IS_PUNCT": false, "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiero",
+              "quiere",
+              "hacer",
+              "ganas",
+              "de",
+              "provoca"
+            ]
+          },
+          "IS_PUNCT": false, "OP": "{1,2}"
+        },
+        {
+          "IS_PUNCT": false, "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se QUIERE levantar de la cama",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "IS_PUNCT": false, "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiero",
+              "quiere"
+            ]
+          }
+        },
+        { "OP": "?", "IS_PUNCT": false},
+        {
+          "LOWER": {
+            "IN": [
+              "levantar",
+              "salir"
+            ]
+          }
+        },
+        {
+          "IS_PUNCT": false, "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cama",
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+      
+     {
+      "literal": "no se quiere levantar de la cama",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "IS_PUNCT": false, "OP": "?"
+        },
+        {
+          "LEMMA": "querer"
+        },
+        { "OP": "?", "IS_PUNCT": false},
+        {
+          "LOWER": {
+            "IN": [
+              "levantar",
+              "salir"
+            ]
+          }
+        },
+        {
+          "IS_PUNCT": false, "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cama",
+              "casa"
+            ]
+          }
+        }
+      ]
+    },  
+      
+    {
+      "literal": "abulia",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "abulia"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

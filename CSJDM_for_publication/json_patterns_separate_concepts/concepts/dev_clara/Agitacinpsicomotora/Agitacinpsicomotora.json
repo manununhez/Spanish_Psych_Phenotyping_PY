@@ -1,0 +1,604 @@
+{
+  "target_rules": [
+    {
+      "literal": "emergencia comportamental",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "emergencia",
+              "emergencias"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "comportamental",
+              "comrpotamental",
+              "comportamentales"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "emergencia comportamental LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "emergencia"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "comportamental"     ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "emergencia comportamental FUZZY",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "emergencia"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "comportamental"     ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "hierquinesia",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hierquinesia",
+              "hiperquineico",
+              "hiperquinesia",
+              "hiperquinetico",
+              "hiperquinético"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperquinesia FUZZY",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "hiperquinetico",
+              "hiperquinético",
+              "hiperquinésia",
+              "hiperquinesia"]
+        }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "hiperquinesia LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": { 
+            "IN": [
+              "hiperquinetico",
+              "hiperquinético",
+              "hiperquinesia"]
+        }
+        }
+      ]
+    },
+    {
+      "literal": "inmovilización",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "esposado",
+              "inmovilización",
+              "inmovilizacion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "agitación",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitada",
+              "agitación",
+              "agitacion",
+              "inquietud"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "agitación LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "agitado",
+              "agitación",
+              "agitacion",
+              "inquietud"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "agitación psicomotora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "agitacion",
+              "agitaciòn",
+              "agitación"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "psicomotora",
+              "catatonica"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "patalear",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pataletas",
+              "patalear"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "patalear LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "pataleta",
+              "patalear"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sedacion por agitación",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sedacion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agitación",
+              "agitacion"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "sedacion por agitación FUZZY",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "sedacion"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "agitación",
+              "agitacion"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "requiere contención",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "requiere",
+              "requirió",
+              "requirio",
+              "dificultan",
+              "dificultad",
+              "ordena"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "contencion",
+              "contención",
+              "inmovilizacion",
+              "sedacion"            ]
+          }
+        }
+      }
+      ]
+    },
+     {
+      "literal": "requiere contención LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "requerir",
+              "dificultad",
+              "ordenar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": { 
+            "IN": [
+              "contencion",
+              "contenér",
+              "contener",
+              "contención",
+              "inmovilizacion",
+              "sedacion"            ]
+          }
+        }
+    
+      ]
+    },
+    {
+      "literal": "contención física ",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contención",
+              "intervención",
+              "contencion",
+              "intervencion"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "farmacológica",
+              "farmacologica",
+              "física",
+              "fisica",
+              "policía",
+              "policia"
+            ]
+          }
+        }
+      ]
+    },
+
+       {
+      "literal": "contención física LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "contención",
+              "intervención",
+              "contencion",
+              "intervencion",
+              "contener",
+              "contenér",
+              "intervenir"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "farmacológica",
+              "farmacologico",
+              "física",
+              "fisico",
+              "policía",
+              "policia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "salir corriendo",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "salir"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "corriendo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "muy inquieto",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "muy",
+              "pone"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "acelerado",
+              "inquieta",
+              "inquieto",
+              "hiperactiva"
+            ]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inquietud motora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {"FUZZY1":{
+            "IN": [
+              "inquietud"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [ 
+              "motora",
+              "motrica"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "aumento de actividad motora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumento"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "actividad"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [ 
+              "motora",
+              "motrica"
+            ]
+          }
+        }
+      }
+      ]
+    },
+{
+      "literal": "no se halla",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hallo",
+              "halla"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "nos toco cogerla entre varios",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cogerla",
+              "cogerlo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "varios",
+              "varias",
+              "varia"
+            ]
+          }
+        }
+      ]
+    },
+        {
+      "literal": "nos toco cogerla entre varios LEMMA",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "coger",
+              "coger él"
+            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "entre"            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "vario"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

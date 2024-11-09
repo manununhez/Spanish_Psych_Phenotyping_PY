@@ -1,0 +1,117 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ideas de muerte", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideas","ideacion","ideación","cogniciones","cognición","pensamientos","pienso","piensa"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["muerte","emurte","euerte","muert","muetre","muetr","meurte"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "deseo de morir", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["deseo","desea","deseos","desos","eseos","pensamientos","poensar","pienso","quisiera","queria","quiere","quiero","mejor","gustaria","desearia"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["muerte","morir","morirse","morirme","emorir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "bueno que yo me muriera", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["bueno","mejor"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["muerte","morir","morirse","morirme","memmuriera","muriera"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tanático", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tanático","tanatológicas","tanaticas","tanáticas","tanática"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "que se la lleve dios", 
+      "category" : "Ideasdemuerte",
+      "pattern" : [
+        {
+          "LOWER": "dios",
+          "OP":"?"
+        },
+        {
+          "LOWER":"que"
+        },
+        {
+          "LOWER": "dios",
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["se","me"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER":"lleve"
+        },
+        {
+          "LOWER": "dios",
+          "OP":"?"
+        }
+      ]
+    }
+  ]
+}
+

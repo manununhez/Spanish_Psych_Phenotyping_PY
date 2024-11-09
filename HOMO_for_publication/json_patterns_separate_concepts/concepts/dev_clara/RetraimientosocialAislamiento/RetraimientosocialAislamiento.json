@@ -1,0 +1,219 @@
+{
+  "target_rules": [
+    {
+      "literal": "aislado",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aislado",
+              "aislada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aislamiento social",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aislamiento"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "afectivo",
+              "familiar",
+              "social"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "encerrado",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "encerrado",
+              "encerrada",
+              "encapsulamiento",
+              "encapsulado",
+              "encapsulada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no relación con los demas pacientes",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "poca",
+              "pocos",
+              "pocas"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "relacion",
+              "relación",
+              "relaciónes",
+              "relaciones",
+              "contacto",
+              "contactos"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "con"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pacientes",
+              "compañeros",
+              "personal",
+              "familia",
+              "familiares"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no sale de/se queda en la casa",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "se"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sale",
+              "queda","salgo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "en",
+              "de"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la","su","mi"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "retraimiento",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "retraimiento",
+              "retraído",
+              "retraída",
+              "retraido",
+              "retraida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "tendencia al aislamiento",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "tendencia",
+              "tiende"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":["."]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aislamiento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "vida solitaria",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "vida"
+            ]
+          }
+        },
+        {
+          "OP":"{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "solitaria"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

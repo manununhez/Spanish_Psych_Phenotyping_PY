@@ -1,0 +1,103 @@
+{
+  "target_rules": [
+    {
+      "literal": "prospección: delirante",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "prospeccuion",
+              "prospeccion",
+              "-prospección",
+              "prospección",
+              "prospéccion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "delirante",
+              "incierta",
+              "no",
+              "nula",
+              "nulas",
+              "interrogada",
+              "parciales"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "prospección: delirante FUZZY",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospeccion",
+              "prospecciones",
+              "prospección",
+              "prospecciónes"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "delirante",
+              "delirantes",
+              "incierta",
+              "interrogada",
+              "parciales"
+            ]
+          }
+        }
+        }
+      ]
+    },
+  
+    {
+      "literal": "prospeccion nulas",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "prospeccuion",
+              "prospeccion",
+              "prospección",
+              "prospéccion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nula",
+              "nulas",
+              "interrogada",
+              "parciales"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "nula prospeccion",
+      "category": "Prospeccindelirante"
+    }
+  ]
+}

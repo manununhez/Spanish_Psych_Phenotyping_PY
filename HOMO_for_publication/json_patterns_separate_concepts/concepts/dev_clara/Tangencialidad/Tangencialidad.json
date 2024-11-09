@@ -1,0 +1,65 @@
+{
+  "target_rules": [
+    {
+      "literal": "pararespuestas",
+      "category": "Tangencialidad",
+      "pattern": [
+        {
+          "LOWER": { 
+            "IN": [
+              "pararespuestas",
+              "pararrepuestas"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "pararespuestas FUZZY",
+      "category": "Tangencialidad",
+      "pattern": [
+        {
+          "LOWER": {  "FUZZY2":{
+            "IN": [
+              "pararespuestas",
+              "pararespuesta",
+              "pararrepuestas"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "tangencial",
+      "category": "Tangencialidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "tangencial",
+              "tangenciales",
+              "tangencialidad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "tangencial FUZZY2",
+      "category": "Tangencialidad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "tangencial",
+              "tangenciales",
+              "tangencialidad"
+            ]
+          }
+        }
+      }
+      ]
+    }
+  ]
+}

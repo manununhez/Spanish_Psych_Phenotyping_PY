@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "duerme mucho", 
+      "category" : "SueoHipersomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["duerme","duermo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["horas","mucho"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hipersomnia", 
+      "category" : "SueoHipersomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipersomnia","hipersomnio"]
+          }
+        }
+      ]
+    }
+  ]
+}

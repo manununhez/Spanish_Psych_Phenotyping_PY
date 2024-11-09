@@ -1,0 +1,40 @@
+{
+  "target_rules": [
+    {
+      "literal": "catatónico",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "catatonico",
+              "catatonica",
+              "catatónico",
+              "catatónica",
+              "catatonia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "catatónico FUZZY",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "catatonico",
+              "catatonica",
+              "catatónico",
+              "catatónica",
+              "catatonia",
+              "catatónia"
+            ]
+          }
+        }
+      }
+      ]
+    }
+  ]
+}

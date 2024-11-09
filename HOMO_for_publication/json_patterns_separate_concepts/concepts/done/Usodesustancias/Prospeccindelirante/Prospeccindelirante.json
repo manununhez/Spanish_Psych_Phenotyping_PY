@@ -1,0 +1,65 @@
+{
+  "target_rules": [
+    {
+      "literal" : "prospección: delirante", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["prospeccuion","prospeccion","-prospección","prospección","prospéccion"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["delirante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "prospección: incierta", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["prospeccuion","prospeccion","prospección","prospéccion"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["incierta"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "prospeccion nulas", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["prospeccuion","prospeccion","prospección","prospéccion"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["no","nula","nulas","interrogada","parciales"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "nula prospeccion", 
+      "category" : "Prospeccindelirante"
+    }
+  ]
+}

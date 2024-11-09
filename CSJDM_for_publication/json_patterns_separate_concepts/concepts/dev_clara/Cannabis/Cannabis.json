@@ -1,0 +1,39 @@
+{
+  "target_rules": [
+    {
+      "literal": "canabis",
+      "category": "Cannabis",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "canabis",
+              "cannabinoides",
+              "cannabis",
+              "cripi",
+              "cannabis-cocuan",
+              "marihuana"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cannabis FUZZY",
+      "category": "Cannabis",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "cannabinoides",
+              "cannabis",
+              "cannabis-cocuan",
+              "marihuana"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

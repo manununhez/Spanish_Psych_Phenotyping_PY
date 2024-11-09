@@ -1,0 +1,61 @@
+{
+  "target_rules": [
+    {
+      "literal" : "fuga de ideas", 
+      "category" : "Fugadeideas"
+    },
+    {
+      "literal" : "hablaba demasiado", 
+      "category" : "Fugadeideas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hablaba","habla","hablar"]
+          }
+        },
+        {
+          "LOWER": "demasiado"
+        }
+      ]
+    },
+    {
+      "literal" : "muchos pensaminetos", 
+      "category" : "Fugadeideas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muchos","muchas","demasiados","demasiadas"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["pensaminetos","ideas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "politemática", 
+      "category" : "Fugadeideas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["politemático","politematico","politemática","politematica"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "politemática FUZZY", 
+      "category" : "Fugadeideas",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["politemático","politematico","politemática","politematica"]
+          }
+          }
+        }
+      ]
+    }
+  ]
+}

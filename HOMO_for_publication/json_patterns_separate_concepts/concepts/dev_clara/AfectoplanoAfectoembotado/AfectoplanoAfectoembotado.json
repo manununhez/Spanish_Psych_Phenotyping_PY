@@ -1,0 +1,41 @@
+{
+  "target_rules": [
+    {
+      "literal": "aplanado",
+      "category": "AfectoplanoAfectoembotado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aplanad",
+              "aplanada",
+              "aplanado",
+              "aplanamiento",
+              "plano",
+              "plana"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "afecto plano",
+      "category": "AfectoplanoAfectoembotado"
+    },
+     {
+      "literal": "embotado",
+      "category": "Afectoembotado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "embotado",
+              "embotada",
+              "embotamiento"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "situación de calle", 
+      "category" : "Ensituacindecalle",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["condición","habitancia","situación","verme"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["calle"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "indigente", 
+      "category" : "Ensituacindecalle",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["indigencia","indigente"]
+          }
+        }
+      ]
+    }
+  ]
+}

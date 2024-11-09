@@ -1,0 +1,9 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ecolalia", 
+      "category" : "Ecolalia"
+    }
+  ]
+}
+

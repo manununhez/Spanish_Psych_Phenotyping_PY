@@ -1,0 +1,412 @@
+{
+  "target_rules": [
+    {
+      "literal": "pobre respuesta",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pobre",
+              "sin",
+              "regular",
+              "poca",
+              "nada",
+              "mala"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "respuesta",
+              "eficacia"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "pobre respuesta FUZZY",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pobre",
+              "sin",
+              "regular",
+              "poca",
+              "nada",
+              "mala"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "respuesta",
+              "eficacia"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "repuesta pobre y parcial",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "respuesta"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pobre",
+              "refractaria",
+              "lenta"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "y"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicacion",
+              "medicaciones",
+              "medicamentos",
+              "medicamento",
+              "la",
+              "parcial"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "evolucion muy torpida",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "evolucion",
+              "evolución",
+              "evolucionado"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muy"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "torpida",
+              "levemente",
+              "estacionaria"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "evolucion muy torpida FUZZY",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "evolucion",
+              "evolución",
+              "evolucionado"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muy"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "torpida",
+              "levemente",
+              "estacionaria"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "a pesar de la medicación",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "a"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pesar"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "del"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "venir",
+              "uso",
+              "estar",
+              "la",
+              "los"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "adherente",
+              "de",
+              "tomando",
+              "medicacion",
+              "medicamento",
+              "medicamentos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no le funcionaba",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "le"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sirve",
+              "sirven",
+              "funcionaba",
+              "funcionaban",
+              "funcionan",
+              "esta"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no ha mejorado con",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ha",
+              "hay",
+              "huvo"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mejorado",
+              "respuesta",
+              "responde",
+              "respondido",
+              "mejoria",
+              "mejoro",
+              "mejora"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "con",
+              "al"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sin recuperar funcionalidad",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin",
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "lograr",
+              "logra",
+              "recuperar"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "remisión",
+              "remisiónes",
+              "remision",
+              "funcionalidad",
+              "funcionalidades"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "de muy dificil manejo",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dificil",
+              "difícil"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "manejo",
+              "control"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "persistencia de sintomatología",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "persistencia"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sintomatología",
+              "sintomas",
+              "síntomas"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "persistencia de sintomatología FUZZY",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "persistencia"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sintomatología",
+              "síntomas"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

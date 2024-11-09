@@ -1,0 +1,84 @@
+{
+  "target_rules": [
+    {
+      "literal": "conductas hipersexuales",
+      "category": "Hipersexualidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "codnucntas",
+              "conductas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sexualizadas",
+              "hipersexuales",
+              "hipersexual",
+              "sexualizada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aumento de líbido",
+      "category": "Hipersexualidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumento",
+              "muy"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "líbido",
+              "sexualmente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aumentó el deseo sexual",
+      "category": "Hipersexualidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "obsesivas",
+              "aumentó"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sexual"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "masturbando",
+      "category": "Hipersexualidad"
+    }
+  ]
+}

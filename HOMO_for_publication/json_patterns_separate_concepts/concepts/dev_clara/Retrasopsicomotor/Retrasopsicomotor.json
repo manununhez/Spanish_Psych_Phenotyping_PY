@@ -1,0 +1,187 @@
+{
+  "target_rules": [
+    {
+      "literal": "bradiquinético",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bradiquinético",
+              "bradiquinetico",
+              "hipoquinética",
+              "hipoquinetica",
+              "hipoquinético",
+              "hipoquinetico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inhibición motora",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inhibición",
+              "inhibiciónes",
+              "inhibiciones",
+              "inhibicion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER" : {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motoras",
+              "motor",
+              "motorico",
+              "motorica",
+              "motoricas",
+              "psicomotorica",
+              "psicomotoricas"
+
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "inhibición motora FUZZY",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "inhibición",
+              "inhibiciónes",
+              "inhibiciones"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motoras",
+              "motor",
+              "motorico",
+              "motorica",
+              "motoricas",
+              "psicomotorica",
+              "psicomotoricas"
+
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "inhibición motora FUZZY FUZZY",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "inhibición",
+              "inhibiciónes",
+              "inhibiciones"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER" : {"NOT_IN" : [".",";"]}
+        },
+        {
+          "LOWER": {"FUZZY2":{
+            "IN": [
+              "motorica",
+              "motoricas",
+              "psicomotorica",
+              "psicomotoricas"
+
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "alteraciones psicomotoras",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteraciones",
+              "alteracion",
+              "alteración",
+              "cambios",
+              "cambio",
+              "trastornos",
+              "trastorno"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motor",
+              "motoras",
+              "motores",
+              "motoricas",
+              "psicomotoras",
+              "psicomotores",
+              "motores"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones psicomotoras FUZZY",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "alteraciones",
+              "alteración",
+              "trastornos",
+              "trastorno"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "motoricas",
+              "psicomotoras",
+              "psicomotores"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

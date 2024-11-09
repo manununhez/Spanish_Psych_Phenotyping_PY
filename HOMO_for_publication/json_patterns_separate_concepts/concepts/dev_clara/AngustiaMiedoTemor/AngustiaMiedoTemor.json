@@ -1,0 +1,122 @@
+{
+  "target_rules": [
+    {
+      "literal" : "angustia", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["angustia","angustian","angusitada","angustiada","angustiado","ngustia"]
+          }
+        }
+      ]
+    },
+      {
+      "literal" : "angustia FUZZY", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["angustia","angustian","angustiada","angustiado"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "miedo / temor", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["miedo", "miedos","miedocon", "temo", "teme", "temor", "temeroso", "temerosa", "asustan", "susto", "asiustan", "asuste","asustado","asusta", "asustada", "sustos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "desasosiego", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["desasosiego", "atormentaban", "atormentado"]
+          }
+        }
+      ]
+    },
+      {
+      "literal" : "desasosiego FUZZY", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["desasosiego", "atormentaban", "atormentado","atormentada"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agobio", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agobio","agobiada","agobiado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "los nervios", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["los"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["nervios"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "preocupacion excesiva", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["preocupacion"]
+          }
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["excesiva", "marcada"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "muy preocupada", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": { 
+            "IN": ["muy"]
+          
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["preocupada", "preocupado"]
+          }
+        }
+      ]
+    }
+  ]
+}

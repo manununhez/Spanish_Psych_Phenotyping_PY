@@ -1,0 +1,72 @@
+{
+  "target_rules": [
+    {
+      "literal": "suspicacia",
+      "category": "Actituddeextraeza",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desconfiada",
+              "desconfiado",
+              "suspicacia",
+              "suspicacias",
+                "suspicaz"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "suspicacia FUZZY",
+      "category": "Actituddeextraeza",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "desconfiada",
+              "desconfiado",
+              "suspicacia"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "actitud de extrañexa",
+      "category": "Actituddeextraeza"
+    },
+     {
+      "literal": "actitud de extrañexa FUZZY",
+      "category": "Actituddeextraeza",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "actitud",
+              "actitudes"
+            ]
+          }
+        }
+        },
+         {
+          "LOWER": { 
+            "IN": [
+              "de"
+            ]
+        }
+        },
+         {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "extrañexa",
+              "extrañeza"
+            ]
+        }
+      }
+        }
+      ]
+    }
+  ]
+}

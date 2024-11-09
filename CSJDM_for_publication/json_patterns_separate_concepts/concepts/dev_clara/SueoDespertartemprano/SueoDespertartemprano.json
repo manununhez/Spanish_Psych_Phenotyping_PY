@@ -1,0 +1,419 @@
+{
+  "target_rules": [
+    {
+      "literal": "despierto 1 no 3 volverme a dormir",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "despierto"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "volverme",
+              "volver"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dormir"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "despierto 1 no 3 volverme a dormir LEMMA",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "despierto",
+              "despierta",
+              "despertar",
+              "despertar yo",
+              "despertar él"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "volver él",
+              "volver yo",
+              "volver"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a"
+            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "dormir",
+              "dormir él",
+              "dormir yo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me despierto mucho",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "despierto",
+              "despierta"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "noches",
+              "varias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "múltiples despertares",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "múltiples",
+              "multiples"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "despertares",
+              "despetares"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "múltiples despertares FUZZY",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "múltiples"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "despertares"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "despertar precoz",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "despertar",
+              "despertarme",
+              "despertarse",
+              "despertares"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "precoz",
+              "frecuentes",
+              "frecuente",
+              "nocturnos",
+              "nocturno"
+            ]
+          }
+        }
+      ]
+    },
+
+      {
+      "literal": "despertar precoz FUZZY2",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2" :{
+            "IN": [
+              "despertarme",
+              "despertarse",
+              "despertares"
+            ]
+          }
+        }
+      },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "frecuentes",
+              "frecuente",
+              "nocturnos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "insomnio de fragmentación",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "insomnio"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fragmentacion",
+              "fragmentación"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "insomnio de fragmentación FUZZY",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "insomnio"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2" : { 
+            "IN": [
+              "fragmentacion",
+              "fragmentación"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "insomnio de mantenimiento",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "insomnio"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mantenimiento"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "insomnio de mantenimiento FUZZY",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "insomnio"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,4}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "mantenimiento"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ratico me despierto",
+      "category": "SueoDespertartemprano"
+    },
+       {
+      "literal": "despertar temprano",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "despertar"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "temprano"
+            ]
+          }
+        }
+        }
+      ]
+    },
+      {
+      "literal": "despertar temprano LEMMA",
+      "category": "SueoDespertartemprano",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "despertar",
+              "despertar yo",
+              "despertar él"
+            ]
+          
+        }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "temprano"
+            ]
+          
+        }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "target_rules": [
+    {
+      "literal": "como si me persiguieran",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dice",
+              "como",
+              "siento",
+              "siente",
+              "sentir",
+              "calle"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que",
+              "si",
+              "q"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persiguen",
+              "persiguieran",
+              "persiguian",
+              "sigue",
+              "siguen",
+              "siguiendo",
+              "seguian"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas delirantes de persecución",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "delirio",
+              "delirios",
+              "delrios",
+              "delirantes",
+              "delirante",
+              "delrinates",
+              "delirates",
+              "ideas",
+              "ideacion",
+              "ideaciones",
+              "tipo",
+              "y",
+              "de",
+              ","
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "presecusion",
+              "persecucion",
+              "persecución",
+              "persecusiòn",
+              "persecutorios",
+              "persecutorias",
+              "persecusion",
+              "pesrsecucion",
+              "persecutoria",
+              "persecutorio",
+              "persecuciion",
+              "persecudion",
+              "prersecucion"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "ideas delirantes de persecución FUZZY",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "delirio",
+              "delirios",
+              "delrios",
+              "delirantes",
+              "delirante",
+              "delrinates",
+              "delirates",
+              "ideas",
+              "ideacion",
+              "ideaciones",
+              "tipo",
+              "y",
+              "de",
+              ","
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "presecusion",
+              "presecusiones",
+              "persecucion",
+              "persecución",
+              "persecusiòn",
+              "persecutorios",
+              "persecutorias",
+              "persecusion",
+              "persecusión",
+              "pesrsecucion",
+              "persecutoria",
+              "persecutorio"
+            ]
+          }
+        }
+        }
+      ]
+    },
+       {
+      "literal": "contenido paranoide",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contenido",
+              "contenidos"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "paranoide",
+              "paranoides"
+            ]
+          }
+        
+        }
+      ]
+    }
+  ]
+}

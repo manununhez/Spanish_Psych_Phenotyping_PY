@@ -1,0 +1,16 @@
+{
+  "target_rules": [
+    {
+      "literal" : "catatónico", 
+      "category" : "ComportamientocatatnicoCatatonia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["catatonico","catatonica","catatónico","catatónica","catatonia"]
+          }
+        }
+      ]
+    }
+  ]
+}
+

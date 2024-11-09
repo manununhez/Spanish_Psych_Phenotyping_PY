@@ -1,0 +1,331 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alteracion de la sensopercepcion", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alteracion", "alteración", "alteraciónes","alteraciones", "trastonos","trastornos","trastorno",
+              "sintomas","síntomas","cambios","cambio"]
+          }
+        },
+        {
+            "OP":"{,4}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["sensoeprcecpion", "sensopercepcion", "sensopercepción", "sensoperceptivas",
+              "sensoperceptiva", "sensoperceptivos", "sensoperceptivo","sensoperceptuales","sensoperceptual",
+              "sensperctivos", "realidad"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "alteracion de la sensopercepcion FUZZY", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["alteración", "alteraciónes","trastornos",
+              "trastorno","síntomas"]
+          }
+          }
+        },
+        {
+            "OP":"{,4}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["sensopercepcion", "sensopercepción", "sensoperceptivas",
+              "sensoperceptiva", "sensoperceptivos", "sensoperceptivo","sensoperceptuales","sensoperceptual",
+               "realidad"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sensación de presencia", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sensacion", "sensaciones","sensacionde", "sensación","sensaciónes", "siente", "siento"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["de", "d"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["presencia", "presencias", "presncia", "equealguien", "observado", "observada"]
+          }
+        }
+      ]
+    },
+      {
+      "literal" : "sensación de presencia FUZZY", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["sensación","sensaciónes","sensaciones"]
+          }
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["de", "d"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["presencia", "presencias", "equealguien", "observado", "observada"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "elementos alucinatorios", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["elementos", "elemento"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["alucinatorios","alucinatorio"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "elementos alucinatorios FUZZY", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["elementos", "elemento"]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["alucinatorios","alucinatorio"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "siento cosas que no hay", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["donde", "y"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["hay"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "siento como que me llaman", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["como"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["que", "un"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["me", "lo"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["esta", "estan"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["llaman","llama", "ruido"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "siento como que me llaman LEMMA", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["sentir","sentir yo", "sentir él"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["como"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["que", "un"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["me", "lo"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["esta", "estan"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["llamar","llamando él","llamando yo", "ruido"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ilusiones", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ilusiones","alucinosis","hipnagogica","hipnagógica","hipnagógico","hipnagogico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tsp", 
+      "category" : "Alteracionessensoperceptivas"
+    },
+    {
+      "literal" : "sentidos alterados", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sentidos"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["alterados","alteración","alteracion",
+              "alteraciónes", "alteraciones"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "alteraciones S/P", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alteraciones","alteración","alteracion","alteraciónes"]
+          }
+        },
+        {
+          "OP":"?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["s"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["/"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["p"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "le aparecian cosas", 
+      "category" : "Alteracionessensoperceptivas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["le","me"]
+          }
+        },
+         {
+          "LOWER": {
+            "IN": ["aparecian","aparecen"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["cosas"]
+          }
+        }
+      ]
+    }
+  ]
+}

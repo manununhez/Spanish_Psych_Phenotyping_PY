@@ -1,0 +1,108 @@
+{
+  "target_rules": [
+    {
+      "literal" : "agresividad", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agrede","agredio","agresión","agresion","agreison","agresiva","agresivo","agresivos","agresividad","agresivdad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "violento", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["violento","destructivo","grosero","insulta","amenazante","amenazandolo","mordiendo","riña"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "heteroagresión", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["heteroagresión","heteroagresion","hteroagresion","ehteroagresion","heteroagresiva","heteroagresivo","heteroagresivas","heteroagresividad","heteroagressividad",
+              "heterolesiva","heterolesivas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "golpea a", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": [ "amenaza","amenazar","matar","mato","busca","peleaba","pelea","arroja","alzaba",
+                    "golpe","golpea","golpeo","golpes","golear","golpear","pego","pega","pegue",
+                    "aporrió","lesionar","ahorcar","corto","cortar","chuzarme","coge","tirando"]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [ "a","la","al","un","con","contra","mucho","pela","pelea","otras","otros","patadas","animales","cuchillos","verbalmente"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "esta lleno de rabia", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["esta","trata"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["lleno","de"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["de","lo"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["rabia","peor"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "con un cuchillo", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["con","le","contra"]
+          }
+        },
+        { "OP":"?"},
+        {
+          "LOWER": {
+            "IN": ["una","un","la","saco"]
+          }
+        },
+        { "OP":"?"},
+        {
+          "LOWER": {
+            "IN": ["varilla","machete","cuchillo","pared"]
+          }
+        }
+      ]
+    }
+  ]
+}

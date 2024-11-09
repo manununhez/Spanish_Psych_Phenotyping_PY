@@ -1,0 +1,61 @@
+{
+  "target_rules": [
+    {
+      "literal" : "", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["enfermedad","espectro","sintomas","sintomatología","sntomas","síntomas","caracteristicas","alteraciones","cambios"]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["(",":"]
+          },
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["afectiva","afectivos","afectivas","afectivo","animicos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "aburrido y estresado", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aburrido"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["estresado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "crisis emocional", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["crisis"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["emocional"]
+          }
+        }
+      ]
+    }
+  ]
+}

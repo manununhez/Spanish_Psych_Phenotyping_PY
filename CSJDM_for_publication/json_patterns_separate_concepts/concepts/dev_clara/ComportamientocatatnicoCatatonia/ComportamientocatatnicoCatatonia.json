@@ -1,0 +1,81 @@
+{
+  "target_rules": [
+    {
+      "literal": "catatonia",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "catatonica",
+              "catatonico",
+              "catatonia"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "catatonia FUZZY",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "catatonica",
+              "catatonico",
+              "catatonia"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "catatimico",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "catatimico",
+              "catatímico",
+              "catatimica",
+              "catatímica"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "catatimico FUZZY",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "catatimico",
+              "catatímico",
+              "catatimica",
+              "catatímica"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "hipoquinesia",
+      "category": "ComportamientocatatnicoCatatonia",
+      "pattern": [
+        {
+          "LOWER": { 
+            "IN": [
+              "hipoquinesia"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

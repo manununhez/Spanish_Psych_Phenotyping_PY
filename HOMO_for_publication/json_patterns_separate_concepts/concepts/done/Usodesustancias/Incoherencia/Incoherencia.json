@@ -1,0 +1,27 @@
+{
+  "target_rules": [
+    {
+      "literal" : "incoherencia", 
+      "category" : "Incoherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["incoherencia","incoherencias","incoherente","inocherente","incoherentes","incoherentes.con"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "poco coherente", 
+      "category" : "Incoherencia"
+    },
+    {
+      "literal" : "habla bobadas", 
+      "category" : "Incoherencia"
+    },
+    {
+      "literal" : "discurso incongruente", 
+      "category" : "Incoherencia"
+    }
+  ]
+}

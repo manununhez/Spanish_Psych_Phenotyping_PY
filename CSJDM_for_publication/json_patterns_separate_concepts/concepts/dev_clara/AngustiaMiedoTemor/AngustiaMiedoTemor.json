@@ -1,0 +1,276 @@
+{
+  "target_rules": 
+  [
+
+    {
+      "literal" : "sentimientos de angustia", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sentimientos","sentimiento","muy"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["angustia","angustiantes","angustiante"]
+          }
+        }
+      ]
+    },
+
+      {
+      "literal" : "sentimientos de angustia LEMMA", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["sentimiento"]
+          }
+        },
+        {
+          "OP":"{,1}"
+        },
+        {
+          "LEMMA": {
+            "IN": ["angustia","angustiante"]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal" : "ataques de nervios", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me","ataques","ataque"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["nerviosos","nervios","nervioso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sensación de miedo", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideas","sentimientos","sentimiento","sensación","me"]
+          }
+        },
+        {
+          "OP":"?" , "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["sobrevaloradas","de","dan"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["miedo","temor"]
+          }
+        }
+      ]
+    },
+      {
+      "literal" : "sensación de miedo LEMMA", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["idea","sentimiento","sensación","sensacion"]
+          }
+        },
+        {
+          "OP":"?" , "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": ["sobrevalorada","de","dar"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": ["miedo","temor", "temer"]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal" : "actitud temerosa", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["con","actitud"]
+          }
+        },
+        {
+          "OP":"{,2}","IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["temores","temerosa","temeroso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "actitud temerosa LEMMA", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["con","actitud"]
+          }
+        },
+        {
+          "OP":"{,2}","IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": ["temor","temeroso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agonía", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agonía","agonia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "angustiada", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["angustia","angustiada","angustiado"]
+          }
+          }
+        }
+      ]
+    },
+
+     {
+      "literal" : "angustiada LEMMA", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LEMMA":{
+            "IN": ["angustia","angustiado"]
+          }
+          }
+      ]
+    },
+    {
+      "literal" : "nerviosa", 
+      "category" : "AngustiaMiedoTemor"
+    },
+    {
+      "literal" : "nervioso", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER":"sistema", "OP":"!"
+          },
+
+        {
+          "LOWER":{
+            "IN": ["nervioso"]
+          }
+          }
+      ]
+    },
+    {
+      "literal" : "se preocupa mucho", 
+      "category" : "AngustiaMiedoTemor"
+    },
+     {
+      "literal" : "se preocupa mucho LEMMA", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LEMMA" : {
+            "IN": ["el"]
+          }
+        },
+         { "LEMMA" : {
+            "IN": ["preocupar"]
+          }
+        },
+          {"LOWER": {
+            "IN": ["mucho"]
+          }
+          }
+      ]
+    },
+    {
+      "literal" : "temeroso", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["temeroso","temerosa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "temor / miedo", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["miedo","temor"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "temor / miedo LEMMA", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["miedo","temor"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sosobra", 
+      "category" : "AngustiaMiedoTemor"
+    },
+    {
+      "literal" : "angustia", 
+      "category" : "AngustiaMiedoTemor"
+    }
+  ]
+}

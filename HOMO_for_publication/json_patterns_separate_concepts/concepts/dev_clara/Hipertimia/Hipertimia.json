@@ -1,0 +1,85 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hipertímica", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipertimia","hipertimica","hipertimico","hipertímica","hipertímico","hipertìmica","hipertìmico","hipermtico","hipertia","hiperttimia","hiperttimico",
+              "congruente.hipertímico"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "hipertímica FUZZY", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["hipertimia","hipertimica","hipertimico","hipertímica","hipertímico","hiperttimico"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "afecto elevado", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muy","tono","animo","afecto"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["alegre","elevado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "elevacion animica", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["elevacion","elevaciones"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["animica","animicas"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "elevado y exaltado", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["elevacion","elevado","elevada","exaltado","exaltada","euforica","euforico"]
+          }
+        },
+        {
+          "OP":"?", "LOWER":{"NOT_IN":[";","."]}
+        },
+        {
+          "LOWER": {
+            "IN": ["exaltado","exaltada","elevado", "elevada","euforica","euforico"]
+          }
+        }
+      ]
+    }
+  ]
+}

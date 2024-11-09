@@ -1,0 +1,86 @@
+CONTEXT: Family
+
+ - Additional cues that could be added
+
+			antecedente familiar de
+			antecedentes familiares
+			historia familiar de
+
+			carga genetica de
+
+			el padre
+			el hijo
+			el hno esta
+			el papá
+			el papa
+			la abuela
+			la familia
+			la hermana
+			la hija
+			la nuera
+			la señora
+			la mamá
+			la hna
+			la familiar
+			la madre
+
+			la hermana menor
+			el hermano mayor es
+			el hermano tambien esta
+
+			maternos
+
+			madre biológica
+			madre es enferma mental
+
+			mi mama
+			otro hermano
+
+			su esposo
+			su hija
+			su hijo
+			un hijo que
+
+			en la madre
+			en la familia
+			en tio
+
+			hermano con
+			padre con
+
+			los compañeros
+			no corresponde al paciente
+			del cuidador
+
+
+			materno
+			materna
+			maternos
+			maternas
+			paterno
+			paterna
+			paternos
+			paternas
+
+			nuera
+			nueras
+			yerno
+			yernos
+
+			señora
+			señoras
+			señor
+			señores
+
+			vecino
+			vecinos
+			vecina
+			vecinas
+
+			compañero
+			compañeros
+			compañera
+			compañeras
+			cuidador
+			cuidadora
+			guardian

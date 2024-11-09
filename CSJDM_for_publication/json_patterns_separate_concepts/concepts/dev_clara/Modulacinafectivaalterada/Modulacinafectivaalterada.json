@@ -1,0 +1,189 @@
+{
+  "target_rules": [
+    {
+      "literal": "incontinencia emocional",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "incontinencia"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "emocional"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "incontinencia emocional FUZZY",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "incontinencia"
+            ]
+          }
+        }
+      },
+        {
+          "OP": "?",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {"FUZZY2":{
+            "IN": [
+              "emocional"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "hipermodulado",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipermodulado",
+              "hipomodulado"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "hipermodulado FUZZY",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "hipermodulado"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "afecto inapropiado",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "afecto"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hipomodulado",
+              "inapropiado"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "afecto restringido",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "afecto"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "restringido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no controlar sus emociones",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "controlar",
+              "controla"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "emociones"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mal modulado",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "menos",
+              "poco"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "modulado"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

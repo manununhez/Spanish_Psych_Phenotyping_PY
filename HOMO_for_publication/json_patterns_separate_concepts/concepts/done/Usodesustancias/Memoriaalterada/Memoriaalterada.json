@@ -1,0 +1,73 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alteracion en la memoria", 
+      "category" : "Memoriaalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alteracion", "alteración", "alteraciones","dificultades","perdiendo","faltas"]
+          }
+        },
+        {
+            "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["memoria"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no se acuerda", 
+      "category" : "Memoriaalterada"
+    },
+    {
+      "literal" : "demora mucho para recordar las cosas", 
+      "category" : "Memoriaalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["recordar", "ecordar","olvida","olvidan"]
+          }
+        },
+        {
+            "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["las", "ciertas"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["cosas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "memoria me falla", 
+      "category" : "Memoriaalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["memoria"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["falla", "alterada"] 
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+

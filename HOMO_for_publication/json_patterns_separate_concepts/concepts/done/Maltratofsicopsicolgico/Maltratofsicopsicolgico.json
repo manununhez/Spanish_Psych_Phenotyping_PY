@@ -1,0 +1,57 @@
+{
+  "target_rules": [
+    {
+      "literal" : "violencia intrafamiliar", 
+      "category" : "Maltratofsicopsicolgico"
+    },
+    {
+      "literal" : "acoso por parte de sus jefes", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["acoso","acosado","acosada"]
+          }
+        },
+        {
+          "OP" : "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["jefes","jefe","trabajo","laboral","colegio","universidad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "bulling", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["bulling","pordebajea"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "maltrato psicológico", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["maltrato","acoso","acosado","acosada"]
+          }
+        },
+        {
+          "OP" : "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["psicológico","psicologico","fisico","físico","emocional"]
+          }
+        }
+      ]
+    }
+  ]
+}

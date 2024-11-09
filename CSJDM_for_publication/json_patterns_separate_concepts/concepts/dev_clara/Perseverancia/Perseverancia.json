@@ -1,0 +1,114 @@
+{
+  "target_rules": [
+    {
+      "literal": "discurso perseverante",
+      "category": "Perseverancia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "discurso"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "perseverante",
+              "insistente",
+              "persistente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "discurso perseverante FUZZY",
+      "category": "Perseverancia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "discurso"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "perseverante",
+              "persistente"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "idea persistente",
+      "category": "Perseverancia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "idea",
+              "ideas"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persistente",
+              "persistentes",
+              "recurrentes",
+              "recurrente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "reiterativa en",
+      "category": "Perseverancia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "persiste",
+              "reiterativa",
+              "reiterativo"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "en"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "perseveraciones",
+      "category": "Perseverancia"
+    },
+     {
+      "literal": "perseverancia",
+      "category": "Perseverancia"
+    }
+  ]
+}

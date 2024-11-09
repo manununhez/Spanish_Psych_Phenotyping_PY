@@ -1,0 +1,62 @@
+{
+  "target_rules": [
+    {
+      "literal" : "jugar maquinitas",
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["jugar","jugo","jugó","juega","jugaba"]
+          }
+        },
+        {
+          "OP" : "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": ["maquinitas","casino"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "cafeina", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cafeina","cafeína"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dependencia a zopiclona", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": "dependencia"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["zopiclona"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "benzodiacepinas", 
+      "category" : "Adiccinotras",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["benzodiacepinas","benzodiazepinas"]
+          }
+        }
+      ]
+    }
+  ]
+}

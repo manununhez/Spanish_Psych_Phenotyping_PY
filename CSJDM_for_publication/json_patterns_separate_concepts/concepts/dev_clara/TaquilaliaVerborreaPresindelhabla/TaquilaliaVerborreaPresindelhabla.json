@@ -1,0 +1,283 @@
+{
+  "target_rules": [
+    {
+      "literal": "presión del habla",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "presion",
+              "presión"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "habla"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "presión del habla FUZZY",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "presión"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "IN": [
+              "de",
+              "del"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "habla"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "logorrea",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "logorre",
+              "logorrea",
+              "logorreica",
+              "logorreico"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "logorrea FUZZY",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "logorrea",
+              "logorreica",
+              "logorreico"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "taquilalia",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "taquilalia",
+              "taquilalica",
+              "taquilalico",
+              "taquilálico",
+              "taquiplalia",
+              "tquilalico"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "taquilalia FUZZY",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "taquilalia",
+              "taquilalica",
+              "taquilalico",
+              "taquilálico",
+              "taquilálica"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "verborrea",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "verborrea",
+              "verborreica",
+              "verborreico"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "verborrea FUZZY1",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1" : { 
+            "IN": [
+              "verborrea",
+              "verborreica",
+              "verborreico"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "hablando mucho",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "habla",
+              "hablar",
+              "hablando",
+              "lenguaje"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "rápido",
+              "rapido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aumento de la producción verbal",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumento"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "producción",
+              "produccion"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "verbal"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "aumento de la producción verbal FUZZY",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumento"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "producción",
+              "produccion"
+            ]
+          }
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "verbal"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hablantinoso",
+      "category": "TaquilaliaVerborreaPresindelhabla"
+    },
+    {
+      "literal": "hablantinoso FUZZY",
+      "category": "TaquilaliaVerborreaPresindelhabla",
+       "pattern": [
+        {
+          "LOWER": { "FUZZY1" : { 
+            "IN": [
+              "hablantinoso",
+              "hablantinosa"
+            ]
+          }
+        }
+        }
+      ]
+    }
+    
+  ]
+}

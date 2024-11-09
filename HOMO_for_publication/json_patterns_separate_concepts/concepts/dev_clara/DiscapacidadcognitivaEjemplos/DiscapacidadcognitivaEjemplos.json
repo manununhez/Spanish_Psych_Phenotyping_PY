@@ -1,0 +1,140 @@
+{
+  "target_rules": [
+    {
+      "literal": "déficit cognitivo",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deficit",
+              "déficit",
+              "déficits",
+              "discapacidad",
+              "discapacidades"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitivo",
+              "cognitivos",
+              "cognoscitivo",
+              "cognoscitiva",
+              "cognoscitivos",
+              "intelectual",
+              "intelectuales",
+              "coginitiva",
+              "cognitiva",
+              "cognitivas",
+              "mental",
+              "mentales"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "déficit cognitivo FUZZY",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "déficit",
+              "discapacidad"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "cognitivo",
+              "cognitivos",
+              "cognoscitivo",
+              "cognoscitivos",
+              "intelectual",
+              "intelectuales",
+              "cognitiva"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "inteligencia impresiona deficitaria",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inteligencia"
+            ]
+          }
+        },
+        {
+          "LOWER": "que",
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "impresiona"
+            ]
+          },"OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "deficitaria",
+              "debajo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "retraso mental",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "retraso",
+              "retrasos",
+              "retardo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mental",
+              "mentales"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "rm",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "rm",
+              "-rm"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

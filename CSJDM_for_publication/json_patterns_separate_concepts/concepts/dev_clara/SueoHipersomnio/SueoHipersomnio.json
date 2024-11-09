@@ -1,0 +1,69 @@
+{
+  "target_rules": [
+    {
+      "literal": "hipersomnio",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipersomnia",
+              "hipersomnio"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "hipersomnio FUZZY",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1" : {
+            "IN": [
+              "hipersomnia",
+              "hipersomnio"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "solo quería dormir",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "solo"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quería",
+              "queria",
+              "quiero",
+              "quiere"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dormir"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "target_rules": [
+    {
+      "literal": "apatía",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "apatia",
+              "apatía"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me importa la vida",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "importa",
+              "intera",
+              "interesa"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "vida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "todo me da igual",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "todo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "da"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "igual"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "perdida del interes",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "perdida"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "interes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "perdida del interes LEMMA",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "perdido",
+              "perder"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "interes"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

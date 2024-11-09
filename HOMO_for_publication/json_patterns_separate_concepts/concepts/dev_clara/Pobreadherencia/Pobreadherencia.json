@@ -1,0 +1,764 @@
+{
+  "target_rules": [
+    {
+      "literal": "mala adherencia al tratameitno",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mala",
+              "mal",
+              "malo",
+              "falta",
+              "baja",
+              "bajo",
+              "nula",
+              "nulo",
+              "parcial",
+              "pésima",
+              "pésimo",
+              "pesimo",
+              "pesima",
+              "poca",
+              "poco",
+              "pobre",
+              "povre",
+              "regular",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "adeherencia",
+              "adherecia",
+              "adherecnia",
+              "adherencia",
+              "ahdrencia",
+              "apego"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tratamiento",
+              "tratamientos",
+              "tto",
+              "medicación",
+              "medicaciónes",
+              "medicaciones",
+              "medicamento",
+              "tratameitno",
+              "tratameitnos",
+              "farmacologica",
+              "farmacologico",
+              "tratameinto",
+              "medicamentos",
+              "manejo",
+              "tratamineto"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "mala adherencia al tratameitno FUZZY",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mala",
+              "mal",
+              "malo",
+              "falta",
+              "baja",
+              "bajo",
+              "nula",
+              "nulo",
+              "parcial",
+              "pésima",
+              "pésimo",
+              "pesimo",
+              "pesima",
+              "poca",
+              "poco",
+              "pobre",
+              "povre",
+              "regular",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "adherencia"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "tratamiento",
+              "tratamientos",
+              "medicación",
+              "medicaciónes",
+              "medicaciones",
+              "medicamento",
+              "farmacologica",
+              "farmacologico",
+              "medicamentos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "no hay buena adherencia",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "buena",
+              "hay",
+              "presento",
+              "tolerancia",
+              "tenido",
+              "tneido",
+              "colabora",
+              "colaborando",
+              "colaborar"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "adherencia",
+              "adherncia",
+              "tratamitno",
+              "tratamiento",
+              "tratamientos"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "no colabora con el tratamiento LEMMA",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "buena",
+              "presentar",
+              "tolerancia",
+              "tener",
+              "colaborar",
+              "colaboración"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "adherencia",
+              "tratamiento"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "no se ha tomado el medicamento",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tomado",
+              "toma",
+              "tomaba",
+              "tomo",
+              "tomando"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicaciónes",
+              "medicacion",
+              "medicaciones",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "tratamientos",
+              "adecaudamernte",
+              "mareo",
+              "pastillas",
+              "risperidona",
+              "divalproato",
+              "biperideno",
+              "paliperidona"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "no se ha tomado el medicamento FUZZY",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "tomar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicaciónes",
+              "medicacion",
+              "medicaciones",
+              "medicamentos",
+              "tratamiento",
+              "tratamientos",
+              "adecaudamernte",
+              "pastillas",
+              "risperidona",
+              "divalproato",
+              "biperideno",
+              "paliperidona"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "no volvió a controles",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "tampoco"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suministro",
+              "suministrado",
+              "recibe",
+              "recibido",
+              "entregaron",
+              "entregado",
+              "pudieron",
+              "realizó",
+              "realizo",
+              "trajo",
+              "volvió",
+              "volvio",
+              "volvido",
+              "regresa",
+              "regreso",
+              "regresó",
+              "continuidad",
+              "evidencian"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "adecaudamernte",
+              "mareo",
+              "pastillas",
+              "risperidona",
+              "divalproato",
+              "biperideno",
+              "paliperidona",
+              "controles",
+              "paraclincos",
+              "examenes",
+              "exámenes"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "no volvió a controles LEMMA",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "tampoco"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "suministrar",
+              "suministrado",
+              "recibir",
+              "entregar",
+              "entregado",
+              "poder",
+              "realizar",
+              "traer",
+              "volvier",
+              "regresar",
+              "regreso",
+              "continuidad",
+              "evidencian",
+              "evidencia"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "adecaudamernte",
+              "mareo",
+              "pastillas",
+              "risperidona",
+              "divalproato",
+              "biperideno",
+              "paliperidona",
+              "controles",
+              "paraclincos",
+              "examenes",
+              "exámenes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dejó de tomar el medicamento",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deje",
+              "dejo",
+              "dejé",
+              "dejó",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tomar",
+              "tomarme"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "droga",
+              "pastillas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no adherencia",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER":{
+            "NOT_IN":["quede"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "adherencia",
+              "adherente",
+              "acudir",
+              "controles",
+              "medicacion",
+              "medicación",
+              "seguimiento",
+              "medicamentos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "suspende el medicamento",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "suspende",
+              "suspendio",
+              "suspendió",
+              "suspension",
+              "suspensiond",
+              "suspensión",
+              "ausencia",
+              "está",
+              "olvida",
+              "inadeherencia",
+              "rechazo",
+              "acabaron"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "emdicaion"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "suspende el medicamento LEMMA",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {"LOWER":{
+          "NOT_IN":["debe"]
+        }
+      },
+        {
+          "LEMMA": {
+            "IN": [
+              "suspender",
+              "suspension",
+              "suspensión",
+              "ausencia",
+              "olvidar",
+              "olvidar yo",
+              "olvidar él",
+              "inadeherencia",
+              "rechazo",
+              "rechazar"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "emdicaion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se lo toma",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "nunca"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "se"
+            ]
+          }, "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "lo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "toma",
+              "tomó",
+              "tomo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "descuadrado con la medicación",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "negativa",
+              "negativas",
+              "negativo",
+              "negativos",
+              "descuadrado",
+              "descuadrada",
+              "resistente",
+              "irregularidades",
+              "irregularidad",
+              "dificultades",
+              "dificultad"
+            ]
+          }
+        },
+        {
+          "OP": "{,6}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tto",
+              "ttop",
+              "tratamiento",
+              "tratamientos",
+              "emdicaion"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "descuadrado con la medicación FUZZY",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "negativa",
+              "negativas",
+              "negativo",
+              "negativos",
+              "descuadrado",
+              "descuadrada",
+              "resistente",
+              "irregularidades",
+              "irregularidad",
+              "dificultades",
+              "dificultad"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,4}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+                      "IN": [
+              "medicamento",
+              "medicación",
+              "medicacion",
+              "medicamentos",
+              "tratamiento",
+              "tratamientos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "adherencia es parcial",
+      "category": "Pobreadherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "adherencia"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "es"
+            ]
+          }, "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "parcial"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

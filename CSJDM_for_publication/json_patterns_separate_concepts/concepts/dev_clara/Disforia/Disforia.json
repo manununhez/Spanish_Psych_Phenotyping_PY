@@ -1,0 +1,24 @@
+{
+  "target_rules": [
+    {
+      "literal": "disfórico",
+      "category": "Disforia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disfório",
+              "disfória",
+              "disforio",
+              "disforia",
+              "disforica",
+              "disfórica",
+              "disforico",
+              "disfórico"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

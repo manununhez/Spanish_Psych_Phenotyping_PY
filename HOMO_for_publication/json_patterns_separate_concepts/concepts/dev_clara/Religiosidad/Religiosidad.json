@@ -1,0 +1,291 @@
+{
+  "target_rules": [
+    {
+      "literal": "mística",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mistico",
+              "místico",
+              "mistica",
+              "mística",
+              "misticos",
+              "misticas",
+              "místicas",
+              "mpisticas",
+              "miitcas",
+              "mesiánicos",
+              "magico-religiosas",
+              "magico-",
+              "-religiosas",
+              "religiosas",
+              "religiosidad"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "mística FUZZY",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "místico",
+              "misticos",
+              "misticas",
+              "mística",
+              "mesiánicos",
+              "mesiánico",
+              "magico-religiosas",
+              "religiosas",
+              "religiosidad"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "revelaciones de dios",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "amo",
+              "revelaciones",
+              "revelación",
+              "revelacion",
+              "voz",
+              "voces"
+
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dios"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "contenido religioso",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "actividad",
+              "actividades",
+              "contenido",
+              "contenidos"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "religiosa",
+              "religioso",
+              "religiosos"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "contenido religioso FUZZY",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "actividad",
+              "actividades",
+              "contenido",
+              "contenidos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "religiosa",
+              "religioso",
+              "religiosos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "soy jesucristo",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "soy",
+              "era",
+              "es",
+              "ser"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "jesucristo",
+              "jesus",
+              "cristo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "revelaciones de dios",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "soy","son","es","era","ser"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "el",
+              "la",
+              "un",
+              "una"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "enviado",
+              "enviados",
+              "espiritu",
+              "virgen",
+              "eviada",
+              "enviada",
+              "enviadas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ora durante entrevista",
+      "category": "Religiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ora",
+              "orando"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "durante",
+              "en"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dios me habla",
+      "category": "Religiosidad",
+       "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dios"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "le",
+              "me"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "habla",
+              "hablo"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "empiezo hablar de religion",
+      "category": "Religiosidad",
+       "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "empiezo",
+              "empezar",
+              "empieza"
+            ]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hablar",
+              "hablando"
+            ]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "religion",
+              "religiosas",
+              "religiosos"
+            ]
+          }
+        }
+      ]
+    }
+    
+  ]
+}

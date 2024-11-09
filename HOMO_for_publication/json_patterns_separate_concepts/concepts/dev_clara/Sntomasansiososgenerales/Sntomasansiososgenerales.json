@@ -1,0 +1,225 @@
+{
+  "target_rules": [
+    {
+      "literal": "cogniciones ansiosas",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cogniciones",
+              "cognición",
+              "cognicions",
+              "cognicoens",
+              "ideas"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansiosas",
+              "ansiosos",
+              "ansisosas",
+              "asiosas",
+              "ansosas",
+              "ansiosa",
+              "ansioso",
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "cogniciones ansiosas FUZZY",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "cogniciones",
+              "cognición"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,4}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "ansiosas",
+              "ansiosos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "trastorno de ansiedad",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "trast",
+              "-trast",
+              "trastorno",
+              "-trastorno"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansioso",
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "trastorno de ansiedad FUZZY",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "trastorno",
+              "trastornos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,4}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansioso",
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas ansiosos",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "sintomaa",
+              "síntomas",
+              "síntoma",
+              "sintoma",
+              "crisis"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pánico",
+              "panico",
+              "ansiosos",
+              "ansioso",
+              "ansiosa",
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas ansiosos FUZZY",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "síntomas",
+              "síntoma",
+              "crisis"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,4}", "LOWER": {"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {"FUZZY1":{
+            "IN": [
+              "pánico",
+              "ansiosos",
+              "ansioso",
+              "ansiosa",
+              "ansiedad"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "catastrofización",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "catastrofización",
+              "catastrofizacion",
+              "catastroficas",
+              "catastroficos",
+              "anticipación",
+              "claustrofobia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "catastrofización FUZZY",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "catastrofización",
+              "catastrofizaciones",
+              "catastrofizacion",
+              "catastrofizaciones",
+              "catastroficas",
+              "catastroficos",
+              "anticipación",
+              "claustrofobia"
+            ]
+          }
+        }
+      }
+      ]
+    },
+     {
+      "literal": "con ansiedad",
+      "category": "Sntomasansiososgenerales"
+    }
+  ]
+}

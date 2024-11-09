@@ -1,0 +1,8 @@
+{
+  "target_rules": [
+    {
+      "literal" : "pueril", 
+      "category" : "Actitudpueril",
+    }
+  ]
+}

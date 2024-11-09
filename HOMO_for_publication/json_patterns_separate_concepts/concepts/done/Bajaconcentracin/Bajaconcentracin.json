@@ -1,0 +1,72 @@
+{
+  "target_rules": [
+    {
+      "literal" : "disprosexia", 
+      "category" : "Bajaconcentracin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["disprosexia","disprosexica","disprosexico","disproséxica","disproséxico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hipoprosexia", 
+      "category" : "Bajaconcentracin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipoprosexia","hipoprosexica","hipoprosexico","hipoproséxico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "distraída", 
+      "category" : "Bajaconcentracin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["distraída","distractil","distraida","desconcentracion","desconcentrada"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "atencion dispersa", 
+      "category" : "Bajaconcentracin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["atencion","atención","concentración","concentracion"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["dispersa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "faltas de concentración", 
+      "category" : "Bajaconcentracin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["faltas","falta","baja","pobre"]
+          }
+        },
+        {
+          "OP" : "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["atencion","atención","concentración","concentracion"]
+          }
+        }
+      ]
+    }
+  ]
+}

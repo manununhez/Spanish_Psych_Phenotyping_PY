@@ -1,0 +1,80 @@
+{
+  "target_rules": [
+    {
+      "literal" : "abulia", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["abulia","anergia","astenia","adinamia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sin ganas de hacer nada", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["provoca","ganas"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["bañarse","hacer","banarse","bañarme", "bañar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sinnganas de nada", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sinnganas"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["nada"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "acostado todo el tiempo", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["acostado","acostada"]
+          }
+        },
+        {
+          "OP":"{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["tiemp","tiempo"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "target_rules": [
+    {
+      "literal" : "colabora poco", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["colabora","colaborar","colaborando"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["poco"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no acata órdenes", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","dificultad","dificultades","dificil"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["acata","acatar"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["órdenes","ordenes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dificultad para acatar órdenes", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["acatar"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["órdenes","ordenes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "negativismo", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["negativismo","negativista"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no colabora", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","poco", "poca"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["colabora","colaborador","colaboradora","colaboracion","colaboración"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "se niega a vestirse", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["niega"]
+          }
+        },
+        {
+          "OP":"{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": ["vestirse","comentar"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "se niega a vestirse LEMMA", 
+      "category" : "Negativismo",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["niego","negar"]
+          }
+        },
+        {
+          "OP":"{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": ["vestirse","comentar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "problemas de manejo", 
+      "category" : "Negativismo"
+    },
+    {
+      "literal" : "rebelde", 
+      "category" : "Negativismo"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "target_rules": [
+    {
+      "literal" : "disminucion en necesidad de sueño", 
+      "category" : "SueoDisminucindenecesidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["disminucion","disminución","dismiución","perdida"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["necesidad"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sueño","dormir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "menos sueño", 
+      "category" : "SueoDisminucindenecesidad"
+    }
+  ]
+}

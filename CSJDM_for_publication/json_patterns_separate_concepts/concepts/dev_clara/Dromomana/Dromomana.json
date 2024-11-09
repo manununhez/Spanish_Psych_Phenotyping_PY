@@ -1,0 +1,113 @@
+{
+  "target_rules": [
+    {
+      "literal": "se va es a caminar",
+      "category": "Dromomana",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fue",
+              "va"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",  "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "andar",
+              "caminando",
+              "caminar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "da la andadera",
+      "category": "Dromomana",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "da"
+            ]
+          }
+        },
+        {
+          "OP": "?",  "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "andadera"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dromomanía",
+      "category": "Dromomana",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dromomania",
+              "dromomanias",
+              "dromomanía",
+              "dromomnia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "camina mucho",
+      "category": "Dromomana"
+    },
+    {
+      "literal": "camina mucho LEMMA",
+      "category": "Dromomana",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "caminar"
+            ]
+          }
+        },
+         {
+          "LOWER": {
+            "IN": [
+              "mucho"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

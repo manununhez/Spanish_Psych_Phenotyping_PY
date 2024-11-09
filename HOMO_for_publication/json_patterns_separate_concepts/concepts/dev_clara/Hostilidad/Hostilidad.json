@@ -1,0 +1,148 @@
+{
+  "target_rules": [
+    {
+      "literal": "hostilidad",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hostil",
+              "hostilidad",
+              "hostiliza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "amenazante",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "amenaza",
+              "amenazante",
+              "amenazar",
+              "amenazando"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "grosero, desafiante, retaliativo",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "grosero",
+              "grosera",
+              "desafiante",
+              "intimidante",
+              "retaliativo",
+              "retaliativa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "insulta los vecinos",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mete",
+              "insulta",
+              "insultar",
+              "insultando",
+              "insultó"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "los",
+              "el",
+              "la"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vecinos",
+              "vecino",
+              "vecina"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "lleno de rabia",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "lleno",
+              "llenar",
+              "llena",
+              "llenarse",
+              "llenarme"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "rabia"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "odia a todo el mundo",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "odia",
+              "odio",
+              "odiar"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a","al"
+            ]
+          }
+        },
+        {"OP":"{,2}", "IS_PUNCT": false},
+        {
+          "LOWER": {
+            "IN": [
+              "mundo"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

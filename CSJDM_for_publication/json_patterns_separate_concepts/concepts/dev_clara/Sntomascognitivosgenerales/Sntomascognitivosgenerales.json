@@ -1,0 +1,426 @@
+{
+  "target_rules": [
+    {
+      "literal": "compromiso de las funciones mentales",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { 
+            "IN": [
+              "compromiso"            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "funciones",
+              "funcion",
+              "funciónes",
+              "función"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mentales",
+              "mental"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "compromiso de las funciones mentales FUZZY",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {  "FUZZY2":{
+            "IN": [
+              "compromiso"            ]
+          }
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "funciones",
+              "funcion",
+              "funciónes",
+              "función"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mentales",
+              "mental"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dificultades de aprendizaje",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sx",
+              "trastorno",
+              "dificultades",
+              "dificultad",
+              "alteraciones",
+              "dishabilidad"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "asperger",
+              "atencional",
+              "aprendizaje",
+              "memoria",
+              "neurocognocitivas",
+              "intelectual"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "dificultades de aprendizaje FUZZY",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "trastorno",
+              "dificultades",
+              "alteraciones",
+              "dishabilidad"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "asperger",
+              "atencional",
+              "atencionales",
+              "aprendizaje",
+              "memoria",
+              "neurocognocitivas",
+              "neurocognocitiva",
+              "neurocognocitivo",
+              "neurocognocitivos",
+              "intelectual",
+              "intelectuales"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "funcion ejecutiva comprometida",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "fms",
+              "funcion",
+              "calculo",
+              "cálculo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER": {
+            "NOT_IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "comprometidas",
+              "comrpeotmidas",
+              "comprometida",
+              "comprometido",
+              "comprometidos"
+            ]
+          }
+        }
+      ]
+    },
+
+
+     {
+      "literal": "funcion ejecutiva comprometida FUZZY",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "fms",
+              "funcion",
+              "calculo",
+              "cálculo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER": {
+            "NOT_IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "comprometidas",
+              "comrpeotmidas",
+              "comprometida",
+              "comprometido",
+              "comprometidos"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "enfermedad de alzheimer",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "enf",
+              "enfermedad",
+              "enferma",
+              "enfermo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "alzheimer",
+              "alzheimers"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "distorciones cognitivas",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disonancia",
+              "distorciones",
+              "distorsiones",
+              "distorsión",
+              "distorsion",
+              "compromiso",
+              "afectación",
+              "afectacion",
+              "sintomas"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitiva",
+              "cognitivas",
+              "cognitvas",
+              "cognitivo",
+              "cognitivos",
+              "conitivas"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "distorciones cognitivas FUZZY",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "disonancia",
+              "distorciones",
+              "distorsión",
+              "compromiso",
+              "afectación",
+              "sintomas"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "cognitiva",
+              "cognitivas",
+              "cognitvas",
+              "cognitivo",
+              "cognitivos"            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "demencia",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "demencia",
+              "demente",
+              "pseudodemencia",
+              "frontotemporal",
+              "frontotemporal.+"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "funciones mentales superiores levemente comprometidas",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "func",
+              "funciones"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ment",
+              "mentales"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "debilitadas",
+              "deterioradas",
+              "comprometida",
+              "comprometidas",
+              "debilitada"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "funciones mentales superiores levemente comprometidas FUZZY",
+      "category": "Sntomascognitivosgenerales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "funciones"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mentales"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "debilitadas",
+              "deterioradas",
+              "comprometida",
+              "comprometidas",
+              "debilitada"
+            ]
+          }
+        }
+      }
+      ]
+    }
+  ]
+}

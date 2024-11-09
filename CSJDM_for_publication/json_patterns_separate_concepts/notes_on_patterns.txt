@@ -1,0 +1,98 @@
+Patterns info
+
+%---------------
+    ConText
+%---------------
+
+    _ALLOWED_KEYS = {
+        "literal",
+        "direction",
+        "pattern",
+        "category",
+        "metadata",
+        "allowed_types",
+        "excluded_types",
+        "max_targets",
+        "max_scope",
+    }
+
+
+
+        _ALLOWED_DIRECTIONS = (
+            "FORWARD",
+            "BACKWARD",
+            "BIDIRECTIONAL",
+            "TERMINATE",
+            "PSEUDO",
+        )
+
+                    "direction": "TERMINATE"
+                    "direction": "FORWARD"
+                    "direction": "BACKWARD"
+                    "direction": "BIDIRECTIONAL"
+
+
+        "attributes": {"is_negated": true},
+        "attributes": {"is_historical": true},
+        "attributes": {"is_hypothetical": true},
+        "attributes": {"is_family": true},
+        "attributes": {"is_uncertain": true},
+
+
+    Examples:
+
+        TERMINATION NEGATION: ya que
+        TERMINATION NEGATION: con
+        TERMINATION NEGATION: continúa
+
+        HISTORICAL: ex
+        HISTORICAL: pseudo: atención previa
+
+
+        HYPOTHETICAL: síntomas de alarma
+        HYPOTHETICAL: psicoeducaicon 
+        HYPOTHETICAL: cudiados de la enfermeadd 
+        HYPOTHETICAL: enfasis en la necesidad
+
+
+%---------------
+    PyRuSH
+%---------------
+
+    begining of sentence:
+        Objetivo: 
+        Porte: 
+        Actitud: 
+        Consciencia: 
+        Orientación: 
+        Atención: 
+        Pensamiento: 
+        Afecto: 
+        Sensopercepción: 
+        Conducta motora: 
+        Lenguaje: 
+        Juicio: 
+        Introspección: 
+        Prospección: 
+        Otros hallazgos:
+
+
+
+    DONE: 
+        end of sentence: %
+        end of sentence: ;
+        end of sentence: " - "
+        end of sentence: " -[a-z]"
+        begining of sentence: PACIENTE CON
+        begining of sentence: ANALISIS Y PLAN
+        begining of sentence: S/
+        begining of sentence: O/
+        begining of sentence: A/
+        begining of sentence: P/
+
+
+%---------------
+    medspaCy Tokenizer
+%---------------
+
+    - "-disfunción" => docs.loc[794,'text']

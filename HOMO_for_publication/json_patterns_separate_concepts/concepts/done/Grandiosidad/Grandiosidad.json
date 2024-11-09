@@ -1,0 +1,42 @@
+{
+  "target_rules": [
+    {
+      "literal" : "grandiosa", 
+      "category" : "Grandiosidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["grandiosa","grandioso","grandiosas","grandiosos","grandiososas","grandiososos","grandiosidad","grandios"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "de grandeza", 
+      "category" : "Grandiosidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["de","y"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["grandeza","grandesa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "megalomaníaco", 
+      "category" : "Grandiosidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["megalomanía","megalomaniaca","megalomaníaca","megalomaniaco","megalomaníaco","megalomaniacas","megalomaníacas","megalomaniacos","megalomaníacos","meglomaniacas","emegalominana"]
+          }
+        }
+      ]
+    }
+  ]
+}

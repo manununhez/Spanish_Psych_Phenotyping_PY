@@ -1,0 +1,98 @@
+{
+  "target_rules": [
+    {
+      "literal": "sentimiento de soledad",
+      "category": "Soledad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "siento",
+              "sensanción",
+              "sensanciónes",
+              "sensancion",
+              "sensanciones",
+              "sentimiento",
+              "sentimientos"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sola",
+              "solo",
+              "soledad"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "sentimiento de soledad LEMMA",
+      "category": "Soledad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "sentir",
+              "sentir yo",
+              "sentir él",
+              "sensanción",
+              "sensanciónes",
+              "sentimiento"            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sola",
+              "solo",
+              "soledad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sentirme solo",
+      "category": "Soledad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "estoy",
+              "sentirme"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "solo",
+              "sola"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "soledad",
+      "category": "Soledad"
+    }
+  ]
+}

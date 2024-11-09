@@ -1,0 +1,174 @@
+{
+  "target_rules": [
+    {
+      "literal" : "sustancia de impacto", 
+      "category" : "Usodesustancias"
+    },
+    {
+      "literal" : "spa", 
+      "category" : "Usodesustancias"
+    },
+    {
+      "literal" : "policonsumo", 
+      "category" : "Usodesustancias"
+    },
+    {
+      "literal" : "toxicos", 
+      "category" : "Usodesustancias"
+    },
+    {
+      "literal" : "consume basuco", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["consume","consumiendo","consumir","consumió","consumo"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["basuco","marihuana","pegante","cigarrillo","alcohol","bazuco",
+              "cannabis","cerveza","cigarrillos","hongos","licor","rivotril"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "consumo de spa", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["consumidor","consumo","consumia","conusmo","cosnumo"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["actual","asociado","activo","concomitante","spa","experimental",
+              "reciente","psicoactivas","tambien","únicamente","drogas","sustancias"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "uso de spa", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["otros","uso"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["spa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "meto vicio", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["toma","tomo","meto","ingería","ingesta","gusta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["trago","vicio","alcohol"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "patrón de consumo", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["por","gradual","ideas","inicio","patrón","relacionadas","recaída","relacionadas","ultimo"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["consumo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pegarme un plon", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pegarme","anotan","pidiéndole"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["plon","tabaco","marihuana"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dejar de consumir", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dejar"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["consumir","fumar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "esta consumiendo", 
+      "category" : "Usodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["esta","estaba","estoy","llevo"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["consumiendo","drogada","cigarrillo"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal" : "suspicaz", 
+      "category" : "Actituddeextraeza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["desconfiada","desconfiado","suspicaz","suspicacia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "actitud de extrañexa", 
+      "category" : "Actituddeextraeza"
+    }
+  ]
+}

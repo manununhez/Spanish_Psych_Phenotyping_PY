@@ -1,0 +1,453 @@
+{
+  "target_rules": [
+    {
+      "literal": "intropección parcial",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "intropección",
+              "intropeccion",
+              "introspeccion",
+              "introspección",
+              "introspécción",
+              "introspéccion",
+              "inospección",
+              "inospeccion",
+              "introspeccón",
+              "introspeccon",
+              "iyp"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nula",
+              "parcial",
+              "pacial",
+              "ausente",
+              "baja",
+              "comprometidos",
+              "negativa",
+              "pobre",
+              "poca",
+              "precaria",
+              "nulas"
+            ]
+          }
+        }
+      ]
+    },
+
+{
+      "literal": "intropección parcial FUZZY",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "intropección",
+              "intropecciónes"
+            
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "parcial"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "introspección y prospección parcial",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inrropeccipón",
+              "inrropeccipon",
+              "introspeccion",
+              "introspección",
+              "introspecc",
+              "i"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "y"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "prospeccipn",
+              "prospeccion",
+              "prospección",
+              "prospecc",
+              "p"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "parcial",
+              "comprometidas",
+              "inciertas",
+              "parciales",
+              "pobres",
+              "pobre"
+            ]
+          }
+        }
+      ]
+    },
+
+
+ {
+      "literal": "introspección y prospección parcial FUZZY",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "introspección"
+            ]
+          }
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "y"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospección"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "parcial",
+              "comprometidas",
+              "comprometida",
+              "inciertas",
+              "incierta",
+              "parciales",
+              "pobres",
+              "pobre"
+            ]
+          }
+        }
+      ]
+    },
+
+
+    {
+      "literal": "insight parcial",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "insight",
+              "insights"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "deficientes",
+              "parcial",
+              "parciales"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "nula introspección",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "nula",
+              "pobre"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "introspeccion",
+              "introspección"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "nula introspección FUZZY",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "nula",
+              "pobre"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "introspeccion",
+              "introspección"
+            ]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "minimiza circunstancias",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "minimiza",
+              "minimizaciòn",
+              "minimizacion"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "circunstancias",
+              "síntomas",
+              "sintomas",
+              "sintomatología",
+              "sintomatologia"
+            ]
+          }
+        }
+      ]
+    },
+
+
+   {
+      "literal": "minimiza circunstancias FUZZY",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "minimizaciòn",
+              "minimizacion"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "circunstancias",
+              "sintomatología",
+              "sintomatologia"
+            ]
+          }
+        }
+        }
+      ]
+    },
+
+    {
+      "literal": "no acepta situación de enfermedad",
+      "category": "Introspeccinpobreinsightpobre",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "acepta",
+              "tiene"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "situación",
+              "situacion",
+              "conciencia"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "enfermedad"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

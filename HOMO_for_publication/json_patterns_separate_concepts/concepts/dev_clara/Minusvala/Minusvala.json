@@ -1,0 +1,57 @@
+{
+  "target_rules": [
+    {
+      "literal": "minusvalia",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "minusvalia",
+              "minusvalias",
+              "minusvalía",
+              "minusvalías",
+              "minusvlia"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "minusvalia FUZZY",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {  "FUZZY2":{
+            "IN": [
+              "minusvalia",
+              "minusvalias",
+              "minusvalía",
+              "minusvalías"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "desvalimiento",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desvalimiento",
+              "desvalimientos",
+              "desvalmiento",
+              "desvalido",
+              "desvalida",
+              "desválido",
+              "desválidos"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

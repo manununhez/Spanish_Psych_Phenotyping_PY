@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hipertimia", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipertimia","hipertimica","hipertimico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "animo elevado", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["animo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["elevado"]
+          }
+        }
+      ]
+    }
+  ]
+}

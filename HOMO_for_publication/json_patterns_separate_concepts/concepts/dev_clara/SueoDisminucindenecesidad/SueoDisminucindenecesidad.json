@@ -1,0 +1,41 @@
+{
+  "target_rules": [
+    {
+      "literal": "disminución de la necesidad del sueño",
+      "category": "SueoDisminucindenecesidad",
+       "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "disminución",
+              "disminuciones",
+              "disminucion"
+            ]
+          }
+      	}
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "necesidad"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño","sueno"
+            ]
+          }
+        }
+      ]
+    }
+    
+  ]
+}

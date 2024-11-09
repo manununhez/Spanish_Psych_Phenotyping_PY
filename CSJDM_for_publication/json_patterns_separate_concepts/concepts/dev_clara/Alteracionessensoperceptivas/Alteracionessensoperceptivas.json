@@ -1,0 +1,347 @@
+{
+  "target_rules": [
+    {
+      "literal": "sensopercepción:",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sensopercepción",
+              "sensopercepcion",
+              "sensopercpecion",
+              "sensopersepción",
+              "sensopercecion",
+              "sensopecepcion",
+              "percepción"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              ":"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sensopercepción: FUZZY",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sensopercepción",
+              "sensopercepcion"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              ":"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones sensopercepctivas",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "síntomas",
+              "trastornos",
+              "alucinaciones",
+              "alt",
+              "alteración",
+              "alteracion",
+              "alteraciones"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aluciantorias",
+              "alucinatorias",
+              "sensopercepctivas",
+              "sensoperceptivas",
+              "sensoperceptvias",
+              "alucinatoria",
+              "sensopercepcion",
+              "sensopercecion",
+              "sensopercpecion",
+              "psesoppercetiovas",
+              "percepción",
+              "sensopercepción",
+              "sensopecepcion",
+              "sensopersepción",
+              "sensoperceptivos",
+              "sensoperceptvos",
+              "sensoperceptiva",
+              "s"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones sensopercepctivas FUZZY",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "síntomas",
+              "trastornos",
+              "alucinaciones",
+              "alteración",
+              "alteracion"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sensoperceptivo",
+              "alucinatoria",
+              "sensopercepcion",
+              "percepción",
+              "percepcion",
+              "sensopercepción"
+            ]
+          }
+        }
+      }
+      ]
+    },
+{
+      "literal": "alteraciones sensopercepctivas LEMMA",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "síntoma",
+              "sintoma",
+              "trastorno",
+              "alucinacion",
+              "alteración",
+              "alteracion"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "sensoperceptivo",
+              "alucinatorio",
+              "sensopercepcion",
+              "percepción",
+              "percepcion",
+              "sensopercepción",
+              "sensopersepción"          ]
+          }
+        }
+      ]
+    },
+
+
+    {
+      "literal": "alucinaciones e ilusiones",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alucinaciones"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "iluciones",
+              "ilusiones"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "alucinaciones e ilusiones FUZZY",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "alucinaciones"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "ilusiones",
+              "ilusion"
+            ]
+          }
+        }
+        }
+      ]
+    },
+
+
+    {
+      "literal": "ilusionaciones",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ilusionaciones"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento una sombra",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "siento",
+              "escucho",
+              "como",
+              "son",
+              "risas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sombra",
+              "ruidos",
+              "presencias",
+              "sensaciones",
+              "inmotivadas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento una sombra LEMMA",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "sentir",
+              "escuchar",
+              "risa"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "sombra",
+              "ruido",
+              "presencia",
+              "sensacion",
+              "inmotivada"
+            ]
+          }
+        }
+      ]
+    },
+{
+      "literal": "VEÍA PREMONICIONES",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "veia",
+              "ve",
+              "ver",
+              "veía"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "premoniciones"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "VEÍA PREMONICIONES LEMMA",
+      "category": "Alteracionessensoperceptivas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ver",
+              "veia"
+
+            ]
+          }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "premonicion"
+            ]
+          }
+        }
+      ]
+    }
+
+  ]
+}

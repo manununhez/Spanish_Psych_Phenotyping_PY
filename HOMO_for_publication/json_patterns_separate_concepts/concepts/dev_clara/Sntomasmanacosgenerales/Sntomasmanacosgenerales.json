@@ -1,0 +1,17 @@
+{
+  "target_rules": [
+    {
+      "literal" : "mania", 
+      "category" : "Sntomasmanacosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mania", "manía", "manìa", "maniaco", "maníaco", "manìaco", "maniacos", "maníacos", "manìacos",
+             "maniaca", "maníaca", "manìaca", "maniacas", "maníacas", "manìacas", "manias","manías", "manìas",
+              "manciaos","maniformes","mamiformes","maniforme", "manìformes", "manìforme", "maníforme", "maníformes"]
+          }
+        }
+      ]
+    }
+  ]
+}

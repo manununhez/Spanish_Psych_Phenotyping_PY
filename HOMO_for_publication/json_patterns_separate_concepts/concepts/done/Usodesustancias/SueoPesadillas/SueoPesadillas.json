@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "pesadillas", 
+      "category" : "SueoPesadillas",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pesadillas","pesadilla"]
+          }
+        }
+      ]
+    }
+  ]
+}

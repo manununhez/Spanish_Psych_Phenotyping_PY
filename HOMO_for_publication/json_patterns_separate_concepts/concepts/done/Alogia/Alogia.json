@@ -1,0 +1,26 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alogica", 
+      "category" : "Alogia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alogica","alógica","alogico","alógico","alogia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "neologismos", 
+      "category" : "Alogia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["neologismos","neologismo"]
+          }
+        }
+      ]
+    }
+  ]
+}

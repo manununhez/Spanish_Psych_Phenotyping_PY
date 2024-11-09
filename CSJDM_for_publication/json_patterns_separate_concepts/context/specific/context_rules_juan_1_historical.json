@@ -1,0 +1,505 @@
+HISTORICAL
+{
+  "context_rules": [
+    {
+      "literal" : "previos", 
+      "category" : "HISTORICAL",
+      "direction" : "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["previo", "previos", "previa", "previas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "antecedente previo de", 
+      "category" : "HISTORICAL",
+      "direction" : "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["antecedente", "antecedentes", "historia"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["previo","previos"]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["por", "de"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "en la adolescencia", 
+      "category" : "HISTORICAL",
+      "direction" : "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["en", "desde"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["el","la"]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["pasado", "adolescenci", "adolescencia", "infancia", "niñez", "niña", "niño", "chiquita", "chiquito"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "fue consumidor", 
+      "category" : "HISTORICAL",
+      "direction" : "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["fue", "antes", "era"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["consumidor", "habitante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "crisis anteriores", 
+      "category" : "HISTORICAL",
+      "direction" : "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["crisis", "hospitalizacion"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["anteriores", "anterior", "previa", "previas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "resuelta", 
+      "category" : "HISTORICAL",
+      "direction" : "BACKWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["resuelta", "resuelto"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "cuando tenia 12 años", 
+      "category" : "HISTORICAL",
+      "direction" : "BACKWARD",
+      "pattern": [
+        {
+          "LOWER": "cuando"
+        },
+        {
+          "LOWER": {
+            "IN": ["tenía", "tenia"]
+          }
+        },
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "LOWER": {
+            "IN": ["años", "año"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tenia 12 años cuando", 
+      "category" : "HISTORICAL",
+      "direction" : "FORWARD",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["tenía", "tenia"]
+          }
+        },
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "LOWER": {
+            "IN": ["años", "año"]
+          }
+        },
+        {
+          "LOWER": "cuando"
+        }
+      ]
+    },
+    {
+      "literal" : "desde el año 2000", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["en", "desde"]
+          }
+        },
+        {
+          "LOWER": "el",
+          "OP": "?"
+        },
+        {
+          "LOWER": "año",
+          "OP": "?"
+        },
+        {
+          "LIKE_NUM" : true
+        }
+      ]
+    },
+    {
+      "literal" : "el año 2000", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": "el",
+          "OP": "?"
+        },
+        {
+          "LOWER": "año"
+        },
+        {
+          "LIKE_NUM" : true
+        }
+      ]
+    },
+    {
+      "literal" : "desde hace 20 años", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["hasta", "desde"]
+          }
+        },
+        {
+          "LOWER": "hace"
+        },
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["año", "añoss", "años"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hace mas de 10-20 años", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["hace", "desde", "a", "de", "hacia", "hasta"]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LIKE_NUM" : true,
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["año", "añoss", "años"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "desde enero del 2000", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["desde", "a", "de", "hacia", "hasta", "en"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["enero", "ene", "febrero", "feb", "marzo", "mar", "abril", "abr", "mayo", "may", "junio", "jun", "julio", "jul", "agosto", "ago", "septiembre", "sept", "sep", "octubre", "oct", "noviembre", "nov", "diciembre", "dic"]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LIKE_NUM" : true
+        }
+      ]
+    },
+    {
+      "literal" : "enero 30 del 2000", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["enero", "ene", "febrero", "feb", "marzo", "mar", "abril", "abr", "mayo", "may", "junio", "jun", "julio", "jul", "agosto", "ago", "septiembre", "sept", "sep", "octubre", "oct", "noviembre", "nov", "diciembre", "dic"]
+          }
+        },
+        {
+          "LIKE_NUM" : true,
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LIKE_NUM" : true
+        }
+      ]
+    },
+    {
+      "literal" : "20 de enero", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["enero", "ene", "febrero", "feb", "marzo", "mar", "abril", "abr", "mayo", "may", "junio", "jun", "julio", "jul", "agosto", "ago", "septiembre", "sept", "sep", "octubre", "oct", "noviembre", "nov", "diciembre", "dic"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "date", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "IS_PUNCT" : true
+        },
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "IS_PUNCT" : true
+        },
+        {
+          "LIKE_NUM" : true
+        }
+      ]
+    },
+    {
+      "literal" : "abstinencia", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["abstinencia", "abstinente"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "en una ocasion", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER" : "en"
+        },
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "LOWER": {
+            "IN": ["ocasion", "ocasiones"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hasta 2016", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["hasta", "desde", "en", "entre"]
+          }
+        },
+        {
+          "LIKE_NUM" : true
+        }
+      ]
+    },
+    {
+      "literal" : "entre los 16 a los 23 años de edad", 
+      "category" : "HISTORICAL",
+      "direction" : "BIDIRECTIONAL",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": ["hasta", "desde", "entre"]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "los"
+        },
+        {
+          "LIKE_NUM" : true
+        },
+        {
+          "LOWER": "años"
+        },
+        {
+          "LOWER": "de",
+          "OP": "?"
+        },
+        {
+          "LOWER": "edad",
+          "OP": "?"
+        }
+      ]
+    },
+    {
+      "category" : "HISTORICAL",
+      "literal" : "eso ya no",
+      "direction" : "BACKWARD",
+      "pattern" : [
+        {
+          "LOWER" : "eso",
+          "OP" : "?"
+        },
+        {
+          "LOWER" : "ya"
+        },
+        {
+          "LOWER" : "no"
+        }
+      ]
+    },
+    {
+      "category" : "HISTORICAL",
+      "literal" : "han desaparecido las",
+      "direction" : "FORWARD",
+      "pattern" : [
+        {
+          "LOWER" : {
+            "IN" : ["ha", "han"]
+          },
+          "OP" : "?"
+        },
+        {
+          "LOWER" : {
+            "IN" : ["desaparecieron", "desaparecido"]
+          }
+        },
+        {
+          "LOWER" : {
+            "IN" : ["las", "la", "todo"]
+          },
+          "OP" : "?"
+        }
+      ]
+    },
+    {
+      "category" : "HISTORICAL",
+      "literal" : "logró remisión de",
+      "direction" : "BACKWARD",
+      "pattern" : [
+        {
+          "LOWER" : {
+            "IN" : ["logro", "logró", "logrò"]
+          },
+          "OP" : "?"
+        },
+        {
+          "LOWER" : {
+            "IN" : ["remision", "remisión", "remisiòn"]
+          }
+        },
+        {
+          "LOWER" : "de"
+        }
+      ]
+    },
+    {
+      "category" : "HISTORICAL",
+      "literal" : "ya sin",
+      "direction" : "FORWARD",
+      "pattern" : [
+        {
+          "LOWER" : {
+            "IN" : ["yo", "ya"]
+          }
+        },
+        {
+          "LOWER" : {
+            "IN" : ["no", "sin"]
+          }
+        }
+      ]
+    }
+  ]
+}
+

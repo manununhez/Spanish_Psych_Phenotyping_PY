@@ -1,0 +1,172 @@
+{
+  "target_rules": [
+    {
+      "literal": "grandiosa",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "grandiosa",
+              "grandioso",
+              "grandiosas",
+              "grandiosos",
+              "grandiososas",
+              "grandiososos",
+              "grandiosidad",
+              "grandios"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "grandiosidad FUZZY",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+
+              "grandiosidad"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "de grandeza",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "y"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "grandeza",
+              "grandezas",
+              "grandesas",
+              "grandesa"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "soy la virgen",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "soy",
+              "yo",
+              "es"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "el",
+              "la"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "virgen",
+              "espiritu",
+              "santo"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "me tienen envidia",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "le"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tienen",
+              "tiene"
+            ]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "envidia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "megalomaníaco",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "megalomanía",
+              "megalomaniaca",
+              "megalomaníaca",
+              "megalomaniaco",
+              "megalomaníaco",
+              "megalomaniacas",
+              "megalomaníacas",
+              "megalomaniacos",
+              "megalomaníacos",
+              "meglomaniacas",
+              "emegalominana"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "megalomaníaco FUZZY2",
+      "category": "Grandiosidad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "megalomaniaca",
+              "megalomaníaca",
+              "megalomaniaco",
+              "megalomaníaco",
+              "megalomaniacas",
+              "megalomaníacas",
+              "megalomaniacos",
+              "megalomaníacos",
+              "meglomaniacas"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hiperorexia", 
+      "category" : "Apetitodisminucinde",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hiperorexia","hipofagia","hiporexia","hipoingesta","inapetencia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "bajo apetito", 
+      "category" : "Apetitodisminucinde",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["bajo","pérdida","perdida","disminución","disminucion","dejo","dejando","poquito"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["apetito","comer","come"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no come nada", 
+      "category" : "Apetitodisminucinde",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["como","come","comer"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["nada","casi","bien"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no como", 
+      "category" : "Apetitodisminucinde"
+    },
+    {
+      "literal" : "no come", 
+      "category" : "Apetitodisminucinde",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["come","comer","comiendo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no le da hambre", 
+      "category" : "Apetitodisminucinde",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","poca"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["hambre","alimentos"]
+          }
+        }
+      ]
+    }
+  ]
+}

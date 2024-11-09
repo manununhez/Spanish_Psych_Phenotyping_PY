@@ -1,0 +1,54 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hipertímica", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipertimia","hipertimica","hipertimico","hipertímica","hipertímico","hipertìmica","hipertìmico","hipermtico","hipertia","hiperttimia","hiperttimico",
+              "congruente.hipertímico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "afecto elevado", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muy","tono","animo","afecto"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["alegre","elevado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "elevacion animica", 
+      "category" : "Hipertimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["elevacion"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["animica"]
+          }
+        }
+      ]
+    }
+  ]
+}

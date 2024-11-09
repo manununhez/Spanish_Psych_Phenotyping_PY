@@ -1,0 +1,47 @@
+{
+  "target_rules": [
+    {
+      "literal" : "perseverante", 
+      "category" : "Perseverancia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["perseverante","perseverantes","perseverente","perseverantes",
+              "persevera","perseveración","perseveracion","perseveraciónes","perseveraciones"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "reiterativa", 
+      "category" : "Perseverancia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["reiterativa","reiterativo","demandante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ínsiste en", 
+      "category" : "Perseverancia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ínsiste","insiste","insistente", "insistir", "insistiendo"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["en","con"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "discurso centrado", 
+      "category" : "Perseverancia"
+    }
+  ]
+}

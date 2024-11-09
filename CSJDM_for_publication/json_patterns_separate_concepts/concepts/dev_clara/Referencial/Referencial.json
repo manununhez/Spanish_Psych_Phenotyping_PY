@@ -1,0 +1,190 @@
+{
+  "target_rules": [
+    {
+      "literal": "ideas delirantes de referencialidad",
+      "category": "Referencial",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideación",
+              "ideas"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "delirante",
+              "delirantes"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "autorreferencialidad",
+              "autoreferencialidad",
+              "referencialidad",
+              "referencia"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "ideas delirantes de referencialidad FUZZY",
+      "category": "Referencial",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "ideación",
+              "ideacion",
+              "ideas"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "delirante",
+              "delirantes"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY3": {
+            "IN": [
+              "autorreferencialidad",
+              "autoreferencialidad",
+              "referencialidad"            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ideas referenciales",
+      "category": "Referencial",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "ideación"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "referenciales",
+              "referencia"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "ideas referenciales FUZZY",
+      "category": "Referencial",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "ideas",
+              "ideación",
+              "ideacion",
+              "ideaciónes"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "referenciales",
+              "referencia"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "referencial",
+      "category": "Referencial"
+    }
+  ]
+}

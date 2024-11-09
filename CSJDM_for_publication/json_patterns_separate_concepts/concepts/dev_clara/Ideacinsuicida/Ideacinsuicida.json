@@ -1,0 +1,502 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ideación suicida estructurada", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["idea","ideaacion","ideacion","ideacio´n","ideación","ideas","intención","depresión","mensajes",
+              "plan","planes","pensamientos","ideasde","ideasd"]
+          }
+        },
+        {
+          "OP": "{,5}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["sucidia","suicda","suicida","suicidaría","suidica","suicidio","sicidio","suicido","suciidio",
+              "suicidios","suicidarias","suciida","suicidas","sucicida","autolítico","autolíticos","autolisis","uicdas"]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": { "NOT_IN": [";", ".", ":"] }
+        },
+        {
+          "LOWER": {
+            "IN": ["estructuradas","estructurados","semiestructuradas","semiestucturadas","estructurado",
+                   "estructuración","estrucuturadas","estructurada","agresiòn","agresión","agresion",
+                   "estructurada","semiestructurada","estuturada","estrucutrado","estrcturada","estrucutrada",
+                   "activas","pasivas"]
+          },
+          "OP":"?"
+        }
+      ]
+    },
+
+
+    {
+      "literal" : "ideación suicida estructurada LEMMA", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["idea","ideacion","ideación","intención","depresión","mensaje",
+              "plan","pensamiento","ideasde"]
+          }
+        },
+        {
+          "OP": "{,5}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": ["suicida", "suicidar","suicidar él","suicidaría","suicidio","suicidario","suicido",
+              "suicidaria","autolítico","autolisis"]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": { "NOT_IN": [";", ".", ":"] }
+        },
+        {
+          "LEMMA": {
+            "IN": ["estructurado","semiestructurada","semiestructurado","semiestucturada","estructurado",
+                   "estructuración","agresiòn","agresión","agresion", "activo","pasivo"]
+          },
+          "OP":"?"
+        }
+      ]
+    },
+
+
+    {
+      "literal" : "ideación suicida estructurada FUZZY", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["ideación","intención","depresión","pensamiento"]
+          }
+          }
+        },
+        {
+          "OP": "{,5}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["suicidaría", "suicidar","suicidaría","suicidio","suicidario",
+              "suicidaria","autolítico","autolisis"]
+          }
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": { "NOT_IN": [";", ".", ":"] }
+        },
+        {
+          "LOWER": { "FUZZY2": {
+            "IN": ["estructurado","semiestructurada","semiestructurado","semiestucturada","estructurado",
+                   "estructuración"]
+          }
+          },
+          "OP":"?"
+        }
+      ]
+    },
+
+    {
+      "literal" : "muerte y suicidas", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muerte","muertes","tanaticas","tanatica","tanáticas","tanática","mueerte","emuerte","muerteo"]
+          }
+        },
+        {
+          "OP":"{,4}",
+          "LOWER": {
+            "NOT_IN": ["homicidio", ";", "."]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["suicidio","suicidas","suicido","suicida","suicidó","suicdio","sucidio","suicidarias","suicidio.sin","autolíticas","autoliticas","autolítica","autolitica"]
+          }
+        }
+      ]
+    },
+
+
+
+    {
+      "literal" : "muerte y suicidas FUZZY", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muerte","muertes","tanaticas","tanatica","tanáticas","tanática","mueerte","emuerte","muerteo"]
+          }
+        },
+        {
+          "OP":"{,4}",
+          "LOWER": {
+            "NOT_IN": ["homicidio", ";", "."]
+          }
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["suicidio","suicidas","suicido","suicida","suicidó","suicdio","suicidaria","autolíticas",
+              "autoliticas","autolítica","autolitica"]
+          }
+          }
+        }
+      ]
+    },
+
+
+    {
+      "literal" : "muerte con plan", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muerte","emuerte","meurte","meurtes"]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", ".","sin"] }
+        },
+        {
+          "LOWER": {
+            "IN": ["plan","planeacion",
+            "estructurado","estructurada","estrlcuturado","estrcuturado",
+              "estrcutruado","estrcuraudo","estructruado","estruxcturado",
+              "estructuradas","estructrado","estrucutrado","semiestrcutraudo","semiestructurada",
+              "semiestructurado","semiestrcutruado","semiestrcuturado","semeistrcutruado"]
+          },
+          "OP":"{1,3}"
+        }
+      ]
+    },
+
+    {
+      "literal" : "muerte con plan FUZZY", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["muerte"]
+          }
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["planeacion","planeado",
+            "estructurado","estructurada","semiestructurada",
+              "semiestructurado"]
+          }
+        },
+          "OP":"{1,3}"
+        }
+
+      ]
+    },
+
+
+    {
+      "literal" : "plan estructurado", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["plan"]
+          }
+        },
+        {
+          "OP":"{,2}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["estructurado","estructurada","estrlcuturado","estrcuturado",
+              "estrcutruado","estrcuraudo","estructruado","estruxcturado",
+              "estructuradas","estructrado","estrucutrado","semiestrcutraudo","semiestructurada",
+              "semiestructurado","semiestrcutruado","semiestrcuturado","semeistrcutruado"]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal" : "plan estructurado FUZZY", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["plan"]
+          }
+        },
+        {
+          "OP":"{,2}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["estructurado","estructurada","semiestructurada", "semiestructurado"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pensado en colgarme", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pensado","pesnado","pensando","pensé","pensó","pienso"]
+          }
+        },
+        {
+          "OP":"?", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["en","y"]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["hacerse","coger","tomarme","ahogarme","ahorcarme","colgarme","cortarme","quitarme","tirarme","planeado","hacerme","suicidio","matarme","saltar","tirarmele"]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal" : "pensado en colgarme LEMMA", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["pensado","pensar"]
+          }
+        },
+        {
+          "OP":"?", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["en","y"]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LEMMA": {
+            "IN": ["hacer él","hacer yo","hacer", "coger","tomarme","tomar","tomar él","tomar yo","ahogar él","ahogar yo",
+              "ahorcar yo","ahorcar él", "ahorcar","colgar","colgar yo", "colgar él", "cortar","cortar él","cortar yo",
+              "quitarme","quitar", "quitar yo", "quitar él","tirar","tirar yo","tirar él","planear","hacerme","suicidio","matarme","matar yo","matar él","saltar","tirarmele", "morir"]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": ["cuchillo","pastilla","ahorcarme","ahorcar yo","ahorcar él", "ahorcar","venas","vena","vida","balcón","ventana","morir","puente","daño"]
+          },
+          "OP":"{,3}"
+        }
+      ]
+    },
+    {
+      "literal" : "se quiere suicidar", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se","me"]
+          }
+        },
+        {
+          "OP":"?", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["intentó","queria","quería","quiere","iba","voy","quiero"]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["ahorcar","suicidar","matar","lanzar","tirar","disparar","daño","cortar","las"]
+          },
+          "OP":"{1,2}"
+        }
+      ]
+    },
+
+
+     {
+      "literal" : "se quiere suicidar LEMMA", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se","me"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"?", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LEMMA": {
+            "IN": ["intentar","querer","ir"]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LEMMA": {
+            "IN": ["ahorcar yo","ahorcar él", "ahorcar","suicidar","suicidar yo", "suicidar él",
+              "matar","matar yo", "matar él", "lanzar","lanzar yo", "lanzar él", "tirar",
+              "tirar yo", "tirar él", "disparar", "disparar yo", "disparar él", "daño",
+              "cortar", "cortar yo","cortar él"]
+          },
+          "OP":"{1,2}"
+        }
+      ]
+    },
+    {
+      "literal" : "estaba que se mataba", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dijo","dice","diciendo","estaba","que"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"{1,4}",
+          "LOWER": {
+            "NOT_IN": ["me","nos", ".", ";"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["matarán","mataba"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ganas de matarme", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ganas","quiere","quiero","quisiera","mejor"]
+          }
+        },
+        {
+          "OP":"{,2}" , "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["matarme","estrellarme","matarse","morirme"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "quitarme la vida", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["quitarme","quitar","quitarse","quitado"]
+          }
+        },
+        {
+          "OP":"{,2}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["vida"]
+          },
+          "OP":"{1,2}"
+        }
+      ]
+    },
+    {
+      "literal" : "tirarme del puente", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tirármele","tirarme","lanzándose","lanzarse","lanzar","lanzarme","lanzarmele","tirar", "tirarse", "tirandose"]
+          }
+        },
+        {
+          "OP":"{,3}", "LOWER": { "NOT_IN": [";", "."] }
+        },
+        {
+          "LOWER": {
+            "IN": ["carro","carros","puente","edificio","ventana","edificios","vacio"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "se quiere morir", 
+      "category" : "Ideacinsuicida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se","me"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["quiere", "quiero"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["morir","morirse"]
+          }
+        }
+      ]
+    }
+  ]
+
+}
+
+
+
+

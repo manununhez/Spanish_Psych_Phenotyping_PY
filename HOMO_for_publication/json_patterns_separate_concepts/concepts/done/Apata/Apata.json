@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "apatía", 
+      "category" : "Apata",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["apatia","apatía","apática","apatica","apático","apatico","indiferente","indifernte"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ganas de nada", 
+      "category" : "Apata",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ganas","emociones"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["nada","vacias"]
+          }
+        }
+      ]
+    }
+  ]
+}

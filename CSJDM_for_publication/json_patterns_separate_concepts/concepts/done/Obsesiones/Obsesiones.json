@@ -1,0 +1,38 @@
+{
+  "target_rules": [
+    {
+      "literal" : "obsesivo", 
+      "category" : "Obsesiones",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["obsesivas","obsesiva","obsesivos","obsesivo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "la cabeza me repite", 
+      "category" : "Obsesiones",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cabeza"]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["repite"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "toc", 
+      "category" : "Obsesiones"
+    }
+  ]
+}

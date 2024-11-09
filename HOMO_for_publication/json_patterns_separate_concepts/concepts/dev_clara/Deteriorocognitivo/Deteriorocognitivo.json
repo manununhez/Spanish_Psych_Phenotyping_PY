@@ -1,0 +1,76 @@
+{
+  "target_rules": [
+    {
+      "literal": "deterioro cognitivo",
+      "category": "Deteriorocognitivo",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+             
+              "compromisos",
+              "deterioro",
+              "deterioros",
+              "deterior",
+              "disfuncion",
+              "disfunciones",
+              "-disfunción",
+              "disfunción"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitiva",
+              "cognitivas",
+              "cognitivo",
+              "cognitivos",
+              "cogntivo"
+            ]
+          }
+        }
+      ]
+    },
+        {
+      "literal": "deterioro cognitivo FUZZY",
+      "category": "Deteriorocognitivo",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "compromiso",
+              "compromisos",
+              "deterioro",
+              "deterioros",
+              "deterior",
+              "disfuncion",
+              "disfunciones",
+              "-disfunción",
+              "disfunción"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "cognitiva",
+              "cognitivas",
+              "cognitivo",
+              "cognitivos",
+              "cogntivo"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

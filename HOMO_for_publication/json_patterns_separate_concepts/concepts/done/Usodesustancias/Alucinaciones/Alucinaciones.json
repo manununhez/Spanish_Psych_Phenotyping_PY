@@ -1,0 +1,50 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alucinación", 
+      "category" : "Alucinaciones",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alucinando","alucinacion","alucinación","aluciaciones","alucinciones","alucinaciones","alucianciones","alucionaciones","aluecionaciones"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "actividad alucinatoria", 
+      "category" : "Alucinaciones",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["actividad","actividades","trastornos","elementos"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["alucinatoria","alucinatorias","hipnagogica","alucinatorios"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "visuales y auditivas", 
+      "category" : "Alucinaciones",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["visuales","auditivas","corporales","auditivos"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["visuales","auditivas","corporales","auditivos"]
+          }
+        }
+      ]
+    }
+  ]
+}

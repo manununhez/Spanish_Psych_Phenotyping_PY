@@ -1,0 +1,27 @@
+{
+  "target_rules": [
+    {
+      "literal" : "subió de peso", 
+      "category" : "PesoIncremento",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sube","subido","subió","subiò"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["peso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sobrepeso", 
+      "category" : "PesoIncremento"
+    }
+  ]
+}

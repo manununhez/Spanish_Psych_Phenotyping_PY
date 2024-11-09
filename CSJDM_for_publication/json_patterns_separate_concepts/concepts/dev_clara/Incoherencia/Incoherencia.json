@@ -1,0 +1,61 @@
+{
+  "target_rules": [
+    {
+      "literal": "incoherente",
+      "category": "Incoherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "incoherentes",
+              "inhorente",
+              "incoherencias",
+              "incoherente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "incoherente LEMMA",
+      "category": "Incoherencia",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "incoherente",
+              "incoherencia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "habla cosas sin sentido",
+      "category": "Incoherencia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cosas"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sin"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sentido"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

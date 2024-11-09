@@ -1,0 +1,89 @@
+{
+  "target_rules": [
+    {
+      "literal": "falta de energía",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "falta",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "energía",
+              "energia",
+              "energias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mantiene débil",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mantiene"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "débil",
+              "debil"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipobulia",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipoabulia",
+              "hipoabulidad",
+              "hipobulia",
+              "hipobulica",
+              "hipobulico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "adinamia",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "adinamia",
+              "adinmia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "decaimiento",
+      "category": "Bajaenerga"
+    }
+  ]
+}

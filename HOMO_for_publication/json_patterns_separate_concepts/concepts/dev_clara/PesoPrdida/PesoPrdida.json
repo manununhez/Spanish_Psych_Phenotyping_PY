@@ -1,0 +1,43 @@
+{
+  "target_rules": [
+    {
+      "literal" : "perdida de peso", 
+      "category" : "PesoPrdida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["bajar","perdido","perdida","pérdida","pérdidas","perdidas"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["peso"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "bajar de peso LEMMA", 
+      "category" : "PesoPrdida",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["bajar","pérdida","perder"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["peso"]
+          }
+        }
+      ]
+    }
+
+  ]
+}

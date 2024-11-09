@@ -1,0 +1,325 @@
+{
+  "target_rules": [
+    {
+      "literal": "porque me van a matar",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "porque"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "van"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "atracar",
+              "matar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento que me van hacer daño",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "diciendo",
+              "dice",
+              "piensa",
+              "pensaba",
+              "pienso",
+              "siento",
+              "siente"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "{,5}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "le",
+              "me"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quieren",
+              "van",
+              "iban"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hacer",
+              "hacerme",
+              "hacerle"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "daño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento que me van a matar",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dice",
+              "siento",
+              "todos"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quieren",
+              "van",
+              "tratan"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "matar",
+              "matarme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "burlan de mi",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pensaba",
+              "hablar",
+              "hablando",
+              "burlan",
+              "burlando"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mí",
+              "mi"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "paranoide",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "paranoide",
+              "paranoides",
+              "paranoico",
+              "paranoica",
+              "paranoia"
+            ]
+          }
+        }
+      ]
+    },
+
+
+ {
+      "literal": "la estan espiando",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "lo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "espiando",
+              "espiar"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "la estan chuzando",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "lo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "chuzando",
+              "chuzar"
+            ]
+          }
+        }
+      ]
+    }
+
+
+  ]
+}

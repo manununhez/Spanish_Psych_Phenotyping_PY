@@ -1,0 +1,449 @@
+{
+  "target_rules": [
+    {
+      "literal": "los medicamentos no me sirven",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "los",
+              "el"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fluoxetina",
+              "quetiapina",
+              "sertralina",
+              "medicamentos",
+              "medicamento"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "me",
+              "le"
+            ]
+          },
+          "OP": "{2,2}"
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "efecto",
+              "ayuda",
+              "sirven",
+              "obrando"
+            ]
+          }
+        }
+      ]
+    },
+
+
+ {
+      "literal": "los medicamentos no me sirven LEMMA",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "los",
+              "el"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "fluoxetina",
+              "quetiapina",
+              "sertralina",
+              "medicamentos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "me",
+              "le"
+            ]
+          },
+          "OP": "{2,2}"
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "efecto",
+              "afectar",
+              "servir"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "sin mejoría de síntomas",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin",
+              "control"
+            ]
+          }
+        },
+        {
+          "OP": "?","IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "controles",
+              "mejoría",
+              "parcial"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "síntomas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no nota ninguna mejoría",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mejoría",
+              "mejoria"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "intensificacion de los sintomas",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "intensificacion",
+              "intensificación"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "síntomas"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "intensificacion de los sintomas FUZZY",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "intensificacion",
+              "intensificación",
+              "intensificaciónes",
+              "intensificaciones"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "síntomas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas han empeorado",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "síntomas",
+              "sintoma",
+              "síntoma"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}","IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "empeorado",
+              "empeoró",
+              "empeoro"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mala respuesta a tratamiento",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mala",
+              "pobre",
+              "poca",
+              "sin",
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "respuesta"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tratamiento",
+              "tratamientos",
+              "manejo",
+              "isrs",
+              "ambulatoria",
+              "ambulatorias",
+              "ambulatorio",
+              "ambulatorios"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no ha respondido al manejo",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ha",
+              "hubo"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cedido",
+              "cedio",
+              "cedió",
+              "respondido",
+              "respondió",
+              "respondio",
+              "responde",
+              "respuesta"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "medicación",
+              "medicamento",
+              "medicamentos",
+              "manejo"
+            ]
+          }
+        }
+      ]
+    },
+
+   {
+      "literal": "no ha respondido al manejo LEMMA",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "responder",
+              "cedar",
+              "ceder",
+              "respondio",
+              "respuesta"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "medicación",
+              "medicamento",
+              "manejo"
+            ]
+          }
+        }
+      ]
+    },
+
+
+{
+      "literal": "no mejora con trazodone",
+      "category": "Pobrerespuestaapsicofrmacos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mejora",
+              "mejorar",
+              "mejorado"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "trazodone"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "refractario a multiples manejos",
+      "category": "Pobrerespuestaapsicofrmacos"
+    },
+    {
+      "literal": "medicamento sigue mal",
+      "category": "Pobrerespuestaapsicofrmacos"
+    },
+    {
+      "literal": "no le ha servido",
+      "category": "Pobrerespuestaapsicofrmacos"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "pueril", 
+      "category" : "Actitudpueril",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pueril","puerilidad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "comporta como una adolescente", 
+      "category" : "Actitudpueril",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["comporta"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["adolescente","niño","niña"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "target_rules": [
+    {
+      "literal" : "violación", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["violacion","violación","violaron"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "violación LEMMA", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["violacion","violación","violar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "abuso sexual", 
+      "category" : "Abusosexual"
+    },
+    {
+      "literal" : "victima de abuso", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["victima","víctima"]
+          }
+        },
+        {
+        },
+        {
+          "LOWER": {
+            "IN": ["violacion","violación","abuso","violaciónes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "as", 
+      "category" : "Abusosexual"
+    }
+  ]
+}

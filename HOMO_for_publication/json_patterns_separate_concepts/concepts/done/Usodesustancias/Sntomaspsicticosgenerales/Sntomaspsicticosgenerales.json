@@ -1,0 +1,60 @@
+{
+  "target_rules": [
+    {
+      "literal" : "psicosis", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["psicotica", "psicosis","psicotico","psicoticos","psicótica","psicóticas",
+              "psicótico","p´sicotico","psicóticos","sicotica","sicótica","sicòtica","sicoticas",
+              "sicòticos","sicóticos","sicoticos","spciticos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "síntomas positivos", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["síntomas","sintomas"]
+          }
+        },
+        {
+          "OP" : "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["positivos","negativos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "fenomenos de primer orden", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["fenomenos","fenómenos","sintomas","síntomas"]
+          }
+        },
+        {
+          "OP" : "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["primer"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["orden"]
+          }
+        }
+      ]
+    }
+  ]
+}

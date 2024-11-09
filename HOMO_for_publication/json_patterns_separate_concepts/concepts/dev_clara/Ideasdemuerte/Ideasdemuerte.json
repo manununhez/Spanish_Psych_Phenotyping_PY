@@ -1,0 +1,365 @@
+{
+  "target_rules": [
+    {
+      "literal": "ideas de muerte",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "idea",
+              "ideacion",
+              "ideaciones",
+              "ideación",
+              "ideaciónes",
+              "cogniciones",
+              "cognición",
+              "cognicion",
+              "pensamientos",
+              "pensamiento",
+              "pienso",
+              "piensa",
+              "pienso",
+              "pensando",
+              "pensar"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muerte",
+              "emurte",
+              "euerte",
+              "muert",
+              "muetre",
+              "muetr",
+              "meurte"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "ideas de muerte FUZZY",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+          
+              "ideacion",
+              "ideaciones",
+              "ideación",
+              "ideaciónes",
+              "cogniciones",
+              "cognición",
+              "cognicion",
+              "pensamientos",
+              "pensamiento",
+              "pensando"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY2": {
+            "IN": [
+              "muerte"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "deseo de morir",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deseo",
+              "desea",
+              "deseos",
+              "desos",
+              "eseos",
+              "pensamientos",
+              "poensar",
+              "pensar",
+              "pensando",
+              "pienso",
+              "quisiera",
+              "queria",
+              "quiere",
+              "quiero",
+              "mejor",
+              "gustaria",
+              "desearia"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muerte",
+              "morir",
+              "morirse",
+              "morirme",
+              "emorir"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "deseo de morir LEMMA",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "deseo",
+              "desear",
+              "pensamiento",
+              "pensar",
+              "querer",
+              "mejor",
+              "desear"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "muerte",
+              "morir",
+              "morir yo",
+              "morir él"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bueno que yo me muriera",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bueno",
+              "mejor"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muerte",
+              "morir",
+              "morirse",
+              "morirme",
+              "memmuriera",
+              "muriera",
+              "muriese"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "bueno que yo me muriera LEMMA",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bueno",
+              "mejor"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "OP": "?", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "muerte",
+              "morir",
+              "morir yo",
+              "morir él"
+              
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "tanático",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "tanático",
+              "tanatológicas",
+              "tanaticas",
+              "tanáticas",
+              "tanática",
+              "tanatica",
+              "tanatico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "que se la lleve dios",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": "que"
+        },
+        
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "lleve"
+        },
+        {
+          "LOWER": "dios"
+        }
+      ]
+    },
+     {
+      "literal": "que dios se la lleve",
+      "category": "Ideasdemuerte",
+      "pattern": [
+        {
+          "LOWER": "que"
+        },
+        {
+          "LOWER": "dios"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "lleve"
+        }
+      ]
+    },
+     {
+      "literal": "dios que se la lleve",
+      "category": "Ideasdemuerte",
+      "pattern": [
+       {
+          "LOWER": "dios"
+        },
+        {
+          "LOWER": "que"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "lleve"
+        }
+      ]
+    },
+      {
+      "literal": "ideas suicidas bien estructuradas, de muerte",
+      "category": "Ideasdemuerte",
+      "pattern": [
+       
+        {
+          "LOWER": {"NOT_IN":["sin"]}
+        },
+       {
+          "LOWER": {"IN":["ideas","idea", "cognicion","cognición","cogniciones"]}
+        },
+        {
+          "OP": "{,6}", "LOWER" : { "NOT_IN" : [";",".","ni","no","sin"] }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+       
+        {
+          "LOWER": "muerte"
+        }
+      ]
+    }
+  ]
+}

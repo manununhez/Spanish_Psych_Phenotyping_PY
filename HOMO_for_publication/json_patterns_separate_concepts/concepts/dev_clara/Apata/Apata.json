@@ -1,0 +1,68 @@
+{
+  "target_rules": [
+    {
+      "literal": "apatía",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "apatia",
+              "apatía",
+              "apática",
+              "apatica",
+              "apático",
+              "apatico",
+              "indiferente",
+              "indifernte"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "apatía FUZZY",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "apatía",
+              "apática",
+              "apático",
+              "indiferente"
+          ]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ganas de nada",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ganas",
+              "emociones",
+              "emocion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "vacias",
+              "vacia"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

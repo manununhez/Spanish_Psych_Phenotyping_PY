@@ -1,0 +1,24 @@
+{
+  "target_rules": [
+    {
+      "literal" : "siento sola", 
+      "category" : "Soledad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento","soy","muy"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["sola","solo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "soledad", 
+      "category" : "Soledad"
+    }
+  ]
+}

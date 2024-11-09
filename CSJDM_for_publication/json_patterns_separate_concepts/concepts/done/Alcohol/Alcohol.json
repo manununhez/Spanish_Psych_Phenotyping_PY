@@ -1,0 +1,76 @@
+{
+  "target_rules": [
+    {
+      "literal" : "gusta el trago", 
+      "category" : "Alcohol",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["gusta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["trago","tomar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "intoxicación por alcohol", 
+      "category" : "Alcohol",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["intoxicación","intoxicacion","intoxicado"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["alcohol"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "alcohol", 
+      "category" : "Alcohol",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alacohol","alchol","alcohol","licor","trago"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "aguardiente", 
+      "category" : "Alcohol",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aguardiente","cerveza","ron"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tragos diarios", 
+      "category" : "Alcohol"
+    },
+    {
+      "literal" : "wernicke", 
+      "category" : "Alcohol"
+    },
+    {
+      "literal" : "embriaguez", 
+      "category" : "Alcohol"
+    }
+  ]
+}

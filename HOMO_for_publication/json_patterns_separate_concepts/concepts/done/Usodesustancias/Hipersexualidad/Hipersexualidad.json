@@ -1,0 +1,40 @@
+{
+  "target_rules": [
+    {
+      "literal" : "conductas hipersexuales", 
+      "category" : "Hipersexualidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipersexuales","hipersexual","hipersexualidad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "conductas sexuales inapropiadas", 
+      "category" : "Hipersexualidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["conductas"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["sexuales"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["inapropiadas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "trata de seducir", 
+      "category" : "Hipersexualidad"
+    }
+  ]
+}

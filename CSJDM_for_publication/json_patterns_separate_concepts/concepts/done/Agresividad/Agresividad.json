@@ -1,0 +1,213 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ideas heteraogresivas", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cogniciones","conductas","contesta","cuadros","episodio","episodios","problemas","riesgo",
+              "idaas","ideacion","ideas","ideación","hetero","elementos","síntomas","tendencia","codncuats"]
+          }
+        },
+        {
+          "OP":"{,6}"
+        },
+        {
+          "LOWER": {
+            "IN": ["heteroagresion","heterolesivas","agresivas","heteroagresivas","heteroliticas","heteroagresivo",
+              "heteroagresión","heteroagresividad","heteraogresivas","heterogresivas","agresivo","heteroagresivos",
+              "agresividad","homicida","heterolítica","ehteragresión","heteroagersión","heterolesiva","hetergaosivas",
+              "heteroagresiòn","agresion","agresi","homicidio","homicidas","agresión"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "heteroagresión", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["heteroagresion","heteroagresiva","heteroagresivas","heteroagresividad",
+              "heteroagresivo","heteroagresivos","heteroagresiòn","heteroagresión",
+              "heteroaresion","heterolitico",
+              "autoheteroagresion","herteroagresion"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agresividad", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agresiva","agresion","agresión","agresivo","agresivos","agresiones","agresividad"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["fisica","física","verbal"]
+          },
+          "OP":"?"
+        }
+      ]
+    },
+    {
+      "literal" : "cogio un cuhillo", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tira","punta","cogio","arrojando"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["palo","cuchillo","cuhillo","piedras"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "amenaza", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["amenaza","amenazante","amenazas","violento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agrede a", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agresivo","golpeo","golpeado","agrede","maltrato"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["con","a","ala"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "casi me mata", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento","ganas","golpear","hacha","casi","casi","intenta","buscando","la","vea"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["mata","matar","matarla","mato"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pone agresivo", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pone","pone","puso","puso","tornó","vuelve","ponerse","estoy",
+              "intentado","golpeado","tirado","intentar","trato","intentó"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["agresivo","pelear","agresiva","agredir",
+              "fuerte","escaleras","pegarme","ahorcar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pelea mucho", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pelea","pelie"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["mucho","con"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "me golpea", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me","da"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["agredia","amenazó","golpea","pego","pata"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "le pego a", 
+      "category" : "Agresividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["las","le"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["escupe","grita","pega","pego","pegue"]
+          }
+        },
+        {
+          "OP":"?",
+          "LOWER": {
+            "IN": ["mucho","a","al"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "target_rules": [
+    {
+      "literal" : "pararespuestas", 
+      "category" : "Tangencialidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pararespuestas","pararrepuestas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tangencial", 
+      "category" : "Tangencialidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tangencial","tangencialidad"]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+

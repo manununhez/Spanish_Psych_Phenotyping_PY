@@ -1,0 +1,33 @@
+{
+  "target_rules": [
+    {
+      "literal": "circunstancial",
+      "category": "Circunstancialidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "circunstancial",
+              "circuntancial",
+              "circustancial"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "circunstancial FUZZY",
+      "category": "Circunstancialidad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "circunstancialidad"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

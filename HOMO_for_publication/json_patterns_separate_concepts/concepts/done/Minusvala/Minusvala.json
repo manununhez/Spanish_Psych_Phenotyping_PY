@@ -1,0 +1,26 @@
+{
+  "target_rules": [
+    {
+      "literal" : "minusvalia", 
+      "category" : "Minusvala",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["minusvalia","minusvalía","minusvlia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "desvalimiento", 
+      "category" : "Minusvala",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["desvalimiento","desvalmiento","desvalido", "desválido"]
+          }
+        }
+      ]
+    }
+  ]
+}

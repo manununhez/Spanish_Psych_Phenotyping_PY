@@ -1,0 +1,380 @@
+{
+  "target_rules": [
+    {
+      "literal": "delirios",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "delirio",
+              "deliros",
+              "delirios",
+              "delirante",
+              "delirantes",
+              "dleirantes"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "deliros FUZZY",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "delirio",
+              "delirios",
+              "delirante",
+              "delirantes"
+                          ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "idea delirante de perjuicio",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "idea",
+              "ideas",
+              "ideacion",
+              "ideación",
+              "ideaciones"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "delirante",
+              "delirantes",
+              "estructurados",
+              "estructuradas"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "magica",
+              "magicas",
+              "magico",
+              "magicos",
+              "erotomaniacas",
+              "erotomaniaca",
+              "megalomaniacas",
+              "megalomaniaca",
+              "megalomaniaco",
+              "megalomaniacos",
+              "deperjuicio",
+              "perjuicio",
+              "daño",
+              "persecusion",
+              "persecusiones",
+              "pseudociesis"
+            ]
+          }
+        }
+      ]
+    },
+
+
+     {
+      "literal": "idea delirante de perjuicio FUZZY",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "ideas",
+              "ideacion",
+              "ideación",
+              "ideaciones"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "delirante",
+              "delirantes",
+              "estructurados",
+              "estructuradas"
+            ]
+          }
+        },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+             
+              "erotomaniacas",
+              "erotomaniaca",
+              "megalomaniacas",
+              "megalomaniaca",
+              "megalomaniaco",
+              "megalomaniacos",
+              "deperjuicio",
+              "perjuicio",
+              "persecusion",
+              "persecusiones",
+              "pseudociesis"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ideación delirante FUZZY",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "ideación",
+              "ideaciones",
+              "síntomas",
+              "pensamiento",
+              "pensamientos",
+              "actividad",
+              "actividades",
+              "interpretación",
+              "interpretaciones",
+              "estrcuturación",
+              "estrcuturaciónes",
+              "explicación",
+              "explicaciones",
+              "convicción",
+              "conviccion",
+              "convicciones",
+              "elementos"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "no",
+              "sin",
+              "ni",
+              "niega"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "no",
+              "sin",
+              "ni",
+              "niega"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "delirante",
+              "delirantes",
+              "deliroides"
+            ]
+          }
+        }
+        }
+      ]
+    },
+     {
+      "literal": "ideación delirante",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "idea",
+              "dea",
+              "ideas",
+              "ideacion",
+              "ideación",
+              "sintomas",
+              "síntomas",
+              "pensamiento",
+              "actividad",
+              "actividades",
+              "interpretacion",
+              "interpretaciones",
+              "estrcuturacion",
+              "estrcuturaciones",
+              "explicación",
+              "explicaciones",
+              "conviccion",
+              "convicciones",
+              "nucleo",
+              "certeza",
+              "elementos",
+              "elemento",
+              "trema"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "no",
+              "sin",
+              "ni",
+              "niega"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "no",
+              "sin",
+              "ni",
+              "niega"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "delirante",
+              "delirantes",
+              "deliroides",
+              "selirates",
+              "deirantes",
+              "deliantes",
+              "delirates",
+              "delirnates",
+              "delriantes",
+              "delrinates",
+              "dleirantes",
+              "dleirants",
+              "dleriantes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pensamiento fantasioso",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "pensamiento",
+              "pensamientos"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "fantasioso",
+              "fantasios"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "alguien me sigue",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "alguien"
+            ]
+          }
+        }, "OP":"?"
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "me",
+              "lo",
+              "la"
+            ]
+          }
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "estan"
+            ]
+          }, "OP":"?"
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "siguiendo", "sigue","siguen"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "reptilianos",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "IN": [ "reptilianos","extraterrestre","extraterrestres"] }
+        }
+        
+      ]
+    },
+         {
+      "literal": "soy el espiritu santo",
+      "category": "Delirios",
+      "pattern": [
+        {
+          "LOWER": { "IN": [ "soy","habla"] }
+        },
+        {"OP":"?"} ,
+        {
+          "LOWER": { "IN": [ "el", "la", "de", "con"] }
+        },
+         {
+          "LOWER": { "IN": [ "espiritu", "virgen","enviado", "dios"] }
+        }
+        
+      ]
+    }
+  ]
+}

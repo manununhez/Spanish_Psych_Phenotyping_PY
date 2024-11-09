@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "rumiación", 
+      "category" : "Rumiacin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["rumiacion","rumiación"]
+          }
+        }
+      ]
+    }
+  ]
+}

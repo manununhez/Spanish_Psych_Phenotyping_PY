@@ -1,0 +1,46 @@
+{
+  "target_rules": [
+    {
+      "literal" : "siento que yo no estoy viva", 
+      "category" : "DespersonalizacinDesrealizacin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["que"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["estoy"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["viva"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "despersonalización", 
+      "category" : "DespersonalizacinDesrealizacin"
+    },
+    {
+      "literal" : "desrealización", 
+      "category" : "DespersonalizacinDesrealizacin"
+    }
+  ]
+}

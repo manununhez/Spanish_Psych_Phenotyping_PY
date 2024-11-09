@@ -1,0 +1,113 @@
+{
+  "target_rules": [
+    {
+      "literal" : "iniciar tecar", 
+      "category" : "TECAR",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["iniciar", "inicio", "iniciaron", "requerido", "realizr"]
+          }
+        },
+        {
+          "LOWER": "tecar"
+        }
+      ]
+    },
+    {
+      "literal" : "necesidad de tecar", 
+      "category" : "TECAR",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["manejo","necesidad","recomendacion","recomendación","recomendaciones","sesiones","uso","sesion","usar","usando"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["con","de"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": "tecar"
+        }
+      ]
+    },
+    {
+      "literal" : "terapia electroconvulsiva con anestesia y relajación", 
+      "category" : "TECAR",
+      "pattern" : [
+        {
+          "LOWER": "terapia"
+        },
+        {
+          "LOWER": "electroconvulsiva"
+        },
+        {
+          "LOWER": "con"
+        },
+        {
+          "LOWER": "anestesia"
+        },
+        {
+          "LOWER": {
+            "IN": ["y"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["relajación","relajacion"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "terapia electroconvulsiva con anestesia y relajación FUZZY", 
+      "category" : "TECAR",
+      "pattern" : [
+        { "LOWER" : { "FUZZY1" : {
+           "IN":["terapia"]
+        }
+        }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN":["electroconvulsiva"]
+          }
+          }
+        },
+        {
+          "LOWER": "con"
+        },
+        { 
+          "LOWER" : { "FUZZY1":{
+           "IN":["anestesia"]
+        }
+      }
+      },
+        {
+          "LOWER": {
+            "IN": ["y"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["relajación","relajacion"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pretecar", 
+      "category" : "TECAR"
+    },
+    {
+      "literal" : "tecar", 
+      "category" : "TECAR"
+    }
+  ]
+}

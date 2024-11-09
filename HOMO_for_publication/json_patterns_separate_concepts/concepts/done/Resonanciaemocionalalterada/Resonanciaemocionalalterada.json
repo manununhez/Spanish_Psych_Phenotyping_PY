@@ -1,0 +1,147 @@
+{
+  "target_rules": [
+    {
+      "literal" : "poco resonante", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sin","no","poco","poc","pocop","póco","parcialmente"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["resonancia","resonante","resonte","resontetre","congruente"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "afecto: restringido", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["afecto"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["constreñido","incongruente","restringido"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "poco reactivo", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["poco"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["reactivo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "afecto no reactivo", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["afecto"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["reactivo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no hay gran respaldo afectivo", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin","poco","poca"]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["cambios","alteraciones","alteracion"]
+          },
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["afectivo","animo","ánimo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "afecto incongruente", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["afecto","modulado","tono"]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["cambios","alteraciones","alteracion","ni","no"]
+          },
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["incongruente"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hiporesonante", 
+      "category" : "Resonanciaemocionalalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hiporesonante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "origen inapropiado", 
+      "category" : "Resonanciaemocionalalterada"
+    }
+  ]
+}

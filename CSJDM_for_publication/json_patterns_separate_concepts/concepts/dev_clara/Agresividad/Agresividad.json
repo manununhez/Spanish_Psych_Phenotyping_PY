@@ -1,0 +1,638 @@
+{
+  "target_rules": [
+    {
+      "literal": "ideas heteraogresivas",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cogniciones",
+              "conductas",
+              "contesta",
+              "cuadros",
+              "episodio",
+              "episodios",
+              "problemas",
+              "riesgo",
+              "idaas",
+              "ideacion",
+              "ideas",
+              "ideación",
+              "hetero",
+              "elementos",
+              "síntomas",
+              "tendencia",
+              "codncuats"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "heteroagresion",
+              "heterolesivas",
+              "agresivas",
+              "heteroagresivas",
+              "heteroliticas",
+              "heteroagresivo",
+              "heteroagresión",
+              "heteroagresividad",
+              "heteraogresivas",
+              "heterogresivas",
+              "agresivo",
+              "heteroagresivos",
+              "agresividad",
+              "homicida",
+              "heterolítica",
+              "ehteragresión",
+              "heteroagersión",
+              "heterolesiva",
+              "hetergaosivas",
+              "heteroagresiòn",
+              "agresion",
+              "agresi",
+              "homicidio",
+              "homicidas",
+              "agresión"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "heteroagresión",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "heteroagresion",
+              "heteroagresiva",
+              "heteroagresivas",
+              "heteroagresividad",
+              "heteroagresivo",
+              "heteroagresivos",
+              "heteroagresiòn",
+              "heteroagresión",
+              "heteroaresion",
+              "heterolitico",
+              "autoheteroagresion",
+              "herteroagresion"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "heteroagresión FUZZY",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY3":{
+            "IN": [
+              "heteroagresion",
+              "heteroagresiva",
+              "heteroagresividad",
+              "heteroagresivo",
+              "heteroagresión",
+              "heterolitico",
+              "autoheteroagresion"            ]
+          }
+        }
+        }
+      ]
+    },
+
+    {
+      "literal": "heteroagresión LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": { 
+            "IN": [
+              "heteroagresion",
+              "heteroagresivo",
+              "heteroagresividad",
+              "heteroagresión",
+              "heterolitico",
+              "autoheteroagresion"            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "agresividad",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agresiva",
+              "agresion",
+              "agresión",
+              "agresivo",
+              "agresivos",
+              "agresiones",
+              "agresividad"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fisica",
+              "física",
+              "verbal"
+            ]
+          },
+          "OP": "?", "IS_PUNCT": false
+        }
+      ]
+    },
+   {
+      "literal": "agresividad LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "agresivo",
+              "agresion",
+              "agresión",
+              "agresion",
+              "agresividad"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "fisico",
+              "físico",
+              "fisica",
+              "física",
+              "verbal"
+            ]
+          },
+          "OP": "?", "IS_PUNCT": false
+        }
+      ]
+    },
+    {
+      "literal": "agresividad FUZZY",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "agresiva",
+              "agresion",
+              "agresión",
+              "agresivo",
+              "agresivos",
+              "agresiones",
+              "agresividad"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "fisica",
+              "física",
+              "verbal"
+            ]
+          }
+        },
+          "OP": "?", "IS_PUNCT": false
+        }
+      ]
+    },
+    {
+      "literal": "cogio un cuhillo",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "tira",
+              "punta",
+              "cogio",
+              "cogió",
+              "arrojando"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "palo",
+              "cuchillo",
+              "cuhillo",
+              "piedras",
+              "hacha"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "cogio un cuhillo LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "tirar",
+              "puntar",
+              "apuntar",
+              "cogio",
+              "coger",
+              "arrojando"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "palo",
+              "cuchillo",
+              "cuhillo",
+              "piedra",
+              "hacha"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "cogio un cuhillo FUZZY",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {"FUZZY1":{
+            "IN": [
+              "tiro",
+              "apunto",
+              "cogio",
+              "coger",
+              "arrojando"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "cuchillo",
+              "hacha"            ]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "amenaza",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "amenaza",
+              "amenazante",
+              "amenazas",
+              "violento"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "amenaza LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "amenazar",
+              "amenazante",
+              "amenaza",
+              "violento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "agrede a",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agresivo",
+              "golpeo",
+              "golpeado",
+              "agrede",
+              "maltrato"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "con",
+              "a",
+              "ala"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "casi me mata",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "siento",
+              "ganas",
+              "golpear",
+              "hacha",
+              "casi",
+              "casi",
+              "intenta",
+              "buscando",
+              "la",
+              "vea"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mata",
+              "matar",
+              "matarla",
+              "matarlo",
+              "mato"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pone agresivo",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pone",
+              "pone",
+              "puso",
+              "puso",
+              "tornó",
+              "vuelve",
+              "ponerse",
+              "estoy",
+              "intentado",
+              "golpeado",
+              "tirado",
+              "intentar",
+              "trato",
+              "intentó"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agresivo",
+              "pelear",
+              "agresiva",
+              "agredir",
+              "fuerte",
+              "escaleras",
+              "pegarme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pelea mucho",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pelea",
+              "pelie"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "con"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "pelea mucho LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "pelear"           ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "con"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me golpea",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "da"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agredia",
+              "amenazó",
+              "golpea",
+              "pego",
+              "pata"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "me golpea LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "dar",
+              "yo",
+              "el"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "agrediar",
+              "amenazar",
+              "golpear",
+              "pegar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "le pego a",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "las",
+              "le"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "escupe",
+              "grita",
+              "pega",
+              "pego",
+              "pegue"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "a",
+              "al"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "le pego a LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "él"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "escupir",
+              "gritar",
+              "pegar"            ]
+          }
+        },
+        {
+          "OP": "?",
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "a",
+              "al"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

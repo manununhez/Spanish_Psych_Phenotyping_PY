@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "cannabis", 
+      "category" : "Cannabis",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cannabinoide","canabinoides","cannabis","bareta","maihuana","marihuana","thc","-thc"]
+          }
+        }
+      ]
+    }
+  ]
+}

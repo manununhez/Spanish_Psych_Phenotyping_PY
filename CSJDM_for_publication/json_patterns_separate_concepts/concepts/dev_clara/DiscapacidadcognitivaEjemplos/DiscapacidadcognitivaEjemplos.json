@@ -1,0 +1,213 @@
+{
+  "target_rules": [
+    {
+      "literal": "dificultades de aprendizaje",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dificultades"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aprendizaje"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "dificultades de aprendizaje LEMMA",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "dificultad"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "aprendizaje"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "discapacidad intelectual",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "discapacidad",
+              "discpaacidad",
+              "dishabilidad"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitiva",
+              "cognoscitiva",
+              "generalizada",
+              "intelectual"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "discapacidad intelectual FUZZY",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "discapacidad",
+              "dishabilidad"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitiva",
+              "cognoscitiva",
+              "generalizada",
+              "intelectual"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "déficit cognitivo",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deficit",
+              "dèficit",
+              "déficit",
+              "déficits"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitivo",
+              "cognitivos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "parálisis cerebral",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "parálisis",
+              "paralisis"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cerebral"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "retraso mental",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "retardo",
+              "retraso"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mental"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "iq impresiona inferior",
+      "category": "DiscapacidadcognitivaEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ci",
+              "inteligencia",
+              "iq",
+              "iqt"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "bajo",
+              "deficitaria",
+              "inferior"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dcl",
+      "category": "DiscapacidadcognitivaEjemplos"
+    }
+  ]
+}

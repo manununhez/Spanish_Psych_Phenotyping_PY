@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "eutímica", 
+      "category" : "Eutimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["eutimi","eutimia","eutimica","eutimico","eutímica"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "target_rules": [
+    {
+      "literal" : "animo he estado mal", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["estado","animo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["emocionalmente","estado","me"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["mal","dejo","cambiante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "trastorno afectivo", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["detrastorno","trastorno","trastornos","tx"]
+          }
+        },
+        {
+          "OP":"{,7}"
+        },
+        {
+          "LOWER": {
+            "IN": ["afectibo","afectivo","depresion","afecto","animo","depresión","emociones","ánimo","humor"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "síntomas afectivos", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sintomas","sintomatología","sintomatoloia","síntoma","síntomas"]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["conducta","comportamentales","persiste"]
+          },
+          "IS_PUNCT": false,
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["afectivos","afectiva","afectos","ánimo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "fluctuaciones del estado de animo", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["flctuaciones","fluctuaciones","empeora"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["estado","de","del","animo","ánimo"]
+          },
+          "OP":"{,4}"
+        }
+      ]
+    },
+    {
+      "literal" : "cambios afectivos", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cambia","cambios","inestabilidad","interferencia","dolor"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["afectivos","animo","emocionales","ánimo","humor","emocional","anímica"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "afectación del ánimo", 
+      "category" : "Sntomasafectivos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["afectación","alteracion","alteraciones","alteración","compromiso","origen"]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["psicomotora","psicomotoras","conducta","comportamentales","persiste"]
+          },
+          "IS_PUNCT": false,
+          "OP":"{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": ["animo","humor","afectivas","ánimo","afectiva","afecto","afectivo"]
+          }
+        }
+      ]
+    }
+  ]
+}

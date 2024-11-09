@@ -1,0 +1,53 @@
+{
+  "target_rules": [
+    {
+      "literal": "se induce el vomito",
+      "category": "Purgasvmitoautoinducido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "induce"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vomito",
+              "vómito"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "se induce el vomito LEMMA",
+      "category": "Purgasvmitoautoinducido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inducir"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "vomito",
+              "vómito",
+              "vomitar"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

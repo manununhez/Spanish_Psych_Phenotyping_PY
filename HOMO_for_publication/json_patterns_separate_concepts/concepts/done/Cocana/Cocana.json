@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "cocaína", 
+      "category" : "Cocana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["basuco","bazuca","coca","cocain","cocaina","cocaína","pbc","perico","periquero"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "base xxx xx cocaina", 
+      "category" : "Cocana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["base"]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["coca","cocain","cocaina","cocaína"]
+          }
+        }
+      ]
+    }
+  ]
+}

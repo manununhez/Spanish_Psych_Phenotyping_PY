@@ -1,0 +1,62 @@
+{
+  "target_rules": [
+    {
+      "literal" : "compromiso cognitivo", 
+      "category" : "Sntomascognitivosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["compromiso"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["cognitivo", "cognitvo", "cognoscitivo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sindrome demencia", 
+      "category" : "Sntomascognitivosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sd","sindrome","síndrome"]
+          },
+            "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["demencia", "demencial"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "vision en tunel", 
+      "category" : "Sntomascognitivosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["vision","visión"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["en","de"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["tunel","túnel"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dificultades en la abstraccion", 
+      "category" : "Sntomascognitivosgenerales"
+    }
+  ]
+}

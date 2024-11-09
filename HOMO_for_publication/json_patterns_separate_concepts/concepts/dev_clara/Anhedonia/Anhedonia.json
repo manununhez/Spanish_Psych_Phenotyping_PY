@@ -1,0 +1,202 @@
+{
+  "target_rules": [
+    {
+      "literal": "anhedonia",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "anhedonia",
+              "anhedonica",
+              "anhedonico"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "anhedonia FUZZY",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "anhedonia",
+              "anhedonica",
+              "anhedonico"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "aburrido con la vida",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aburrido",
+              "aburrida"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desanimada",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desanimada",
+              "desanimado",
+              "sinnganas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ganas de no hacer nada",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ganas"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": "nada"
+        }
+      ]
+    },
+    {
+      "literal": "no le saco gusto a nada",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "gusto",
+              "ganas",
+              "qiero",
+              "quiero",
+              "quiere",
+              "querer"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "hablar"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "levantar",
+              "levantarme",
+              "levantarse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dejar de disfrutaba",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dejar",
+              "dejado"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,8}", "LOWER": {"NOT_IN": [";","."]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "disfrutaba",
+              "disfrutar"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "dejar de disfrutaba LEMMA",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "dejar",
+              "dejado"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "disfrutar"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

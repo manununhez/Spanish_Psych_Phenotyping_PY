@@ -1,0 +1,87 @@
+{
+  "target_rules": [
+    {
+      "literal": "ideas sobrevaloradas",
+      "category": "Ideassobrevaloradas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "idea",
+              "ideación",
+              "ideacion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "osbevtarlaodas",
+              "sbrevalorada",
+              "sobrevalorada",
+              "sobrevatlaodasd",
+              "sobravalorada",
+              "sobravaoradas",
+              "valoradas",
+              "valorado",
+              "sobreavaloradas",
+              "sobrebaloradas",
+              "sobrebvaloradas",
+              "sobrevaladas",
+              "sobrevaloadas",
+              "sobrevaloradas",
+              "sobrevalorads",
+              "sobrevalordsa",
+              "sobrevalorados",
+              "sobrevalroadas",
+              "sorbarvarlaodas",
+              "sorbavralordas",
+              "sorebvaloraas"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "ideas sobrevaloradas FUZZY",
+      "category": "Ideassobrevaloradas",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "ideas",
+              "ideación"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sobrevalorada",
+              "sobrevaloradas"
+            ]
+          }
+        }
+      }
+      ]
+    }
+  ]
+}

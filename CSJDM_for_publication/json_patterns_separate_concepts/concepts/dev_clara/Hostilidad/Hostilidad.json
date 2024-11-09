@@ -1,0 +1,97 @@
+{
+  "target_rules": [
+    {
+      "literal": "contesto feo",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contesto",
+              "contesta",
+              "trata"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "feo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "palabras obesas",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "palabras"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "obesas",
+              "obcenas",
+              "obsenas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "insulta",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "insulta",
+              "insultar",
+              "insultos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hostil",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hostil",
+              "hostilidad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "grosero",
+      "category": "Hostilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "grosera",
+              "grosero"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

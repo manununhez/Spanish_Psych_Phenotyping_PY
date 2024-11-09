@@ -1,0 +1,72 @@
+{
+  "target_rules": [
+    {
+      "literal" : "cogniciones ansiosas", 
+      "category" : "Sntomasansiososgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cogniciones","cognicions","cognicoens","ideas"]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["ansiosas","ansiosos","ansisosas","asiosas","ansosas","ansiosa","ansioso","ansiedad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "trastorno de ansiedad", 
+      "category" : "Sntomasansiososgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["trast","-trast","trastorno","-trastorno"]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["ansioso","ansiedad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "síntomas ansiosos", 
+      "category" : "Sntomasansiososgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sintomas","sintomaa","síntomas","síntoma","crisis"]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["pánico","panico","ansiosos","ansioso","ansiosa","ansiedad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "catastrofización", 
+      "category" : "Sntomasansiososgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["catastrofización","catastrofizacion","catastroficas","catastroficos","anticipacion","claustrofobia"]
+          }
+        }
+      ]
+    }
+  ]
+}

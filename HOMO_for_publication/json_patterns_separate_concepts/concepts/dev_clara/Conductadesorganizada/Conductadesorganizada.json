@@ -1,0 +1,514 @@
+{
+  "target_rules": [
+    {
+      "literal": "comportamiento desorganizado",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "comportamiento",
+              "comportamientos",
+              "conducta",
+              "conductas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "desorganizado",
+              "destructivos",
+              "extraños",
+              "extraña",
+              "extraño",
+              "desorganizada",
+              "antisociale",
+              "desoganizadas",
+              "desorganizadas",
+              "repetitivas",
+              "repetitivos",
+              "repetitiva",
+              "repetitivo",
+              "sexuales",
+              "calle",
+              "riesgo",
+              "riesgos"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "comportamiento desorganizado FUZZY",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "comportamiento",
+              "comportamientos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "desorganizado",
+              "destructivos",
+              "desorganizada",
+              "antisociale",
+              "desoganizadas",
+              "desorganizadas",
+              "repetitivas",
+              "repetitivos",
+              "repetitivo"
+             
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desorganización conductual",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteracion",
+              "alteración",
+              "alteraciones",
+              "cambios",
+              "desorganización",
+              "problemas",
+              "repercusiones",
+              "reportaproblemas",
+              "sintomas",
+              "síntomas",
+              "modificación",
+              "movilizan",
+              "movimientos"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "conductual",
+              "conduta",
+              "comportam",
+              "comportamiento",
+              "conducta",
+              "conductuales",
+              "comportamentales",
+              "estereotipados"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "desorganización conductual FUZZY",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "alteracion",
+              "alteración",
+              "alteraciones",
+              "alteraciónes",
+              "desorganización",
+              "problemas",
+              "repercusiones",
+              "reportaproblemas",
+              "síntomas",
+              "modificación",
+              "movimientos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "conductual",
+              "comportamiento",
+              "conductuales",
+              "comportamentales",
+              "estereotipados"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "disruptivo",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "destructivo",
+              "destructiva",
+              "disruptiva",
+              "disruptivo",
+              "disruptivos",
+              "disruptivas",
+              "errática",
+              "errático",
+              "erratica",
+              "erática",
+              "erático",
+              "intrusiva",
+              "intrusivo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "escándalos",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "grita",
+              "patalea",
+              "gritaba",
+              "gritando",
+              "escandalos",
+              "escandalo",
+              "escandalos",
+              "escandalo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se porta raro",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "porta",
+              "portando",
+              "portandose",
+              "potarse"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "raro",
+              "rara"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones conductuales",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "alteraciones",
+              "alteración",
+              "cambios"
+              
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,6}", "LOWER": { "NOT_IN": [".",";"] }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "conductuales",
+              "conductual"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "comportamientos agresivos",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "comportamientos",
+              "comportamiento"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "LOWER": { "NOT_IN": [".",";"] }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agresivos",
+              "agresivo"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "manosea a la hermana",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER":{
+            "IN": [
+              "manosea",
+              "manosear",
+              "manoseando"
+            ]
+          }
+        },
+         {
+          "LOWER":{
+            "IN": [
+              "a"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "las",
+              "los"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "presta plata",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER":{
+            "IN": [
+              "presta",
+              "gasta",
+              "gastando",
+              "gastar",
+              "prestar",
+              "prestando"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "plata",
+              "dinero",
+              "millones"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desordena cosas de su casa",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER":{
+            "IN": [
+              "desordena",
+              "desordenando",
+              "desordena",
+              "regalando",
+              "regala",
+              "regalar"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cosas"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "su","la"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se baña",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER":{
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "baña",
+              "baño"
+            ]
+          }
+        }
+      ]
+    },
+        {
+      "literal": "se baña varias veces",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER":{
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        
+        {
+          "LOWER": {
+            "IN": [
+              "baña",
+              "baño"
+            ]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "veces"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "tiene conflictos con los compañeros",
+      "category": "Conductadesorganizada",
+      "pattern": [
+        {
+          "LOWER":{
+            "IN": [
+              "tiene",
+              "tengo",
+              "tener",
+              "tuvo",
+              "tuve"
+            ]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "conflictos",
+              "conflicto"
+            ]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "con"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mis",
+              "mi",
+              "sus",
+              "su",
+              "los",
+              "las",
+              "la",
+              "el"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "risas exageradas",
+      "category": "Conductadesorganizada"
+    }
+
+  ]
+}

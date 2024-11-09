@@ -1,0 +1,372 @@
+{
+  "target_rules": [
+    {
+      "literal": "agitacion psicomotora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "agitada",
+              "agitado",
+              "inquietud",
+              "trastornos",
+              "trastorno",
+              "cambios"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "psicomotora",
+              "psicomotriz",
+              "motora",
+              "motores"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "agitacion psicomotora FUZZY",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "agitación",
+              "inquietud",
+              "trastornos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "psicomotora",
+              "psicomotriz"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones de la conducta motora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteraciones",
+              "alteracion",
+              "aumento",
+              "aumentos"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "conducta",
+              "esfera",
+              "actividad"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motor",
+              "motoras",
+              "psicomotoras",
+              "psicomotora"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "episodio de agitacion",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "episodio",
+              "episodios",
+              "periodos",
+              "periodo",
+              "estado",
+              "estados"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agitación",
+              "agitacion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperquinesia",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hiperquinesia",
+              "hiperquinético",
+              "hipercinesia",
+              "discinecia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inquieto / agitado",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "agitado",
+              "agitada",
+              "inquieta",
+              "inquietas",
+              "inquieto",
+              "inquietud"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperbúlico",
+      "category": "Agitacinpsicomotora"
+    },
+     {
+      "literal": "hiperbúlico FUZZY",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hiperbúlico",
+              "hiperbúlica",
+              "hiperbulico",
+              "hiperbulica"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inmovilizacion",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inmovilizado",
+              "inmovilizada",
+              "inmovilizar",
+              "inmovilizacion",
+              "inmovilización",
+              "amarrarla",
+              "amarrarlo",
+              "amarraron",
+              "amarrar",
+              "contencion",
+              "contención"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "inmovilizacion FUZZY",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "inmovilizado",
+              "inmovilizada",
+              "inmovilizar",
+              "inmovilizacion",
+              "inmovilización",
+              "contención"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "no se halla",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "ha",
+              "me"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "halla",
+              "hallo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "le da un desespero",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "le"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "da"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "por",
+              "un"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hablar",
+              "desepero"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "los movimientos que hacia eran muy acelerados",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "movimientos",
+              "movimiento"
+            ]
+          }
+        },
+        {
+        "OP": "{,4}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "acelerados",
+              "acelerado"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "deseos de salir corriendo",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deseos",
+              "deseo"
+            ]
+          }
+        },
+        {
+        "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "salir",
+              "salirse",
+              "salirme"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "corriendo"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

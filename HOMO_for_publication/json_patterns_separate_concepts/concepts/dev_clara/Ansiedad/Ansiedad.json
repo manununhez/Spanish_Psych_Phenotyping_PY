@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ansiedad", 
+      "category" : "Ansiedad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ansiedad","ansiedades","ansiosa","ansioso","ansiosas","ansiosos"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "target_rules": [
+    {
+      "literal": "se autogrede",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "se"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "autoagrede",
+              "autoagredio",
+              "autoagredió"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "auto ni heteroagresion",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "auto"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "ni"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "heteroagresion",
+              "heteroagresión",
+              "agresión"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "auto ni heteroagresion FUZZY",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "auto"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "ni"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "heteroagresion",
+              "heteroagresión"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "estructuración autolítica",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "estructuración",
+              "estructuracion",
+              "estructuraciones"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "autolítica",
+              "autolíticas",
+              "autolitica"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "estructuración autolítica FUZZY",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "estructuración",
+              "estructuracion",
+              "estructuraciones"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": { "FUZZY1" : {
+            "IN": [
+              "autolítica",
+              "autolíticas",
+              "autolitica"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "autoagresión",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "autoagresión",
+              "autoagresion",
+              "autoagresiones",
+              "autolesionismo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "autoagresión FUZZY",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "autoagresión",
+              "autoagresion",
+              "autoagresiones",
+              "autolesionismo"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ideas autolesivas",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "idea",
+              "intencion",
+              "conductas",
+              "intención"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "autolesivas",
+              "autoelesivas",
+              "autoliticas",
+              "autolesiva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas de auto o heteroagresion",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "idea",
+              "ideación",
+              "ideacion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "auto"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER" : {"NOT_IN" : [".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "heterolesiva",
+              "heteroagresion",
+              "heteroagresión",
+              "hteroagresion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cutting",
+      "category": "Autolesin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cutting",
+              "cortarse",
+              "cortandose",
+              "cortandome",
+              "cortarme"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

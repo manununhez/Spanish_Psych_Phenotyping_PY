@@ -1,0 +1,158 @@
+{
+  "target_rules": [
+    {
+      "literal" : "trataron muy mal", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["trataron"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["mal"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "restitución de sus derechos", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["restitución","restitucion"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["derechos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "golpes por parte", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["golpes"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["parte"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "le pega", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["le","lo","me"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["pega","lesionaron","pegan","golpeo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "violencia intrafamiliar", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["violencia"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["intrafamiliar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "maltrato infantil", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["maltrato"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["infantil"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "maltrato", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["maltrato"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["por"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "bullying", 
+      "category" : "Maltratofsicopsicolgico"
+    },
+    {
+      "literal" : "abandono", 
+      "category" : "Maltratofsicopsicolgico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["abandono"]
+          }
+        },
+        {
+          "LIKE_NUM": false,
+          "LOWER": {
+            "NOT_IN": ["de","la","el","consumo"]
+          }
+        }
+      ]
+    }
+  ]
+}

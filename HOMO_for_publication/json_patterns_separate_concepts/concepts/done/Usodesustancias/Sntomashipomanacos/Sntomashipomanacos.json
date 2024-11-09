@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hipomanía", 
+      "category" : "Sntomashipomanacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipomanìas","hipomanías","hipomanias","hipomanìa","hipomanía","hipomania","hipomaniaca","hipomaniaco","hipomaníaca","hipomaníaco"]
+          }
+        }
+      ]
+    }
+  ]
+}

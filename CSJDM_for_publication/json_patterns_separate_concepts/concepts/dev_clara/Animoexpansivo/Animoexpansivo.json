@@ -1,0 +1,48 @@
+{
+  "target_rules": [
+    {
+      "literal": "expansivo",
+      "category": "Animoexpansivo",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "expansivo",
+              "expansividad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ánimo exaltado",
+      "category": "Animoexpansivo"
+    },
+
+    {
+      "literal": "ánimo expansivo FUZZY",
+      "category": "Animoexpansivo",
+      "pattern":[
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "ánimo"
+            ]
+          }
+        },
+         {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "expansivo"
+            ]
+          }
+          }
+        }
+      ]
+    }
+  ]
+}

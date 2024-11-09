@@ -1,0 +1,43 @@
+{
+  "target_rules": [
+    {
+      "literal": "sobrevaloradas",
+      "category": "Ideassobrevaloradas"
+    },
+    {
+      "literal": "sobrevaloradas FUZZY",
+      "category": "Ideassobrevaloradas",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sobrevaloradas"
+            ]
+          }
+      }
+        }
+      ]
+    },
+
+     {
+      "literal": "sobre valoradas",
+      "category": "Ideassobrevaloradas",
+      "pattern": [
+        {
+          "LOWER": { 
+            "IN": [
+              "sobre"
+            ]
+          }
+      },
+       {
+          "LOWER": { 
+            "IN": [
+              "valoradas"
+            ]
+          }
+      }
+      ]
+    }
+  ]
+}

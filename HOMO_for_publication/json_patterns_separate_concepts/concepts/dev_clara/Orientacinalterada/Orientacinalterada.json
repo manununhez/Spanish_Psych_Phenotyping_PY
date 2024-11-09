@@ -1,0 +1,69 @@
+{
+  "target_rules": [
+    {
+      "literal": "desorientacion",
+      "category": "Orientacinalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desorientacion",
+              "desorientación",
+              "desorienta",
+              "desorientada",
+              "desorientadas",
+              "desorientado",
+              "desorientados"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "orientado parcialmente",
+      "category": "Orientacinalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "orientada",
+              "orientado"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "parcialmente"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "orientación alterada FUZZY",
+      "category": "Orientacinalterada",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "orientación",
+              "orientacion"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "alterada"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

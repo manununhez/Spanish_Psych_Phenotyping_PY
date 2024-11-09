@@ -1,0 +1,258 @@
+{
+  "target_rules": [
+    {
+      "literal": "actividad senestesica",
+      "category": "Alucinacionesotras",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "actividad"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hipnagogica",
+              "cenestesica",
+              "senestesica"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "actividad senestesica FUZZY",
+      "category": "Alucinacionesotras",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "actividad",
+              "actividades"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "hipnagogica",
+              "cenestesica",
+              "senestesica"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "alucionaciones, viscerales",
+      "category": "Alucinacionesotras",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alucinaciones",
+              "alucinacion",
+              "alucinación",
+              "alucins",
+              "alucionacion",
+              "aluecionaciones",
+              "o",
+              "y",
+              ",",
+              "ni"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "olfativa",
+              "olfativas",
+              "olfatorias",
+              "viscerales",
+              "cenestesicas",
+              "cenestesica",
+              "corporales",
+              "tactiles",
+              "tactil",
+              "táctil",
+              "somaticas",
+              "somatica",
+              "somáticas",
+              "somática"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "alucionaciones, viscerales FUZZY",
+      "category": "Alucinacionesotras",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "alucinaciones",
+              "alucinación"
+              
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "olfativa",
+              "olfativas",
+              "olfatorias",
+              "viscerales",
+              "cenestesicas",
+              "cenestesica",
+              "corporales",
+              "tactiles",
+              "somáticas",
+              "somática"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "siente que se lo comen por dentro",
+      "category": "Alucinacionesotras",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "espiritus",
+              "quejidos",
+              "siente",
+              "siento",
+              "sintio",
+              "sentido",
+              "sintió",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "malos",
+              "que",
+              "q",
+              "mueve"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "LOWER":{
+            "NOT_IN":[";","."]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "salen",
+              "aprietan",
+              "entierran",
+              "sopla",
+              "soplan",
+              "comen",
+              "carros",
+              "estaba",
+              "bebe",
+              "bebé"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{
+            "NOT_IN":[";","."]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cuerpo",
+              "dentro",
+              "lado",
+              "vientre"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siente xxxxx donde no los hay",
+      "category": "Alucinacionesotras",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "siente",
+              "siento",
+              "sintio",
+              "sintió"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}", "LOWER":{
+            "NOT_IN":[";","."]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "donde",
+              "dónde"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hay"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "corporales y auditivas",
+      "category": "Alucinacionesotras"
+    },
+    {
+      "literal": "corporales y auditivos",
+      "category": "Alucinacionesotras"
+    }
+  ]
+}

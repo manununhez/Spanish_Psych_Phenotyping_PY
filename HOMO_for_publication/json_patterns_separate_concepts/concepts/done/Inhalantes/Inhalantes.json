@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "consumiendo pega", 
+      "category" : "Inhalantes",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["consumiendo","consume"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["pega"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "inhalantes", 
+      "category" : "Inhalantes",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["inhalantes","sacol"]
+          }
+        }
+      ]
+    }
+  ]
+}

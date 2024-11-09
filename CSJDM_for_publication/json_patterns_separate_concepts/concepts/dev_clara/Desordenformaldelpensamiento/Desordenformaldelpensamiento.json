@@ -1,0 +1,429 @@
+{
+  "target_rules": [
+    {
+      "literal": "bradipsíquia",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bradifrenico",
+              "bradilalia",
+              "bradipsiquia",
+              "bradipsiquico",
+              "bradipsíquia",
+              "bradipsíquico",
+              "bradispisiquia"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "bradipsíquia FUZZY",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "bradifrenico",
+              "bradilalia",
+              "bradipsiquia",
+              "bradipsiquico"          ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "taquipsiquica",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "taquipsiquia",
+              "taquipsiquica",
+              "taquipsiquico",
+              "taquipsíquia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "taquipsiquica FUZZY",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "taquipsiquia",
+              "taquipsiquica"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "concrestista",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "concrestista",
+              "concrestistas",
+              "concretismo",
+              "concreto"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones en la forma",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alrteraicones",
+              "altera",
+              "alteracion",
+              "alteraciones",
+              "alteraciòn",
+              "alteración",
+              "alteraciónes",
+              "alterado",
+              "alteraicones",
+              "atleración",
+              "atleracion"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "forma",
+              "curso",
+              "cursoo",
+              "laforma"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "alteraciones en la forma LEMMA",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "alteración",
+              "alterar",
+              "alteracion"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "forma",
+              "formas",
+              "curso",
+              "cursoo",
+              "laforma"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pensamiento concreto",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pensameinto",
+              "pensamiento",
+              "pensmaiento",
+              "discurso",
+              "lenguaje",
+              "origen",
+              "tiende",
+              "abstracción",
+              "abstraccion"
+            ]
+          }
+        },
+        {
+          "OP": "{,6}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "concreto",
+              "bradipsiquico",
+              "concretista",
+              "bradipsíquico",
+              "concreta",
+              "escaso"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aumento en la latencia pregunta respuesta",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumento",
+              "disminución",
+              "disminucion"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "latencia",
+              "tiempo"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "respuesta",
+              "respuestas",
+              "-respuesta"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "concretismo verbal",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "concretismo",
+              "concreto"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "verbal",
+              "discurso"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "enfermedad primaria del pensamiento",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "t.",
+              "t",
+              "problemas",
+              "problema",
+              "enfermedad",
+              "trastorno",
+              "aumento"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "curso",
+              "primaria",
+              "velocidad"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pensamiento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bloquenado la mente",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bloquenado",
+              "borrado"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bloquenado la mente LEMMA",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "bloquear",
+              "borrar"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "con bloqueos",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "multiples",
+              "con"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "bloqueos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "respuestas cortas",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "respuestas"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cortas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "laxa de ideas",
+      "category": "Desordenformaldelpensamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "laxa"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ideas"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

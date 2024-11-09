@@ -1,0 +1,72 @@
+{
+  "target_rules": [
+    {
+      "literal" : "asociacion laxa de ideas", 
+      "category" : "DiscursodesorganizadoDescarrilamiento",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["asociacion","asociaciones","asociación"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["laxa","laxas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "disgregado", 
+      "category" : "DiscursodesorganizadoDescarrilamiento",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["descarrilamientos","disgregado","disprosodia","politemática"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dialogo poco concreto", 
+      "category" : "DiscursodesorganizadoDescarrilamiento",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dialogo","ensalada","hablando"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["concreto","palabras","bobada"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no los concreta", 
+      "category" : "DiscursodesorganizadoDescarrilamiento",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["concreta","concreto"]
+          }
+        }
+      ]
+    }
+  ]
+}

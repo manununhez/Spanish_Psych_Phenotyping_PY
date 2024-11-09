@@ -1,0 +1,29 @@
+{
+  "target_rules": [
+    {
+      "literal" : "deterioro cognitivo", 
+      "category" : "Deteriorocognitivo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["compromiso","deterioro","disfuncion","-disfunción","disfunción"]
+          }
+        },
+        { "OP" : "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["cognitiva","cognitivo","cogntivo"]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+ 
+ 
+            
+  
+ 
+     

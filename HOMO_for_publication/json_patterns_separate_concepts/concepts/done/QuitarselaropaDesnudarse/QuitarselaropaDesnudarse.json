@@ -1,0 +1,71 @@
+{
+  "target_rules": [
+    {
+      "literal" : "sale desnudo", 
+      "category" : "QuitarselaropaDesnudarse",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sale","saliendo","salio","salió"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["desnudo","desnuda","cucos","calzoncillos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "se niega a  vestirse", 
+      "category" : "QuitarselaropaDesnudarse",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["niega"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["vestirse"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "se quita la ropa", 
+      "category" : "QuitarselaropaDesnudarse",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["quita"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["ropa"]
+          }
+        }
+      ]
+    }
+  ]
+}

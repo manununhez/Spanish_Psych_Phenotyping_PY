@@ -1,0 +1,66 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alexitimia", 
+      "category" : "Modulacinafectivaalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alexitimia","hipomdulado","hipomodulado","hipomodulaod"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "", 
+      "category" : "Modulacinafectivaalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mal","poco"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["modualdo","modulada","modulaod","modulado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "risas insulsas", 
+      "category" : "Modulacinafectivaalterada",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["risas","sonrie"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["exageradas","insulsas","mucha","toda","inapropiadas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "muy sensible", 
+      "category" : "Modulacinafectivaalterada"
+    },
+    {
+      "literal" : "incontinencia afectiva", 
+      "category" : "Modulacinafectivaalterada"
+    },
+    {
+      "literal" : "afecto inapropiado", 
+      "category" : "Modulacinafectivaalterada"
+    }
+  ]
+}
+

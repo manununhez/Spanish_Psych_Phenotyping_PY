@@ -1,0 +1,204 @@
+{
+  "target_rules": [
+    {
+      "literal": "minusvalía",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "eminusvalia",
+              "emismuvalia",
+              "emisvualia",
+              "minusvalia",
+              "minusvalía",
+              "minuvalia",
+              "minuvsalia",
+              "misnuvalia",
+              "munusvalia",
+              "misnvualia",
+              "minusvallia",
+              "minusval",
+              "minusvalìa",
+              "minsuvalia",
+              "menosprecio"
+            ]
+          }
+        }
+      ]
+    },
+
+      {
+      "literal": "minusvalía FUZZY",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "minusvalía",
+              "menosprecio"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "ya no sirvo",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ya",
+              "que"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?",
+          "LOWER": {
+            "NOT_IN": [
+              "le"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sirvo",
+              "sirve"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento un estorbo",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "siendo",
+              "siento",
+              "sentía"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estorbo",
+              "estorba",
+              "boba",
+              "bobo",
+              "menos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no estaba haciendo nada bien",
+      "category": "Minusvala",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estaba",
+              "puedo",
+              "puede",
+              "logro",
+              "logra"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "haciendo",
+              "hacer"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "bien"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

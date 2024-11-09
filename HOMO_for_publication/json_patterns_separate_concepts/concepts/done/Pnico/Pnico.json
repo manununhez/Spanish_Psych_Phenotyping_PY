@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal" : "pánico", 
+      "category" : "Pnico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pànico","panico","pánico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "crisis de ansiedad", 
+      "category" : "Pnico"
+    }
+  ]
+}

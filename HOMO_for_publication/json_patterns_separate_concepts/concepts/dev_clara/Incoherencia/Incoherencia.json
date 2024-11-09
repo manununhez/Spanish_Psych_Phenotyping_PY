@@ -1,0 +1,80 @@
+{
+  "target_rules": [
+    {
+      "literal" : "incoherencia", 
+      "category" : "Incoherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["incoherencia","incoherencias","incoherente","inocherente","incoherentes","incoherentes.con"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "incoherencia FUZZY", 
+      "category" : "Incoherencia",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": ["incoherencia","incoherencias","incoherente","incoherentes"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "poco coherente", 
+      "category" : "Incoherencia"
+    },
+    {
+      "literal" : "poco coherente EXTENDED", 
+      "category" : "Incoherencia",
+      "pattern" : [
+        {
+          "LOWER": { 
+            "IN": ["poco","poca"]
+          
+          }
+        },
+        {
+          "LOWER": { 
+            "IN": ["coherencia","coherente","coherentes"]
+          
+          }
+        }
+
+      ]
+    },
+    {
+      "literal" : "habla bobadas", 
+      "category" : "Incoherencia"
+    },
+    {
+      "literal" : "habla bobadas LEMMA", 
+      "category" : "Incoherencia",
+      "pattern" : [
+        {
+          "LEMMA": { 
+            "IN": ["hablar"]
+          
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { 
+            "IN": ["bobadas"]
+          
+          }
+        }
+
+      ]
+    },
+    {
+      "literal" : "discurso incongruente", 
+      "category" : "Incoherencia"
+    }
+  ]
+}

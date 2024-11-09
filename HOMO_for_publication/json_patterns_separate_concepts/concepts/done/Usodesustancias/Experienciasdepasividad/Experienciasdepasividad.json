@@ -1,0 +1,97 @@
+{
+  "target_rules": [
+    {
+      "literal" : "control del pensamiento", 
+      "category" : "Experienciasdepasividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["insersion","insercion","robo","lectura","control","transmision","eco","llegan","escuchan"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["pensamiento","pensamieto","pensamientos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "saben lo que pienso", 
+      "category" : "Experienciasdepasividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sabe","saben","escuchan","escucha"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["q","que"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["piensa","pienso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "de influencia", 
+      "category" : "Experienciasdepasividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["de","d","e"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["influencia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sometimiento a la voluntad", 
+      "category" : "Experienciasdepasividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sometimiento"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["voluntad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "experiencias de pasividad", 
+      "category" : "Experienciasdepasividad"
+    },
+    {
+      "literal" : "lo siento por dentro", 
+      "category" : "Experienciasdepasividad"
+    },
+    {
+      "literal" : "interceptan", 
+      "category" : "Experienciasdepasividad"
+    }
+  ]
+}

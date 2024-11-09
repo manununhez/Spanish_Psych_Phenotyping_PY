@@ -1,0 +1,115 @@
+{
+  "target_rules": [
+    {
+      "literal" : "no logra dormir", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["esta","está","logra","lograr","logro","logró","poder","puede","pudo"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["dormía","duerme","duermo","duormia","durmiendo","dormir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no logra dormir LEMMA", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin"]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": ["estar","lograr","logro","poder"]
+          },
+          "OP":"?"
+        },
+        {
+          "LEMMA": {
+            "IN": ["dormir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dificultad para conciliar el sueño", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dificultad","dificultades","impide"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT" : false
+        },
+        {
+          "LOWER": {
+            "IN": ["consiliar","conciliar"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT" : false
+        },
+        {
+          "LOWER": {
+            "IN": ["sueño","sueno"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "dificultad para conciliar el sueño FUZZY", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["dificultad","dificultades"]
+          }
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT" : false
+        },
+        { 
+          "LOWER": { "FUZZY2":{
+            "IN": ["consiliar","conciliar"]
+          }
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT" : false
+        },
+        {
+          "LOWER": {
+            "IN": ["sueño","sueno"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "insomnio", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["insmonio","insomne","insomnio","insomno"]
+          }
+        }
+      ]
+    }
+  ]
+}

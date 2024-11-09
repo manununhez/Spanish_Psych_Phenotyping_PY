@@ -1,0 +1,53 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ataques de ansiedad", 
+      "category" : "Pnico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ataque","ataques","crisis"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["ansiedad","nervios"],
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "episodios de pánico", 
+      "category" : "Pnico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ataques","ataque","episodios","episodio","sensación","sensaciónes","trastorno","trastornos"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": ["pánico","panico"]
+          }
+        }
+      ]
+    },
+     {
+      "literal" : "pánico", 
+      "category" : "Pnico",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pánico"]
+          }
+        }
+      ]
+    }
+  ]
+}

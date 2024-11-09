@@ -1,0 +1,34 @@
+sentence split ideas
+# point between sentences: "Example sentence. New sentence"
+#.(	0	stbegin
+#.)	2	stend
+#e(	0	stbegin
+#e)	2	stend
+#\a.\s+(Now 	0	stbegin
+#\a+.\s+(N)ew	0	stbegin
+#\a+.\s+(N)ow	0	stbegin
+#\a+.\s+(N)ew	2	stend
+#\a+.\s+(N)ow	2	stend
+
+#mL.\s+(\a	0	stbegin
+
+#\s.(\s+\a)	0	stbegin
+#\s+(.)\s+\a	2	stend
+#**\d.	3	stend
+#**\d.	0	stbegin
+
+
+#.(\s\C	0	stbegin
+#(.)\s\C	2	stend
+
+
+#.\s+\w+	0	stend
+
+#.\s(No	0	stbegin
+
+#(**\d	0	stbegin
+#\s)**\d	2	stend
+#\d)**\d	2	stend
+#\p\C\c	0	stbegin
+#,)\sle 	2	stend
+#,\s(le	0	stbegin

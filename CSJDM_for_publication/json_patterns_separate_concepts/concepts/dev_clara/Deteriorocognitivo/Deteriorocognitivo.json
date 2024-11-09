@@ -1,0 +1,102 @@
+{
+  "target_rules": [
+    {
+      "literal": "deficit neurologico",
+      "category": "Deteriorocognitivo",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deficit",
+              "déficit"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "neurologico",
+              "neurológico",
+              "neurologicos",
+              "neurológicos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "deterioro cognitivo",
+      "category": "Deteriorocognitivo",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "compromiso",
+              "compromisos",
+              "deterioro",
+              "deterioros"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cognitivo",
+              "cognitivos",
+              "cognoscitivo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ci deterioro",
+      "category": "Deteriorocognitivo",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ci"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "deterioro"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "senil",
+      "category": "Deteriorocognitivo",
+      "pattern": [
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "catarata"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "senil"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

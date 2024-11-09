@@ -1,0 +1,37 @@
+{
+  "target_rules": [
+    {
+      "literal": "hongos",
+      "category": "Alucingenos"
+    },
+    {
+      "literal": "Alucinogenos",
+      "category": "Alucingenos",
+		"pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "alucinogeno"
+            ]
+          }
+        }
+       ]
+     },
+     {
+      "literal": "Alucinogeno",
+      "category": "Alucingenos",
+		"pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "alucinogenos",
+              "alucinogeno",
+              "alucinogena"
+            ]
+          }
+      }
+        }
+       ]
+     }      
+  ]
+}

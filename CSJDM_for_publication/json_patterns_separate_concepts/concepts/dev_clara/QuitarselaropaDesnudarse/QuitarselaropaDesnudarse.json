@@ -1,0 +1,166 @@
+{
+  "target_rules": [
+    {
+      "literal": "no se quiere vestir",
+      "category": "QuitarselaropaDesnudarse",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiere",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vestir"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "no se quiere vestir LEMMA",
+      "category": "QuitarselaropaDesnudarse",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "querer",
+              "querer él",
+              "querer yo"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "vestir",
+              "vestido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se desnuda",
+      "category": "QuitarselaropaDesnudarse",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "salio",
+              "se",
+              "publica",
+                "publico"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "desnuda",
+              "desnudó",
+              "desnudo"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "se desnuda LEMMA",
+      "category": "QuitarselaropaDesnudarse",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "se",
+              "me"
+            ]
+          }
+        },
+        {
+          "OP": "?", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "desnuda",
+              "desnudó",
+              "desnudo",
+              "desnudar",
+              "desnudar él",
+              "desnudar yo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "quitarse la ropa LEMMA",
+      "category": "QuitarselaropaDesnudarse",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "quitar él",
+              "quitar yo",
+              "quitar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "ropa"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

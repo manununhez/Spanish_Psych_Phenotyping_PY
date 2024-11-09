@@ -1,0 +1,94 @@
+{
+  "target_rules": [
+    {
+      "literal" : "actitud alucinatoria", 
+      "category" : "Actitudalucinatoria",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["actitud", "actitudes", "actividad", "comportamiento"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["alucinada","alucinartoria","alucinatoia","alucinatoira","alucinatoria","alucinatorias","alucinado"]
+          }
+        }
+      ]
+    },
+        {
+      "literal" : "soliloquios", 
+      "category" : "Actitudalucinatoria",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["soliloquios", "solilouios"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "habla solo", 
+      "category" : "Actitudalucinatoria",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["habla", "hablaba"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["solo", "sola", "alguna"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "impresiona estar alucinando", 
+      "category" : "Actitudalucinatoria",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["impresiona", "mpresiona", "luce"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["alucinando", "alucinado","psicotica","psicotico","psicótica","psicótico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "risas inmotivadas", 
+      "category" : "Actitudalucinatoria",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["risa", "risas", "ríe", "rie"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["inmotivadas", "inmotivada","inmotivadas","inotivada","insulsas","solo"]
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+

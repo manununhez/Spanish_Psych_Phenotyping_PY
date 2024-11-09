@@ -1,0 +1,134 @@
+#/*******************************************
+************************************
+# * Copyright  2016  Department of Biomedical Informatics, University of Utah
+# * <p>
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# * <p>
+# * http://www.apache.org/licenses/LICENSE-2.0
+# * <p>
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *******************************************************************************/
+
+#this list is optimized for shorter rule length rules for semeval were added
+@MaxRepeatLength	100
+@Version	1.0.3.4
+
+#stbegin is the marker for sentence begin, the span of sentence will start at the begin of the captured group
+#stbegin has two scores 0, 1: 0 for true sentence begin clues, 1 for false sentence begin clues which will overwrite 0-scored rules when they are overlapping.
+
+#stend is the marker for sentence end, the span of sentence will end at the end of the captured group
+#stend also has two scores 2, 3: 2 for true sentence end clues, 3 for false sentence end clues which will overwrite 2-scored rules when they are overlapping
+
+# \b the begin of an input
+# \e the end of an input
+# \d A digit
+# \C A capital letter
+# \c A lowercase letter
+# \s A character of whitespace or tab or Unicode code point 160
+# \w A character of \s above or Unicode code greater than '~'
+# \a A Non-whitespace character
+# \u A unusual character: Unicode code greater than '~' (excluding Unicode 160)
+# \n A return ('\n' or '\r')
+# ( Beginning of capturing a group
+# ) End of capturing a group
+# \p A punctuation
+#
+# \+ An addition symbol (to distinguish the "+" after a wildcard)
+# \( A left parentheses symbol
+# \) A right parentheses symbol
+#
+#  A wildcard followed by a "+": 1 or more characters that match the wildcard
+
+
+# beginning of any input
+\b(\C	0	stbegin
+\b(\d	0	stbegin
+\b\s+(\C	0	stbegin
+\b\s+(\d	0	stbegin
+
+# end of any input
+\a\e	2	stend
+\s\e	2	stend
+
+# end of one sentence, period, begining of next sentence
+\a.\s+)\a	2	stend
+\a.\s+(\a)	0	stbegin
+\C.\s+(\C)	0	stbegin
+\C.)\s+\C	2	stend
+\C.(\C)	0	stbegin
+(\C).\C	2	stend
+
+## items listed with two asterisks. eg:"...semana **2. Divalproato..." ## "...-0-1/4**4.pregalina..."
+\s)**\d	2	stend
+\c) **\d	2	stend
+\C) **\d	2	stend
+(**\d)	0	stbegin
+
+## items listed with a dash. eg: "... -Hace dias ...."
+\s(-\C)	0	stbegin
+\s(-\C)	2	stend
+\s(-\s+\C)	0	stbegin
+\s(-\s+\C)	2	stend
+
+## time: 'Hace'
+,\s+hace	0	stbegin
+,\s+hace	2	stend
+,\s+debuto	0	stbegin
+,\s+debuto	2	stend
+
+#\s\d\p\s\C	0	stbegin
+#\s\d\p\s\C	2	stend
+
+
+
+#end of sentence: %
+\d(% )	2	stend
+\d(%. )	2	stend
+\d (%. )	2	stend
+
+#end of sentence: ;
+\c(; )	2	stend
+\c( ; )	2	stend
+\c(;)	2	stend
+\c( ;)	2	stend
+\c;( 	0	stbegin
+\c ;( )	0	stbegin
+\c(;)	0	stbegin
+
+#end of sentence: " - "
+#end of sentence: " -[a-z]"
+( )-	2	stend
+(- )	0	stbegin
+(-\c)	0	stbegin
+(-\C)	0	stbegin
+(-\d)	0	stbegin
+
+#begining of sentence: PACIENTE CON
+( )paciente con	2	stend
+ (paciente con)	0	stbegin
+
+#begining of sentence: ANALISIS Y PLAN
+( )analisis	2	stend
+ (analisis)	0	stbegin
+
+#begining of sentence: S/ O/ A/ P/
+( )S/	2	stend
+( )S}/	2	stend
+( )O/	2	stend
+( )A/	2	stend
+( )P/	2	stend
+ (S/)	0	stbegin
+ (S}/)	0	stbegin
+ (O/)	0	stbegin
+ (A/)	0	stbegin
+ (P/)	0	stbegin
+ (SUBJETIVO)	0	stbegin
+ (AL EXAMEN MENTAL	0	stbegin
+ )AL EXAMEN MENTAL	2	end
+ 

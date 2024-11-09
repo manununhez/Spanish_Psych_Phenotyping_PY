@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hiperexia", 
+      "category" : "Apetitoaumentode",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hiperexia","hiperfagia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "aumento del apetito", 
+      "category" : "Apetitoaumentode",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aumento","comiendo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["apetito","mucho"]
+          }
+        }
+      ]
+    }
+  ]
+}

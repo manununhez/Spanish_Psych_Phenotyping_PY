@@ -1,0 +1,406 @@
+{
+  "target_rules": [
+    {
+      "literal": "no tiene ni amistades",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dejado",
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "amistades"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no sale de la casa",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "nunca",
+              "ni"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sale",
+              "salir"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa",
+              "cuarto"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me gusta salir",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,1}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "gusta",
+              "quiere",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "salir"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "soy callada",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "más",
+              "soy"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "callado",
+              "callada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "menos interactivo",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "menos"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "interactivo",
+              "interactiva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me aislo",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aislo",
+              "encerre",
+              "encerré",
+              "encierra",
+              "encerrada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me aislo LEMMA",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "aislo",
+              "aislar él",
+              "aislar yo",
+              "aislar",
+              "encerrar",
+              "encerre",
+              "encerrar él",
+              "encerrar yo",
+              "encierro",
+              "enserrado"           ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "encerrado a la casa",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "encerrado",
+              "pasa"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "en",
+              "la"
+            ]
+          },
+          "OP": "{,2}"
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "encerrado a la casa LEMMA",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "encerrar",
+              "encerre",
+              "encerrar él",
+              "encerrar yo",
+              "encierro",
+              "enserrado",
+              "pasar"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "en",
+              "la"
+            ]
+          },
+          "OP": "{,2}"
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aislameinto social",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+         {
+          "LOWER": {
+            "NOT_IN": [
+              "uca",
+              "requiere",
+              "requirió"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aisalimiento",
+              "aislameinto",
+              "aislamiento",
+              "asilameinto"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "social"
+            ]
+          },
+          "OP": "?"
+        }
+      ]
+    },
+
+
+     {
+      "literal": "aislameinto social FUZZY",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+         {
+          "LOWER": {
+            "NOT_IN": [
+              "uca",
+              "requiere",
+              "requirió"
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "aislameinto",
+              "aislameintos",
+              "retraimiento"            ]
+          }
+        }
+      },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": ["social"]
+      }
+    }
+      }
+      ]
+    },
+    {
+      "literal": "retraído",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "retraído",
+              "retraido",
+              "retraída",
+              "retraida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aislado",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "uca",
+              "requiere",
+              "requirió"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aislada",
+              "aislado",
+              "aislarse",
+              "aislarme"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

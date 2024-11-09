@@ -1,0 +1,246 @@
+{
+  "target_rules": [
+    {
+      "literal" : "mala adherencia al tratameitno", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mala","falta","baja","nula","nulo","parcial","pésima","pesima","poca","pobre","povre","regular","sin"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["adeherencia","adherecia","adherecnia","adherencia","ahdrencia","apego"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["tratamiento","tto","medicación","tratameitno","farmacologica","tratameinto","medicamentos","tratamientos","manejo","tratamineto"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no hay buena adherencia", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["buena","hay","presento","tolerancia","tenido","tneido","colabora"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["adherencia","adherncia","tratamitno","tratamiento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no se ha tomado el medicamento", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["tomado","toma","tomaba","tomo","tomando"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicamento","medicación","medicacion","medicamentos","tto","ttop","tratamiento",
+                   "adecaudamernte","mareo","pastillas","risperidona","divalproato","biperideno","paliperidona"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no volvió a controles", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","tampoco"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["suministro","recibe","entregaron","pudieron","realizó","realizo","trajo","volvió","volvio","regresa","continuidad","evidencian"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicamento","medicación","medicacion","medicamentos","tto","ttop","tratamiento",
+                   "adecaudamernte","mareo","pastillas","risperidona","divalproato","biperideno","paliperidona",
+                   "controles","paraclincos","examenes","exámenes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dejó de tomar el medicamento", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["deje","dejo","dejé","dejó","sin"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["tomar","tomarme"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicamento","medicación","medicacion","medicamentos","tto","ttop","tratamiento","droga","pastillas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no adherencia", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["adherencia","adherente","acudir","controles","medicacion","medicación","seguimiento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "suspende el medicamento", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["suspende","suspendio","suspendió","suspension","suspensiond","suspensión","ausencia","está","olvida","inadeherencia","rechazo","acabaron"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicamento","medicación","medicacion","medicamentos","tto","ttop","tratamiento","emdicaion"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no se lo toma", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","nunca"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["se"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["la","lo"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["toma","tomó","tomo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "descuadrado con la medicación", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["negativa","descuadrado","resistente","irregularidades","dificultades"]
+          }
+        },
+        {
+          "OP":"{,6}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicamento","medicación","medicacion","medicamentos","tto","ttop","tratamiento","emdicaion"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "adherencia es parcial", 
+      "category" : "Pobreadherencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["adherencia"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["es"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["parcial"]
+          }
+        }
+      ]
+    }
+  ]
+}

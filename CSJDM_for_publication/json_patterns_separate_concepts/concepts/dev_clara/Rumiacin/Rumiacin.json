@@ -1,0 +1,57 @@
+{
+  "target_rules": [
+    {
+      "literal": "rumiaciones",
+      "category": "Rumiacin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "rumiaciones",
+              "rumiación",
+              "rumiacion"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "rumiaciones FUZZY",
+      "category": "Rumiacin",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "rumiaciones",
+              "rumiación"            ]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "estado pensativa",
+      "category": "Rumiacin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "estado"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pensativa",
+              "pensativo"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

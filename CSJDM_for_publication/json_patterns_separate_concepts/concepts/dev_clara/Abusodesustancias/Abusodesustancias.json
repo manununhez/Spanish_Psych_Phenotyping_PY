@@ -1,0 +1,370 @@
+{
+  "target_rules": [
+    {
+      "literal" : "policonsumo", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["policonsumidor","policonsumo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tabaquismo", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["tabaquismo"]
+          }
+          }
+        }
+        
+      ]
+    },
+    {
+      "literal" : "consumo de múltiples sustancias", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["consumo"]
+          }
+        },
+        {
+          "OP":"{,2}","IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["múltiples","multiples", "muchas","varias"]
+          }
+        },
+        {
+          "OP":"?" ,"IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["sustancias"]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal" : "dependencia a sustancias", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dependencia","depndencia","dificultades","calle","intoxicación","intoxicacion"]
+          }
+        },
+        {
+          "OP":"{,3}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": { 
+            "IN": ["alchol","benzodiacepinas","drogas","aguda","alcohol","sustancias"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "proceso de desintoxicación", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hospitalizacion","proceso","procedo","manejo"]
+          }
+        },
+        {
+          "OP":"{,2}","IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["desintoxicacion","desintoxicación","deshabituación","deshabituacion"]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal" : "patología dual", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["patologia","patologìa","patología", "patologias"]
+          }
+        }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["dual"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "abuso de sustancias", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["abuso"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["cannabis","sustancias"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "rehabilitación por consumo", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["rehabilitación","rehabilitacion","dejar"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["consumo","consumir", "consume", "consumiendo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "farmacodependencia", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["farmacodependencia","farmacodependencia","drogadiccion"]
+          }
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sintomas de abstinencia", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["fenomeno","signos","sintomas","síndrome"]
+          }
+        }
+        },
+        {
+          "OP":"{,4}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["abstinencia"]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal" : "consume  mucho", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["meter","mete", "metiendo","consume","toma","tomar","fumo", "fumar", "fuma"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["mucho","demasiado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "esta consumiendo", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["esta","dias","pasa"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["consumiendo"]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal" : "aumenta consumo", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["aumentado","aumenta","aumento","auemtno","aumeneto","ansiedad","recae","recaida","recaída"]
+          }
+        },
+        {
+          "OP":"{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["consumo","alcohol","consumir","consumía","consumia"]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal" : "consumió alcohol hasta la embriaguez", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tomar","consumido","consumió","consumio","consumo"]
+          }
+        },
+        {
+          "OP":"{,3}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {"FUZZY1": {
+            "IN": ["todos","botellas","alcohol","spa","cannabis","bazuco","cerveza","rivotril"]
+          }
+        }
+        },
+        {
+          "OP":"{,5}", "IS_PUNCT":false,
+          "LOWER": {
+            "NOT_IN": [",","hace"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["dias","embriaguez","años","anos","diario","perder","dependencia","incremento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "consumo diario", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LEMMA": {
+            "IN": ["frecuencia","consumir","consume","consumo","tomar","tomo","fumar","fumando","fuma","periodicidad"]
+          }
+        },
+        {
+          "OP":"{,4}", "IS_PUNCT":false,
+          "LOWER": {
+            "NOT_IN": [",","hace"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["diario","días","dias","diaria"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "patrón de dependencia", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["patrón","patron"]
+          }
+        },
+        {
+          "OP":"?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["de"]
+          }
+        },
+        {
+          "OP":"{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["usual","dependencia","abuso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "trastorno mental y comportamental por consumo", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["t","t.","trastorno","trastornos","tx"]
+          }
+        },
+        {
+          "OP":"{,8}",
+          "IS_PUNCT": false,
+          "LOWER": { "NOT_IN": ["bipolar"] }
+        },
+        {
+          "LOWER": {
+            "IN": ["consumo","conusmo","policonsumo","uso"]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal" : "dependencia a las benzodiacepinas", 
+      "category" : "Abusodesustancias",
+      "pattern" : [
+        {
+          "LOWER": { "FUZZY1": {
+            "IN": ["dependencia","dependencias"]
+          }
+          
+          }
+        },
+        {
+          "OP":"{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2": {
+            "IN": ["benzodiacepinas", "benzodiacepina"]
+          }
+          }
+        }
+      ]
+    }
+  ]
+}

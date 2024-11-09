@@ -1,0 +1,843 @@
+{
+  "target_rules": [{
+      "literal": "sustancia de impacto",
+      "category": "Usodesustancias"
+    },
+    {
+      "literal": "sustancia de impacto FUZZY",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "FUZZY2": {
+              "IN": [
+                "sustancia",
+                "sustancias"
+              ]
+            }
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "impacto"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "spa",
+      "category": "Usodesustancias",
+      "pattern": [{
+        "LOWER": {
+          "IN": [
+            "spa",
+            "spas"
+          ]
+        }
+      }]
+    },
+    {
+      "literal": "policonsumo FUZZY",
+      "category": "Usodesustancias",
+      "pattern": [{
+        "LOWER": {
+          "FUZZY1": {
+            "IN": [
+              "policonsumo",
+              "policonsumos"
+            ]
+          }
+        }
+      }]
+    },
+    {
+      "literal": "policonsumo",
+      "category": "Usodesustancias"
+    },
+    {
+      "literal": "toxicos",
+      "category": "Usodesustancias"
+    },
+    {
+      "literal": "consume basuco",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "IN": [
+              "consume",
+              "consumiendo",
+              "consumir",
+              "consumió",
+              "consumo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "basuco",
+              "marihuana",
+              "pegante",
+              "cigarrillo",
+              "alcohol",
+              "bazuco",
+              "cannabis",
+              "cerveza",
+              "cigarrillos",
+              "hongos",
+              "licor",
+              "rivotril"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "consume basuco FUZZY",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "FUZZY1": {
+              "IN": [
+                "consume",
+                "consumiendo",
+                "consumir",
+                "consumió",
+                "consumo"
+              ]
+            }
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "FUZZY1": {
+              "IN": [
+                "basuco",
+                "basucos",
+                "marihuana",
+                "pegante",
+                "pegantes",
+                "cigarrillo",
+                "cigarro",
+                "alcohol",
+                "bazuco",
+                "cannabis",
+                "cerveza",
+                "cigarrillos",
+                "hongos",
+                "licor",
+                "liquor",
+                "licores",
+                "rivotril"
+              ]
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "consume basuco LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "FUZZY1": {
+              "IN": [
+                "consumir yo",
+                "consumir él",
+                "consumir",
+                "consumo"
+              ]
+            }
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+            "LEMMA": {
+              "IN": [
+                "basuco",
+                "marihuana",
+                "pegante",
+                "cigarrillo",
+                "cigarro",
+                "alcohol",
+                "bazuco",
+                "cannabis",
+                "canabis",
+                "cerveza",
+                "hongo",
+                "licor",
+                "liquor",
+                "rivotril"
+              ]
+            
+          }
+        }
+      ]
+    },
+    {
+      "literal": "consumo de spa",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "IN": [
+              "consumidor",
+              "consumo",
+              "consumia",
+              "consumi",
+              "conusmo",
+              "cosnumo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "actual",
+              "asociado",
+              "activo",
+              "concomitante",
+              "spa",
+              "experimental",
+              "reciente",
+              "psicoactivas",
+              "tambien",
+              "únicamente",
+              "drogas",
+              "sustancias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "consumo de spa FUZZY",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "FUZZY1": {
+              "IN": [
+                "consumidor",
+                "consumo",
+                "consume",
+                "consumi",
+                "consumia",
+                "conusmo",
+                "cosnumo"
+              ]
+            }
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "FUZZY1": {
+              "IN": [
+                "concomitante",
+                "experimental",
+                "reciente",
+                "psicoactivas",
+                "tambien",
+                "únicamente",
+                "drogas",
+                "sustancias"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "literal": "consumo de spa LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LEMMA": {
+            "IN": [
+              "consumidor",
+              "consumo",
+              "consumir",
+              "consumir yo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "actual",
+              "asociado",
+              "activo",
+              "concomitante",
+              "spa",
+              "experimental",
+              "reciente",
+              "psicoactivo",
+              "psicoactiva",
+              "tambien",
+              "únicamente",
+              "unicamente",
+              "droga",
+              "sustancia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "uso de spa",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "IN": [
+              "otros",
+              "otras",
+              "otro",
+              "otra",
+              "uso"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "spa",
+              "sustancia",
+              "sustancias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "uso de spa LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LEMMA": {
+            "IN": [
+              "otro",
+              "uso",
+              "usar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "spa",
+              "spas",
+              "sustancias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "meto vicio",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "IN": [
+              "toma",
+              "tomo",
+              "meto",
+              "ingería",
+              "ingesta",
+              "ingesto",
+              "gusta"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "trago",
+              "vicio",
+              "alcohol"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "meto vicio LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LEMMA": {
+            "IN": [
+              "tomar",
+              "tomar yo",
+              "tomar él",
+              "meter",
+              "meter él",
+              "meter yo",
+              "ingeer",
+              "ingestar",
+              "ingesto",
+              "gustar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "trago",
+              "tragos",
+              "vicio",
+              "alcohol"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "patrón de consumo",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "IN": [
+              "por",
+              "gradual",
+              "ideas",
+              "inicio",
+              "patrón",
+              "relacionadas",
+              "recaída",
+              "relacionadas",
+              "ultimo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "consumo"
+            ]
+          }
+        }
+      ]
+    },
+
+
+    {
+      "literal": "patrón de consumo FUZZY",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "FUZZY2": {
+              "IN": [
+
+                "gradual",
+                "ideas",
+                "inicio",
+                "patrón",
+                "patrónes",
+                "relacionadas",
+                "recaída",
+                "recaídas",
+                "relacionadas"
+              ]
+            }
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "consumo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pegarme un plon",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pegarme",
+              "pegarse",
+              "pegar",
+              "anotan",
+              "pidiéndole"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "plon",
+              "plones",
+              "tabaco",
+              "marihuana",
+              "marijuana"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dejar de consumir",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dejar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "consumir",
+              "fumar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dejar de consumir LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "dejar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "consumir",
+              "fumar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "esta consumiendo",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "esta",
+              "estaba",
+              "estoy",
+              "llevo"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "consumiendo",
+              "drogada",
+              "drogado",
+              "cigarrillo",
+              "cigarrillos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "esta consumiendo LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "estar",
+              "llevar"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}",
+          "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "consumiendo",
+              "consumir",
+              "drogado",
+              "cigarrillo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "esta consumiendo FUZZY",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LEMMA": {
+            "IN": [
+              "estar",
+              "llevar"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "FUZZY2": {
+              "IN": [
+                "consumiendo",
+                "consumir",
+                "drogado",
+                "cigarrillo"
+              ]
+            }
+          }
+        }
+      ]
+    },
+
+
+    {
+      "literal": "exposición a toxinas o drogas LEMMA",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LEMMA": {
+            "IN": [
+              "exposición",
+              "exposicion",
+              "expuesto",
+              "exponer"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LEMMA": {
+              "IN": [
+                "droga"
+              ]
+            }
+        }
+      ]
+    },
+     {
+      "literal": "exposición a toxinas o drogas",
+      "category": "Usodesustancias",
+      "pattern": [{
+          "LOWER": {
+            "IN": [
+              "exposición",
+              "exposicion",
+              "expuesto",
+              "exponer"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+              "IN": [
+                "drogas"
+              ]
+            }
+        }
+      ]
+    },
+     {
+      "literal": "signos de toxicidad aparente",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "signos",
+              "signo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+              "IN": [
+                "toxicidad"
+              ]
+            }
+          }
+        }
+      ]
+    },
+     {
+      "literal": "bajo los efectos del alcohol",
+      "category": "Usodesustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bajo",
+              "esta"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+         {
+          "LOWER": {
+            "IN": [
+              "efecto",
+              "efectos"
+            ]
+          }
+        },
+         {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+              "IN": [
+                "alcohol"
+              ]
+            }
+        }
+      ]
+    }
+
+  ]
+}

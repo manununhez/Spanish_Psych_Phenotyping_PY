@@ -1,0 +1,110 @@
+{
+  "target_rules": [
+    {
+      "literal": "aislamiento afectivo",
+      "category": "Aislamientoemocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aislamiento"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "afectivo"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "aislamiento afectivo FUZZY",
+      "category": "Aislamientoemocional",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "aislamiento"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "LOWER": {
+            "NOT_IN": [
+              ";",
+              "."
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "afectivo"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "distante emocionalemtne",
+      "category": "Aislamientoemocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "distante"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "emocionalemtne"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "distante emocionalemtne FUZZY",
+      "category": "Aislamientoemocional",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "distante"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "emocionalemtne"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

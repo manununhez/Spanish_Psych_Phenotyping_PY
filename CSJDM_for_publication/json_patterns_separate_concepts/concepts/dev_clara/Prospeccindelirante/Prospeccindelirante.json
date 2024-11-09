@@ -1,0 +1,292 @@
+{
+  "target_rules": [
+    {
+      "literal": "iyp nulas",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "p",
+              "iyp"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pobres",
+              "nulas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "prospección no adecuada",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "prospeccion",
+              "propseccion",
+              "prospecc",
+              "prospeccipn",
+              "prospección"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "adecuada"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "prospección no adecuada FUZZY",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2": {
+            "IN": [
+              "prospeccion",
+              "prospecc",
+              "prospección"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "adecuada"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "prospección inadecuada FUZZY",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospeccion",
+              "prospección"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "inadecuada"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "propseccion pobre",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "prospeccion",
+              "propseccion",
+              "prospecc",
+              "prospeccipn",
+              "prospección"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "deficientes",
+              "parciales",
+              "parcial",
+              "pobre",
+              "pobres",
+              "estrucutradas",
+              "estructurar",
+              "comprometidas",
+              "inciertas",
+              "suspendida",
+              "nula"
+            ]
+          }
+        }
+      ]
+    },
+
+     {
+      "literal": "prospección deliriante",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospección",
+              "prospecciónes",
+              "prospeccion",
+              "prospecciones"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "deliriante",
+              "deliriantes"
+            ]
+          }
+        }
+      }
+      ]
+    },
+     {
+      "literal": "con pobre introspección y prospección",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { 
+            "IN": [
+              "pobre",
+              "pobres",
+              "pobreza"            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospección",
+              "prospecciónes"
+            ]
+          }
+        }
+      }
+      ]
+    },
+
+
+     {
+      "literal": "prospección: nula",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospección",
+              "prospeccion",
+              "prospecciónes"            ]
+          }
+          }
+        },
+       
+        {
+          "LOWER": { 
+            "IN": [
+              "nula",
+              "nulas",
+              "deliriante",
+              "deliriantes"
+            ]
+          }
+      }
+      ]
+    },
+
+       {
+      "literal": "dificultades en la estructuración de la prospección",
+      "category": "Prospeccindelirante",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "dificultades",
+              "dificultad" 
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "estructuración",
+              "estructurar"
+            ]
+          }
+        }
+      },
+
+      {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+    {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "prospección",
+              "prospeccion"
+            ]
+          }
+        }
+      }    
+      ]
+    }
+  ]
+}

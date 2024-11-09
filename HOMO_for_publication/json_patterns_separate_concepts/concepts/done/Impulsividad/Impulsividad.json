@@ -1,0 +1,57 @@
+{
+  "target_rules": [
+    {
+      "literal" : "impulsivo", 
+      "category" : "Impulsividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["impulsivo","impulsiva"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "gastando dinero", 
+      "category" : "Impulsividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["gastando","regalando"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["dinero","cosas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pierde el control", 
+      "category" : "Impulsividad"
+    },
+    {
+      "literal" : "tirándosele a los carros", 
+      "category" : "Impulsividad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tirándosele","tirandosele","tirándose","tirandose","tira"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["carros","calle"]
+          }
+        }
+      ]
+    }
+  ]
+}

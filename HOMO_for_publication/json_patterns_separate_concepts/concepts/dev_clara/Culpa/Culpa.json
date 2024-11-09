@@ -1,0 +1,197 @@
+{
+  "target_rules": [
+    {
+      "literal": "sentimiento de culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": { 
+            "IN": [
+              "cogniciones",
+              "cognicion",
+              "sentimiento",
+              "sentimientos"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "sentimiento de culpa FUZZY",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {  "FUZZY2" : {
+            "IN": [
+              "cogniciones",
+              "cognicion",
+              "sentimiento",
+              "sentimientos"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas sobrevaloradas de culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "idea"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sobrevaloeradas",
+              "sobrevaloradas",
+              "sobrevalorada"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "ideas sobrevaloradas de culpa FUZZY",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ideas",
+              "idea"
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sobrevaloradas",
+              "sobrevalorada"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "con remordimiento",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "con"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa",
+              "remordimiento",
+                "remordimientos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "mia",
+              "mía",
+              "suya",
+              "tuya",
+              "de"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

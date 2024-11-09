@@ -1,0 +1,64 @@
+{
+  "target_rules": [
+    {
+      "literal" : "no logra dormir", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["esta","está","logra","lograr","logro","logró","poder","puede","pudo"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["dormía","duerme","duermo","duormia","durmiendo","dormir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dificultad para conciliar el sueño", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dificultad","dificultades","impide"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["consiliar","conciliar"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sueño"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "insomnio", 
+      "category" : "SueoInsomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["insmonio","insomne","insomnio"]
+          }
+        }
+      ]
+    }
+  ]
+}

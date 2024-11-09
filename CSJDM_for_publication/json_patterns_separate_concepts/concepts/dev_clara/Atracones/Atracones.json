@@ -1,0 +1,43 @@
+{
+  "target_rules": [
+    {
+      "literal": "como mucho",
+      "category": "Atracones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "como"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "atracones",
+      "category": "Atracones"
+    },
+    {
+      "literal": "atracones",
+      "category": "Atracones",
+      "pattern":[
+      {
+          "LOWER": {
+            "IN": [
+              "atracones"
+            ]
+          }
+        }]
+    }
+  ]
+}

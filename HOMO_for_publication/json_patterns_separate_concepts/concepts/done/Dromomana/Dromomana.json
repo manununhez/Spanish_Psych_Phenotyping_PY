@@ -1,0 +1,50 @@
+{
+  "target_rules": [
+    {
+      "literal" : "dromomanía", 
+      "category" : "Dromomana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dromomania","dromomanía"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "deambular", 
+      "category" : "Dromomana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["deambula","deambular","deambulacion","deambulación","deambulando"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hace sino caminar", 
+      "category" : "Dromomana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hace","se"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["sino","iba"]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["caminar","andar"]
+          }
+        }
+      ]
+    }
+  ]
+}

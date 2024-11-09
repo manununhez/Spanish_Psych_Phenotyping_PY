@@ -1,0 +1,238 @@
+{
+  "target_rules": [
+    {
+      "literal": "alucinaciones visuales",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aluc",
+              "aluciaciones",
+              "alucina",
+              "alucinac",
+              "alucinaciones",
+              "alucionaciones",
+              "alucin"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "visual",
+              "visuales",
+              "vusuales",
+              "vis"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "alucinaciones visuales FUZZY",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [             
+              "alucinaciones",
+              "alucinación"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "visuales"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "auditivas y visuales",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "y",
+              ","
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "visual",
+              "visuales",
+              "vusuales",
+              "vis"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "auditivas y visuales FUZZY",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+          {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "auditivas"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "y",
+              ",",
+              "/",
+              "o"
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "visuales"
+            ]
+          }
+        }
+        }
+      ]
+    },
+     {
+      "literal": "visuales y auditivas FUZZY",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+          {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "visuales"
+            ]
+          }
+        }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "y",
+              ",",
+              "/",
+              "o"
+            ]
+          }
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "auditivas"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "veo el diablo",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "visiones",
+              "visión",
+              "aparecio",
+              "aparece",
+              "veo",
+              "vi",
+              "ve",
+              "veia"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "demonios",
+              "diablo",
+              "demonio",
+              "calavera"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "veo cosas raras",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "veo",
+              "vi",
+              "ve",
+              "ver",
+              "viendo",
+              "aparecen"
+            ]
+          }
+        },
+        {
+          "LOWER": "cosas"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que",
+              "raras"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "visiones de",
+      "category": "Alucinacionesvisual"
+    },
+    {
+      "literal": "veo sombras",
+      "category": "Alucinacionesvisual",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "veo",
+              "vi",
+              "ve",
+              "ver",
+              "viendo"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "IN": ["sombras","sombra"] }
+        }
+      ]
+    }
+  ]
+}

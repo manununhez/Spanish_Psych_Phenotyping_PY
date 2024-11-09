@@ -1,0 +1,23 @@
+{
+  "target_rules": [
+    {
+      "literal" : "despertar temprano", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["despertar","despierto","despierta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["temprano","ligero"]
+          }
+        }
+      ]
+    }
+  ]
+}

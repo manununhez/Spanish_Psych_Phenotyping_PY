@@ -1,0 +1,180 @@
+{
+  "target_rules": [
+    {
+      "literal": "residuales",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "residualidad",
+              "residual",
+              "residuales"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "residuales FUZZY",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "residualidad",
+              "residuales"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "con deterioro asociado",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deterioro"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "asociado"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cronicidad de los sitnomas",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cronicidad"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "LOWER":{"NOT_IN":["sin","ni", ".",";", ","]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sitnomas",
+              "síntomas",
+              "sintomas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas negativos persistentes",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "síntomas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":["sin","ni", ".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persistentes"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "síntomas negativos persistentes FUZZY",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "síntomas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":["sin","ni", ".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "persistentes"
+            ]
+          }
+          }
+        }
+      ]
+    },
+      {
+      "literal": "sin lograr remisión",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",  "LOWER":{"NOT_IN":["sin","ni", ".",";"]}
+        },
+        {
+          "LOWER": { 
+            "IN": [
+              "funcionalidad",
+              "remisión"
+            ]
+          }
+        
+        }
+      ]
+    },
+    {
+      "literal": "sin lograr remisión FUZZY",
+      "category": "Sntomasresiduales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",  "LOWER":{"NOT_IN":["sin","ni", ".",";"]}
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "funcionalidad",
+              "remisión",
+              "remision"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

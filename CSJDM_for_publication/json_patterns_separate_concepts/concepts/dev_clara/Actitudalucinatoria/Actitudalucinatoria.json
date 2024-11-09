@@ -1,0 +1,285 @@
+{
+  "target_rules": [
+    {
+      "literal": "actitud alucinatoria",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "actitud",
+              "actitudes",
+              "actividad"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY2": {
+            "IN": [
+              "alucinatoria",
+              "alucinatorias",
+              "alcuinatoria"
+            ]
+          }
+        }
+      }
+      ]
+    },
+    {
+      "literal": "actitud alucinatoria LEMMA",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "actitud",
+              "actividad",
+              "ACTIVIDAD",
+              "ACTIVIDADES",
+              "ACTITUDES",
+              "ACTITUD"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+         "LEMMA": {
+            "IN": [
+              "alucinatoria",
+              "ALUCINATORIA"
+            ]
+        }
+        }
+      ]
+    },
+    {
+      "literal": "habla solo",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "habla",
+              "hablando",
+              "hablar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "solo",
+              "sola"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "habla solo LEMMA",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "HABLA",
+              "HABLANDO",
+              "hablar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "solo"            
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "luce alucinada",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "luce"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "alucinada",
+              "alucinado"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "se rie solo",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "río",
+              "rio",
+              "ríe",
+              "rie"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sola",
+              "solo"
+            ]
+          }
+        }
+      ]
+    },
+
+ {
+      "literal": "se rie solo LEMMA",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "reír",
+              "río",
+              "riir",
+              "RIE",
+              "RIO"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "SOLA",
+              "solo",
+              "SOLO"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "risas inmotivadas",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "risa",
+              "risas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY2": {
+            "IN": [
+              "inmotivada",
+              "inmotivadas"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "soliloquios",
+      "category": "Actitudalucinatoria"
+    },
+
+    {
+      "literal": "risas inmotivadas LEMMA",
+      "category": "Actitudalucinatoria",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "risa",
+              "RISAS",
+              "RISA"            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "inmotivada",
+              "immotivada"            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "soliloquios",
+      "category": "Actitudalucinatoria",
+      "pattern":[
+        {"LOWER" : {
+          "IN": [
+          "soliloquios",
+          "soliloquio"
+          ]
+        }
+      }
+    ]
+    }
+  ]
+}

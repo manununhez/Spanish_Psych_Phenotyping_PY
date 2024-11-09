@@ -1,0 +1,335 @@
+{
+  "target_rules": [
+    {
+      "literal": "sensacion de tristeza",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sensacion",
+              "sensación",
+              "sentiemeintos",
+              "sentimientos"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tristeza",
+              "trsieza",
+              "trsiteza"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "sensacion de tristeza FUZZY",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sensacion",
+              "sensación",
+              "sentimientos"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "tristeza",
+              "triste"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "me da tristeza",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "haideas",
+              "ha",
+              "me",
+              "muy",
+              "ve"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tristeza",
+              "deprimí",
+              "decaída",
+              "triste"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "facies triste",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "facies",
+              "fascies",
+              "fondo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "triste",
+              "omega",
+              "depresivo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "estoy depresiva",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "una",
+              "esta",
+              "estaba",
+              "estoy",
+              "está"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresion",
+              "amrgura",
+              "deprimida",
+              "depresiva",
+              "depresivo",
+              "deprimido",
+              "abajo",
+              "triste",
+              "trsite"
+            ]
+          }
+        }
+      ]
+    },
+
+{
+      "literal": "estoy depresiva LEMMA",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "uno",
+              "estar",
+              "está"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "depresion",
+              "amrgura",
+              "amargura",
+              "depresivo",
+              "deprimido",
+              "abajo",
+              "triste"            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "literal": "deprimida",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deprimida",
+              "deprimido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "triste",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "decaimiento",
+              "decaído",
+              "decaido",
+              "decaida",
+              "decaída",
+              "melancolía",
+              "triste",
+              "tristeza",
+              "tristezas",
+              "trsiteza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bajo de ánimo",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "baja",
+              "bajo",
+              "cae",
+              "bajado"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ánimo",
+              "animo"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "bajo de ánimo LEMMA",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "bajar",
+              "bajo",
+              "caer",
+              "bajado"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT":false
+        },
+        {
+          "LEMMA": {
+            "IN": [
+              "ánimo",
+              "animo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ánimo deprimido",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "ànimo",
+              "ánimo",
+              "venia"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "triste",
+              "trise",
+              "tris",
+              "depresivo",
+              "deprimido",
+              "deprimida",
+              "bajo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "afecto triste",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "afecto"
+            ]
+          }
+        },
+        {
+          "OP": "{,6}", "IS_PUNCT":false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "triste",
+              "depresivo",
+              "deprimido",
+              "distimico",
+              "distímico"
+            ]
+          }
+        }
+      }
+      ]
+    }
+  ]
+}

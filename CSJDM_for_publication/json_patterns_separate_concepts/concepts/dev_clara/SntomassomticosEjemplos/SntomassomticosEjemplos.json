@@ -1,0 +1,254 @@
+{
+  "target_rules": [
+    {
+      "literal": "nauseas",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "nauseas",
+              "mareo",
+              "diarrea",
+              "temblor",
+              "tembrlo",
+              "tiemblo",
+              "sudar",
+              "sudoración",
+              "sudoracion",
+              "emesis",
+              "diaforesis",
+              "taquicardia",
+              "palpitaciones",
+              "hiperventilación",
+              "hiperventilacion"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "sudoración FUZZY",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "diarrea",
+              "temblor",
+              "tiemblo",
+              "sudoración",
+              "sudoracion",
+              "diaforesis",
+              "taquicardia",
+              "palpitaciones",
+              "hiperventilación",
+              "hiperventilacion"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "gastritis",
+      "category": "SntomassomticosEjemplos"
+    },
+    {
+      "literal": "disnea",
+      "category": "SntomassomticosEjemplos"
+    },
+    {
+      "literal": "migraña",
+      "category": "SntomassomticosEjemplos"
+    },
+    {
+      "literal": "cefalea",
+      "category": "SntomassomticosEjemplos"
+    },
+    {
+      "literal": "vomito",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "vomita",
+              "vomitar",
+              "vomito"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dolor de cabeza",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dolor", "dolores"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cabeza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dolor cronica",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dolor",
+              "dolores",
+              "dolro",
+              "eule",
+              "duele",
+              "vacio",
+              "temblor",
+              "sensacion",
+              "cefalea",
+              "crisis",
+              "siento",
+              "frio",
+              "tensión",
+              "tension",
+              "colon",
+              "episodios",
+              "espasmo",
+              "esta"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agudo",
+              "cronica",
+              "cronico",
+              "crónico",
+              "cabeza",
+              "lumbar",
+              "torácico",
+              "musculares",
+              "cornico",
+              "cuerpor",
+              "estómago",
+              "estomago",
+              "distal",
+              "manos",
+              "nauseas",
+              "intensa",
+              "dolorosas",
+              "amreo",
+              "irritable",
+              "emeticos",
+              "muscular",
+              "tembladera"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas somáticos",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "síntomas",
+              "sintomatologia",
+              "sintomatología",
+              "spintomas",
+              "síntomas",
+              "contenido",
+              "ideas",
+              "molestias",
+              "quejas"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vegeativos",
+              "vegetativos",
+              "neurovegetativas",
+              "presominio",
+              "somáticos",
+              "somaticos",
+              "somáticas",
+              "somaticas",
+              "somático",
+              "somatico",
+              "gástricos",
+              "dolorosas"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "síntomas somáticos FUZZY",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "sintomas",
+              "síntomas",
+              "sintomatologia",
+              "sintomatología",
+              "spintomas",
+              "contenido",
+              "molestias"
+            ]
+          }
+        }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "vegeativos",
+              "vegetativos",
+              "neurovegetativas",
+              "presominio",
+              "somáticos",
+              "somaticos",
+              "somáticas",
+              "somaticas",
+              "somático",
+              "somatico",
+              "gástricos",
+              "dolorosas"
+            ]
+          }
+        }
+        }
+      ]
+    }
+  ]
+}

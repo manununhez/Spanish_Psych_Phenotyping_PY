@@ -1,0 +1,53 @@
+{
+  "target_rules": [
+    {
+      "literal" : "mutista", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mutismo","mutista"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "muy callado", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muy","demasiado"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["callado","callada"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "mantiene en silencio", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mantiene"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["en","el"]
+          },
+          "OP" : "?"
+        },
+        {
+          "LOWER": {
+            "IN": ["callado","callada","silencio"]
+          }
+        }
+      ]
+    }
+  ]
+}

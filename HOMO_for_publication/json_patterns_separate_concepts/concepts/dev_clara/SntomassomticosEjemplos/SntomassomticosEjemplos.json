@@ -1,0 +1,246 @@
+{
+  "target_rules": [
+    {
+      "literal": "symptom",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ageusia",
+              "gastrointestinal",
+              "gastrointestinales",
+              "urinaruio",
+              "anosmia",
+              "artralgias",
+              "cefalea",
+              "mialgias",
+              "mialgia",
+              "tembladera",
+              "constipacion",
+              "constipación",
+              "diarreicas",
+              "diarrea",
+              "disnea",
+              "emesis",
+              "peptica",
+              "epigastralgia",
+              "fibromialgia",
+              "fiebre",
+              "gastritis",
+              "hipocondriaca",
+              "mareo",
+              "nauseas",
+              "odinofagia",
+              "palpitos",
+              "pirosis",
+              "vomitar",
+              "vomito",
+              "vómitos",
+              "tos",
+              "escalofrio",
+              "sentiaescalofrio",
+              "seencalambra",
+              "vasovagal",
+              "disautonomicos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no libido",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "libido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dolia todo",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dolia",
+              "duele"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "todo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pulso acelerado",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "pulso",
+              "pulsos",
+              "tencion",
+              "tención",
+              "tenciones"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "acelerado",
+              "acelerados",
+              "muscular",
+              "musculares"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cuadro de dolor",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cuadro",
+              "torax"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dolor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dolor de cabeza",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dolor",
+              "duele"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "abdominal",
+              "costal",
+              "cabeza",
+              "garganta",
+              "brazo",
+              "epigastrio",
+              "toracico",
+              "cuerpo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dificultad para respirar",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dificultad",
+              "opresion",
+              "vacio"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "respirar",
+              "pecho",
+              "estomago"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "quejas somáticas",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sintomas",
+              "síntomas",
+              "quejas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "organicos",
+              "somaticos",
+              "somatico",
+              "somatica",
+              "somaticas",
+              "somáticas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "falta de fuerza",
+      "category": "SntomassomticosEjemplos"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "target_rules": [
+    {
+      "literal" : "código fucsia",
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["código","codigo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["fucsia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "violencia sexual", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["violencia"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sexual","genero","amante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "abuso sexual", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["abuso"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sexual","amante"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "la habían violado", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["la"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["violado","violaron"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "victima de tocamiento", 
+      "category" : "Abusosexual",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["que","victima","víctima"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["tocó","toco","tocamiento"]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "target_rules": [
+    {
+      "literal": "alexitimia",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alexitimia",
+              "hipomdulado",
+              "hipomodulado",
+              "hipomodulados",
+              "hipomodulada",
+              "hipomoduladas",
+              "hipomodulaod"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "poco modulado",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "poco"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "modualdo",
+              "modulada",
+              "modulaod",
+              "modulado",
+              "modulados",
+              "moduladas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "risas insulsas",
+      "category": "Modulacinafectivaalterada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "risas",
+              "reir",
+              "reirse",
+              "sonrie",
+              "sonreir",
+              "sonrisas",
+              "sonrisa"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}", "LOWER":{"NOT_IN":[".",";","sin","no","ni"]}
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "exageradas",
+              "exagerada",
+              "exageradamente",
+              "insulsas",
+              "insulsa",
+              "mucha",
+              "mucho",
+              "toda",
+              "inapropiadas",
+              "inapropiada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "muy sensible",
+      "category": "Modulacinafectivaalterada"
+    },
+    {
+      "literal": "incontinencia afectiva",
+      "category": "Modulacinafectivaalterada"
+    },
+    {
+      "literal": "afecto inapropiado",
+      "category": "Modulacinafectivaalterada"
+    }
+  ]
+}

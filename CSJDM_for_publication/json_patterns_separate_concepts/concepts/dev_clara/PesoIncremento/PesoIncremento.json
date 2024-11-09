@@ -1,0 +1,31 @@
+{
+  "target_rules": [
+    {
+      "literal": "aumento de peso",
+      "category": "PesoIncremento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumente",
+              "aumenté",
+              "aumento",
+              "aumentó",
+              "incremento"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "peso"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

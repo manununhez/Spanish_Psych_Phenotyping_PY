@@ -1,0 +1,386 @@
+{
+  "target_rules": [
+    {
+      "literal": "agresividad",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agrede",
+              "agredio",
+              "agresión",
+              "agresion",
+              "agreison",
+              "agresiva",
+              "agresivo",
+              "agresivos",
+              "agresividad",
+              "agresivdad"
+            ]
+          }
+        }
+      ]
+    },
+      {
+      "literal": "agresividad FUZZY",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY1":{
+            "IN": [
+              "agresión",
+              "agresiónes",
+              "agresion",
+              "agresiva",
+              "agresivo",
+              "agresivos",
+              "agresividad"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "violento",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "violento",
+              "violenta",
+              "destructivo",
+              "destructiva",
+              "grosero",
+              "grosera",
+              "insulta",
+              "insultando",
+              "amenazante",
+              "amenazandolo",
+              "amenazando",
+              "mordiendo",
+              "riña"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "heteroagresión",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "heteroagresión",
+              "heteroagresion",
+              "hteroagresion",
+              "ehteroagresion",
+              "heteroagresiva",
+              "heteroagresivo",
+              "heteroagresivas",
+              "heteroagresividad",
+              "heteroagressividad",
+              "heterolesiva",
+              "heterolesivas"
+            ]
+          }
+        }
+      ]
+    },
+       {
+      "literal": "heteroagresión FUZZY",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": { "FUZZY2":{
+            "IN": [
+              "heteroagresión",
+              "heteroagresion",
+              "heteroagresiva",
+              "heteroagresivo",
+              "heteroagresivas",
+              "heteroagresividad",
+              "heterolesivas"
+            ]
+          }
+        }
+        }
+      ]
+    },
+    {
+      "literal": "golpea a",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "amenaza",
+              "amenazar",
+              "matar",
+              "mato",
+              "peleaba",
+              "pelea",
+              "arroja",
+              "alzaba",
+              "golpe",
+              "golpea",
+              "golpeo",
+              "golpes",
+              "golear",
+              "golpear",
+              "pego",
+              "pega",
+              "pegue",
+              "aporrió",
+              "lesionar",
+              "ahorcar",
+              "corto",
+              "cortar",
+              "chuzarme",
+              "coge",
+              "tirando"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "la",
+              "al",
+              "un",
+              "con",
+              "contra",
+              "mucho",
+              "pela",
+              "pelea",
+              "otras",
+              "otros",
+              "patadas",
+              "animales",
+              "cuchillos",
+              "verbalmente"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "golpea LEMMA",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LEMMA": {
+            "IN": [
+              "amenazo",
+              "amenazar",
+              "matar",
+              "pelear",
+              "pelear él",
+              "arrojar",
+              "golpe",
+              "golpear",
+              "pegar",
+              "aporreír",
+              "lesionar",
+              "ahorcar",
+              "cortar",
+              "chuzar yo",
+              "tirar",
+              "tirar yo",
+              "tirar él"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "la",
+              "al",
+              "un",
+              "con",
+              "contra",
+              "mucho",
+              "pela",
+              "pelea",
+              "otras",
+              "otros",
+              "patadas",
+              "patada",
+              "animales",
+              "cuchillos",
+              "cuchillo",
+              "verbalmente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "esta lleno de rabia",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "esta",
+              "trata"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "lleno",
+              "llena",
+              "de"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "lo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "rabia",
+              "peor"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "lleno de rabia",
+      "category": "Agresividad",
+      "pattern": [
+        
+        {
+          "LOWER": {
+            "IN": [
+              "lleno",
+              "llena",
+              "de"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "lo",
+              "con"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "rabia",
+              "peor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "con un cuchillo",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "con",
+              "le",
+              "contra"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "una",
+              "un",
+              "la",
+              "lo",
+              "saco"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "varilla",
+              "varila",
+              "machete",
+              "cuchillo",
+              "cuchillos",
+              "pared"
+            ]
+          }
+        }
+      ]
+    },
+     {
+      "literal": "daño a si misma o a otras personas",
+      "category": "Agresividad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "daño",
+              "daños",
+              "dañar",
+              "dano"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a"
+            ]
+          }
+        },
+        {
+          "OP": "?", "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "personas",
+              "persona",
+              "otros",
+              "otras",
+              "otra"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
