@@ -1,4 +1,4 @@
-# Spanish_pattern_ner_psychiatric_phenotyping
+# Spanish pattern-based named entity recognition (NER) for psychiatric phenotyping
 Repository with tool for pattern-based named entity recognition (NER) for extraction of psychiatric phenotypes from Spanish text
 
 # Patterns:
