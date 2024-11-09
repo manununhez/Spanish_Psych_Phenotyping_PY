@@ -6,3 +6,6 @@ Patterns for NER are under CSJDM/HOMO (depending on the algorithm). Each json fi
 
 # Usage:
 XXX EXAMPLE USAGE, SEE TOOL USE PYTHON FILE TO WRITE SECTION XXX
+
+# Paper:
+XXX reference to preprint/paper XXX
