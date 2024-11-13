@@ -1,0 +1,194 @@
+{
+  "target_rules": [
+    {
+      "literal" : "autoagresión", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["autagresivo", "autoagresion", "autoagresivo", "autoagresión", "autogresion",
+                   "autoagresvidad", "autoheteroagresion", 
+                   "autolesiones", "autolesivo", "autolesión", "autolesion", 
+                   "autolisis", "autolitico", "autolítico", "autolticio",
+                   "cutting"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "auto o heteroagresión", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["auto"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["hetero ", "heteroagresividad", "heteroagresion", "heteroagresión",
+                   "heteroagresivo", "herteroagresion", "heteroagresiva", "heterolitico",
+                   "agresion", "agresión", "heteroagresivos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "conductas autolíticas", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["conductas", "comportamiento", "condutas", "acting",
+                   "actitud", "episodios", "volvi", "confuta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["autolíticas", "autoagresivo", "cutting", "autolitico", "auto", "cortarme",
+              "autoagresivas", "autolesivas", "autoliticas", "autoagresion", "autoagresión",
+              "autograsion", "autolítico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ideación de auto o heteragresión", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideacion","ideación","ideas","intento","intención","intencion",
+              "cogniciones","dieación","dieacion","gestos"]
+          }
+        },
+        {
+          "OP":"{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": ["auto","autoo","uato",
+                   "autoagresión","autoagresion",
+                   "autolesivo","autolesiavs","autolesivas",
+                   "autoliticas","autolíticas","autolitica","autolitico","autoliticos","autolítico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "hacerce daño", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hacerce","hacerme","quererme"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["daño","dañar","dano","danar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "se hace daño", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ha","he","me","se"]
+          }
+        },
+        {
+          "OP":"{,4}",
+          "LOWER": {
+            "NOT_IN": ["van","pensado","haga","mal"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["daño","dano","conté","conte","corte","corto","corta","cortó",
+              "arañaba","aranaba","arranco","arrancando","arranca","cortando",
+              "cortar","cortarme","cutting","cuttig","agredo","aruña","aruna",
+              "mordía","mordia","puños","punos","tiro","rayo","enterró","enterro","pega"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "me doy golpes", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["a","me","se"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["darme","doy","empieza"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["golpes","golpear"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "cortandose el cuello", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cortandose","cortado"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["cuello","antebrazo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agredir a si misma", 
+      "category" : "Autolesin",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agredir"]
+          }
+        },
+        {
+          "OP":"{,6}"
+        },
+        {
+          "LOWER": {
+            "IN": ["misma"]
+          }
+        }
+      ]
+    }
+  ]
+}

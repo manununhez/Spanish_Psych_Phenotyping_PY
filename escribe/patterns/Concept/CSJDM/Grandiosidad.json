@@ -1,0 +1,27 @@
+{
+  "target_rules": [
+    {
+      "literal" : "grandiosidad", 
+      "category" : "Grandiosidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["grandiosidad","grandeza","gradeza","grandiosas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "megalomania", 
+      "category" : "Grandiosidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["megalomania","megalomaniacas"]
+          }
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,80 @@
+{
+  "target_rules": [
+    {
+      "literal" : "adelgazo mucho", 
+      "category" : "PesoPrdida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["adelgazo","adelgazó"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["mucho"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "esta en los huesos", 
+      "category" : "PesoPrdida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["esta","está"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["huesos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "perdida de peso", 
+      "category" : "PesoPrdida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["bajo","bajado","perdida"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["peso2","peso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "perdida de 4 kilos", 
+      "category" : "PesoPrdida",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["perdida","pérdida"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["kilo","kilos"]
+          }
+        }
+      ]
+    }
+  ]
+}

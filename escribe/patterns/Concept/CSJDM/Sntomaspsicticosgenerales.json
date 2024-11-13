@@ -1,0 +1,91 @@
+{
+  "target_rules": [
+    {
+      "literal" : "sintomas psicóticos", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sintomas","sintómas","sitnomas","síntoma","síntomas","síntoms","sitnoams","trastorno","sintomatología","sintomatologia","sintoma","sintoms"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["psicóticos","psicoticos","psicótico","psicótica","psicotica","psicotico","psicosis"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "trastorno delirante", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["trastorno"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["delirante","delirantes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "psicótica", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["piscóticos","piscoticos","psicotica","psicotico","psicoticos","psicótica","psicótico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "episodio psicótico", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cuadro","carácter","caracter","episodios","estado","fenomenos","incursiones","manifestaciones","episodio","signos"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["psicosis","psicótico","psicoticos","psicóticas","psicoticas","psicótica","psicotica","psicotico"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "psicosis tóxica", 
+      "category" : "Sntomaspsicticosgenerales",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["psicosis"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["tóxica","toxica","tóxicas","toxicas"]
+          }
+        } 
+      ],
+    }
+  ]
+}

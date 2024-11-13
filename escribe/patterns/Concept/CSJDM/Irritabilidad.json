@@ -1,0 +1,115 @@
+{
+  "target_rules": [
+    {
+      "literal" : "irritablidad", 
+      "category" : "Irritabilidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ira","irascible","irritabilida","irritabilidad","irritable","irritablidad","malgeniado","rabia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "mantengo malgeniada", 
+      "category" : "Irritabilidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mantengo","irritabilidad"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["malgeniada","fácil","facil"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "me irrito facil", 
+      "category" : "Irritabilidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me","se"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["irritando","irrito","altera","enoja"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["fácil","facil"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no se le puede decir nada", 
+      "category" : "Irritabilidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["puede","soporto"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["decir","me"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["nada","hablen"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "se enojo", 
+      "category" : "Irritabilidad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["enoja","enojo"]
+          }
+        }
+      ]
+    } 
+  ]
+}

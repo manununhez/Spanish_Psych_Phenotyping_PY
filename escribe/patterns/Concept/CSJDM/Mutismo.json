@@ -1,0 +1,77 @@
+{
+  "target_rules": [
+    {
+      "literal" : "mutismo", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mutismo","mutista"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "muy callado", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["muy"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["callado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no verbaliza respuestas", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["verbaliza"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["respuestas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no hablaba", 
+      "category" : "Mutismo",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["hablaaba","hablaba"]
+          }
+        }
+      ]
+    }
+  ]
+}

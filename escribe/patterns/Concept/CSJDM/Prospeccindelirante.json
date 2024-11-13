@@ -1,0 +1,89 @@
+{
+  "target_rules": [
+    {
+      "literal" : "iyp nulas", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["p","iyp"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["pobres","nulas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "prospección no adecuada", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["prospeccion","propseccion","prospecc","prospeccipn","prospección"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["adecuada"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "pobre introspección y prospección", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pobre","nula"]
+          }
+        },
+        {
+          "OP":"{,3}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["prospeccion","propseccion","prospecc","prospeccipn","prospección"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "propseccion pobre", 
+      "category" : "Prospeccindelirante",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["prospeccion","propseccion","prospecc","prospeccipn","prospección"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["deficientes","parciales","parcial","pobre","pobres","estrucutradas","estructurar","comprometidas","inciertas","suspendida","nula"]
+          }
+        }
+      ]
+    }
+  ]
+}

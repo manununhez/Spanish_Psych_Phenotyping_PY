@@ -1,0 +1,166 @@
+{
+  "target_rules": [
+    {
+      "literal" : "desesperanza", 
+      "category" : "Desesperanza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["desesperanza","desesperanzan","desperanza","dessesperanza"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ideas de desespernaza", 
+      "category" : "Desesperanza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideas","pensamientos"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["desesperanza","deseseranza","desesperanzas","desespernaza","desesperan"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ideas sobrevaloradas de desesperanza", 
+      "category" : "Desesperanza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideación", "ideacion","ideas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sobrevalorada", "sobrebvaloradas", "sobrevaloradas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["de"]
+          }
+        },
+        {
+          "OP":"{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": ["desesperanza","desesperanzas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no le encontraba sentido a nada", 
+      "category" : "Desesperanza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["encontraba","encuentra","encuentro","veo","tiene"]
+          },
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sentido","deseos"," alientos"]
+          },
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["nada","vida","luchar","vivir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "vida no tiene sentido", 
+      "category" : "Desesperanza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["vida"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["tiene"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sentido"]
+          }
+        }
+      ]
+    },    
+    {
+      "literal" : "no veo salida", 
+      "category" : "Desesperanza",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["veo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["salida"]
+          }
+        }
+      ]
+    }
+  ]
+}

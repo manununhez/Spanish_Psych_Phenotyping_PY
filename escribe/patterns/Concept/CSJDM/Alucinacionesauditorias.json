@@ -1,0 +1,140 @@
+{
+  "target_rules": [
+    {
+      "literal" : "alucinaciones auditivas", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alucinatoria","alucinaciones","alucionaciones"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["auditiva","auditivas","audtivas","audutivas","adutitivas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "alucinaciones visuales y/o auditivas", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alucinaciones"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["auditivas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "escucha voces", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["escucha","escuchando","escucho","oigo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["voces","voz"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "escuchar que lo llaman", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["escuchar","escucha","escucho","siento"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["llaman"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "voces que me dicen", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["voz","voces"]
+          }
+        },
+        {
+          "OP":"{,4}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["dice","decían","decía","dicen"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "esas voces", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["las","esas"]
+          }
+        },
+        {
+          "OP":"{,2}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["voces"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "voces de comando", 
+      "category" : "Alucinacionesauditorias",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["voces"]
+          }
+        },
+        {
+          "OP":"{,2}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["comando","gruesas","si"]
+          }
+        }
+      ]
+    }
+  ]
+}

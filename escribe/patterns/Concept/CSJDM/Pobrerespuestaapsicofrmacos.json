@@ -1,0 +1,190 @@
+{
+  "target_rules": [
+    {
+      "literal" : "los medicamentos no me sirven", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["la","los","el"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["fluoxetina","quetiapina","sertralina","medicamentos","medicamento"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no","me","le"]
+          },
+          "OP":"{2,2}"
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["efecto","ayuda","sirven","obrando"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sin mejoría de síntomas", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sin","control"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["controles","mejoría","parcial"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sintomas","síntomas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no nota ninguna mejoría", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sin","no"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["mejoría","mejoria"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "intensificacion de los sintomas", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["intensificacion","intensificación"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sintomas","síntomas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "síntomas han empeorado", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sintomas","síntomas","sintoma","síntoma"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["empeorado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "mala respuesta a tratamiento", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["mala","pobre","poca","sin","no"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["respuesta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["tratamiento","manejo","isrs","ambulatoria"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no ha respondido al manejo", 
+      "category" : "Pobrerespuestaapsicofrmacos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["ha","hubo"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["cedido","cedio","cedió","respondido","respondió","respondio","responde","respuesta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicación","medicamento","medicamentos","manejo"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "refractario a multiples manejos", 
+      "category" : "Pobrerespuestaapsicofrmacos"
+    },
+    {
+      "literal" : "medicamento sigue mal", 
+      "category" : "Pobrerespuestaapsicofrmacos"
+    },
+    {
+      "literal" : "no le ha servido", 
+      "category" : "Pobrerespuestaapsicofrmacos"
+    }
+  ]
+}

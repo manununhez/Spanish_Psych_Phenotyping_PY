@@ -1,0 +1,42 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hipersomnio", 
+      "category" : "SueoHipersomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipersomnia","hipersomnio"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "solo quería dormir", 
+      "category" : "SueoHipersomnio",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["solo"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["quería","queria","quiero"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["dormir"]
+          }
+        }
+      ]
+    }
+  ]
+}

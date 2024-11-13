@@ -1,0 +1,73 @@
+{
+  "target_rules": [
+    {
+      "literal" : "se va es a caminar", 
+      "category" : "Dromomana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["se"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["fue","va"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["andar","caminando","caminar"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "da la andadera", 
+      "category" : "Dromomana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["da"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["la"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["andadera"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "dromomanía", 
+      "category" : "Dromomana",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["dromomania","dromomanias","dromomanía","dromomnia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "camina mucho", 
+      "category" : "Dromomana"
+    }
+  ]
+}

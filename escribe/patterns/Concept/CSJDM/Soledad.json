@@ -1,0 +1,46 @@
+{
+  "target_rules": [
+    {
+      "literal" : "sentimiento de soledad", 
+      "category" : "Soledad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["siento","sensanción","sentimiento"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sola","solo","soledad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sentirme solo", 
+      "category" : "Soledad",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["estoy","sentirme"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["solo","sola"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "soledad", 
+      "category" : "Soledad"
+    }
+  ]
+}

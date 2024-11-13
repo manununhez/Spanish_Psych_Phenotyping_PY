@@ -1,0 +1,67 @@
+{
+  "target_rules": [
+    {
+      "literal" : "juicio de realidad debilitado", 
+      "category" : "Juiciocomprometido",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["jucio","juicio"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["critico","crítico","de","realidad","y","raciocinio","raciocino"]
+          },
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["no","sin","conservado"]
+          },
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["compormetidos","comprometido","desviado","disminuido"  ,"debil"    ,"debilitado","insuficiente",
+                   "comprometidos","compromiso" ,"desviados","deteriorados","debilitad","debilitados","pobre"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "alteración de juicio de realidad", 
+      "category" : "Juiciocomprometido",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["alteración","alteracion","compromiso","perdida","pérdida"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["juicio","estado","prueba"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["realidad","conciencia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "prueba de realidad alterada", 
+      "category" : "Juiciocomprometido"
+    }
+  ]
+}

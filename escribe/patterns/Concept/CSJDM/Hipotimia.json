@@ -1,0 +1,16 @@
+{
+  "target_rules": [
+    {
+      "literal" : "hipotímico", 
+      "category" : "Hipotimia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["hipotimia","hipotimica","hipotimico","hipotímico"]
+          }
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,45 @@
+{
+  "target_rules": [
+    {
+      "literal" : "perdida del interes", 
+      "category" : "Anhedonia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["perdida","pérdida"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["interes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "anhedonia", 
+      "category" : "Anhedonia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["achedonia","adhendonia","anhedia","anhedoni","anhedonia","anhenodnia","anheonia","anhodnia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "desanimado", 
+      "category" : "Anhedonia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["desanimado","desanimada"]
+          }
+        }
+      ]
+    }
+  ]
+}

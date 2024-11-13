@@ -1,0 +1,15 @@
+{
+  "target_rules": [
+    {
+      "literal" : "canabis", 
+      "category" : "Cannabis",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["canabis","cannabinoides","cannabis","cripi","cannabis-cocuan","marihuana"]
+          }
+        }
+      ]
+    }
+  ]
+}

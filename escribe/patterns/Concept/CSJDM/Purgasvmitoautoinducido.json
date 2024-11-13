@@ -1,0 +1,12 @@
+{
+  "target_rules": [
+    {
+      "literal" : "quiero vomitar", 
+      "category" : "Purgasvmitoautoinducido"
+    },
+    {
+      "literal" : "como vomito", 
+      "category" : "Purgasvmitoautoinducido"
+    }
+  ]
+}

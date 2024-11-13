@@ -1,0 +1,194 @@
+{
+  "target_rules": [
+    {
+      "literal" : "symptom example", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["acatisia","sialorrea","galactorrea",
+                   "pancreattis","parestesias","epistaxis"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "somnolencia", 
+      "category" : "Efectosadversos"
+    },
+    {
+      "literal" : "medicamentos no me cae bien", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["medicamentos","porque","pasta","droga","medicina"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["me","le"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["cae","haciendo","cayó","cayendo","caen"]
+          },
+          "OP":"?"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["bien","mal","produce"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "por las pastillas", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["por","cuando"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["las","tomo"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["pastillas","pastas"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "medicamentos no me sirven", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["pasta","medicamentos","pastillas"]
+          }
+        },
+        {
+          "OP":"{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": ["no","le","me"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sirve","sirven"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "efectos adversos de la medicación", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["efectos","efecto"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["adversos","adverso"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["medicación","medicamento"]
+          },
+          "OP":"?"
+        }
+      ]
+    },
+    {
+      "literal" : "temblor en la boca", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["peridas","excesiva","temblor","pesadez","rigidez",
+              "presentó","taquicardia","ganas","reacciones","embotado"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["memoria","sedación","boca","mandíbula","mandíbula",
+              "asociada","vomitar","alérgicas","farmacologicamente"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "síntomas gástricos por litio", 
+      "category" : "Efectosadversos",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["asociado","síntomas","adjudica","paciente"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["consumo","gástricos","inicio","sensible"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["litio","aripiprazol","haloperidol"]
+          }
+        }
+      ]
+    }
+  ]
+}
+

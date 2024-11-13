@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal" : "tecar", 
+      "category" : "TECAR",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["tecar","tacer"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "tec-ar", 
+      "category" : "TECAR"
+    }
+  ]
+}

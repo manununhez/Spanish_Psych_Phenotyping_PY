@@ -1,80 +1,38 @@
 import os
 import pandas as pd
-import spacy
-import medspacy
-from medspacy.ner import TargetRule
+from medspacy import load, ner
 
-
-#########################
-# LOAD DEFAULT PIPELINE #
-#########################
-
-nlp            = medspacy.load(   'es_core_news_md', 
-                                  enable=['tok2vec', 'morphologizer', 'attribute_ruler', 'lemmatizer'])
-
-sentencizer    = nlp.replace_pipe('medspacy_pyrush',        'medspacy_pyrush', 
-                                  config={'rules_path': 'json_patterns/sentencizer/rush_rules_mod.tsv'})
-
-target_matcher = nlp.replace_pipe('medspacy_target_matcher', 'medspacy_target_matcher', 
-                                  config={'rules'     : None})
-
-context        = nlp.replace_pipe('medspacy_context',        'medspacy_context', 
-                                  #config={'rules'     : None})
-                                  #config={'rules'     : 'json_patterns/context/patterns_for_ConText_by_juan_1.json'})
-                                  config={'rules'     : 'json_patterns/context/patterns_for_ConText_by_juan_2.json'})
+nlp            = load( 'es_core_news_md', enable=['tok2vec', 'morphologizer', 'attribute_ruler', 'lemmatizer'] )
+sentencizer    = nlp.replace_pipe('medspacy_pyrush',         'medspacy_pyrush',         config={'rules_path': 'escribe/patterns/RuSH_ES.tsv'})
+target_matcher = nlp.replace_pipe('medspacy_target_matcher', 'medspacy_target_matcher', config={'rules'     : None})
+context        = nlp.replace_pipe('medspacy_context',        'medspacy_context',        config={'rules'     : 'escribe/patterns/ConText_ES.json'})
 
 print("Components in NLP pipeline:")
 for p in nlp.pipe_names:
     print('\t-',p)
+
+def load_json_patterns_from_dir( json_dir ):
     
-########################
-# ADD DEFAULT PATTERNS #
-########################
+    rules_json = [json for json in os.listdir(json_dir) if '.json' in json]
+    rules      = sum([pd.read_json(json_dir+'/'+file)['target_rules'].tolist() for file in rules_json],[])
+    rules_tbl  = pd.DataFrame( rules ).assign(target_rules = [ner.TargetRule.from_dict(rule) for rule in rules])
+    rules_tbl  = rules_tbl.set_index('category').sort_index()
 
-def add_json_patterns_from_dir( direc = 'json_patterns/concepts/done/', nlp_to_update=None ):
-    
-        # get rules from json files in directory
-    rules_json = [json for json in os.listdir(direc) if '.json' in json]
-    print("N json files:\t", len(rules_json))
-
-    rules     = sum([pd.read_json(direc+'/'+file)['target_rules'].tolist() for file in rules_json],[])
-    rules_tbl = pd.DataFrame( rules ).assign(target_rules = [TargetRule.from_dict(rule) for rule in rules])
-    rules_tbl = rules_tbl.set_index('category').sort_index()
-
-    if nlp_to_update is not None:
-            # add rules to target_matcher from medspacy
-        target_matcher = nlp.replace_pipe('medspacy_target_matcher', 'medspacy_target_matcher', config={'rules':None})
-        _ = [target_matcher.add( rule ) for rule in rules_tbl['target_rules']]
-        print("N of rules : \t", len(target_matcher.rules))
-        
     return rules_tbl
 
-#########################
-# TEST ON DEFAULT TABLE #
-#########################
+def select_concepts( nlp, json_dir = 'escribe/patterns/Concept/HOMO', concepts = ['all'], verbose=True ):
 
-def run_NLP_on_records( nlp, tbl, cols, context=True ):
-    tbl = tbl.fillna('')
+    target_matcher = nlp.replace_pipe('medspacy_target_matcher', 'medspacy_target_matcher', config={'rules':None})
+    patterns = load_json_patterns_from_dir( json_dir = json_dir)
+    if 'all' in concepts:
+        _ = [target_matcher.add( rule ) for rule in patterns['target_rules']]
+    else:
+        _ = [target_matcher.add( rule ) for rule in patterns.loc[concepts,'target_rules']]
 
-    pt_ents = []
+    if verbose:
+        print("Concepts included:")
+        rules = list(set([rule.category for rule in target_matcher.rules]))
+        rules.sort()
+        _ =[print('   ',rule) for rule in rules]
 
-    for i in tbl.index:
-        for field in cols:
-
-            doc = nlp(tbl.loc[i, field])
-            for ent in doc.ents:
-
-                if context:
-                    if not ent._.is_family:
-                        if not ent._.is_hypothetical:
-                            if not ent._.is_negated:
-                #                if not ent._.is_historical:
-                #                    if not ent._.is_uncertain:
-                                pt_ents.append( [i, field, ent] )
-
-                else:
-                    pt_ents.append( [i, field, ent] )
-                    
-    pt_ents = pd.DataFrame( pt_ents, columns=['EHR_ID','field', 'ent'])
-    
-    return pt_ents
+    return nlp

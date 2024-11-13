@@ -1,0 +1,152 @@
+{
+  "target_rules": [
+    {
+      "literal" : "despierto 1 no 3 volverme a dormir", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["despierto"]
+          }
+        },
+        {
+          "OP":"?",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"{,3}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["volverme","volver"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["a"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["dormir"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "me despierto mucho", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me"]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": ["despierto"]
+          }
+        },
+        {
+          "OP":"{,3}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["mucho","noches"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "múltiples despertares", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["múltiples","multiples"]
+          }
+        },
+        {
+          "OP":"{,2}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["despertares","despetares"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "despertar precoz", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["despertar","despertares"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["precoz","frecuentes","nocturnos"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "insomnio de fragmentación", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["insomnio"]
+          }
+        },
+        {
+          "OP":"{,2}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["fragmentacion","fragmentación"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "insomnio de mantenimiento", 
+      "category" : "SueoDespertartemprano",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["insomnio"]
+          }
+        },
+        {
+          "OP":"{,4}",
+          "IS_PUNCT":false
+        },
+        {
+          "LOWER": {
+            "IN": ["mantenimiento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ratico me despierto", 
+      "category" : "SueoDespertartemprano"
+    }
+  ]
+}
+

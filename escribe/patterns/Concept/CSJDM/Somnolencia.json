@@ -1,0 +1,42 @@
+{
+  "target_rules": [
+    {
+      "literal" : "me siento sonsa", 
+      "category" : "Somnolencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sentía","siento","sentia","da"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["sueño","dormida","dormido","sonsa","sonso"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "somnolencia", 
+      "category" : "Somnolencia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["somnolencia","somnolienta","somnoliento"]
+          }
+        }
+      ]
+    }
+  ]
+}

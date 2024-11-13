@@ -1,0 +1,62 @@
+{
+  "target_rules": [
+    {
+      "literal" : "ideas delirantes de referencialidad", 
+      "category" : "Referencial",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideación","ideas"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["delirante","delirantes"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["de"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["autorreferencialidad","autoreferencialidad","referencialidad","referencia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ideas referenciales", 
+      "category" : "Referencial",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideas","ideación"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["referenciales","referencia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "referencial", 
+      "category" : "Referencial"
+    }
+  ]
+}

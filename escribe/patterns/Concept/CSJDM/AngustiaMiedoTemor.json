@@ -1,0 +1,144 @@
+{
+  "target_rules": [
+    {
+      "literal" : "sentimientos de angustia", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sentimientos","muy"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["angustia","angustiantes"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "ataques de nervios", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["me","ataques"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["nerviosos","nervios"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sensación de miedo", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["ideas","sentimientos","sensación","me"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["sobrevaloradas","de","dan"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["miedo","temor"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "actitud temerosa", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["con","actitud"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["temores","temerosa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agonía", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agonía","agonia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "angustiada", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["angustia","angustiada","angustiado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "nerviosa", 
+      "category" : "AngustiaMiedoTemor"
+    },
+    {
+      "literal" : "se preocupa mucho", 
+      "category" : "AngustiaMiedoTemor"
+    },
+    {
+      "literal" : "temeroso", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["temeroso","temerosa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "temor / miedo", 
+      "category" : "AngustiaMiedoTemor",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["miedo","temor"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "sosobra", 
+      "category" : "AngustiaMiedoTemor"
+    }
+  ]
+}

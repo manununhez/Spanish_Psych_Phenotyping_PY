@@ -1,0 +1,93 @@
+{
+  "target_rules": [
+    {
+      "literal" : "falta de energía", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sin","falta"]
+          }
+        },
+        {
+          "OP":"{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": ["energia","energía"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no quiero hacer nada", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no","sin"]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": ["logro","puedo"]
+          },
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["quiero","quiere","hacer","ganas","de","provoca"]
+          },
+          "OP":"{1,2}"
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["nada"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "no se quiere levantar de la cama", 
+      "category" : "Abulia",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["no"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["quiero","quiere"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["levantar","salir"]
+          }
+        },
+        {
+          "OP":"{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": ["cama","casa"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "abulia", 
+      "category" : "Abulia"
+    }
+  ]
+}

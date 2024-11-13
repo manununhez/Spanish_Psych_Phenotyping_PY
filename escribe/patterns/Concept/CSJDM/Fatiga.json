@@ -1,0 +1,60 @@
+{
+  "target_rules": [
+    {
+      "literal" : "sin energía", 
+      "category" : "Fatiga",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["sin"]
+          }
+        },
+        {
+          "OP":"?"
+        },
+        {
+          "LOWER": {
+            "IN": ["energía","energia"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "cansada", 
+      "category" : "Fatiga",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["cansada","cansado"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "fatiga", 
+      "category" : "Fatiga",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["fatiga","fatigabilidad"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "agotado", 
+      "category" : "Fatiga",
+      "pattern" : [
+        {
+          "LOWER": {
+            "IN": ["agotado","agotada","agotamiento"]
+          }
+        }
+      ]
+    },
+    {
+      "literal" : "astenia", 
+      "category" : "Fatiga"
+    }
+  ]
+}
