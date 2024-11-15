@@ -34,17 +34,17 @@ Load specific concepts:
 ```
 nlp = select_concepts(nlp, concepts = ['Usodesustancias','Anhedonia'])
 ```
-Load concepts from a specific source:
+Load concepts from a specific source (replace <SOURCE> with CSJDM, HOMO, or COMBINED to load algorithm patterns):
 ```
-nlp = select_concepts(nlp, json_dir = 'escribe/patterns/Concepts/SOURCE')
+nlp = select_concepts(nlp, json_dir = 'escribe/patterns/Concept/<SOURCE>')
 ```
 
 ### Extract concepts from text
 Using the NLP object
 ```
-doc = nlp('el padre biologico nunca sufre de paranoia')
-doc.ents                           # (paranoia,)
-doc.ents[0].label_                 # 'Paranoia'
+doc = nlp('el padre biologico nunca sufre de anhedonia')
+doc.ents                           # (anhedonia,)
+doc.ents[0].label_                 # 'Anhedonia'
 doc.ents[0]._.is_family            # True
 doc.ents[0]._.is_historical        # False
 doc.ents[0]._.is_hypothetical      # False
