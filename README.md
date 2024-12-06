@@ -50,6 +50,22 @@ doc.ents[0]._.is_historical        # False
 doc.ents[0]._.is_hypothetical      # False
 doc.ents[0]._.is_negated           # True
 doc.ents[0]._.is_uncertain         # False
+
+doc = nlp('paciente con antecedentes de consumo de SPA. Niega alucinaciones')
+doc.ents                           # (consumo de SPA, alucinaciones)
+doc.ents[0].label_                 # 'Abusodesustancias'
+doc.ents[0]._.is_family            # False
+doc.ents[0]._.is_historical        # True
+doc.ents[0]._.is_hypothetical      # False
+doc.ents[0]._.is_negated           # False
+doc.ents[0]._.is_uncertain         # False
+
+doc.ents[1].label_                 # 'Alucinaciones'
+doc.ents[1]._.is_family            # False
+doc.ents[1]._.is_historical        # False
+doc.ents[1]._.is_hypothetical      # False
+doc.ents[1]._.is_negated           # True
+doc.ents[1]._.is_uncertain         # False
 ```
 
 # Citation
