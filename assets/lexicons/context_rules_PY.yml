@@ -1,0 +1,116 @@
+# context_rules_PY.yml
+# Reglas tipo ConText/pyConText para español clínico (ES-PY).
+# - categories: NEGATED, UNCERTAIN, HISTORICAL, FAMILY, HYPOTHETICAL_PLAN, SEVERITY, TEMPORALITY, SECTION
+# - Cada trigger tiene: pattern (regex literal), direction (forward/backward), window (número de tokens), notes.
+# - Ajusta window según tu tokenizer (8–12 suele ir bien). Agrega/recorta según tus notas reales.
+
+language: es
+version: 0.9
+last_updated: 2025-10-05
+
+negation_triggers:
+  category: NEGATED
+  rules:
+    - {pattern: "\\bno\\b", direction: forward, window: 8}
+    - {pattern: "\\bniega(n)?\\b", direction: forward, window: 12}
+    - {pattern: "\\bsin\\b", direction: forward, window: 6}
+    - {pattern: "ausencia de", direction: forward, window: 10}
+    - {pattern: "no presenta", direction: forward, window: 10}
+    - {pattern: "no refiere", direction: forward, window: 10}
+    - {pattern: "descarta(n)?", direction: forward, window: 10}
+    - {pattern: "se descarta", direction: backward, window: 10}
+    - {pattern: "negado", direction: backward, window: 6}
+    - {pattern: "sin evidencia(s)? de", direction: forward, window: 10}
+    - {pattern: "no hay (signos|síntomas|evidencia) de", direction: forward, window: 10}
+    - {pattern: "tampoco", direction: forward, window: 6}
+    - {pattern: "nunca", direction: forward, window: 6}
+
+uncertainty_triggers:
+  category: UNCERTAIN
+  rules:
+    - {pattern: "posible(s)?", direction: forward, window: 8}
+    - {pattern: "probable(s)?", direction: forward, window: 8}
+    - {pattern: "sugiere", direction: forward, window: 8}
+    - {pattern: "podr(í|i)a", direction: forward, window: 8}
+    - {pattern: "compatible con", direction: forward, window: 8}
+    - {pattern: "a considerar", direction: forward, window: 10}
+    - {pattern: "dudoso", direction: forward, window: 8}
+    - {pattern: "en estudio", direction: forward, window: 8}
+    - {pattern: "pendiente de confirmar", direction: forward, window: 10}
+
+historical_triggers:
+  category: HISTORICAL
+  rules:
+    - {pattern: "antecedente(s)? de", direction: forward, window: 12}
+    - {pattern: "historia de", direction: forward, window: 12}
+    - {pattern: "episodios previos de", direction: forward, window: 12}
+    - {pattern: "en la infancia", direction: forward, window: 12}
+    - {pattern: "previo", direction: backward, window: 6}
+    - {pattern: "postparto", direction: forward, window: 8}
+    - {pattern: "resuelto", direction: backward, window: 6}
+    - {pattern: "remitido", direction: backward, window: 6}
+    - {pattern: "hace \\d+ (d(í|i)as|semanas|meses|años)", direction: forward, window: 8}
+
+family_triggers:
+  category: FAMILY
+  rules:
+    - {pattern: "madre con", direction: forward, window: 8}
+    - {pattern: "padre con", direction: forward, window: 8}
+    - {pattern: "herman[oa] con", direction: forward, window: 8}
+    - {pattern: "abuela? con", direction: forward, window: 8}
+    - {pattern: "t[ií]a? con", direction: forward, window: 8}
+    - {pattern: "familiar(es)? con", direction: forward, window: 8}
+    - {pattern: "en la familia", direction: forward, window: 8}
+    - {pattern: "antecedente(s)? familiar(es) de", direction: forward, window: 12}
+
+plan_hypothesis_triggers:
+  category: HYPOTHETICAL_PLAN
+  rules:
+    - {pattern: "plan", direction: backward, window: 6}
+    - {pattern: "si (empeora|aparece|persiste)", direction: forward, window: 10}
+    - {pattern: "en caso de", direction: forward, window: 10}
+    - {pattern: "iniciar|indicar|ajustar (ISRS|tratamiento)", direction: forward, window: 10}
+    - {pattern: "se sugiere|se recomienda", direction: forward, window: 10}
+    - {pattern: "controlar|vigilar (ansiedad|estado de ánimo)", direction: forward, window: 10}
+    - {pattern: "riesgo de", direction: forward, window: 10}
+    - {pattern: "prevenci[oó]n de", direction: forward, window: 10}
+
+severity_triggers:
+  category: SEVERITY
+  rules:
+    - {pattern: "\\bleve\\b", direction: bidirectional, window: 4, value: "mild"}
+    - {pattern: "moderad[ao]", direction: bidirectional, window: 4, value: "moderate"}
+    - {pattern: "sever[ao]|grave", direction: bidirectional, window: 4, value: "severe"}
+    - {pattern: "\\+\\+\\+?", direction: backward, window: 2, value: "intensity_marks"} # e.g., "ansiedad ++"
+
+temporality_triggers:
+  category: TEMPORALITY
+  rules:
+    - {pattern: "desde hace", direction: forward, window: 8}
+    - {pattern: "últim[ao]s? \\d+ (d(í|i)as|semanas|meses)", direction: forward, window: 8}
+    - {pattern: "agudo|agudizado", direction: bidirectional, window: 4}
+    - {pattern: "cr[oó]nico|cronicidad", direction: bidirectional, window: 4}
+    - {pattern: "subagudo", direction: bidirectional, window: 4}
+    - {pattern: "hoy|ayer", direction: bidirectional, window: 4}
+
+abbreviation_expansions:
+  # Útiles para normalizar mapeos antes del matcheo semántico
+  - {abbr: "IS", expands_to: "ideación suicida"}
+  - {abbr: "TAG", expands_to: "trastorno de ansiedad generalizada"}
+  - {abbr: "TDM", expands_to: "trastorno depresivo mayor"}
+  - {abbr: "ISRS", expands_to: "inhibidor selectivo de la recaptación de serotonina"}
+  - {abbr: "c/ ans.", expands_to: "con ansiedad"}
+  - {abbr: "dep.", expands_to: "depresión"}
+  - {abbr: "sx", expands_to: "síntomas"}
+
+section_scopes:
+  # Si tu parser detecta secciones, puedes forzar contexto por sección
+  - {section_regex: "(?i)^antecedentes personales", context: HISTORICAL}
+  - {section_regex: "(?i)^antecedentes familiares", context: FAMILY}
+  - {section_regex: "(?i)^(plan|conducta|indicación)", context: HYPOTHETICAL_PLAN}
+  - {section_regex: "(?i)^impresi[oó]n diagn[oó]stica", context: null}
+  - {section_regex: "(?i)^(evoluci[oó]n|progreso)", context: null}
+
+notes:
+  - "Ajustar 'window' tras pruebas con tus notas."
+  - "Agregar gatillos locales que aparezcan en tu corpus (p.ej. ‘no pega un ojo’ ya está como variante de sueño, no de negación)."
