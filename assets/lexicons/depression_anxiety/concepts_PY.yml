@@ -1,0 +1,361 @@
+# concepts_PY.yml
+# Guía de uso:
+# - Cada "concept" define un síntoma clínico canónico y sus variantes en español de Paraguay (ES-PY).
+# - "core_terms": anclas semánticas (alta precisión).
+# - "variants_py": expresiones clínicas/coloquiales, abreviaturas y ortografía común en EHR.
+# - "scales": vínculo a ítems de PHQ-9 / GAD-7 y otros (opcional BDI-II / GHQ-12) para trazabilidad clínica.
+# - "codes": completar por el equipo clínico (HPO/SNOMED/UMLS).
+# - "examples_positive/negative": frases de ejemplo para verificación rápida del alcance del concepto.
+
+language: es
+version: 0.9
+last_updated: 2025-10-05
+
+concepts:
+  # ===================== DEPRESIÓN =====================
+  - canonical_label: anhedonia
+    core_terms: ["anhedonia", "pérdida de interés", "pérdida de placer"]
+    variants_py:
+      - "ya nada me interesa"
+      - "sin ganas de hacer cosas"
+      - "no me dan ganas de nada"
+      - "perdió interés por actividades"
+      - "no le encuentra gusto a nada"
+      - "falta de motivación"
+      - "no tengo motivación"
+      - "no disfruto como antes"
+      - "apatía", "apático/a"
+      - "dejó hobbies", "abandonó actividades"
+    scales:
+      - {scale: "PHQ-9", item: 1}
+      - {scale: "BDI-II", items: [4,12,21]}
+      - {scale: "GHQ-12", items: [1,2]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Anhedonia"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Loss of interest"}
+      - {system: "UMLS", code: null, preferred_term: "Anhedonia"}
+    examples_positive:
+      - "Refiere pérdida de interés en actividades que antes le gustaban."
+      - "Sin ganas de hacer nada; no encuentra placer."
+    examples_negative:
+      - "Niega pérdida de interés."
+
+  - canonical_label: ánimo_depresivo
+    core_terms: ["ánimo bajo", "tristeza", "depresivo"]
+    variants_py:
+      - "bajón", "bajoneado/a"
+      - "me siento triste todo el tiempo"
+      - "depre", "está depre"
+      - "llanto fácil", "llora con facilidad"
+      - "desesperanza"
+      - "pena constante"
+      - "no levanta el ánimo"
+      - "no mejora el humor"
+      - "estado de ánimo decaído"
+    scales:
+      - {scale: "PHQ-9", item: 2}
+      - {scale: "BDI-II", items: [1,10]}
+      - {scale: "GHQ-12", items: [9]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Depressed mood"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Depressed mood"}
+      - {system: "UMLS", code: null, preferred_term: "Depressed mood"}
+    examples_positive:
+      - "Se encuentra con ánimo bajo desde hace semanas, con llanto fácil."
+    examples_negative:
+      - "NIEGA sentirse triste."
+
+  - canonical_label: alteraciones_sueno
+    core_terms: ["insomnio", "hipersomnia", "trastorno del sueño"]
+    variants_py:
+      - "no pega un ojo", "no concilia el sueño"
+      - "despierta varias veces", "sueño entrecortado"
+      - "duerme demasiado", "somnolencia diurna"
+      - "pesadillas", "mal dormir"
+      - "se despierta temprano", "despertar precoz"
+    scales:
+      - {scale: "PHQ-9", item: 3}
+      - {scale: "GAD-7", item: 1}  # ansiedad también suele afectar sueño
+      - {scale: "BDI-II", items: [16]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Sleep disturbance"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Sleep disorder"}
+      - {system: "UMLS", code: null, preferred_term: "Insomnia/Hypersomnia"}
+    examples_positive:
+      - "No pega un ojo desde hace 3 noches, con despertares frecuentes."
+    examples_negative:
+      - "Sin problemas de sueño."
+
+  - canonical_label: fatiga_baja_energia
+    core_terms: ["fatiga", "cansancio", "baja energía"]
+    variants_py:
+      - "sin fuerzas", "agotado/a"
+      - "no rinde", "le falta pila"
+      - "se siente exhausto", "cansancio todo el día"
+      - "no tiene energía", "me falta fuerza"
+    scales:
+      - {scale: "PHQ-9", item: 4}
+      - {scale: "BDI-II", items: [15,20]}
+      - {scale: "GHQ-12", items: [10]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Fatigue"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Tiredness"}
+      - {system: "UMLS", code: null, preferred_term: "Fatigue"}
+    examples_positive:
+      - "Refiere cansancio y falta de energía la mayor parte del día."
+    examples_negative:
+      - "Niega fatiga."
+
+  - canonical_label: apetito_peso
+    core_terms: ["pérdida de apetito", "aumento de apetito", "cambio de peso"]
+    variants_py:
+      - "no tiene hambre", "come menos"
+      - "comiendo de más", "atracones"
+      - "subió de peso", "bajó de peso"
+      - "angurria"  # *uso local para mucha hambre; validar con clínicos
+    scales:
+      - {scale: "PHQ-9", item: 5}
+      - {scale: "BDI-II", items: [18,19]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Abnormal appetite/Weight change"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Appetite change"}
+      - {system: "UMLS", code: null, preferred_term: "Appetite/Weight change"}
+    examples_positive:
+      - "Ha perdido el apetito y bajó 3 kg en un mes."
+    examples_negative:
+      - "Sin cambios de apetito."
+
+  - canonical_label: culpa_inutilidad_autoestima_baja
+    core_terms: ["culpa", "inutilidad", "autoestima baja"]
+    variants_py:
+      - "se siente inútil", "no sirve para nada"
+      - "se culpa por todo", "autoculpa"
+      - "se siente un estorbo"
+      - "poca valía personal", "muy poca autoestima"
+    scales:
+      - {scale: "PHQ-9", item: 6}
+      - {scale: "BDI-II", items: [5,6,7]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Feelings of worthlessness"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Feelings of guilt"}
+      - {system: "UMLS", code: null, preferred_term: "Worthlessness"}
+    examples_positive:
+      - "Se siente inútil y con culpa excesiva."
+    examples_negative:
+      - "Niega sentimientos de culpa."
+
+  - canonical_label: concentracion_toma_decisiones
+    core_terms: ["dificultad de concentración", "problemas para decidir"]
+    variants_py:
+      - "se distrae fácil", "no se concentra"
+      - "mente nublada", "no logra enfocarse"
+      - "le cuesta decidir", "indeciso"
+    scales:
+      - {scale: "PHQ-9", item: 7}
+      - {scale: "BDI-II", items: [13]}
+      - {scale: "GHQ-12", items: [7]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Impaired concentration"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Poor concentration"}
+      - {system: "UMLS", code: null, preferred_term: "Concentration impairment"}
+    examples_positive:
+      - "Refiere dificultad para concentrarse en el trabajo."
+    examples_negative:
+      - "Concentración conservada."
+
+  - canonical_label: agitacion_retardo_psicomotor
+    core_terms: ["agitación psicomotora", "retardo psicomotor"]
+    variants_py:
+      - "inquieto/a", "camina de un lado a otro"
+      - "habla/mueve lento", "letárgico"
+      - "se nota acelerado", "se nota enlentecido"
+    scales:
+      - {scale: "PHQ-9", item: 8}
+      - {scale: "BDI-II", items: [11,17]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Psychomotor agitation/retardation"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Psychomotor change"}
+      - {system: "UMLS", code: null, preferred_term: "Psychomotor"}
+    examples_positive:
+      - "Se observa agitación psicomotora."
+    examples_negative:
+      - "Sin agitación."
+
+  - canonical_label: ideacion_suicida_autolesion
+    core_terms: ["ideación suicida", "pensamientos de muerte", "autolesión"]
+    variants_py:
+      - "ideas de matarme", "quitarme la vida"
+      - "mejor estar muerto", "no vale la pena vivir"
+      - "cortarse", "autoagresión", "autolesiones"
+      - "IS", "ideación autolítica"
+      - "plan suicida", "intento previo"
+    scales:
+      - {scale: "PHQ-9", item: 9}
+      - {scale: "BDI-II", items: [9]}
+      - {scale: "GHQ-12", items: [12]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Suicidal ideation"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Suicidal thoughts"}
+      - {system: "UMLS", code: null, preferred_term: "Suicidal ideation"}
+    examples_positive:
+      - "Refiere ideas de quitarse la vida con plan."
+    examples_negative:
+      - "Niega ideación suicida o autolesiones."
+
+  - canonical_label: aislamiento_social_retiro
+    core_terms: ["aislamiento social", "retiro social"]
+    variants_py:
+      - "se encierra en su pieza", "no sale de casa"
+      - "evita a la gente", "se aparta de amigos"
+      - "se quedó sin ganas de ver a nadie"
+    scales:
+      - {scale: "BDI-II", items: [12]}
+      - {scale: "GHQ-12", items: [6]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Social withdrawal"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Social withdrawal"}
+      - {system: "UMLS", code: null, preferred_term: "Social withdrawal"}
+
+  - canonical_label: irritabilidad_depresiva
+    core_terms: ["irritabilidad", "malhumor"]
+    variants_py:
+      - "se enoja por todo", "mal genio"
+      - "corta paciencia", "está muy irritable"
+    scales:
+      - {scale: "BDI-II", items: [14]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Irritability"}
+
+  # ===================== ANSIEDAD / TAG =====================
+  - canonical_label: ansiedad_nerviosismo
+    core_terms: ["ansiedad", "nerviosismo", "estar en punta"]
+    variants_py:
+      - "nervios", "ataque de nervios"
+      - "me agarra ansiedad", "me pongo nerviosa/o"
+      - "angustia", "siente angustia en el pecho"
+      - "intranquilo/a", "está muy nerviosa"
+    scales:
+      - {scale: "GAD-7", item: 1}
+      - {scale: "GHQ-12", items: [5]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Anxiety"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Anxiety"}
+      - {system: "UMLS", code: null, preferred_term: "Anxiety state"}
+    examples_positive:
+      - "Ansiedad elevada, muy nerviosa en consulta."
+    examples_negative:
+      - "Niega ansiedad."
+
+  - canonical_label: preocupacion_excesiva
+    core_terms: ["preocupación excesiva", "rumiación"]
+    variants_py:
+      - "no puede parar de pensar", "se preocupa por todo"
+      - "da muchas vueltas a las cosas", "rumia"
+      - "pensamientos catastróficos"
+    scales:
+      - {scale: "GAD-7", items: [2,3]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Excessive worry"}
+      - {system: "SNOMED-CT", code: null, preferred_term: "Worry"}
+      - {system: "UMLS", code: null, preferred_term: "Worry"}
+
+  - canonical_label: dificultad_relajarse
+    core_terms: ["dificultad para relajarse", "no puede relajarse"]
+    variants_py:
+      - "no se puede calmar", "no logra relajarse"
+      - "siempre tenso/a"
+    scales:
+      - {scale: "GAD-7", item: 4}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Difficulty relaxing"}
+
+  - canonical_label: inquietud_agitacion
+    core_terms: ["inquietud", "agitación"]
+    variants_py:
+      - "no puede estar quieto/a", "mueve las piernas"
+      - "ansioso/a ++", "muy acelerado"
+    scales:
+      - {scale: "GAD-7", item: 5}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Restlessness"}
+
+  - canonical_label: irritabilidad_ansiosa
+    core_terms: ["irritabilidad por ansiedad", "fácilmente irritable"]
+    variants_py:
+      - "se irrita fácil", "se enoja rápido"
+    scales:
+      - {scale: "GAD-7", item: 6}
+
+  - canonical_label: miedo_algo_terrible
+    core_terms: ["miedo a que pase algo terrible", "aprehensión"]
+    variants_py:
+      - "siente que algo malo va a pasar"
+      - "temor constante", "fatalismo"
+    scales:
+      - {scale: "GAD-7", item: 7}
+
+  - canonical_label: sintomas_autonomicos
+    core_terms: ["palpitaciones", "temblor", "sudoración", "disnea"]
+    variants_py:
+      - "taquicardia", "opresión en el pecho"
+      - "falta de aire", "hiperventila"
+      - "hormigueos", "nudo en la garganta"
+    scales:
+      - {scale: "GHQ-12", items: [3]}
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Autonomic symptoms of anxiety"}
+
+  - canonical_label: ataques_panico
+    core_terms: ["ataque de pánico", "crisis de pánico"]
+    variants_py:
+      - "ataque de nervios con palpitaciones"
+      - "episodios de pánico", "pánico nocturno"
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Panic attack"}
+
+  - canonical_label: evitacion
+    core_terms: ["evitación", "conducta evitativa"]
+    variants_py:
+      - "evita salir", "evita reuniones"
+      - "no toma colectivos por ansiedad"
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Avoidance behavior"}
+
+  - canonical_label: hipervigilancia_sobresalto
+    core_terms: ["hipervigilancia", "sobresalto fácil"]
+    variants_py:
+      - "saltón/a", "se sobresalta por cualquier cosa"
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Hypervigilance"}
+
+  - canonical_label: tension_muscular
+    core_terms: ["tensión muscular", "contracturas por ansiedad"]
+    variants_py:
+      - "rigidez muscular", "dolor cuello/hombros por tensión"
+    codes:
+      - {system: "HPO", code: null, preferred_term: "Muscle tension"}
+
+  - canonical_label: problemas_sueno_por_ansiedad
+    core_terms: ["insomnio por ansiedad", "sueño no reparador"]
+    variants_py:
+      - "se acuesta preocupado y no concilia"
+      - "despierta ansioso/a"
+    scales:
+      - {scale: "GAD-7", item: 1}
+      - {scale: "PHQ-9", item: 3}
+
+  # ===================== METADATOS ÚTILES (no-síntoma, pero features) =====================
+  - canonical_label: consumo_psicoactivos_relacionado
+    core_terms: ["alcohol", "benzodiacepinas", "cannabis"]
+    variants_py:
+      - "toma clonazepam sin receta", "usa alplax"
+      - "fuma marihuana", "bebe mucho"
+    codes:
+      - {system: "SNOMED-CT", code: null, preferred_term: "Substance use"}
+
+  - canonical_label: estresores_psicosociales
+    core_terms: ["estrés laboral", "conflicto familiar", "duelo"]
+    variants_py:
+      - "problemas económicos", "separación", "violencia"
+    codes:
+      - {system: "SNOMED-CT", code: null, preferred_term: "Problem related to psychosocial circumstances"}
