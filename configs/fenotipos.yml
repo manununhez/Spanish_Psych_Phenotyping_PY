@@ -1,0 +1,18 @@
+# Lista de conceptos (carpetas) activas
+# Para profile=col toma escribe/patterns/Concept/<estos>
+# Para profile=py carga todo Concept_PY (se ignora esta lista)
+active_concepts:
+  - Ansiedad
+  - Depresion
+  - Sueno
+
+# (Opcional) Si más adelante querés forzar un subconjunto por archivos:
+# include_files:
+#   Ansiedad:
+#     - Ansiedad.json
+#     - AngustiaMiedoTemor.json
+#   Depresion:
+#     - Anhedonia.json
+#     - Culpa.json
+#   Sueno:
+#     - SueoInsomnio.json

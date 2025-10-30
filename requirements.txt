@@ -1,0 +1,4 @@
+spacy>=3.5
+medspacy
+pandas
+pyyaml

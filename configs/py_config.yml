@@ -1,0 +1,12 @@
+# ===============================================================
+# Config base — Perfil paraguayo (extensión futura A/D)
+# ===============================================================
+project_name: "psych_phenotyping_py"
+text_column: "texto"          # igual que arriba
+patterns_dir: "escribe/patterns/Concept_PY/"
+output_dir: "outputs/py/"
+label_mapping:
+  depression: "depresion"
+  anxiety: "ansiedad"
+  sleep: "sueno"
+

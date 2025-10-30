@@ -1,0 +1,12 @@
+# ===============================================================
+# Config base — Perfil colombiano (baseline A/D)
+# ===============================================================
+project_name: "psych_phenotyping_col"
+text_column: "texto"        # <-- ajusta si tu CSV usa otra (ej: 'original_motivo_consulta')
+patterns_dir: "escribe/patterns/Concept/"
+output_dir: "outputs/col/"
+label_mapping:
+  depression: "depresion"
+  anxiety: "ansiedad"
+  sleep: "sueno"
+
