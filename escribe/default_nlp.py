@@ -105,48 +105,73 @@ def _load_target_rules_from_dir(json_dir: Path) -> pd.DataFrame:
 
 def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True):
     """
-    Carga reglas en el target_matcher desde:
-      - json_dir (Path|str) si se provee,
-      - o desde PATTERNS_DIR_DEFAULT (Concept/) por defecto.
+    Carga reglas del target_matcher seleccionando por CARPETA (p.ej. Ansiedad/ Depresion/ Sueno),
+    no por el campo 'category' de cada regla.
 
-    'concepts' puede ser:
-      - ('all',) para cargar TODO lo que exista (Ansiedad/Depresion/Sueno),
-      - una lista/tupla de categorías de alto nivel (nombres de subcarpetas o 'category' en reglas),
-        p.ej.: ('Ansiedad','Depresion').
-
-    Retorna el mismo objeto nlp con las reglas registradas.
+    - Si concepts=('all',), carga recursivamente TODOS los .json de json_dir.
+    - Si concepts=('Ansiedad','Depresion',...), carga SOLO los .json ubicados en esas subcarpetas.
     """
-    json_dir = Path(json_dir) if json_dir else PATTERNS_DIR_DEFAULT
+    base_dir = Path(json_dir) if json_dir else PATTERNS_DIR_DEFAULT
 
     # reset del target matcher
     tm = nlp_obj.replace_pipe("medspacy_target_matcher", "medspacy_target_matcher", config={"rules": None})
 
-    rules_tbl = _load_target_rules_from_dir(json_dir)
-    if rules_tbl.empty:
-        if verbose:
-            print(f"[select_concepts] No se hallaron target_rules en: {json_dir}")
-        return nlp_obj
-
+    # 1) Armar lista de archivos a cargar según carpeta
+    json_paths = []
     if concepts and (len(concepts) == 1 and concepts[0] == "all"):
-        for tr in rules_tbl["target_rules"].tolist():
-            tm.add(tr)
+        json_paths = list(_iter_json_files(base_dir))
     else:
-        # filtrar por categoría (case-insensitive; admite prefijo de carpeta)
-        wanted = {str(c).lower() for c in concepts}
-        # categorías del DF son las 'category' de las reglas (p.ej., 'Ansiedad', 'Depresion', 'Sueno', o más específicas)
-        for cat, row in rules_tbl.groupby(level=0):
-            if cat.lower() in wanted:
-                for tr in row["target_rules"].tolist():
-                    tm.add(tr)
-        # fallback: si ninguna categoría coincidió, cargar TODO para no dejar el pipeline vacío
-        if len(tm.rules) == 0:
-            for tr in rules_tbl["target_rules"].tolist():
+        wanted = {str(c).strip() for c in concepts}
+        for c in wanted:
+            sub = base_dir / c
+            if sub.exists():
+                json_paths.extend(list(_iter_json_files(sub)))
+            else:
+                # si la subcarpeta no existe, no fallamos: avisamos
+                if verbose:
+                    print(f"[select_concepts] Aviso: no existe carpeta {sub}")
+
+    # 2) Cargar reglas de esos archivos (sin filtrar por 'category')
+    #    Reutilizamos el loader por conveniencia, pero lo llamamos por archivo
+    total_added = 0
+    cats_seen = set()
+    for fp in json_paths:
+        try:
+            j = pd.read_json(fp)
+        except ValueError:
+            try:
+                j = pd.read_json(fp, orient="records", typ="frame")
+            except Exception:
+                continue
+
+        # localizar reglas tipo dict con 'category' y 'pattern'/'literal'
+        rules = []
+        if "target_rules" in j.columns:
+            rules = j["target_rules"].tolist()
+        else:
+            for col in j.columns:
+                try:
+                    vals = j[col].tolist()
+                except Exception:
+                    vals = []
+                for v in vals:
+                    if isinstance(v, dict) and ("category" in v) and ("pattern" in v or "literal" in v):
+                        rules.append(v)
+
+        for r in rules:
+            try:
+                tr = ner.TargetRule.from_dict(r)
                 tm.add(tr)
+                cats_seen.add(tr.category)
+                total_added += 1
+            except Exception:
+                pass
 
     if verbose:
-        print("Concepts included:")
-        cats = sorted({r.category for r in tm.rules})
-        for c in cats:
-            print("   ", c)
+        print("Concepts included (by folder):", ", ".join(concepts if concepts else ["(default)"]))
+        if cats_seen:
+            print("Rule categories loaded:", ", ".join(sorted(cats_seen)))
+        print(f"Total target rules added: {total_added}")
 
     return nlp_obj
+
