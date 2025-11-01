@@ -4,7 +4,6 @@
 active_concepts:
   - Ansiedad
   - Depresion
-  - Sueno
 
 # (Opcional) Si más adelante querés forzar un subconjunto por archivos:
 # include_files:
