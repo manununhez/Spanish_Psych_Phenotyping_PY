@@ -1,61 +1,131 @@
 {
   "target_rules": [
     {
-      "literal" : "bradiquinesia", 
-      "category" : "Retrasopsicomotor",
-      "pattern" : [
+      "literal": "alteraciones psicomotoras",
+      "category": "Retrasopsicomotor",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["bradicinesia","bradiquinesia"]
+            "IN": [
+              "alteraciones",
+              "cambios",
+              "motor",
+              "motora",
+              "motoras",
+              "motores",
+              "psicomotoras",
+              "trastornos"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motor",
+              "motoras",
+              "psicomotoras",
+              "motores"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "hipoquinético", 
-      "category" : "Retrasopsicomotor",
-      "pattern" : [
+      "literal": "bradiquinesia",
+      "category": "Retrasopsicomotor",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["hipocinesia","hipocinética","hipoquinecia","hipoquinesia","hipoquinetico","hipoquinético"]
+            "IN": [
+              "bradicinesia",
+              "bradiquinesia"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "inhibición motora", 
-      "category" : "Retrasopsicomotor",
-      "pattern" : [
+      "literal": "bradiquinético",
+      "category": "Retrasopsicomotor",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["inhibición"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["motora"]
+            "IN": [
+              "bradiquinético",
+              "hipoquinética",
+              "hipoquinético"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "motora hipaoctiva", 
-      "category" : "Retrasopsicomotor",
-      "pattern" : [
+      "literal": "hipoquinético",
+      "category": "Retrasopsicomotor",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["motora"]
+            "IN": [
+              "hipocinesia",
+              "hipocinética",
+              "hipoquinecia",
+              "hipoquinesia",
+              "hipoquinetico",
+              "hipoquinético"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inhibición motora",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inhibicion",
+              "inhibición",
+              "motora"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["hipaoctiva"]
+            "IN": [
+              "motora"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "motora hipaoctiva",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipaoctiva",
+              "motora"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hipaoctiva"
+            ]
           }
         }
       ]

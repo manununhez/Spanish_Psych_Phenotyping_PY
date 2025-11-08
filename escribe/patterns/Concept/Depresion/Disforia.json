@@ -1,0 +1,86 @@
+{
+  "target_rules": [
+    {
+      "literal": "desespero",
+      "category": "Disforia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desesperada",
+              "desesperado",
+              "desespero"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "disforia",
+      "category": "Disforia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disforia",
+              "disforias",
+              "disforica",
+              "disforico",
+              "disforicoa",
+              "disfórica",
+              "disfórico",
+              "fisforia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "disfórico",
+      "category": "Disforia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disforica",
+              "disforico",
+              "disfórica",
+              "disfórico",
+              "disfório"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "estoy muy mal",
+      "category": "Disforia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "estoy",
+              "mal",
+              "muy",
+              "siento"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muy"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mal"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

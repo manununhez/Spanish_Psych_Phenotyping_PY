@@ -1,83 +1,150 @@
 {
   "target_rules": [
     {
-      "literal" : "come mucho", 
-      "category" : "Apetitoaumentode",
-      "pattern" : [
+      "literal": "aumento de frecuencia en la alimentacion",
+      "category": "Apetitoaumentode",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["come"]
+            "IN": [
+              "alimentacion",
+              "alimentación",
+              "aumento",
+              "aumentó",
+              "frecuencia"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "{,2}",
+          "IS_PUNCT": false
         },
         {
           "LOWER": {
-            "IN": ["mucho","todo"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "aumento de frecuencia en la alimentacion", 
-      "category" : "Apetitoaumentode",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["aumento","aumentó"]
+            "IN": [
+              "frecuencia"
+            ]
           }
         },
         {
-          "OP":"{,2}",
-          "IS_PUNCT":false
+          "OP": "{,2}",
+          "IS_PUNCT": false
         },
         {
           "LOWER": {
-            "IN": ["frecuencia"]
-          }
-        },
-        {
-          "OP":"{,2}",
-          "IS_PUNCT":false
-        },
-        {
-          "LOWER": {
-            "IN": ["alimentacion","alimentación"]
+            "IN": [
+              "alimentacion",
+              "alimentación"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "muchas ganas de comer", 
-      "category" : "Apetitoaumentode",
-      "pattern" : [
+      "literal": "aumento del apetito",
+      "category": "Apetitoaumentode",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["muchas"]
+            "IN": [
+              "apetito",
+              "aumento",
+              "comiendo",
+              "mucho"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "{,2}"
         },
         {
           "LOWER": {
-            "IN": ["ganas"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["comer"]
+            "IN": [
+              "apetito",
+              "mucho"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "hiperfagia", 
-      "category" : "Apetitoaumentode"
+      "literal": "come mucho",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "come",
+              "mucho",
+              "todo"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "todo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperexia",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hiperexia",
+              "hiperfagia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperfagia",
+      "category": "Apetitoaumentode"
+    },
+    {
+      "literal": "muchas ganas de comer",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "comer",
+              "ganas",
+              "muchas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ganas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "comer"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

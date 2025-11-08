@@ -1,207 +1,418 @@
 {
   "target_rules": [
     {
-      "literal" : "llanto", 
-      "category" : "Llantofcil",
-      "pattern" : [
+      "literal": "",
+      "category": "Llantofcil",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["lloradera","llanto","llora","llore","llorar"]
+            "IN": [
+              "con",
+              "cosa",
+              "cualquier",
+              "dias",
+              "el",
+              "empece",
+              "empiezo",
+              "en",
+              "facilidad",
+              "las",
+              "llanto",
+              "llora",
+              "llorando",
+              "llorar",
+              "lloro",
+              "los",
+              "mucha",
+              "noches",
+              "pasillo",
+              "por",
+              "presenta",
+              "tiempo",
+              "todo",
+              "todos"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "en",
+              "todos",
+              "todo",
+              "con",
+              "por"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "las",
+              "los",
+              "el",
+              "mucha",
+              "cualquier"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pasillo",
+              "noches",
+              "dias",
+              "tiempo",
+              "facilidad",
+              "cosa"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "llanto durante la entrevista", 
-      "category" : "Llantofcil",
-      "pattern" : [
+      "literal": "episodios de llanto",
+      "category": "Llantofcil",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["llanto","llantio"]
+            "IN": [
+              "episodios",
+              "horas",
+              "llanto",
+              "llorando",
+              "visto"
+            ]
           }
         },
         {
-          "OP":"{,3}"
+          "OP": "{,2}"
         },
         {
           "LOWER": {
-            "IN": ["evaluaci","evalulación","evalulacion","entrevista"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "llanto fácil", 
-      "category" : "Llantofcil",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["llanto","llnato","llora","lloraba","llorando","lloro","llorar"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["constante","facil","fàcil","fácil","frecuente","incontenible","incontrolable","inmotivado","ocasional","mucho"]
+            "IN": [
+              "llanto",
+              "llorando"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "", 
-      "category" : "Llantofcil",
-      "pattern" : [
+      "literal": "gime y llora",
+      "category": "Llantofcil"
+    },
+    {
+      "literal": "llanto",
+      "category": "Llantofcil",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["llorando","lloro","llora"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["en","todos","todo","con","por"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["las","los","el","mucha","cualquier"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["pasillo","noches","dias","tiempo","facilidad","cosa"]
+            "IN": [
+              "llanto",
+              "llora",
+              "lloradera",
+              "llorar",
+              "llore"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "episodios de llanto", 
-      "category" : "Llantofcil",
-      "pattern" : [
+      "literal": "llanto durante la entrevista",
+      "category": "Llantofcil",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["episodios","horas","visto"]
+            "IN": [
+              "entrevista",
+              "evaluaci",
+              "evalulacion",
+              "evalulación",
+              "llantio",
+              "llanto"
+            ]
           }
         },
         {
-          "OP":"{,2}"
+          "OP": "{,3}"
         },
         {
           "LOWER": {
-            "IN": ["llanto","llorando"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "llorar y llorar", 
-      "category" : "Llantofcil",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["llore","llorar","llanto"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["que","y"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["llore","llorar","gritos"]
+            "IN": [
+              "evaluaci",
+              "evalulación",
+              "evalulacion",
+              "entrevista"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "mantiene llorando", 
-      "category" : "Llantofcil",
-      "pattern" : [
+      "literal": "llanto facil",
+      "category": "Llantofcil",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["ganas","mantiene","paso"]
+            "IN": [
+              "contenido",
+              "copioso",
+              "espontaneo",
+              "facil",
+              "frecuente",
+              "frofuso",
+              "profuso"
+            ]
           }
         },
         {
-          "OP":"{,2}"
-        },
-        {
           "LOWER": {
-            "IN": ["llorar","llorando"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "", 
-      "category" : "Llantofcil",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["presenta","empiezo","empece"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["llanto","llorar"]
+            "IN": [
+              "copioso",
+              "facil",
+              "frecuente",
+              "contenido",
+              "espontaneo",
+              "frofuso",
+              "profuso"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "me pongo a llorar", 
-      "category" : "Llantofcil",
-      "pattern" : [
+      "literal": "llanto fácil",
+      "category": "Llantofcil",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["me","se"]
+            "IN": [
+              "constante",
+              "facil",
+              "frecuente",
+              "fàcil",
+              "fácil",
+              "incontenible",
+              "incontrolable",
+              "inmotivado",
+              "llanto",
+              "llnato",
+              "llora",
+              "lloraba",
+              "llorando",
+              "llorar",
+              "lloro",
+              "mucho",
+              "ocasional"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "{,2}"
         },
         {
           "LOWER": {
-            "IN": ["pongo","encrró","encrro","puso","encerré","encerre"]
-          }
-        },
-        {
-          "OP":"{,4}"
-        },
-        {
-          "LOWER": {
-            "IN": ["a","para"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["llorar","lorar"]
+            "IN": [
+              "constante",
+              "facil",
+              "fàcil",
+              "fácil",
+              "frecuente",
+              "incontenible",
+              "incontrolable",
+              "inmotivado",
+              "ocasional",
+              "mucho"
+            ]
           }
         }
       ]
+    },
+    {
+      "literal": "llora con facilidad",
+      "category": "Llantofcil",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "copiosamente",
+              "facilidad",
+              "facilmnete"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "facilmnete",
+              "facilidad",
+              "copiosamente"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "llorando",
+      "category": "Llantofcil",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "llanto",
+              "llorando"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "llorar y llorar",
+      "category": "Llantofcil",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "gritos",
+              "llanto",
+              "llorar",
+              "llore",
+              "que",
+              "y"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que",
+              "y"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "llore",
+              "llorar",
+              "gritos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mantiene llorando",
+      "category": "Llantofcil",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ganas",
+              "llorando",
+              "llorar",
+              "mantiene",
+              "paso"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "llorar",
+              "llorando"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me pongo a llorar",
+      "category": "Llantofcil",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "encerre",
+              "encerré",
+              "encrro",
+              "encrró",
+              "llorar",
+              "lorar",
+              "me",
+              "para",
+              "pongo",
+              "puso",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pongo",
+              "encrró",
+              "encrro",
+              "puso",
+              "encerré",
+              "encerre"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "para"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "llorar",
+              "lorar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "tendencia al llanto",
+      "category": "Llantofcil"
     }
   ]
 }

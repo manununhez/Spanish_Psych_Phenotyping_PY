@@ -1,0 +1,242 @@
+{
+  "target_rules": [
+    {
+      "literal": "deprivación del sueño",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deprivacion",
+              "deprivación",
+              "dificultad",
+              "sueno",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dificultad para conciliar el sueño",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "conciliar",
+              "consiliar",
+              "dificultad",
+              "dificultades",
+              "impide",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "consiliar",
+              "conciliar"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "insomnio",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "insmonio",
+              "insomne",
+              "insomnio",
+              "insomnioo",
+              "insomnnio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mal patrón en la iniciacion del sueño",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "iniciacion",
+              "iniciación",
+              "mal",
+              "patron",
+              "patrón",
+              "sueno",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "patrón",
+              "patron"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "iniciacion",
+              "iniciación"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no duerme",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dormir",
+              "duerme",
+              "duermen",
+              "duermo",
+              "durmiendo",
+              "ni",
+              "no",
+              "sueno",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,6}",
+          "LOWER": {
+            "NOT_IN": [
+              "trastorno",
+              "trastornos",
+              "dificultad",
+              ","
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "duermo",
+              "duerme",
+              "duermen",
+              "dormir",
+              "durmiendo",
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no logra dormir",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dormir",
+              "dormía",
+              "duerme",
+              "duermo",
+              "duormia",
+              "durmiendo",
+              "esta",
+              "está",
+              "logra",
+              "lograr",
+              "logro",
+              "logró",
+              "no",
+              "poder",
+              "pudo",
+              "puede",
+              "sin"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "esta",
+              "está",
+              "logra",
+              "lograr",
+              "logro",
+              "logró",
+              "poder",
+              "puede",
+              "pudo"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dormía",
+              "duerme",
+              "duermo",
+              "duormia",
+              "durmiendo",
+              "dormir"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

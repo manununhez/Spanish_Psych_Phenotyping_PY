@@ -1,230 +1,694 @@
 {
   "target_rules": [
     {
-      "literal" : "atentar contra mi vida", 
-      "category" : "Intentosuicida",
-      "pattern" : [
+      "literal": "alto riesgo de suicidio",
+      "category": "Intentosuicida",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["atentar","quitarme"]
+            "IN": [
+              "autoagresion",
+              "autogresion",
+              "autolesivo",
+              "sucidas",
+              "suicida",
+              "suicidar",
+              "suicidarse",
+              "suicidas",
+              "suicidi",
+              "suicidio"
+            ]
           }
         },
         {
-          "OP":"{,2}"
+          "LOWER": "riesgo"
+        },
+        {
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["mi","su","la"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["vida"]
+            "IN": [
+              "sucidas",
+              "suicida",
+              "suicidar",
+              "suicidarse",
+              "suicidi",
+              "suicidas",
+              "suicidio",
+              "autogresion",
+              "autoagresion",
+              "autolesivo"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "intento suicida", 
-      "category" : "Intentosuicida",
-      "pattern" : [
+      "literal": "atentar contra mi vida",
+      "category": "Intentosuicida",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["dos","con","multiples"]
+            "IN": [
+              "atentar",
+              "la",
+              "mi",
+              "quitarme",
+              "su",
+              "vida"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mi",
+              "su",
+              "la"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "conducta suicida",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "autogresion",
+              "autolesiva",
+              "conducta",
+              "conductas",
+              "de",
+              "intencion",
+              "intención",
+              "sucidas",
+              "suicida",
+              "suicidas",
+              "suicidi",
+              "suicidio"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
           },
-          "OP":"{,2}"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["gestos","gesto","fines","fin","i","eintento","conductas",
-                   "intenciòn","intención","intente","intento","i.",
-                   "intentos","intetno","itentos","intentado","intente","trato"]
+            "IN": [
+              "sucidas",
+              "suicida",
+              "suicidi",
+              "suicidas",
+              "suicidio",
+              "autogresion",
+              "autolesiva"
+            ]
           }
-        }, 
-        {
-          "OP":"{,3}"
-        },
+        }
+      ]
+    },
+    {
+      "literal": "intento suicida",
+      "category": "Intentosuicida",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["previo","previos","suicida","autólico","autoliticos","autolíticos",
-              "autolitica","suicidarme","autolesivo","autolitico","autolítico","autoliticas",
-              "autolíticas","suicido","letalidad","suicidas","suicidos","suicidio","suicidar"]
+            "IN": [
+              "autoagresion",
+              "autogresion",
+              "autolesivo",
+              "autolitica",
+              "autoliticas",
+              "autolitico",
+              "autoliticos",
+              "autolíticas",
+              "autolítico",
+              "autolíticos",
+              "autólico",
+              "con",
+              "conductas",
+              "dos",
+              "eintento",
+              "fin",
+              "fines",
+              "gesto",
+              "gestos",
+              "i",
+              "i.",
+              "intenciòn",
+              "intención",
+              "intentaba",
+              "intentado",
+              "intente",
+              "intento",
+              "intentos",
+              "intenté",
+              "intetno",
+              "intrento",
+              "itentos",
+              "letalidad",
+              "multiples",
+              "previo",
+              "previos",
+              "sucidas",
+              "suicida",
+              "suicidar",
+              "suicidarme",
+              "suicidarse",
+              "suicidas",
+              "suicidi",
+              "suicidio",
+              "suicido",
+              "suicidos",
+              "trato"
+            ]
           },
-          "OP":"{1,2}"
-        }
-      ]
-    },
-    {
-      "literal" : "me tome unas pastas", 
-      "category" : "Intentosuicida",
-      "pattern" : [
+          "OP": "{,2}"
+        },
         {
           "LOWER": {
-            "IN": ["me","se"]
+            "IN": [
+              "gestos",
+              "gesto",
+              "fines",
+              "fin",
+              "i",
+              "eintento",
+              "conductas",
+              "intenciòn",
+              "intención",
+              "intente",
+              "intento",
+              "i.",
+              "intentos",
+              "intetno",
+              "itentos",
+              "intentado",
+              "intente",
+              "trato"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "{,3}"
         },
         {
           "LOWER": {
-            "IN": ["puse","tome","tomé","tomado","toma","tomo"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["veneno","tabletas","cloro","límpido","pastas","poco","pastillas","pasta"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "laceración de muñecas", 
-      "category" : "Intentosuicida",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["cortado","tirarse","laceracion","cuerda","cortarle","pensado"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["antebrazo","puente","muñecas","cuerda","colgarme"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "intentó tirarse del puente", 
-      "category" : "Intentosuicida",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["intentó","intento","intente"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["tomar","tirarse","tirarme","tirarsele","tirarmele","cortar","cortarme","tomarme","de"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["cloro","puente","carro","venas","pastas","ahorcamiento"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "intoxicación autoinflingida", 
-      "category" : "Intentosuicida",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["herida","intoxicacion","intoxicacion","consumió",
-              "ingerir","ingesta","ingesta","dosis","tomar"]
-          }
-        },
-        {
-          "OP":"{,3}"
-        },
-        {
-          "LOWER": {
-            "IN": ["autoinflingida","autoinflingida","pastas","pastillas",
-              "raticida","raticida","raticida ","toxica","veneno"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "se iba a suicidar", 
-      "category" : "Intentosuicida",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["se","me"]
-          }
-        },
-        {
-          "OP":"{,3}"
-        },
-        {
-          "LOWER": {
-            "IN": ["amarro","cortó","corto","querido","iba","intenta",
-              "intentó","intento","lanza","inetento",
-              "tiró","tomó","tiro","tomo"]
-          }
-        },
-        {
-          "OP":"{,3}"
-        },
-        {
-          "LOWER": {
-            "IN": ["ahorcarse","cuello","hacer","daño","suicidar","matar",
-              "tirar","ahorcar","carro","carros","lanzar","piso","veneno"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "se cortó", 
-      "category" : "Intentosuicida",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["se","me"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["cortó","suicidara"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "me intente ahorcar", 
-      "category" : "Intentosuicida",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["me"]
-          }
-        },
-        {
-          "OP":"?"
-        },
-        {
-          "LOWER": {
-            "IN": ["corté","intente","intento","intoxique","iba","le","inetete"]
-          }
-        },
-        {
-          "OP":"{,3}"
-        },
-        {
-          "LOWER": {
-            "IN": ["venas","colgar","ahorcar","hacer","daño","luban","tirar","tirar"]
+            "IN": [
+              "previo",
+              "previos",
+              "suicida",
+              "autólico",
+              "autoliticos",
+              "autolíticos",
+              "autolitica",
+              "suicidarme",
+              "autolesivo",
+              "autolitico",
+              "autolítico",
+              "autoliticas",
+              "autolíticas",
+              "suicido",
+              "letalidad",
+              "suicidas",
+              "suicidos",
+              "suicidio",
+              "suicidar"
+            ]
           },
-          "OP":"{1,2}"
+          "OP": "{1,2}"
+        }
+      ]
+    },
+    {
+      "literal": "intenté matarme",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "intente",
+              "intento",
+              "intenté",
+              "intentó",
+              "matarme",
+              "matarse",
+              "queria",
+              "quería",
+              "quise",
+              "quiso",
+              "suicidarme",
+              "suicidarse"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidarme",
+              "matarme",
+              "suicidarse",
+              "matarse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "intentó quitarse la vida",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "intente",
+              "intento",
+              "intenté",
+              "intentó",
+              "queria",
+              "quería",
+              "quiso",
+              "quitarme",
+              "quitarse"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quitarse",
+              "quitarme"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "vida"
+        }
+      ]
+    },
+    {
+      "literal": "intentó tirarse del puente",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ahorcamiento",
+              "carro",
+              "cloro",
+              "cortar",
+              "cortarme",
+              "de",
+              "intente",
+              "intento",
+              "intentó",
+              "pastas",
+              "puente",
+              "tirarme",
+              "tirarmele",
+              "tirarse",
+              "tirarsele",
+              "tomar",
+              "tomarme",
+              "venas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tomar",
+              "tirarse",
+              "tirarme",
+              "tirarsele",
+              "tirarmele",
+              "cortar",
+              "cortarme",
+              "tomarme",
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cloro",
+              "puente",
+              "carro",
+              "venas",
+              "pastas",
+              "ahorcamiento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "intoxicación autoinflingida",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "autoinflingida",
+              "consumió",
+              "dosis",
+              "herida",
+              "ingerir",
+              "ingesta",
+              "intoxicacion",
+              "pastas",
+              "pastillas",
+              "raticida",
+              "raticida ",
+              "tomar",
+              "toxica",
+              "veneno"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "autoinflingida",
+              "autoinflingida",
+              "pastas",
+              "pastillas",
+              "raticida",
+              "raticida",
+              "raticida ",
+              "toxica",
+              "veneno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "laceración de muñecas",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "antebrazo",
+              "colgarme",
+              "cortado",
+              "cortarle",
+              "cuerda",
+              "laceracion",
+              "muñecas",
+              "pensado",
+              "puente",
+              "tirarse"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "antebrazo",
+              "puente",
+              "muñecas",
+              "cuerda",
+              "colgarme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me intente ahorcar",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ahorcar",
+              "colgar",
+              "corté",
+              "daño",
+              "hacer",
+              "iba",
+              "inetete",
+              "intente",
+              "intento",
+              "intoxique",
+              "le",
+              "luban",
+              "me",
+              "tirar",
+              "venas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "corté",
+              "intente",
+              "intento",
+              "intoxique",
+              "iba",
+              "le",
+              "inetete"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "venas",
+              "colgar",
+              "ahorcar",
+              "hacer",
+              "daño",
+              "luban",
+              "tirar",
+              "tirar"
+            ]
+          },
+          "OP": "{1,2}"
+        }
+      ]
+    },
+    {
+      "literal": "me tome unas pastas",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cloro",
+              "límpido",
+              "me",
+              "pasta",
+              "pastas",
+              "pastillas",
+              "poco",
+              "puse",
+              "se",
+              "tabletas",
+              "toma",
+              "tomado",
+              "tome",
+              "tomo",
+              "tomé",
+              "veneno"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "puse",
+              "tome",
+              "tomé",
+              "tomado",
+              "toma",
+              "tomo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "veneno",
+              "tabletas",
+              "cloro",
+              "límpido",
+              "pastas",
+              "poco",
+              "pastillas",
+              "pasta"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "para matarme",
+      "category": "Intentosuicida"
+    },
+    {
+      "literal": "se cortó",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cortó",
+              "me",
+              "se",
+              "suicidara"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cortó",
+              "suicidara"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se iba a suicidar",
+      "category": "Intentosuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ahorcar",
+              "ahorcarse",
+              "amarro",
+              "carro",
+              "carros",
+              "corto",
+              "cortó",
+              "cuello",
+              "daño",
+              "hacer",
+              "iba",
+              "inetento",
+              "intenta",
+              "intento",
+              "intentó",
+              "lanza",
+              "lanzar",
+              "matar",
+              "me",
+              "piso",
+              "querido",
+              "se",
+              "suicidar",
+              "tirar",
+              "tiro",
+              "tiró",
+              "tomo",
+              "tomó",
+              "veneno"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "amarro",
+              "cortó",
+              "corto",
+              "querido",
+              "iba",
+              "intenta",
+              "intentó",
+              "intento",
+              "lanza",
+              "inetento",
+              "tiró",
+              "tomó",
+              "tiro",
+              "tomo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ahorcarse",
+              "cuello",
+              "hacer",
+              "daño",
+              "suicidar",
+              "matar",
+              "tirar",
+              "ahorcar",
+              "carro",
+              "carros",
+              "lanzar",
+              "piso",
+              "veneno"
+            ]
+          }
         }
       ]
     }

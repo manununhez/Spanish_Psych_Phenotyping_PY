@@ -1,0 +1,595 @@
+{
+  "target_rules": [
+    {
+      "literal": "agitacion psicomotora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "agitada",
+              "agitado",
+              "cambios",
+              "inquietud",
+              "motora",
+              "motores",
+              "psicomotora",
+              "psicomotriz",
+              "trastornos"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "psicomotora",
+              "psicomotriz",
+              "motora",
+              "motores"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "agitación",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "agitada",
+              "inquietud"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "agitación psicomotora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitaciòn",
+              "agitación",
+              "catatonica",
+              "psicomotora"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "psicomotora",
+              "catatonica"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteraciones de la conducta motora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "actividad",
+              "alteraciones",
+              "aumento",
+              "conducta",
+              "esfera",
+              "motor",
+              "motora",
+              "motoras",
+              "psicomotoras"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "conducta",
+              "esfera",
+              "actividad"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motor",
+              "motoras",
+              "psicomotoras"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aumento de actividad motora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "actividad",
+              "aumento",
+              "motor",
+              "motora"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "actividad"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "contención física ",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contencion",
+              "contención",
+              "farmacologica",
+              "farmacológica",
+              "fisica",
+              "física",
+              "intervencion",
+              "intervención",
+              "policia",
+              "policía"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "farmacológica",
+              "farmacologica",
+              "física",
+              "fisica",
+              "policía",
+              "policia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "emergencia comportamental",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "comportamental",
+              "comportamentales",
+              "comrpotamental",
+              "emergencia",
+              "emergencias"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "comportamental",
+              "comrpotamental",
+              "comportamentales"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "episodio de agitacion",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "episodio",
+              "episodios",
+              "estado",
+              "estados",
+              "periodos"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agitación",
+              "agitacion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hierquinesia",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hierquinesia",
+              "hiperquineico",
+              "hiperquinesia",
+              "hiperquinetico",
+              "hiperquinético"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperbúlico",
+      "category": "Agitacinpsicomotora"
+    },
+    {
+      "literal": "hiperquinesia",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "discinecia",
+              "hipercinesia",
+              "hiperquinesia",
+              "hiperquinético"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inmovilización",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "esposado",
+              "inmovilizacion",
+              "inmovilización"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inquieto / agitado",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "agitada",
+              "agitado",
+              "inquieta",
+              "inquietas",
+              "inquieto",
+              "inquietud"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inquietud motora",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inquietud",
+              "motora",
+              "motra"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motra"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "le da un desespero",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "da",
+              "desepero",
+              "hablar",
+              "le",
+              "por",
+              "un"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "da"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "por",
+              "un"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hablar",
+              "desepero"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "muy inquieto",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "acelerado",
+              "alterado",
+              "hipetactiva",
+              "inquieta",
+              "inquieto",
+              "muy",
+              "pone"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "acelerado",
+              "alterado",
+              "inquieta",
+              "inquieto",
+              "hipetactiva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se halla",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ha",
+              "halla",
+              "hallo",
+              "me",
+              "no",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hallo",
+              "halla"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "patalear",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "patalear",
+              "pataletas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "requiere contención",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contencion",
+              "contención",
+              "dificultan",
+              "inmoviliacion",
+              "inmovilizacion",
+              "ordena",
+              "requiere",
+              "requirio",
+              "requirió",
+              "sedacion",
+              "sedación"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "contencion",
+              "contención",
+              "inmoviliacion",
+              "inmovilizacion",
+              "sedacion",
+              "sedación"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "salir corriendo",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "corriendo",
+              "salir"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "corriendo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sedacion / inmovilizacion",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "amarrarla",
+              "amarraron",
+              "contencion",
+              "contención",
+              "inmovilizacion",
+              "inmovilización",
+              "inmovilizado",
+              "inmovilizar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sedacion por agitación",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agitacion",
+              "agitación",
+              "sedacion"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "agitación",
+              "agitacion"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

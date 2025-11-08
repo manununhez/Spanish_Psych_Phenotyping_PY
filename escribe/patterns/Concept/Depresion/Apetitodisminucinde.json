@@ -1,100 +1,201 @@
 {
   "target_rules": [
     {
-      "literal" : "hiperorexia", 
-      "category" : "Apetitodisminucinde",
-      "pattern" : [
+      "literal": "bajo apetito",
+      "category": "Apetitodisminucinde",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["hiperorexia","hipofagia","hiporexia","hipoingesta","inapetencia"]
+            "IN": [
+              "apetito",
+              "bajo",
+              "come",
+              "comer",
+              "dejando",
+              "dejo",
+              "disminucion",
+              "disminución",
+              "perdida",
+              "poquito",
+              "pérdida"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "apetito",
+              "comer",
+              "come"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "bajo apetito", 
-      "category" : "Apetitodisminucinde",
-      "pattern" : [
+      "literal": "come mal",
+      "category": "Apetitodisminucinde",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["bajo","pérdida","perdida","disminución","disminucion","dejo","dejando","poquito"]
+            "IN": [
+              "alimenta",
+              "come",
+              "comiendo",
+              "mal",
+              "poco",
+              "regular"
+            ]
           }
         },
         {
-          "OP":"{,3}"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["apetito","comer","come"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "no come nada", 
-      "category" : "Apetitodisminucinde",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["no"]
-          }
-        },
-        {
-          "OP":"{,3}"
-        },
-        {
-          "LOWER": {
-            "IN": ["como","come","comer"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["nada","casi","bien"]
+            "IN": [
+              "poco",
+              "mal",
+              "regular"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "no como", 
-      "category" : "Apetitodisminucinde"
-    },
-    {
-      "literal" : "no come", 
-      "category" : "Apetitodisminucinde",
-      "pattern" : [
+      "literal": "hiperorexia",
+      "category": "Apetitodisminucinde",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["no"]
-          }
-        },
-        {
-          "OP":"{,4}"
-        },
-        {
-          "LOWER": {
-            "IN": ["come","comer","comiendo"]
+            "IN": [
+              "hiperorexia",
+              "hipofagia",
+              "hipoingesta",
+              "hiporexia",
+              "inapetencia"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "no le da hambre", 
-      "category" : "Apetitodisminucinde",
-      "pattern" : [
+      "literal": "hiporexia",
+      "category": "Apetitodisminucinde",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["no","poca"]
+            "IN": [
+              "hiporexia",
+              "hiporexico",
+              "inapetencia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no come",
+      "category": "Apetitodisminucinde",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "come",
+              "comer",
+              "comiendo",
+              "no",
+              "sin"
+            ]
           }
         },
         {
-          "OP":"{,3}"
+          "OP": "{,4}"
         },
         {
           "LOWER": {
-            "IN": ["hambre","alimentos"]
+            "IN": [
+              "come",
+              "comer",
+              "comiendo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no come nada",
+      "category": "Apetitodisminucinde",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bien",
+              "casi",
+              "come",
+              "comer",
+              "como",
+              "nada",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "como",
+              "come",
+              "comer"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "casi",
+              "bien"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no como",
+      "category": "Apetitodisminucinde"
+    },
+    {
+      "literal": "no le da hambre",
+      "category": "Apetitodisminucinde",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alimentos",
+              "hambre",
+              "no",
+              "poca"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hambre",
+              "alimentos"
+            ]
           }
         }
       ]

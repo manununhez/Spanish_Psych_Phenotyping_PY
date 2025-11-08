@@ -1,42 +1,204 @@
 {
   "target_rules": [
     {
-      "literal" : "perdida del interes", 
-      "category" : "Anhedonia",
-      "pattern" : [
+      "literal": "aburrido con la vida",
+      "category": "Anhedonia",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["perdida","pérdida"]
+            "IN": [
+              "aburrida",
+              "aburrido",
+              "vida"
+            ]
           }
         },
         {
-          "OP":"{,2}"
+          "OP": "{,3}"
         },
         {
           "LOWER": {
-            "IN": ["interes"]
+            "IN": [
+              "vida"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "anhedonia", 
-      "category" : "Anhedonia",
-      "pattern" : [
+      "literal": "anhedonia",
+      "category": "Anhedonia",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["achedonia","adhendonia","anhedia","anhedoni","anhedonia","anhenodnia","anheonia","anhodnia"]
+            "IN": [
+              "achedonia",
+              "adhendonia",
+              "anhedia",
+              "anhedoni",
+              "anhedonia",
+              "anhedonica",
+              "anhedonico",
+              "anhenodnia",
+              "anheonia",
+              "anhodnia"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "desanimado", 
-      "category" : "Anhedonia",
-      "pattern" : [
+      "literal": "dejar de disfrutaba",
+      "category": "Anhedonia",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["desanimado","desanimada"]
+            "IN": [
+              "de",
+              "dejado",
+              "dejar",
+              "disfrutaba",
+              "disfrutar"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,8}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "disfrutaba",
+              "disfrutar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desanimada",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desanimada",
+              "desanimado",
+              "sinnganas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desanimado",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desanimada",
+              "desanimado"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ganas de no hacer nada",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ganas"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": "nada"
+        }
+      ]
+    },
+    {
+      "literal": "no le saco gusto a nada",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ganas",
+              "gusto",
+              "levantar",
+              "nada",
+              "no",
+              "qiero",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "gusto",
+              "ganas",
+              "qiero",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "hablar"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "levantar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "perdida del interes",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "interes",
+              "perdida",
+              "pérdida"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "interes"
+            ]
           }
         }
       ]

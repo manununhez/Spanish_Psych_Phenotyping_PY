@@ -1,42 +1,174 @@
 {
   "target_rules": [
     {
-      "literal" : "de culpa", 
-      "category" : "Culpa",
-      "pattern" : [
+      "literal": "castigo autoimpuesto",
+      "category": "Culpa"
+    },
+    {
+      "literal": "con remordimiento",
+      "category": "Culpa",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["de","y",",","mi"]
+            "IN": [
+              "con",
+              "culpa",
+              "remordimiento"
+            ]
           }
         },
         {
-          "OP":"?"
-        },
-        {
           "LOWER": {
-            "IN": ["culpa"]
+            "IN": [
+              "culpa",
+              "remordimiento"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "culapbilidad", 
-      "category" : "Culpa",
-      "pattern" : [
+      "literal": "culapbilidad",
+      "category": "Culpa",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["culapbilidad"]
+            "IN": [
+              "culapbilidad"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "castigo autoimpuesto", 
-      "category" : "Culpa"
+      "literal": "culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "mia",
+              "mía",
+              "suya",
+              "tuya",
+              "de"
+            ]
+          }
+        }
+      ]
     },
     {
-      "literal" : "siente que hizo algo mal", 
-      "category" : "Culpa"
+      "literal": "de culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              ",",
+              "culpa",
+              "de",
+              "mi",
+              "y"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas sobrevaloradas de culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "culpa",
+              "de",
+              "ideas",
+              "sobrevaloeradas",
+              "sobrevaloradas"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sobrevaloeradas",
+              "sobrevaloradas"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sentimiento de culpa",
+      "category": "Culpa",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cogniciones",
+              "culpa",
+              "de",
+              "sentimiento"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "culpa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siente que hizo algo mal",
+      "category": "Culpa"
     }
   ]
 }

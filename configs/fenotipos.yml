@@ -4,14 +4,3 @@
 active_concepts:
   - Ansiedad
   - Depresion
-
-# (Opcional) Si más adelante querés forzar un subconjunto por archivos:
-# include_files:
-#   Ansiedad:
-#     - Ansiedad.json
-#     - AngustiaMiedoTemor.json
-#   Depresion:
-#     - Anhedonia.json
-#     - Culpa.json
-#   Sueno:
-#     - SueoInsomnio.json

@@ -1,82 +1,145 @@
 {
   "target_rules": [
     {
-      "literal" : "apatía", 
-      "category" : "Apata",
-      "pattern" : [
+      "literal": "apatía",
+      "category": "Apata",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["apatia","apatía"]
+            "IN": [
+              "apatia",
+              "apatica",
+              "apatico",
+              "apatía",
+              "apática",
+              "apático",
+              "indiferente",
+              "indifernte"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "no me importa la vida", 
-      "category" : "Apata",
-      "pattern" : [
+      "literal": "ganas de nada",
+      "category": "Apata",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["no"]
+            "IN": [
+              "emociones",
+              "ganas",
+              "nada",
+              "vacias"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "{,2}"
         },
         {
           "LOWER": {
-            "IN": ["importa","intera","interesa"]
-          }
-        },
-        {
-          "OP":"{,3}"
-        },
-        {
-          "LOWER": {
-            "IN": ["nada","vida"]
-          }
-        }
-      ]
-    },
-    {
-      "literal" : "todo me da igual", 
-      "category" : "Apata",
-      "pattern" : [
-        {
-          "LOWER": {
-            "IN": ["todo"]
-          }
-        },
-        {
-          "OP":"{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": ["da"]
-          }
-        },
-        {
-          "LOWER": {
-            "IN": ["igual"]
+            "IN": [
+              "nada",
+              "vacias"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "perdida del interes", 
-      "category" : "Apata",
-      "pattern" : [
+      "literal": "no me importa la vida",
+      "category": "Apata",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["perdida"]
+            "IN": [
+              "importa",
+              "intera",
+              "interesa",
+              "nada",
+              "no",
+              "vida"
+            ]
           }
         },
         {
-          "OP":"{,2}"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["interes"]
+            "IN": [
+              "importa",
+              "intera",
+              "interesa"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "vida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "perdida del interes",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "interes",
+              "perdida"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "interes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "todo me da igual",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "da",
+              "igual",
+              "todo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "da"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "igual"
+            ]
           }
         }
       ]

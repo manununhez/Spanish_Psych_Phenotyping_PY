@@ -1,93 +1,230 @@
 {
   "target_rules": [
     {
-      "literal" : "falta de energía", 
-      "category" : "Abulia",
-      "pattern" : [
+      "literal": "abulia",
+      "category": "Abulia"
+    },
+    {
+      "literal": "acostado todo el tiempo",
+      "category": "Abulia",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["sin","falta"]
+            "IN": [
+              "acostado",
+              "tiemp",
+              "tiempo"
+            ]
           }
         },
         {
-          "OP":"{,2}"
+          "OP": "{,3}"
         },
         {
           "LOWER": {
-            "IN": ["energia","energía"]
+            "IN": [
+              "tiemp",
+              "tiempo"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "no quiero hacer nada", 
-      "category" : "Abulia",
-      "pattern" : [
+      "literal": "falta de energía",
+      "category": "Abulia",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["no","sin"]
+            "IN": [
+              "energia",
+              "energía",
+              "falta",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "energia",
+              "energía"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no quiero hacer nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "ganas",
+              "hacer",
+              "nada",
+              "no",
+              "provoca",
+              "quiere",
+              "quiero",
+              "sin"
+            ]
           }
         },
         {
           "LOWER": {
-            "NOT_IN": ["logro","puedo"]
+            "NOT_IN": [
+              "logro",
+              "puedo"
+            ]
           },
-          "OP":"?"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["quiero","quiere","hacer","ganas","de","provoca"]
+            "IN": [
+              "quiero",
+              "quiere",
+              "hacer",
+              "ganas",
+              "de",
+              "provoca"
+            ]
           },
-          "OP":"{1,2}"
+          "OP": "{1,2}"
         },
         {
-          "OP":"?"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["nada"]
+            "IN": [
+              "nada"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "no se quiere levantar de la cama", 
-      "category" : "Abulia",
-      "pattern" : [
+      "literal": "no se quiere levantar de la cama",
+      "category": "Abulia",
+      "pattern": [
         {
           "LOWER": {
-            "IN": ["no"]
+            "IN": [
+              "cama",
+              "casa",
+              "levantar",
+              "no",
+              "quiere",
+              "quiero",
+              "salir"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["quiero","quiere"]
+            "IN": [
+              "quiero",
+              "quiere"
+            ]
           }
         },
         {
-          "OP":"?"
+          "OP": "?"
         },
         {
           "LOWER": {
-            "IN": ["levantar","salir"]
+            "IN": [
+              "levantar",
+              "salir"
+            ]
           }
         },
         {
-          "OP":"{,3}"
+          "OP": "{,3}"
         },
         {
           "LOWER": {
-            "IN": ["cama","casa"]
+            "IN": [
+              "cama",
+              "casa"
+            ]
           }
         }
       ]
     },
     {
-      "literal" : "abulia", 
-      "category" : "Abulia"
+      "literal": "sin ganas de hacer nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bañarse",
+              "ganas",
+              "hacer",
+              "no",
+              "provoca",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "provoca",
+              "ganas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "bañarse",
+              "hacer"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sinnganas de nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "sinnganas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

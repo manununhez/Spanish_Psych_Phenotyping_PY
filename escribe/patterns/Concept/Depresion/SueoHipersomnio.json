@@ -1,0 +1,98 @@
+{
+  "target_rules": [
+    {
+      "literal": "duerme mucho",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "duerme",
+              "duermo",
+              "horas",
+              "mucho"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "horas",
+              "mucho"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipersomnia",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipersomnia",
+              "hipersomnio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipersomnio",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipersomnia",
+              "hipersomnio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "solo quería dormir",
+      "category": "SueoHipersomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dormir",
+              "queria",
+              "quería",
+              "quiero",
+              "solo"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quería",
+              "queria",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dormir"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
