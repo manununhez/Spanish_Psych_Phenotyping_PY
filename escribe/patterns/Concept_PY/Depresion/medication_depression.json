@@ -1,0 +1,29 @@
+{
+    "target_rules": [
+        {
+            "literal": "antidepresivos",
+            "category": "medication_depression",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "sertralina",
+                            "zoloft",
+                            "fluoxetina",
+                            "prozac",
+                            "escitalopram",
+                            "lexapro",
+                            "paroxetina",
+                            "paxil",
+                            "amitriptilina",
+                            "tryptanol",
+                            "venlafaxina",
+                            "mirtazapina",
+                            "bupropion"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

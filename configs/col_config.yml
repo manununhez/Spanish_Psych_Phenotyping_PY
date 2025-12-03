@@ -1,6 +1,3 @@
-# ===============================================================
-# Config base — Perfil colombiano (baseline A/D)
-# ===============================================================
 label_mapping:
   anxiety: ansiedad
   depression: depresion
@@ -9,4 +6,3 @@ output_dir: outputs/col/
 patterns_dir: escribe/patterns/Concept/
 project_name: psych_phenotyping_col
 text_column: texto_rb
-

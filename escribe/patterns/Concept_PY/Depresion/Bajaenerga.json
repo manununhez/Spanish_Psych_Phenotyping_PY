@@ -1,0 +1,144 @@
+{
+  "target_rules": [
+    {
+      "literal": "adinamia",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "adinamia",
+              "adinmia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "decaimiento",
+      "category": "Bajaenerga"
+    },
+    {
+      "literal": "falta de energía",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "energia",
+              "energía",
+              "falta",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "energía",
+              "energia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipobulia",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "adinamia",
+              "anergia",
+              "astenia",
+              "hipoabulia",
+              "hipoabulidad",
+              "hipobulia",
+              "hipobulica",
+              "hipobulico",
+              "hipobúlica",
+              "hipobúlico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mantiene débil",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "debil",
+              "débil",
+              "mantiene"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "débil",
+              "debil"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sensacion de cansancio",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cansancio",
+              "sensacion"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cansancio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sin fuerzas",
+      "category": "Bajaenerga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "fuerza",
+              "fuerzas",
+              "sin"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fuerzas",
+              "fuerza"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

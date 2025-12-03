@@ -1,6 +1,3 @@
-# Lista de conceptos (carpetas) activas
-# Para profile=col toma escribe/patterns/Concept/<estos>
-# Para profile=py carga todo Concept_PY (se ignora esta lista)
 active_concepts:
-  - Ansiedad
-  - Depresion
+- Ansiedad
+- Depresion

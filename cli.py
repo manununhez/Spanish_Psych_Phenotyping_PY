@@ -44,13 +44,13 @@ def collapse_to_AD(doc):
     dep_hits, anx_hits, slp_hits = 0, 0, 0
     dep_terms, anx_terms, slp_terms = [], [], []
     for ent in getattr(doc, "ents", []):
-        if getattr(ent._, "is_negated", False):
-            continue
+        # if getattr(ent._, "is_negated", False):
+        #     continue
         lab = ent.label_.lower()
         # Agrupación por nombre de label. Ajusta si tus labels cambian:
-        if "depres" in lab or "anhedon" in lab or "suicid" in lab or "culpa" in lab or "desesper" in lab or "apat" in lab or "psicomot" in lab or "concentr" in lab or "triste" in lab:
+        if "depres" in lab or "anhedon" in lab or "suicid" in lab or "culpa" in lab or "desesper" in lab or "apat" in lab or "psicomot" in lab or "concentr" in lab or "triste" in lab or "medication_depression" in lab:
             dep_hits += 1; dep_terms.append(ent.label_)
-        elif "ansie" in lab or "miedo" in lab or "temor" in lab or "angu" in lab or "irritab" in lab or "evit" in lab or "pan" in lab or "vigil" in lab:
+        elif "ansie" in lab or "miedo" in lab or "temor" in lab or "angu" in lab or "irritab" in lab or "evit" in lab or "pan" in lab or "vigil" in lab or "medication_anxiety" in lab:
             anx_hits += 1; anx_terms.append(ent.label_)
         elif "sue" in lab or "insom" in lab or "hipersom" in lab:
             slp_hits += 1; slp_terms.append(ent.label_)

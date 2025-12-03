@@ -1,0 +1,120 @@
+{
+  "target_rules": [
+    {
+      "literal": "desengaño la vida",
+      "category": "Desesperanza",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desengañada",
+              "desengañado",
+              "desengaño",
+              "vida"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desesperanza",
+      "category": "Desesperanza",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deseperanza",
+              "desesperanza",
+              "desesperanzada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sin sentido de vida",
+      "category": "Desesperanza",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "perdido",
+              "razones",
+              "sentido",
+              "sin",
+              "vida",
+              "vivir"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sentido",
+              "razones"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vida",
+              "vivir"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "vida no tiene sentido",
+      "category": "Desesperanza",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "sentido",
+              "sin",
+              "vida"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sentido"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

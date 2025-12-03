@@ -1,0 +1,62 @@
+{
+  "target_rules": [
+    {
+      "literal": "aumento de peso",
+      "category": "PesoIncremento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aumente",
+              "aumento",
+              "aumenté",
+              "aumentó",
+              "peso"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "peso"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sobrepeso",
+      "category": "PesoIncremento"
+    },
+    {
+      "literal": "subió de peso",
+      "category": "PesoIncremento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "peso",
+              "sube",
+              "subido",
+              "subiò",
+              "subió"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "peso"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "target_rules": [
+    {
+      "literal": "afecto poco reactivo",
+      "category": "Hipotimia"
+    },
+    {
+      "literal": "hipotímica",
+      "category": "Hipotimia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipotimcia",
+              "hipotimia",
+              "hipotimica",
+              "hipotimico",
+              "hipotimicos",
+              "hipotímica",
+              "hipotímico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipotímico",
+      "category": "Hipotimia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipotimia",
+              "hipotimica",
+              "hipotimico",
+              "hipotímico"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

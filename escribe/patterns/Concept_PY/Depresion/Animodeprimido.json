@@ -1,0 +1,483 @@
+{
+  "target_rules": [
+    {
+      "literal": "aburrido con la vida",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aburrida",
+              "aburrido",
+              "vida"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "afecto triste",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "afecto",
+              "depresivo",
+              "deprimido",
+              "deprsivo",
+              "distimico",
+              "distímico",
+              "triste",
+              "trsite"
+            ]
+          }
+        },
+        {
+          "OP": "{,6}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "triste",
+              "trsite",
+              "depresivo",
+              "deprimido",
+              "deprsivo",
+              "distimico",
+              "distímico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "animo depresivo",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "decaida",
+              "decaido",
+              "decaída",
+              "decaído",
+              "depresivo",
+              "deprimido",
+              "fondo",
+              "todno",
+              "tono",
+              "triste",
+              "ánimo"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "triste",
+              "decaido",
+              "decaído",
+              "decaida",
+              "decaída",
+              "deprimido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bajo de ánimo",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "baja",
+              "bajado",
+              "bajo",
+              "cae",
+              "ánimo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ánimo",
+              "animo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "deprimida",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "deprimida",
+              "deprimido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desanimado",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aburición",
+              "aburricion",
+              "desanimada",
+              "desanimado"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "estoy depresiva",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "abajo",
+              "amrgura",
+              "depresion",
+              "depresiva",
+              "depresivo",
+              "deprimida",
+              "deprimido",
+              "esta",
+              "estaba",
+              "estoy",
+              "está",
+              "triste",
+              "trsite",
+              "una"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresion",
+              "amrgura",
+              "deprimida",
+              "depresiva",
+              "depresivo",
+              "deprimido",
+              "abajo",
+              "triste",
+              "trsite"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "facies depresiva",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "facies",
+              "fascies",
+              "fase",
+              "tristeza"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "tristeza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "facies triste",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "depresivo",
+              "facies",
+              "fascies",
+              "fondo",
+              "omega",
+              "triste"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "triste",
+              "omega",
+              "depresivo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "idea de tristeza",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "idea",
+              "ideas",
+              "mucha",
+              "sentir",
+              "tristeza"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tristeza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "llanto contenido",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contenido",
+              "llanto"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "contenido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me da tristeza",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "decaída",
+              "deprimí",
+              "ha",
+              "haideas",
+              "me",
+              "muy",
+              "triste",
+              "tristeza",
+              "ve"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tristeza",
+              "deprimí",
+              "decaída",
+              "triste"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no es feliz",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "feliz",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "feliz"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "nostálgica",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "melancolica",
+              "melancòlica",
+              "melancólica",
+              "nostalgica",
+              "nostálgica"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sensacion de tristeza",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sensacion",
+              "sensación",
+              "sentiemeintos",
+              "sentimientos",
+              "tristeza",
+              "trsieza",
+              "trsiteza"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tristeza",
+              "trsieza",
+              "trsiteza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "triste",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "decaimiento",
+              "decaída",
+              "decaído",
+              "melancolía",
+              "triste",
+              "tristeza",
+              "tristezas",
+              "trsite",
+              "trsiteza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ánimo deprimido",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "bajo",
+              "depresivo",
+              "deprimida",
+              "deprimido",
+              "tris",
+              "trise",
+              "triste",
+              "venia",
+              "ànimo",
+              "ánimo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "triste",
+              "trise",
+              "tris",
+              "depresivo",
+              "deprimido",
+              "deprimida",
+              "bajo"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+    "target_rules": [
+        {
+            "literal": "ansioliticos",
+            "category": "medication_anxiety",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "clonazepam",
+                            "clona",
+                            "rivotril",
+                            "alprazolam",
+                            "alplax",
+                            "diazepam",
+                            "valium",
+                            "lorazepam",
+                            "trapax",
+                            "bromazepam",
+                            "lexotanil",
+                            "cnz"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
