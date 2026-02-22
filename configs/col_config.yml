@@ -1,8 +1,0 @@
-label_mapping:
-  anxiety: ansiedad
-  depression: depresion
-  sleep: sueno
-output_dir: outputs/col/
-patterns_dir: escribe/patterns/Concept/
-project_name: psych_phenotyping_col
-text_column: texto_rb
