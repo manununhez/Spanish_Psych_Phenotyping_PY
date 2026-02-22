@@ -478,6 +478,22 @@
           }
         }
       ]
+    },
+    {
+      "literal": "bajoneada",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bajoneada",
+              "bajoneado",
+              "desgano",
+              "ñembotavy"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
