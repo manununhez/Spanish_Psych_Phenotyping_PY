@@ -1,0 +1,67 @@
+{
+    "target_rules": [
+        {
+            "label": "Alcohol",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "alcohol",
+                            "alcoholismo",
+                            "etilismo",
+                            "etilista",
+                            "bebedor",
+                            "ebrio",
+                            "borracho",
+                            "embriaguez"
+                        ]
+                    }
+                }
+            ],
+            "category": "Contexto"
+        },
+        {
+            "label": "Alcohol",
+            "pattern": [
+                {
+                    "LOWER": "consumo"
+                },
+                {
+                    "LOWER": "de"
+                },
+                {
+                    "LOWER": "bebidas"
+                }
+            ],
+            "category": "Contexto"
+        },
+        {
+            "label": "Alcohol",
+            "pattern": [
+                {
+                    "LOWER": "dependencia"
+                },
+                {
+                    "LOWER": "al"
+                },
+                {
+                    "LOWER": "alcohol"
+                }
+            ],
+            "category": "Contexto"
+        },
+        {
+            "label": "Alcohol",
+            "pattern": [
+                {
+                    "IS_PUNCT": false,
+                    "OP": "?"
+                },
+                {
+                    "LOWER": "oh"
+                }
+            ],
+            "category": "Contexto"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "target_rules": [
+        {
+            "label": "Agresividad",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "agresividad",
+                            "agresivo",
+                            "agresiva",
+                            "violencia",
+                            "violento",
+                            "violenta",
+                            "hostilidad",
+                            "hostil"
+                        ]
+                    }
+                }
+            ],
+            "category": "Contexto"
+        },
+        {
+            "label": "Agresividad",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "heteroagresividad",
+                            "heteroagresivo",
+                            "heteroagresiva",
+                            "peleas",
+                            "golpes",
+                            "insultos"
+                        ]
+                    }
+                }
+            ],
+            "category": "Contexto"
+        },
+        {
+            "label": "Agresividad",
+            "pattern": [
+                {
+                    "LOWER": "maltrato"
+                },
+                {
+                    "LOWER": {
+                        "IN": [
+                            "fisico",
+                            "físico",
+                            "psicológico",
+                            "psicologico"
+                        ]
+                    }
+                }
+            ],
+            "category": "Contexto"
+        },
+        {
+            "label": "Agresividad",
+            "pattern": [
+                {
+                    "LOWER": "crisis"
+                },
+                {
+                    "LOWER": "de"
+                },
+                {
+                    "LOWER": "agresividad"
+                }
+            ],
+            "category": "Contexto"
+        }
+    ]
+}
