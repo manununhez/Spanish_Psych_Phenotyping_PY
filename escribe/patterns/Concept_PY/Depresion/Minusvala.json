@@ -1,0 +1,67 @@
+{
+    "target_rules": [
+        {
+            "label": "Minusvala",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "minusvalia",
+                            "minusvalía",
+                            "desvalimiento",
+                            "desvalido"
+                        ]
+                    }
+                }
+            ],
+            "category": "Minusvala"
+        },
+        {
+            "label": "Minusvala",
+            "pattern": [
+                {
+                    "LOWER": "ya"
+                },
+                {
+                    "LOWER": "no"
+                },
+                {
+                    "LOWER": {
+                        "IN": [
+                            "sirvo",
+                            "sirve"
+                        ]
+                    }
+                }
+            ],
+            "category": "Minusvala"
+        },
+        {
+            "label": "Minusvala",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "siendo",
+                            "siento",
+                            "sentía"
+                        ]
+                    }
+                },
+                {
+                    "OP": "{,3}"
+                },
+                {
+                    "LOWER": {
+                        "IN": [
+                            "estorbo",
+                            "boba",
+                            "inservible"
+                        ]
+                    }
+                }
+            ],
+            "category": "Minusvala"
+        }
+    ]
+}

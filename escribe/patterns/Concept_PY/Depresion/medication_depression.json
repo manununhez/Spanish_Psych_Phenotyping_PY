@@ -1,29 +1,29 @@
 {
     "target_rules": [
         {
-            "literal": "antidepresivos",
-            "category": "medication_depression",
+            "label": "med_depresion",
             "pattern": [
                 {
                     "LOWER": {
                         "IN": [
-                            "sertralina",
-                            "zoloft",
                             "fluoxetina",
-                            "prozac",
-                            "escitalopram",
-                            "lexapro",
-                            "paroxetina",
-                            "paxil",
-                            "amitriptilina",
-                            "tryptanol",
+                            "flt",
+                            "flt20",
+                            "fxt",
+                            "vlf",
                             "venlafaxina",
-                            "mirtazapina",
-                            "bupropion"
+                            "sertralina",
+                            "sert",
+                            "esc",
+                            "escitalopram",
+                            "trazodona",
+                            "tra",
+                            "traz"
                         ]
                     }
                 }
-            ]
+            ],
+            "category": "medication_depression"
         }
     ]
 }

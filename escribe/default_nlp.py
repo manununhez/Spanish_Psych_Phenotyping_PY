@@ -6,7 +6,7 @@ from medspacy import load as ms_load, ner
 
 # --- Rutas base relativas a este archivo ---
 HERE = Path(__file__).resolve().parent
-PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept"          # <-- tu filtro A/D/Sueno
+PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept_PY"          # <-- tu filtro A/D/Sueno
 RUSH_RULES = HERE / "patterns" / "RuSH_ES.tsv"
 CONTEXT_RULES = HERE / "patterns" / "ConText_ES.json"
 

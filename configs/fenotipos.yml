@@ -1,3 +1,8 @@
-active_concepts:
-- Ansiedad
-- Depresion
+# configs/fenotipos.yml
+dataset: "IPS_Paraguay"
+language: "py"
+concepts:
+  - "Ansiedad"
+  - "Depresion"
+  - "Sueno"
+  - "Contexto

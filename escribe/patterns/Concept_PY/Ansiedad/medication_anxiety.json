@@ -1,34 +1,42 @@
 {
     "target_rules": [
         {
-            "literal": "ansioliticos",
-            "category": "medication_anxiety",
+            "label": "med_ansiedad",
             "pattern": [
                 {
                     "LOWER": {
                         "IN": [
                             "clonazepam",
-                            "clona",
-                            "rivotril",
-                            "alprazolam",
-                            "alplax",
-                            "diazepam",
-                            "valium",
-                            "lorazepam",
-                            "trapax",
-                            "bromazepam",
-                            "lexotanil",
+                            "clz",
+                            "clz2",
                             "cnz",
-                            "quetiapina",
-                            "qtp",
-                            "eszopiclona",
-                            "fluoxetina",
-                            "fxt",
-                            "prozac"
+                            "alprazolam",
+                            "alpraz",
+                            "alp",
+                            "diazepam",
+                            "dzp"
                         ]
                     }
                 }
-            ]
+            ],
+            "category": "medication_anxiety"
+        },
+        {
+            "label": "med_ansiedad",
+            "pattern": [
+                {
+                    "LOWER": {
+                        "IN": [
+                            "quetiapina",
+                            "qtp",
+                            "queti",
+                            "lvp",
+                            "lvp25"
+                        ]
+                    }
+                }
+            ],
+            "category": "medication_anxiety"
         }
     ]
 }
