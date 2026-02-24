@@ -9,7 +9,8 @@
                             "minusvalia",
                             "minusvalía",
                             "desvalimiento",
-                            "desvalido"
+                            "desvalido",
+                            "desvalida"
                         ]
                     }
                 }
@@ -20,7 +21,9 @@
             "label": "Minusvala",
             "pattern": [
                 {
-                    "LOWER": "ya"
+                    "LOWER": {
+                        "IN": ["ya", "ahora"]
+                    }
                 },
                 {
                     "LOWER": "no"
@@ -29,7 +32,8 @@
                     "LOWER": {
                         "IN": [
                             "sirvo",
-                            "sirve"
+                            "sirve",
+                            "sirven"
                         ]
                     }
                 }
@@ -44,7 +48,9 @@
                         "IN": [
                             "siendo",
                             "siento",
-                            "sentía"
+                            "siente",
+                            "sentía",
+                            "sentirse"
                         ]
                     }
                 },
@@ -55,8 +61,12 @@
                     "LOWER": {
                         "IN": [
                             "estorbo",
-                            "boba",
-                            "inservible"
+                            "carga",
+                            "inutil",
+                            "inútil",
+                            "inutilidad",
+                            "desechable",
+                            "basura"
                         ]
                     }
                 }
