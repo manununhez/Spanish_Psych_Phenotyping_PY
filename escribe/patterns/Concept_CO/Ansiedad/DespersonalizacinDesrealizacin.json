@@ -1,0 +1,123 @@
+{
+  "target_rules": [
+    {
+      "literal": "despersonalización",
+      "category": "DespersonalizacinDesrealizacin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "despersonalizacion",
+              "despersonalización",
+              "desrealizacion",
+              "desrealización"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "desrealización",
+      "category": "DespersonalizacinDesrealizacin"
+    },
+    {
+      "literal": "salgo del cuerpo",
+      "category": "DespersonalizacinDesrealizacin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cuerpo",
+              "salgo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cuerpo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento que yo no estoy viva",
+      "category": "DespersonalizacinDesrealizacin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "estoy",
+              "no",
+              "que",
+              "siento",
+              "viva"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estoy"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "viva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "trastorno disociativo",
+      "category": "DespersonalizacinDesrealizacin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disociativo",
+              "disociativos",
+              "sintomas",
+              "trastorno"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "disociativos",
+              "disociativo"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "target_rules": [
+    {
+      "literal": "alteraciones psicomotoras",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteraciones",
+              "cambios",
+              "motor",
+              "motora",
+              "motoras",
+              "motores",
+              "psicomotoras",
+              "trastornos"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora",
+              "motor",
+              "motoras",
+              "psicomotoras",
+              "motores"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bradiquinesia",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bradicinesia",
+              "bradiquinesia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "bradiquinético",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bradiquinético",
+              "hipoquinética",
+              "hipoquinético"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipoquinético",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipocinesia",
+              "hipocinética",
+              "hipoquinecia",
+              "hipoquinesia",
+              "hipoquinetico",
+              "hipoquinético"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inhibición motora",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "inhibicion",
+              "inhibición",
+              "motora"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "motora"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "motora hipaoctiva",
+      "category": "Retrasopsicomotor",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipaoctiva",
+              "motora"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hipaoctiva"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

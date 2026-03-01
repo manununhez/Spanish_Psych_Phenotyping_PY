@@ -1,6 +1,86 @@
 {
   "target_rules": [
     {
+      "literal": "ansiedad/ansioso con ancla clínica",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "refiere",
+              "presenta",
+              "consulta",
+              "manifiesta",
+              "describe",
+              "comenta",
+              "señala",
+              "acude"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansioso",
+              "ansiosa",
+              "ansiosos",
+              "ansiosas",
+              "ansiad",
+              "ansiadad",
+              "ansiedsd",
+              "anisiosa",
+              "asnioso"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ansiedad/ansioso con intensidad",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansioso",
+              "ansiosa",
+              "ansiosos",
+              "ansiosas",
+              "ansiad",
+              "ansiadad",
+              "ansiedsd",
+              "anisiosa",
+              "asnioso"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucha",
+              "mucho",
+              "intensa",
+              "intenso",
+              "marcada",
+              "severa",
+              "severo",
+              "constante",
+              "generalizada",
+              "persistente"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "literal": "ataque de ansiedad",
       "category": "Sntomasansiososgenerales",
       "pattern": [

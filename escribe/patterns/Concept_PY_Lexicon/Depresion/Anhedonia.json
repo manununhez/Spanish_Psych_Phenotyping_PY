@@ -1,0 +1,50 @@
+{
+  "target_rules": [
+    {
+      "literal": "Desinterés",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desinteres",
+              "desinterés"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Pérdida",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "perdida",
+              "pérdida"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "No da gusto",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "da"
+        },
+        {
+          "LOWER": "gusto"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

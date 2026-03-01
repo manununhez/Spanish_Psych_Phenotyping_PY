@@ -1,0 +1,446 @@
+{
+  "target_rules": [
+    {
+      "literal": "atentar contra mi vida",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atentar",
+              "la",
+              "mi",
+              "quitarme"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la",
+              "mi"
+            ]
+          }
+        },
+        {
+          "LOWER": "vida"
+        }
+      ]
+    },
+    {
+      "literal": "cogniciones depresivas de muerte o de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sucidio",
+              "suciidio",
+              "suicdiio",
+              "suicdio",
+              "suicicio",
+              "suicidas",
+              "suicidio",
+              "suicido"
+            ]
+          }
+        },
+        {
+          "LOWER": "depresivas",
+          "OP": "?"
+        },
+        {},
+        {},
+        {},
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidio",
+              "suicdiio",
+              "sucidio",
+              "suicdio",
+              "suicidas",
+              "suicido",
+              "suicicio",
+              "suciidio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "de suicidio",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "ganas de suicidarme",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "en",
+              "envenenarme",
+              "ganas",
+              "matarme",
+              "pensar",
+              "pense",
+              "pienso",
+              "riesgo",
+              "suicidarme",
+              "suicidio"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "en"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidarme",
+              "suicidio",
+              "envenenarme",
+              "matarme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas de muerte ni de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "suicidas",
+              "suicidio",
+              "suicido"
+            ]
+          }
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "muerte"
+        },
+        {
+          "LOWER": "ni"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidio",
+              "suicido",
+              "suicidas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas de muerte o de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "d",
+              "de",
+              "emurte",
+              "eo",
+              "ideacion",
+              "ideas",
+              "meurte",
+              "muert",
+              "muerte",
+              "muetr",
+              "muetre",
+              "o",
+              "sucidio",
+              "suciidio",
+              "suicdiio",
+              "suicdio",
+              "suicicio",
+              "suicidas",
+              "suicidio",
+              "suicido",
+              "y"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "d"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "muerte",
+              "muert",
+              "muetre",
+              "emurte",
+              "muetr",
+              "meurte"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "o",
+              "y",
+              "eo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "d"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidio",
+              "suicdiio",
+              "sucidio",
+              "suicdio",
+              "suicidas",
+              "suicido",
+              "suicicio",
+              "suciidio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas de suicidio",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "autolitica",
+              "desea",
+              "deseos",
+              "idea",
+              "ideacion",
+              "ideaciones",
+              "ideación",
+              "ideas",
+              "su8cida",
+              "sucida",
+              "sucidas",
+              "suicda",
+              "suicida",
+              "suicidarse",
+              "suicidas",
+              "suicidias",
+              "suicidio"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicida",
+              "suicidio",
+              "suicidarse",
+              "sucida",
+              "suicda",
+              "autolitica",
+              "su8cida",
+              "sucidas",
+              "suicidas",
+              "suicidias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas y planes suicidas",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "autolitica",
+              "autolítica",
+              "autolíticas",
+              "estructuracion",
+              "estructuración",
+              "ideacion",
+              "ideación",
+              "ideas",
+              "suicida",
+              "suicidas",
+              "suicidio"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicida",
+              "suicidas",
+              "suicidio",
+              "autolítica",
+              "autolitica",
+              "autolíticas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pensamientos suicidas",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "conideacion",
+              "pensamientos",
+              "plan",
+              "riesgo",
+              "suicida",
+              "suicidas"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "suicidas",
+              "suicida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se quería matar",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "matar",
+              "me",
+              "morir",
+              "queria",
+              "quería",
+              "quiere",
+              "quiero",
+              "se"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quería",
+              "queria",
+              "quiere",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "morir",
+              "matar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se va a matar",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "suicidas",
+      "category": "Ideacinsuicida"
+    },
+    {
+      "literal": "tirarme a un carro",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "calle",
+              "carro",
+              "edificio",
+              "puente",
+              "río",
+              "tirar",
+              "tirarme",
+              "tirarse",
+              "ventana"
+            ]
+          }
+        },
+        {},
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "carro",
+              "río",
+              "puente",
+              "edificio",
+              "ventana",
+              "calle"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "target_rules": [
+    {
+      "literal": "TOC",
+      "category": "Compulsiones"
+    },
+    {
+      "literal": "compulsiones",
+      "category": "Compulsiones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "compulsion",
+              "compulsiones",
+              "compulsiva",
+              "compulsivo",
+              "compulsión"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "conductas repetitivas",
+      "category": "Compulsiones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "compulsiva",
+              "compulsivas",
+              "conducta",
+              "conductas",
+              "repetitiva",
+              "repetitivas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "repetitivas",
+              "repetitiva",
+              "compulsiva",
+              "compulsivas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "toc",
+      "category": "Compulsiones"
+    }
+  ]
+}

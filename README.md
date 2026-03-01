@@ -1,136 +1,104 @@
-# Spanish Psych Phenotyping — Paraguay (Fork A/D)
+# Spanish Psych Phenotyping — LATAM (CO baseline + PY adaptation)
 
-Este fork está basado en el proyecto original [`Spanish_Psych_Phenotyping`](https://github.com/clarafrydman/Spanish_Psych_Phenotyping),
-pero se especializa en **trastornos de depresión y ansiedad**.
+Este fork está basado en el proyecto original **Spanish_Psych_Phenotyping** (DeLaHoz2015),
+pero se reorganiza para soportar una arquitectura **Core + Adaptation Layers** enfocada en
+**fenotipado psiquiátrico en EHR en español**.
 
-Incluye un CLI unificado (`cli.py`) con dos perfiles:
-- `col`: baseline colombiano (usa `escribe/patterns/Concept/`)
-- `py`: versión paraguaya (usará `escribe/patterns/Concept_PY/`)
+La motivación práctica (IPS/Paraguay) es que muchas notas clínicas combinan:
 
-## Uso básico
-```bash
-python cli.py --profile col \
-  --input ../psych-phenotyping-paraguay/data/ips_clean.csv \
-  --output ../psych-phenotyping-paraguay/data/rule_based_col.csv
+- *Narrativa clínica* (síntomas / evolución / plan)
+- *Plantillas administrativas* (formularios repetitivos) que generan falsos positivos
+
+Este repositorio no “reemplaza” el baseline publicado: lo **congela**, y permite medir
+cuánto mejora una adaptación local.
+
+## Arquitectura por capas
+
+### 1) `Concept_CO/` — baseline (paper, Colombia)
+Conjunto congelado para reproducir el fenotipado publicado.
+
+### 2) `Concept_PY/` — core reproducible (IPS)
+Core estable para EHR en español con **fixes generales** (anclajes, correcciones técnicas,
+reducción de falsos positivos por estructura), pero sin depender de léxico cultural local.
+
+> Nota: si movés los términos paraguayos a `Concept_PY_Lexicon/`, el core puede quedar **muy
+> parecido** al baseline, pero **no necesariamente idéntico**: es válido que el core contenga
+> correcciones técnicas y mejoras generalizables (p. ej. fixes `label→literal`, anclajes, ajustes
+> de ventanas) mientras que el léxico local quede en la capa de adaptación.
+
+### 3) `Concept_PY_Lexicon/` — adaptation layer (Paraguay)
+Extensión opcional con **léxico paraguayo/jopará**, abreviaturas institucionales y variantes
+locales. Se carga **encima del core** (sin reset del matcher) para poder comparar:
+
+- baseline (`co`) vs core (`core`) vs core+adaptación (`py`).
+
+Para evitar “contexto no clínico”, esta capa debe usar **anclaje clínico** (p. ej. “refiere/niega/presenta”)
+(y/o ejecutarse sobre secciones narrativas), y debe correrse sobre texto normalizado.
+
+## Normalización de texto (data cleaning, no decisión clínica)
+
+En IPS es común que la nota incluya secciones de formulario repetitivas (2–8). Para reducir
+falsos positivos en extracción basada en reglas:
+
+> “Identificamos y eliminamos segmentos de formulario repetitivos (secciones 2–8) que no
+> aportan fenomenología psiquiátrica y generan falsos positivos en extracción basada en reglas.”
+
+Esto es normalización de formato de nota (muy común en EHR) y debe ocurrir **antes** del extractor.
+
+## Estructura de directorios
+
 ```
+escribe/patterns/
+├─ Concept_CO/            # baseline (paper)
+├─ Concept_PY/            # core reproducible
+├─ Concept_PY_Lexicon/    # capa paraguaya (opcional)
+├─ ConText_ES.json
+└─ RuSH_ES.tsv
 
-## Estructura
-
-escribe/patterns/Concept/        → patrones originales del proyecto
-escribe/patterns/Concept_PY/     → versión adaptada para Paraguay
-escribe/patterns/ContextRules/   → reglas contextuales originales
 configs/
-  col_config.yml                 → config para baseline colombiano
-  py_config.yml                  → config para futura versión PY
+├─ fenotipos.yml          # lista de conceptos (carpetas) a activar
+├─ co_config.yml
+├─ core_config.yml
+└─ py_config.yml
+
 cli.py
-
-
----
-
-## 6️⃣ `.gitignore` y `requirements.txt`
-
-**.gitignore**
-```txt
-__pycache__/
-outputs/
-.ipynb_checkpoints/
-*.pyc
-.DS_Store
 ```
 
-## Nota metodológica
-Este fork especializa el proyecto **Spanish_Psych_Phenotyping** en los fenotipos de **Ansiedad** y **Depresión**, filtrando los *concepts* del repositorio original para enfocarse en el bloque afectivo según **CIE-10**.
+## Uso (CLI)
 
-- **Ansiedad / Pánico:** **F40–F41**  
-- **Depresión:** **F32.2, F32.3, F33.1, F33.2, F33.3, F33.4**  
-- **Sueño (comórbidos A/D):** síntomas frecuentes en F32.x y F41.x (insomnio, hipersomnia, despertar temprano, etc.)
+Perfiles:
 
-> **Proveniencia:** todos los JSON listados provienen del set original (CSJDM) y se incluyen aquí como **filtro temático** (ansiedad, depresión y sueño).  
-> **Nota:** algunos archivos del set original pueden no contener reglas/patrones; se conservan por **trazabilidad** y para unificar criterios diagnósticos.
+- `co`   → baseline Colombia (`Concept_CO/`)
+- `core` → core reproducible (`Concept_PY/`)
+- `py`   → core + adaptación (`Concept_PY/` + `Concept_PY_Lexicon/`)
 
----
-
-## Estructura de directorios (filtrada)
-
-```
-escribe/patterns/Concept/
-├─ Ansiedad/
-├─ Depresion/
-└─ Sueno/
+```bash
+python cli.py --profile co   --config co_config.yml   --input data/ips_clean.csv --output outputs/rules_co.csv
+python cli.py --profile core --config core_config.yml --input data/ips_clean.csv --output outputs/rules_core.csv
+python cli.py --profile py   --config py_config.yml   --input data/ips_clean.csv --output outputs/rules_py.csv
 ```
 
----
+## Uso (Python / notebooks)
 
-## Fenotipos de **Ansiedad / Pánico** (CIE-10: F40–F41)
+```python
+from pathlib import Path
+from escribe.default_nlp import nlp, select_concepts
 
-| Archivo JSON | Constructo clínico | CIE-10 (referencia) | Comentario |
-|---|---|---:|---|
-| `Ansiedad.json` | Ansiedad inespecífica / GAD | F41.1 | Preocupación, activación somato-psíquica |
-| `AngustiaMiedoTemor.json` | Angustia / miedo | F41.0–F41.9 | Afecto ansioso prominente, crisis subjetivas |
-| `Irritabilidad.json` | Irritabilidad | F41.1 | Síntoma transversal en ansiedad generalizada |
+BASE = Path("escribe/patterns")
 
-> **Observación:** en el set original no aparece un JSON específico para **ataque de pánico (F41.0)** con síntomas autonómicos (palpitaciones, disnea/ahogo, temblor, sudoración, miedo a morir/perder control). La cobertura de pánico se apoya aquí en “Angustia/Miedo/Temor”.
+# Baseline (CO)
+nlp_co = select_concepts(nlp, json_dir=str(BASE / "Concept_CO"), concepts=("all",), reset=True)
 
----
+# Core (PY)
+nlp_core = select_concepts(nlp, json_dir=str(BASE / "Concept_PY"), concepts=("all",), reset=True)
 
-## Fenotipos de **Depresión** (CIE-10: F32.2, F32.3, F33.1–F33.4)
+# Core + Adaptación (PY)
+nlp_py = select_concepts(nlp, json_dir=str(BASE / "Concept_PY"), concepts=("all",), reset=True)
+nlp_py = select_concepts(nlp_py, json_dir=str(BASE / "Concept_PY_Lexicon"), concepts=("all",), reset=False)
+```
 
-| Archivo JSON | Constructo clínico | CIE-10 (referencia) | Comentario |
-|---|---|---:|---|
-| `Agitacinpsicomotora.json` | Agitación psicomotora | F32.3 | Marcador de gravedad |
-| `Anhedonia.json` | Pérdida de interés/placer | F32–F33 | Síntoma nuclear |
-| `Animodeprimido.json` | Ánimo deprimido | F32–F33 | Síntoma nuclear |
-| `Animoexpansivo.json` | Ánimo expansivo | — | **No depresivo**; útil para control/exclusión diferencial |
-| `Apata.json` | Apatía | F32–F33 | Motivacional |
-| `Apetitoaumentode.json` | Aumento de apetito | F33.1 | Subtipo atípico |
-| `Apetitodisminucinde.json` | Disminución del apetito | F32.2 | Somático frecuente |
-| `Bajaconcentracin.json` | Dificultad de concentración | F32.3 | Cognitivo |
-| `Culpa.json` | Culpa excesiva/inadecuada | F32.3, F33.x | Cognición negativa |
-| `Desesperanza.json` | Hopelessness | F32.3, F33.x | Predictor de gravedad |
-| `Fatiga.json` | Fatiga / cansancio | F32.2–F33.1 | Somático |
-| `Ideacinsuicida.json` | Ideación suicida | F32.3, F33.x | Suicidabilidad (gravedad) |
-| `Ideasdemuerte.json` | Ideas de muerte | F32.3, F33.x | Suicidabilidad |
-| `Intentosuicida.json` | Intento suicida | F33.3–F33.4* | Especificador de curso/gravedad |
-| `Llantofcil.json` | Labilidad/llanto fácil | F32–F33 | Apoyo clínico |
-| `Negativismo.json` | Valencia negativa persistente | F32–F33 | Distorsión cognitiva asociada |
-| `RetraimientosocialAislamiento.json` | Retraimiento/aislamiento social | F32–F33 | Comportamental |
-| `Retrasopsicomotor.json` | Retardo psicomotor | F32.3 | Marcador de gravedad |
-| `Sntomasdepresivosgenerales.json` | Síntomas depresivos inespecíficos | F32–F33 | Sostén / screening |
+## Configuración
 
-\* La suicidabilidad no es un diagnóstico independiente en CIE-10, pero se reporta por su relevancia clínica en episodios depresivos graves y trastornos recurrentes.
+- `configs/fenotipos.yml` define qué carpetas cargar (por defecto: Ansiedad, Depresion, Contexto).
+- `configs/*_config.yml` define la columna de texto (`text_column`) y nombres de proyecto.
 
----
-
-## Fenotipos de **Sueño** (comórbidos con A/D)
-
-| Archivo JSON | Constructo clínico | CIE-10 (referencia) | Comentario |
-|---|---|---:|---|
-| `SueoInsomnio.json` | Insomnio | F32.x / F41.x | Muy prevalente en A/D |
-| `SueoHipersomnio.json` | Hipersomnia | F32.1–F33.1 | Subtipo atípico/curso |
-| `SueoDespertartemprano.json` | Despertar precoz | F32.x | Patrón melancólico |
-| `SueoAlterado.json` | Alteración del sueño (inespecífica) | F32–F41 | Sostén |
-| `SueoPesadillas.json` | Pesadillas | F41.x | Arousal/ansiedad |
-| `Somnolencia.json` | Somnolencia diurna | F32.x | Somático relacionado |
-
----
-
-## Criterios de inclusión / exclusión
-
-- **Incluidos:** síntomas nucleares y asociados de **ansiedad/pánico (F40–F41)** y **depresión (F32.2–F33.4)**; y **sueño** por comorbilidad frecuente en ambos cuadros.  
-- **Excluidos:** fenómenos fuera del espectro A/D (psicosis, TOC, bipolaridad, sustancias, etc.), salvo `Animoexpansivo.json`, que se conserva para **control** (útil en análisis diferenciales).  
-- **Integridad del set:** si algún JSON del original no trae reglas/patrones, igualmente se **enumera** aquí por trazabilidad diagnóstica; su estado no afecta el criterio de inclusión temática.
-
----
-
-## Justificación diagnóstica (CIE-10)
-
-- **Trastornos de ansiedad y pánico (F40–F41):** preocupación excesiva, síntomas de activación autonómica (palpitaciones, disnea, sudoración, temblor), tensión muscular, hipervigilancia, irritabilidad, angustia/miedo.  
-- **Episodio depresivo y trastorno depresivo recurrente (F32.2–F33.4):** ánimo deprimido, anhedonia, fatiga, alteraciones psicomotoras, dificultades cognitivas (concentración), distorsiones negativas (culpa, desesperanza), e indicios de suicidabilidad (ideas de muerte/ideación/intentona).  
-- **Sueño:** insomnio/hipersomnia/despertar temprano como manifestaciones somáticas frecuentes que modulan diagnóstico y gravedad.
-
----
-
-## Alcance y propósito
-
-Esta selección **filtra** el repositorio original para delimitar un **baseline clínico** centrado en A/D, mejorando coherencia diagnóstica, interpretabilidad y comparabilidad con datasets clínicos alineados a **F40–F41** y **F32–F33**.  
-El objetivo es **reproducibilidad** y **trazabilidad**: cada fenotipo mantiene nombre y referencia al concepto original, documentado aquí con su mapeo CIE-10.

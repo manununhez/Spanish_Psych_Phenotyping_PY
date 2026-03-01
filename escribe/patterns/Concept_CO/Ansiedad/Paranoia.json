@@ -1,0 +1,357 @@
+{
+  "target_rules": [
+    {
+      "literal": "burlan de mi",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "burlan",
+              "de",
+              "hablando",
+              "hablar",
+              "mi",
+              "mí",
+              "pensaba"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mí",
+              "mi"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "delirantes de tipo paranoides",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "delirante",
+              "delirantes",
+              "delirios",
+              "paranoide",
+              "paranoides"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "paranoides",
+              "paranoide"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas paranoides",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "elementos",
+              "ideacion",
+              "ideaciopn",
+              "ideación",
+              "ideas",
+              "paranoide",
+              "paranoides",
+              "paraonoides",
+              "sintomas",
+              "síntomas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "paranoide",
+              "paranoides",
+              "paraonoides"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me van a hacer algo",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "algo",
+              "hacer",
+              "mal",
+              "males",
+              "me",
+              "van"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "van"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hacer"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "males",
+              "algo",
+              "mal"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "paranoia",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "paranlide",
+              "paranodie",
+              "paranoia",
+              "paranoide"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "paranoide",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "paranoico",
+              "paranoide",
+              "paranoides"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "porque me van a matar",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atracar",
+              "matar",
+              "porque",
+              "van"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "van"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "atracar",
+              "matar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "querulante",
+      "category": "Paranoia"
+    },
+    {
+      "literal": "siento que me van a matar",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dice",
+              "matar",
+              "matarme",
+              "que",
+              "quieren",
+              "siento",
+              "todos",
+              "tratan",
+              "van"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quieren",
+              "van",
+              "tratan"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "matar",
+              "matarme"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "siento que me van hacer daño",
+      "category": "Paranoia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "daño",
+              "dice",
+              "diciendo",
+              "hacer",
+              "le",
+              "me",
+              "piensa",
+              "pienso",
+              "que",
+              "quieren",
+              "siente",
+              "siento",
+              "van"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "le",
+              "me"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quieren",
+              "van"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hacer"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "daño"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

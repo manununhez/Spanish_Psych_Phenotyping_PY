@@ -225,6 +225,75 @@
           }
         }
       ]
+    },
+    {
+      "literal": "sin ganas",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "sin",
+              "ninguna",
+              "ningún",
+              "pocas",
+              "poca"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ganas",
+              "animo",
+              "ánimo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se levanta de la cama",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "casi",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": "se"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "levanta",
+              "levanto",
+              "levantó",
+              "levantarse"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cama"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

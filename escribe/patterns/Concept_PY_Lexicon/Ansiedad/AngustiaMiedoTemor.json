@@ -1,0 +1,20 @@
+{
+  "target_rules": [
+    {
+      "literal": "No se halla",
+      "category": "AngustiaMiedoTemor",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "se"
+        },
+        {
+          "LOWER": "halla"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

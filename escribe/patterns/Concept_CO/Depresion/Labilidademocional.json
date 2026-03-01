@@ -1,0 +1,276 @@
+{
+  "target_rules": [
+    {
+      "literal": "altera facil",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "altera",
+              "facil"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "facil"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "animo cambiante",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "cambiante",
+              "muy"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cambiante"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cambios emocionales",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "cambia",
+              "cambios",
+              "emocional",
+              "emocionales",
+              "humor",
+              "inestabilidad"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "emocional",
+              "emocionales",
+              "animo",
+              "humor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "fluctuaciones en estado de animo",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "flctuaciones",
+              "fluctuaciones",
+              "ánimo"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "ánimo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "llora y rie",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alegria",
+              "exaltación",
+              "hipotimia",
+              "llanto",
+              "llora",
+              "rie",
+              "risa",
+              "risas",
+              "ríe"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "exaltación",
+              "risas",
+              "ríe",
+              "rie",
+              "risa",
+              "alegria"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "lábil",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "fluctuante",
+              "labil",
+              "labilidad",
+              "làbil",
+              "lábil"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "oscilaciones en el estado de ánimo",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "cambios",
+              "de",
+              "estado",
+              "oscilaciones",
+              "oscilación",
+              "ánimo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estado"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "animo",
+              "ánimo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "rie y llora",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alegria",
+              "exaltación",
+              "hipotimia",
+              "llanto",
+              "llora",
+              "rie",
+              "risa",
+              "risas",
+              "ríe"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "hipotimia",
+              "llanto",
+              "llora"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "riendose y luego llorando",
+      "category": "Labilidademocional",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alegre",
+              "feliz",
+              "llorado",
+              "llorando",
+              "riendose",
+              "triste"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "triste",
+              "llorando",
+              "llorado"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

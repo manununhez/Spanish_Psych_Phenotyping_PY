@@ -1,0 +1,33 @@
+{
+  "target_rules": [
+    {
+      "literal": "Tekorei",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": "tekorei"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Todo me da igual",
+      "category": "Apata",
+      "pattern": [
+        {
+          "LOWER": "todo"
+        },
+        {
+          "LOWER": "me"
+        },
+        {
+          "LOWER": "da"
+        },
+        {
+          "LOWER": "igual"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

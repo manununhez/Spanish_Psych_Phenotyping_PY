@@ -1,0 +1,25 @@
+{
+  "target_rules": [
+    {
+      "literal": "Se arma películas",
+      "category": "Prospeccindesesperanzada",
+      "pattern": [
+        {
+          "LOWER": "se"
+        },
+        {
+          "LOWER": "arma"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "peliculas",
+              "películas"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

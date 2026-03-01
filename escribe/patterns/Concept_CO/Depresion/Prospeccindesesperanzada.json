@@ -1,0 +1,58 @@
+{
+  "target_rules": [
+    {
+      "literal": "perdida de la prospeccion",
+      "category": "Prospeccindesesperanzada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "perdida",
+              "prospeccion",
+              "prospección",
+              "pérdida"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "prospeccion",
+              "prospección"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "prospeccion negativa",
+      "category": "Prospeccindesesperanzada",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "negativa",
+              "pobre",
+              "prospeccion",
+              "prospección"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pobre",
+              "negativa"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

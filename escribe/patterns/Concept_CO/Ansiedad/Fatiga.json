@@ -1,0 +1,130 @@
+{
+  "target_rules": [
+    {
+      "literal": "agotado",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "agotada",
+              "agotado",
+              "agotamiento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "astenia",
+      "category": "Fatiga"
+    },
+    {
+      "literal": "cansada",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cansada",
+              "cansado"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "fatiga",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "adinamia",
+              "adinámia",
+              "fatiga",
+              "fatigabilidad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sensacion de cansancio",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cansado",
+              "cansancio",
+              "sensacion",
+              "siento"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cansado",
+              "cansancio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sin energía",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "energia",
+              "energía",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "energía",
+              "energia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sin fuerzas",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "fuerzas",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fuerzas"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

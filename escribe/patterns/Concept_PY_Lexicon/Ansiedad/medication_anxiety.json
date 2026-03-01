@@ -1,0 +1,16 @@
+{
+  "target_rules": [
+    {
+      "literal": "ALP",
+      "category": "medication_anxiety",
+      "pattern": [
+        {
+          "LOWER": {
+            "REGEX": "^alp$"
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

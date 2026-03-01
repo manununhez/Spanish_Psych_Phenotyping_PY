@@ -1,0 +1,32 @@
+{
+  "target_rules": [
+    {
+      "literal": "angustiantes esos sueños",
+      "category": "SueoPesadillas",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "angustiantes",
+              "sueños"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueños"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "pesadillas",
+      "category": "SueoPesadillas"
+    }
+  ]
+}

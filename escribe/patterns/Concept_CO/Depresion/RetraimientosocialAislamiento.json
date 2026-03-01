@@ -1,0 +1,513 @@
+{
+  "target_rules": [
+    {
+      "literal": "aislado",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aislada",
+              "aislado",
+              "aislarse"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aislada",
+              "aislado",
+              "aislarse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aislameinto social",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aisalimiento",
+              "aislameinto",
+              "aislamiento",
+              "asilameinto",
+              "social"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "social"
+            ]
+          },
+          "OP": "?"
+        }
+      ]
+    },
+    {
+      "literal": "aislamiento social",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "afectivo",
+              "aislamiento",
+              "familiar",
+              "social"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "afectivo",
+              "familiar",
+              "social"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "encerrado",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "encapsulado",
+              "encapsulamiento",
+              "encerrado"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "encerrado a la casa",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "casa",
+              "en",
+              "encerrado",
+              "la",
+              "pasa"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "a",
+              "en",
+              "la"
+            ]
+          },
+          "OP": "{,2}"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me aislo",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aislo",
+              "encerrada",
+              "encerre",
+              "encerré",
+              "encierra",
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aislo",
+              "encerre",
+              "encerré",
+              "encierra",
+              "encerrada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "menos interactivo",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "interactiva",
+              "interactivo",
+              "menos"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "interactivo",
+              "interactiva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me gusta salir",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "gusta",
+              "no",
+              "quiere",
+              "salir"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "gusta",
+              "quiere"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "salir"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no relación con los demas pacientes",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "compañeros",
+              "con",
+              "contacto",
+              "familia",
+              "familiares",
+              "no",
+              "pacientes",
+              "personal",
+              "poca",
+              "relacion",
+              "relación"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "relacion",
+              "relación",
+              "contacto"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "con"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pacientes",
+              "compañeros",
+              "personal",
+              "familia",
+              "familiares"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no sale de la casa",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "casa",
+              "cuarto",
+              "de",
+              "no",
+              "nunca",
+              "sale"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sale"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "de"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa",
+              "cuarto"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no sale de/se queda en la casa",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "casa",
+              "de",
+              "en",
+              "la",
+              "no",
+              "queda",
+              "sale",
+              "se"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sale",
+              "queda"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "en",
+              "de"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "la"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no tiene ni amistades",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "amistades",
+              "dejado",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "amistades"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "retraimiento",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "retraido",
+              "retraimiento",
+              "retraído"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "retraído",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "retraida",
+              "retraido",
+              "retraída",
+              "retraído"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "soy callada",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "callada",
+              "callado",
+              "más",
+              "soy"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "callado",
+              "callada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "tendencia al aislamiento",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "aislamiento",
+              "tendencia",
+              "tiende"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "aislamiento"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "vida solitaria",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "solitaria",
+              "vida"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "solitaria"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "target_rules": [
+    {
+      "literal": "alteraciones en el sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteracion",
+              "alteraciones",
+              "deprivacion",
+              "deprivación",
+              "dificultad",
+              "fragmentacion",
+              "inadecuada",
+              "inconveniente",
+              "problema",
+              "sueno",
+              "sueño",
+              "trastornos"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteración de los patrones del sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteracion",
+              "alteraciones",
+              "alteración",
+              "alterado",
+              "cambio",
+              "cambios",
+              "patron",
+              "patrones",
+              "patrton",
+              "patrón",
+              "ptron",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "patrón",
+              "patron",
+              "patrones",
+              "patrton",
+              "ptron"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteración del ciclo del sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteracion",
+              "alteración",
+              "biologicos",
+              "ciclo",
+              "ciclos",
+              "desplazamiento",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ciclos",
+              "ciclo"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "biologicos",
+              "sueño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "alteración en el patron del sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteracion",
+              "alteraciones",
+              "alteración",
+              "dificultades",
+              "difucltades",
+              "mal",
+              "patorn",
+              "patron",
+              "patrón",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "patrón",
+              "patron",
+              "patorn"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cambios en el sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cambios",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "despertares frecuentes",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "despertar",
+              "despertares",
+              "despierto",
+              "frecuentes",
+              "mucho",
+              "nocturnos",
+              "precoz",
+              "tarde"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "frecuentes",
+              "nocturnos",
+              "precoz",
+              "mucho",
+              "tarde"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dificultad para conciliar el sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "conciliar",
+              "consiliar",
+              "dificultad",
+              "dificultades",
+              "el",
+              "para",
+              "problemas",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "para"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "conciliar",
+              "consiliar"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "el"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "duerme mal",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "duerme",
+              "duermo",
+              "durmiendo",
+              "mal",
+              "no",
+              "poco",
+              "sueno",
+              "sueño",
+              "tarde"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mal",
+              "poco",
+              "no",
+              "tarde"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "inadecuado patrón del sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dueño",
+              "inadecuado",
+              "patron",
+              "patrón",
+              "sueno",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "patron",
+              "patrón"
+            ]
+          }
+        },
+        {
+          "OP": "{,7}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dueño",
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "insomnio global",
+      "category": "SueoAlterado"
+    },
+    {
+      "literal": "mal patron global del sueño",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "del",
+              "estructuracion",
+              "mal",
+              "mantenimiento",
+              "patron",
+              "patrón",
+              "sueno",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estructuracion",
+              "mantenimiento",
+              "patron",
+              "patrón"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "del"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "multiples despertares",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "despertares",
+              "despetares",
+              "despierto",
+              "multiples",
+              "múltiples",
+              "ratico"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "despetares",
+              "despertares",
+              "despierto"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no consigue dormir",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alteracion",
+              "alteraciones",
+              "alteración",
+              "danaron",
+              "daño",
+              "perturbacion",
+              "perturbaciones",
+              "perturbación",
+              "quejas",
+              "sueno",
+              "sueño",
+              "trastorno",
+              "trastornos"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sueño",
+              "sueno"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no duerme",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dormir",
+              "duerme",
+              "duermen",
+              "duermo",
+              "durmiendo",
+              "ni",
+              "no",
+              "suemre",
+              "sueno",
+              "sueño"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "duermo",
+              "duerme",
+              "duermen",
+              "dormir",
+              "durmiendo",
+              "sueño",
+              "sueno",
+              "suemre"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no duerme bien",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bien",
+              "duerme",
+              "no",
+              "sin"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "duerme"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "bien",
+              "sin"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me dejan dormir",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dormir",
+              "no"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dormir"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sueño inadecuado",
+      "category": "SueoAlterado"
+    }
+  ]
+}

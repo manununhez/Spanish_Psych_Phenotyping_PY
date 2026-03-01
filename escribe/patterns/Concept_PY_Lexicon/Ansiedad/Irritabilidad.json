@@ -1,0 +1,34 @@
+{
+  "target_rules": [
+    {
+      "literal": "Argel",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": "argel"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Argelado",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": "argelado"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Argelada",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": "argelada"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

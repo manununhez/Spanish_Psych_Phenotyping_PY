@@ -1,0 +1,8 @@
+text_column: texto
+patterns_root: escribe/patterns
+concept_layers:
+- Concept_PY
+concept_folders:
+- Ansiedad
+- Depresion
+- Contexto

@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal": "Ndavy'ái",
+      "category": "Soledad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ndavy'ai",
+              "ndavy'ái"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

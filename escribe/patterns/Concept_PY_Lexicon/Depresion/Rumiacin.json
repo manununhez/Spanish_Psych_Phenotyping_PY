@@ -1,0 +1,17 @@
+{
+  "target_rules": [
+    {
+      "literal": "Darle vueltas",
+      "category": "Rumiacin",
+      "pattern": [
+        {
+          "LOWER": "darle"
+        },
+        {
+          "LOWER": "vueltas"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

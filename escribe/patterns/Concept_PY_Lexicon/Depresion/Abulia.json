@@ -1,0 +1,20 @@
+{
+  "target_rules": [
+    {
+      "literal": "Ganas de nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": "ganas"
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "nada"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "target_rules": [
+    {
+      "literal": "Ahogo",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": "ahogo"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Opresión",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "opresion",
+              "opresión"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Contractura",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": "contractura"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Tensión",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "tension",
+              "tensión"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Pirĩ",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "piri",
+              "pirĩ"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Temblo",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": "temblo"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Tiemblo",
+      "category": "SntomassomticosEjemplos",
+      "pattern": [
+        {
+          "LOWER": "tiemblo"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

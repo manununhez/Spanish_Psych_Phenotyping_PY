@@ -1,0 +1,39 @@
+{
+  "target_rules": [
+    {
+      "literal": "Bajoneado",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": "bajoneado"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Bajoneada",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": "bajoneada"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Vy'a'ỹ",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "vy'a'y",
+              "vy'a'ỹ"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

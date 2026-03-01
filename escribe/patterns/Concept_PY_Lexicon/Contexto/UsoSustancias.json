@@ -1,0 +1,41 @@
+{
+  "target_rules": [
+    {
+      "literal": "Chespi",
+      "category": "UsoSustancias",
+      "pattern": [
+        {
+          "LOWER": "chespi"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Macoña",
+      "category": "UsoSustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "macona",
+              "macoña"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "SPA",
+      "category": "UsoSustancias",
+      "pattern": [
+        {
+          "LOWER": {
+            "REGEX": "^spa$"
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

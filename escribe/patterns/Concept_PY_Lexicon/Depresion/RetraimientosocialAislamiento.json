@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal": "Ñembotavy",
+      "category": "RetraimientosocialAislamiento",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "nembotavy",
+              "ñembotavy"
+            ]
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

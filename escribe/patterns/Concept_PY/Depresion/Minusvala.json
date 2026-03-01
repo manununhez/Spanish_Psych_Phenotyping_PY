@@ -1,77 +1,80 @@
 {
-    "target_rules": [
+  "target_rules": [
+    {
+      "pattern": [
         {
-            "label": "Minusvala",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "minusvalia",
-                            "minusvalía",
-                            "desvalimiento",
-                            "desvalido",
-                            "desvalida"
-                        ]
-                    }
-                }
-            ],
-            "category": "Minusvala"
-        },
-        {
-            "label": "Minusvala",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": ["ya", "ahora"]
-                    }
-                },
-                {
-                    "LOWER": "no"
-                },
-                {
-                    "LOWER": {
-                        "IN": [
-                            "sirvo",
-                            "sirve",
-                            "sirven"
-                        ]
-                    }
-                }
-            ],
-            "category": "Minusvala"
-        },
-        {
-            "label": "Minusvala",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "siendo",
-                            "siento",
-                            "siente",
-                            "sentía",
-                            "sentirse"
-                        ]
-                    }
-                },
-                {
-                    "OP": "{,3}"
-                },
-                {
-                    "LOWER": {
-                        "IN": [
-                            "estorbo",
-                            "carga",
-                            "inutil",
-                            "inútil",
-                            "inutilidad",
-                            "desechable",
-                            "basura"
-                        ]
-                    }
-                }
-            ],
-            "category": "Minusvala"
+          "LOWER": {
+            "IN": [
+              "minusvalia",
+              "minusvalía",
+              "desvalimiento",
+              "desvalido",
+              "desvalida"
+            ]
+          }
         }
-    ]
+      ],
+      "category": "Minusvala",
+      "literal": "Minusvala"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ya",
+              "ahora"
+            ]
+          }
+        },
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "sirvo",
+              "sirve",
+              "sirven"
+            ]
+          }
+        }
+      ],
+      "category": "Minusvala",
+      "literal": "Minusvala"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "siendo",
+              "siento",
+              "siente",
+              "sentía",
+              "sentirse"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estorbo",
+              "carga",
+              "inutil",
+              "inútil",
+              "inutilidad",
+              "desechable",
+              "basura"
+            ]
+          }
+        }
+      ],
+      "category": "Minusvala",
+      "literal": "Minusvala"
+    }
+  ]
 }

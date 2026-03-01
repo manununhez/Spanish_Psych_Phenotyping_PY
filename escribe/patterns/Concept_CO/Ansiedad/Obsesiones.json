@@ -1,0 +1,103 @@
+{
+  "target_rules": [
+    {
+      "literal": "TOC",
+      "category": "Obsesiones"
+    },
+    {
+      "literal": "ideas obsesivas",
+      "category": "Obsesiones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dea",
+              "idea",
+              "ideas",
+              "iea",
+              "obsesiva",
+              "obsesivas",
+              "obsesivasni",
+              "sosbesvia"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "obsesivas",
+              "obsesiva",
+              "sosbesvia",
+              "obsesivasni"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "la cabeza me repite",
+      "category": "Obsesiones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cabeza",
+              "repite"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "repite"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "obsesiones",
+      "category": "Obsesiones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "obsesion",
+              "obsesiones",
+              "obsesiva",
+              "obsesivo",
+              "obsesivoide",
+              "obsesión"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "obsesivo",
+      "category": "Obsesiones",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "obsesiva",
+              "obsesivas",
+              "obsesivo",
+              "obsesivos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "toc",
+      "category": "Obsesiones"
+    }
+  ]
+}

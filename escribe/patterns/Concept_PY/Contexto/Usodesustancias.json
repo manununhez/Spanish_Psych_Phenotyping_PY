@@ -1,72 +1,72 @@
 {
-    "target_rules": [
+  "target_rules": [
+    {
+      "pattern": [
         {
-            "label": "UsoSustancias",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "sustancias",
-                            "psicoactivas",
-                            "droga",
-                            "drogadicción",
-                            "drogadicto",
-                            "spa"
-                        ]
-                    }
-                }
-            ],
-            "category": "Contexto"
-        },
-        {
-            "label": "UsoSustancias",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "marihuana",
-                            "macoña",
-                            "cannabis",
-                            "cocaina",
-                            "cocaína",
-                            "crack",
-                            "chespi",
-                            "clorhidrato"
-                        ]
-                    }
-                }
-            ],
-            "category": "Contexto"
-        },
-        {
-            "label": "UsoSustancias",
-            "pattern": [
-                {
-                    "LOWER": "consumo"
-                },
-                {
-                    "LOWER": "de"
-                },
-                {
-                    "LOWER": "sustancias"
-                }
-            ],
-            "category": "Contexto"
-        },
-        {
-            "label": "UsoSustancias",
-            "pattern": [
-                {
-                    "LOWER": "abuso"
-                },
-                {
-                    "LOWER": "de"
-                },
-                {
-                    "LOWER": "sustancias"
-                }
-            ],
-            "category": "Contexto"
+          "LOWER": {
+            "IN": [
+              "sustancias",
+              "psicoactivas",
+              "droga",
+              "drogadicción",
+              "drogadicto",
+              "spa"
+            ]
+          }
         }
-    ]
+      ],
+      "category": "Contexto",
+      "literal": "UsoSustancias"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "marihuana",
+              "macoña",
+              "cannabis",
+              "cocaina",
+              "cocaína",
+              "crack",
+              "chespi",
+              "clorhidrato"
+            ]
+          }
+        }
+      ],
+      "category": "Contexto",
+      "literal": "UsoSustancias"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": "consumo"
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "sustancias"
+        }
+      ],
+      "category": "Contexto",
+      "literal": "UsoSustancias"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": "abuso"
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "sustancias"
+        }
+      ],
+      "category": "Contexto",
+      "literal": "UsoSustancias"
+    }
+  ]
 }

@@ -1,0 +1,150 @@
+{
+  "target_rules": [
+    {
+      "literal": "aumento de frecuencia en la alimentacion",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "alimentacion",
+              "alimentación",
+              "aumento",
+              "aumentó",
+              "frecuencia"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "frecuencia"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}",
+          "IS_PUNCT": false
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "alimentacion",
+              "alimentación"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "aumento del apetito",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "apetito",
+              "aumento",
+              "comiendo",
+              "mucho"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "apetito",
+              "mucho"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "come mucho",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "come",
+              "mucho",
+              "todo"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "mucho",
+              "todo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperexia",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hiperexia",
+              "hiperfagia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hiperfagia",
+      "category": "Apetitoaumentode"
+    },
+    {
+      "literal": "muchas ganas de comer",
+      "category": "Apetitoaumentode",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "comer",
+              "ganas",
+              "muchas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ganas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "comer"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

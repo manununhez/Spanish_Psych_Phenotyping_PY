@@ -1,85 +1,85 @@
 {
   "target_rules": [
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "ansiedad"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "ansioso"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "ansiosa"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "nervios"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "nerviosa"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "nervioso"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "inquietud"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "estresada"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     },
     {
-      "label": "ansiedad",
       "pattern": [
         {
           "LOWER": "estresado"
         }
       ],
-      "category": "Ansiedad"
+      "category": "Ansiedad",
+      "literal": "ansiedad"
     }
   ]
 }

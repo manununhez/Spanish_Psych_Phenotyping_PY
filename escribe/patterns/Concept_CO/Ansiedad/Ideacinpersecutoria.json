@@ -1,0 +1,314 @@
+{
+  "target_rules": [
+    {
+      "literal": "como si me persiguieran",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "calle",
+              "como",
+              "dice",
+              "persiguen",
+              "persiguieran",
+              "q",
+              "que",
+              "si",
+              "siente",
+              "siento",
+              "sigue",
+              "siguen",
+              "siguiendo"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "que",
+              "si",
+              "q"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persiguen",
+              "persiguieran",
+              "sigue",
+              "siguen",
+              "siguiendo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "de tipo persecutorio",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "persecucion",
+              "persecución",
+              "persecusion",
+              "persecutoria",
+              "persecutorias",
+              "persecutorio",
+              "persecutorios"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persecución",
+              "persecutorios",
+              "persecusion",
+              "persecutoria",
+              "persecucion",
+              "persecutorio",
+              "persecutorias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dice que lo persiguen",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "dice",
+              "diciendo",
+              "esta",
+              "estaban",
+              "estan",
+              "está",
+              "están",
+              "la",
+              "lo",
+              "me",
+              "persiguen",
+              "persiguiendo",
+              "piensa",
+              "que",
+              "siguiendo"
+            ]
+          },
+          "OP": "{1,2}"
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "lo",
+              "la",
+              "me"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "estan",
+              "están",
+              "estaban",
+              "está",
+              "esta"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persiguen",
+              "siguiendo",
+              "persiguiendo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideación delirante persecutoria",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "delirante",
+              "delirantes",
+              "delirios",
+              "eidea",
+              "fijas",
+              "idea",
+              "ideación",
+              "ideas",
+              "persecucion",
+              "persecución",
+              "persecusion",
+              "persecutoria",
+              "persecutorias",
+              "persecutorio",
+              "persecutorios"
+            ]
+          },
+          "OP": "{1,2}"
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persecución",
+              "persecutorios",
+              "persecusion",
+              "persecutoria",
+              "persecucion",
+              "persecutorio",
+              "persecutorias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas delirantes de persecución",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              ",",
+              "de",
+              "delirante",
+              "delirantes",
+              "delirates",
+              "delirio",
+              "delirios",
+              "delrinates",
+              "delrios",
+              "ideacion",
+              "ideas",
+              "persecuciion",
+              "persecucion",
+              "persecución",
+              "persecudion",
+              "persecusion",
+              "persecusiòn",
+              "persecutoria",
+              "persecutorias",
+              "persecutorios",
+              "pesrsecucion",
+              "prersecucion",
+              "presecusion",
+              "tipo",
+              "y"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "presecusion",
+              "persecucion",
+              "persecución",
+              "persecusiòn",
+              "persecutorios",
+              "persecutorias",
+              "persecusion",
+              "pesrsecucion",
+              "persecutoria",
+              "persecuciion",
+              "persecudion",
+              "prersecucion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me vienen persiguiendo",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "espiando",
+              "estan",
+              "la",
+              "me",
+              "persiguen",
+              "persiguiendo",
+              "vienen"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "vienen",
+              "estan"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "persiguiendo",
+              "persiguen",
+              "espiando"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "persecución",
+      "category": "Ideacinpersecutoria",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "persecución",
+              "persecusion",
+              "tipopersecutorio"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

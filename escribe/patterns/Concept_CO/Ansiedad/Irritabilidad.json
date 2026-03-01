@@ -1,0 +1,303 @@
+{
+  "target_rules": [
+    {
+      "literal": "facil irritabilidad",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "afecto",
+              "enoja",
+              "enojado",
+              "facil",
+              "facilmente",
+              "fondo",
+              "iirrita",
+              "irrita",
+              "irritabilidad",
+              "irritable",
+              "se",
+              "sentirse",
+              "tono",
+              "torna",
+              "tornado"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "irritabilidad",
+              "irritable",
+              "enoja",
+              "enojado",
+              "irrita",
+              "iirrita"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "irritabilidad",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "irirtabilidad",
+              "irritabildiad",
+              "irritabilidad",
+              "irritable",
+              "irritalidiad",
+              "irrritabilidad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "irritablidad",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ira",
+              "irascible",
+              "irritabilida",
+              "irritabilidad",
+              "irritable",
+              "irritablidad",
+              "malgeniado",
+              "rabia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "lleno de rabia",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "con",
+              "ira",
+              "lleno",
+              "muy",
+              "rabia",
+              "rabias",
+              "rabiosa",
+              "sufro"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "rabia",
+              "rabias",
+              "rabiosa",
+              "ira"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "mantengo malgeniada",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "facil",
+              "fácil",
+              "irritabilidad",
+              "malgeniada",
+              "mantengo"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "malgeniada",
+              "fácil",
+              "facil"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "me irrito facil",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "altera",
+              "enoja",
+              "facil",
+              "fácil",
+              "irritando",
+              "irrito",
+              "me",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "irritando",
+              "irrito",
+              "altera",
+              "enoja"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "fácil",
+              "facil"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se le puede decir nada",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "decir",
+              "hablen",
+              "me",
+              "nada",
+              "no",
+              "puede",
+              "soporto"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "puede",
+              "soporto"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "decir",
+              "me"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "hablen"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se enojo",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "enoja",
+              "enojo",
+              "se"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "enoja",
+              "enojo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "se irita facil",
+      "category": "Irritabilidad",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "enoja",
+              "enojado",
+              "enojo",
+              "facil",
+              "facilidad",
+              "facilmente",
+              "fácil",
+              "iirrita",
+              "irrita",
+              "irritable"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "facil",
+              "fácil",
+              "facilidad",
+              "facilmente"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

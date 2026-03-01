@@ -1,0 +1,28 @@
+{
+  "target_rules": [
+    {
+      "literal": "QTP",
+      "category": "medication_depression",
+      "pattern": [
+        {
+          "LOWER": {
+            "REGEX": "^qtp$"
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "VNF",
+      "category": "medication_depression",
+      "pattern": [
+        {
+          "LOWER": {
+            "REGEX": "^vnf$"
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

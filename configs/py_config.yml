@@ -1,8 +1,9 @@
-label_mapping:
-  anxiety: ansiedad
-  depression: depresion
-  sleep: sueno
-output_dir: outputs/py/
-patterns_dir: escribe/patterns/Concept_PY/
-project_name: psych_phenotyping_py
 text_column: texto
+patterns_root: escribe/patterns
+concept_layers:
+- Concept_PY
+- Concept_PY_Lexicon
+concept_folders:
+- Ansiedad
+- Depresion
+- Contexto

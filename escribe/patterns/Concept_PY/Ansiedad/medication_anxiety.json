@@ -1,42 +1,42 @@
 {
-    "target_rules": [
+  "target_rules": [
+    {
+      "pattern": [
         {
-            "label": "med_ansiedad",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "clonazepam",
-                            "clz",
-                            "clz2",
-                            "cnz",
-                            "alprazolam",
-                            "alpraz",
-                            "alp",
-                            "diazepam",
-                            "dzp"
-                        ]
-                    }
-                }
-            ],
-            "category": "medication_anxiety"
-        },
-        {
-            "label": "med_ansiedad",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "quetiapina",
-                            "qtp",
-                            "queti",
-                            "lvp",
-                            "lvp25"
-                        ]
-                    }
-                }
-            ],
-            "category": "medication_anxiety"
+          "LOWER": {
+            "IN": [
+              "clonazepam",
+              "clz",
+              "clz2",
+              "cnz",
+              "alprazolam",
+              "alpraz",
+              "alp",
+              "diazepam",
+              "dzp"
+            ]
+          }
         }
-    ]
+      ],
+      "category": "medication_anxiety",
+      "literal": "med_ansiedad"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "quetiapina",
+              "qtp",
+              "queti",
+              "lvp",
+              "lvp25"
+            ]
+          }
+        }
+      ],
+      "category": "medication_anxiety",
+      "literal": "med_ansiedad"
+    }
+  ]
 }

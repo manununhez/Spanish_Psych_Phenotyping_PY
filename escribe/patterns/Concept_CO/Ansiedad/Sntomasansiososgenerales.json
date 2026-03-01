@@ -1,0 +1,277 @@
+{
+  "target_rules": [
+    {
+      "literal": "ataque de ansiedad",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ataque",
+              "ataques",
+              "crisis",
+              "cuadro",
+              "depresión",
+              "grupo",
+              "ideas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "catastrofización",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "anticipacion",
+              "catastroficas",
+              "catastroficos",
+              "catastrofizacion",
+              "catastrofización",
+              "claustrofobia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "cogniciones ansiosas",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansiosa",
+              "ansiosas",
+              "ansioso",
+              "ansiosos",
+              "ansisosas",
+              "ansosas",
+              "asiosas",
+              "cogniciones",
+              "cognicions",
+              "cognicoens",
+              "ideas"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansiosas",
+              "ansiosos",
+              "ansisosas",
+              "asiosas",
+              "ansosas",
+              "ansiosa",
+              "ansioso",
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "despersonalización",
+      "category": "Sntomasansiososgenerales"
+    },
+    {
+      "literal": "desrealización",
+      "category": "Sntomasansiososgenerales"
+    },
+    {
+      "literal": "equivalentes de ansiedad",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansiedd",
+              "ansioso",
+              "epísodios",
+              "equiavlentes",
+              "equivaentes",
+              "equivalente",
+              "equivalentes"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansioso",
+              "ansiedad",
+              "ansiedd"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "fobia",
+      "category": "Sntomasansiososgenerales"
+    },
+    {
+      "literal": "núcleo ansioso",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansioso",
+              "nucleo",
+              "núcleo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansioso"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas ansiosos",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansiosa",
+              "ansioso",
+              "ansiosos",
+              "crisis",
+              "panico",
+              "pánico",
+              "sintomaa",
+              "sintomas",
+              "síntoma",
+              "síntomas"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "pánico",
+              "panico",
+              "ansiosos",
+              "ansioso",
+              "ansiosa",
+              "ansiedad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "trastorno de ansiedad",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "-trast",
+              "-trastorno",
+              "ansieda",
+              "ansiedad",
+              "ansiosa",
+              "ansiosas",
+              "ansioso",
+              "ansiosos",
+              "diagnóstico",
+              "manifestaciones",
+              "queja",
+              "quejas",
+              "sintomas",
+              "sintomatología",
+              "sitomas",
+              "síntomas",
+              "trast",
+              "trastorno",
+              "trastrono",
+              "ts",
+              "tx"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ansiedad",
+              "ansioso",
+              "ansiosos",
+              "ansiosa",
+              "ansieda",
+              "ansiosas"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "trastorno disociativo",
+      "category": "Sntomasansiososgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disociativo",
+              "disociativos",
+              "síntomas",
+              "trastorno"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "disociativos",
+              "disociativo"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

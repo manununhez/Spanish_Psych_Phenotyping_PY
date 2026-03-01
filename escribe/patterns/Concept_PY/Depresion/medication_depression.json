@@ -1,29 +1,29 @@
 {
-    "target_rules": [
+  "target_rules": [
+    {
+      "pattern": [
         {
-            "label": "med_depresion",
-            "pattern": [
-                {
-                    "LOWER": {
-                        "IN": [
-                            "fluoxetina",
-                            "flt",
-                            "flt20",
-                            "fxt",
-                            "vlf",
-                            "venlafaxina",
-                            "sertralina",
-                            "sert",
-                            "esc",
-                            "escitalopram",
-                            "trazodona",
-                            "tra",
-                            "traz"
-                        ]
-                    }
-                }
-            ],
-            "category": "medication_depression"
+          "LOWER": {
+            "IN": [
+              "fluoxetina",
+              "flt",
+              "flt20",
+              "fxt",
+              "vlf",
+              "venlafaxina",
+              "sertralina",
+              "sert",
+              "esc",
+              "escitalopram",
+              "trazodona",
+              "tra",
+              "traz"
+            ]
+          }
         }
-    ]
+      ],
+      "category": "medication_depression",
+      "literal": "med_depresion"
+    }
+  ]
 }

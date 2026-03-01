@@ -1,0 +1,230 @@
+{
+  "target_rules": [
+    {
+      "literal": "abulia",
+      "category": "Abulia"
+    },
+    {
+      "literal": "acostado todo el tiempo",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "acostado",
+              "tiemp",
+              "tiempo"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "tiemp",
+              "tiempo"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "falta de energía",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "energia",
+              "energía",
+              "falta",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "energia",
+              "energía"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no quiero hacer nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "de",
+              "ganas",
+              "hacer",
+              "nada",
+              "no",
+              "provoca",
+              "quiere",
+              "quiero",
+              "sin"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "logro",
+              "puedo"
+            ]
+          },
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiero",
+              "quiere",
+              "hacer",
+              "ganas",
+              "de",
+              "provoca"
+            ]
+          },
+          "OP": "{1,2}"
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no se quiere levantar de la cama",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cama",
+              "casa",
+              "levantar",
+              "no",
+              "quiere",
+              "quiero",
+              "salir"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiero",
+              "quiere"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "levantar",
+              "salir"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "cama",
+              "casa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sin ganas de hacer nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "bañarse",
+              "ganas",
+              "hacer",
+              "no",
+              "provoca",
+              "sin"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "provoca",
+              "ganas"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "bañarse",
+              "hacer"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "sinnganas de nada",
+      "category": "Abulia",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "nada",
+              "sinnganas"
+            ]
+          }
+        },
+        {
+          "OP": "?"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "nada"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

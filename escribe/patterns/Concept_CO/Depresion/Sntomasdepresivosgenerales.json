@@ -1,0 +1,413 @@
+{
+  "target_rules": [
+    {
+      "literal": "cogniciones depresivas",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "cognicioes",
+              "cogniciones",
+              "cognicions",
+              "cognicoens",
+              "depesiva",
+              "depresivas",
+              "depresivo",
+              "depresovas",
+              "depresvias"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresovas",
+              "depresivas",
+              "depesiva",
+              "depresvias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "depresión",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresion",
+              "depresiones",
+              "depresiòn",
+              "depresió",
+              "depresión",
+              "despresión"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "elementos depresivos",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "contenido",
+              "contenidos",
+              "cortejo",
+              "cuadro",
+              "depresivo",
+              "depresivos",
+              "elementos",
+              "episodio",
+              "episodios",
+              "subtipo"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresivos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "episodio depresivo",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depreisvo",
+              "depreivo",
+              "depresivo",
+              "depresivos",
+              "dropesivo",
+              "epeisodio",
+              "episidios",
+              "episodio",
+              "episodios",
+              "episoido",
+              "espectro",
+              "espisodio",
+              "estados"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depreivo",
+              "depreisvo",
+              "depresivo",
+              "dropesivo",
+              "depresivos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "esta muy deprimido",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "depresivo",
+              "deprimida",
+              "deprimido",
+              "esta",
+              "estoy",
+              "está"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "deprimido",
+              "depresiva",
+              "deprimida"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "ideas depresivas",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "depresivas",
+              "fase",
+              "ideas",
+              "tristeza"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresiva",
+              "depresivas",
+              "tristeza",
+              "tristeza"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me qiero levantar",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "levanta",
+              "levantar",
+              "levantarse",
+              "no",
+              "qiero",
+              "quiere",
+              "quiero"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "quiere",
+              "quiero",
+              "qiero"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "levantar",
+              "levanta",
+              "levantarse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "núcleo depresivo",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "clínico",
+              "cogntiivas",
+              "con",
+              "cuadro",
+              "cuadros",
+              "depresion",
+              "depresiones",
+              "depresiva",
+              "depresivas",
+              "depresivo",
+              "depresivo.sin",
+              "depresión",
+              "derpesion",
+              "grupo",
+              "ideas",
+              "manifestaciones",
+              "marcada",
+              "muchacho",
+              "nucleo",
+              "núcleo",
+              "polaridad",
+              "por",
+              "presentado",
+              "pseudodemencia",
+              "rumiaciones",
+              "sufrido",
+              "tengo",
+              "tipo"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresiones",
+              "depresión",
+              "derpesion",
+              "depresivo.sin",
+              "depresivo",
+              "depresivas",
+              "depresion",
+              "depresiva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas de corte depresivo",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "depreisvos",
+              "depresiva",
+              "depresivas",
+              "depresivo",
+              "depresivos",
+              "rsintomas",
+              "sinotmas",
+              "sintoma",
+              "sintomas",
+              "sintomatologia",
+              "síntoma",
+              "síntomas"
+            ]
+          }
+        },
+        {
+          "OP": "{,3}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresivas",
+              "depresivos",
+              "depreisvos",
+              "depresiva"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "síntomas depresivos",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "deperesivos",
+              "depreivo",
+              "depresiivos",
+              "depresivo",
+              "depresivos",
+              "depresión",
+              "isntomas",
+              "sindrome",
+              "sintomas",
+              "sintomatologia",
+              "sintomatología",
+              "sx",
+              "síntomas",
+              "tristeza",
+              "trsiteza"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresivos",
+              "trsiteza",
+              "depreivo",
+              "depresión",
+              "tristeza",
+              "deperesivos",
+              "depresiivos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "trastorno depresivo",
+      "category": "Sntomasdepresivosgenerales",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "-trastorno",
+              "-trastrono",
+              "depesivo",
+              "depreivomayor",
+              "depresion",
+              "depresivo",
+              "depresivorecurrente",
+              "depresión",
+              "t",
+              "t.",
+              "trastorno",
+              "trastrno",
+              "trastrono",
+              "tratsorno",
+              "trstorno",
+              "trx",
+              "tx"
+            ]
+          }
+        },
+        {
+          "OP": "{,5}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "depresivo",
+              "depresión",
+              "depresion",
+              "depesivo",
+              "depreivomayor"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

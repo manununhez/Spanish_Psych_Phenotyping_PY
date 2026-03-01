@@ -1,0 +1,17 @@
+{
+  "target_rules": [
+    {
+      "literal": "Duerme entrecortado",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": "duerme"
+        },
+        {
+          "LOWER": "entrecortado"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

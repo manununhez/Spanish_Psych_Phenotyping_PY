@@ -1,0 +1,53 @@
+{
+  "target_rules": [
+    {
+      "literal": "Bloqueo",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": "bloqueo"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Me bloqueo",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": "me"
+        },
+        {
+          "LOWER": "bloqueo"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "No rindo",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "rindo"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "No rinde",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "rinde"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

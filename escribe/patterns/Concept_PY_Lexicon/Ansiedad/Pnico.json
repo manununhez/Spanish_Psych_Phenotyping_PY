@@ -1,0 +1,33 @@
+{
+  "target_rules": [
+    {
+      "literal": "Ataque de nervios",
+      "category": "Pnico",
+      "pattern": [
+        {
+          "LOWER": "ataque"
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "nervios"
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "Susto (emocional)",
+      "category": "Pnico",
+      "pattern": [
+        {
+          "LOWER": "susto"
+        },
+        {
+          "LOWER": "(emocional)"
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}

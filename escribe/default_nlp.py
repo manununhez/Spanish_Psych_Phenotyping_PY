@@ -6,7 +6,11 @@ from medspacy import load as ms_load, ner
 
 # --- Rutas base relativas a este archivo ---
 HERE = Path(__file__).resolve().parent
-PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept_PY"          # <-- tu filtro A/D/Sueno
+# Capas de reglas:
+#   - Concept_CO: baseline extraído del paper (DeLaHoz2015 / Colombia)
+#   - Concept_PY: "core" reproducible para IPS (baseline + fixes generales)
+#   - Concept_PY_Lexicon: adaptación paraguaya (léxico local + abreviaturas), se carga encima del core
+PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept_PY"  # default = core
 RUSH_RULES = HERE / "patterns" / "RuSH_ES.tsv"
 CONTEXT_RULES = HERE / "patterns" / "ConText_ES.json"
 
@@ -103,7 +107,7 @@ def _load_target_rules_from_dir(json_dir: Path) -> pd.DataFrame:
     df = df.set_index("category").sort_index()
     return df
 
-def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True):
+def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True, reset=True):
     """
     Carga reglas del target_matcher seleccionando por CARPETA (p.ej. Ansiedad/ Depresion/ Sueno),
     no por el campo 'category' de cada regla.
@@ -113,8 +117,11 @@ def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True):
     """
     base_dir = Path(json_dir) if json_dir else PATTERNS_DIR_DEFAULT
 
-    # reset del target matcher
-    tm = nlp_obj.replace_pipe("medspacy_target_matcher", "medspacy_target_matcher", config={"rules": None})
+    # reset opcional del target matcher (permite cargar por capas)
+    if reset:
+        tm = nlp_obj.replace_pipe("medspacy_target_matcher", "medspacy_target_matcher", config={"rules": None})
+    else:
+        tm = nlp_obj.get_pipe("medspacy_target_matcher")
 
     # 1) Armar lista de archivos a cargar según carpeta
     json_paths = []

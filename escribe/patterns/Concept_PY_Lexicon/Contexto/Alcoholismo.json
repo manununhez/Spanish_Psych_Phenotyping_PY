@@ -1,0 +1,28 @@
+{
+  "target_rules": [
+    {
+      "literal": "OH",
+      "category": "Alcoholismo",
+      "pattern": [
+        {
+          "LOWER": {
+            "REGEX": "^oh$"
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    },
+    {
+      "literal": "OH+",
+      "category": "Alcoholismo",
+      "pattern": [
+        {
+          "LOWER": {
+            "REGEX": "^oh\\+?$"
+          }
+        }
+      ],
+      "source": "py_lexicon"
+    }
+  ]
+}
