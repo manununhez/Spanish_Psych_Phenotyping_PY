@@ -13,24 +13,22 @@
               "alpraz",
               "alp",
               "diazepam",
-              "dzp"
-            ]
-          }
-        }
-      ],
-      "category": "medication_anxiety",
-      "literal": "med_ansiedad"
-    },
-    {
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
+              "dzp",
+              "lorazepam",
+              "bromazepam",
+              "midazolam",
+              "buspirona",
+              "pregabalina",
               "quetiapina",
               "qtp",
               "queti",
               "lvp",
-              "lvp25"
+              "lvp25",
+              "escitalopram",
+              "sertralina",
+              "paroxetina",
+              "venlafaxina",
+              "duloxetina"
             ]
           }
         }
