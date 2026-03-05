@@ -7,8 +7,7 @@
         {
           "LOWER": "bajoneado"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Bajoneada",
@@ -17,8 +16,7 @@
         {
           "LOWER": "bajoneada"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Vy'a'ỹ",
@@ -32,8 +30,24 @@
             ]
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
+    },
+    {
+      "literal": "mal anímicamente",
+      "category": "Animodeprimido",
+      "pattern": [
+        {
+          "LOWER": "mal"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "anímicamente",
+              "animicamente"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

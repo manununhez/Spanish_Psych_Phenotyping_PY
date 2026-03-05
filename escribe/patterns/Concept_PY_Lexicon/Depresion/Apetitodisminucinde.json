@@ -1,0 +1,31 @@
+{
+  "target_rules": [
+    {
+      "literal": "come poco",
+      "category": "Apetitodisminucinde",
+      "pattern": [
+        {
+          "LOWER": "come"
+        },
+        {
+          "LOWER": "poco"
+        }
+      ]
+    },
+    {
+      "literal": "no tiene hambre",
+      "category": "Apetitodisminucinde",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "tiene"
+        },
+        {
+          "LOWER": "hambre"
+        }
+      ]
+    }
+  ]
+}

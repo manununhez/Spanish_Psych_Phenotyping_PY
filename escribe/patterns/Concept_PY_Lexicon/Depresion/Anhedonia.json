@@ -12,8 +12,7 @@
             ]
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Pérdida",
@@ -27,8 +26,7 @@
             ]
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "No da gusto",
@@ -43,8 +41,28 @@
         {
           "LOWER": "gusto"
         }
-      ],
-      "source": "py_lexicon"
+      ]
+    },
+    {
+      "literal": "ya no le halla sentido",
+      "category": "Anhedonia",
+      "pattern": [
+        {
+          "LOWER": "ya"
+        },
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "le"
+        },
+        {
+          "LOWER": "halla"
+        },
+        {
+          "LOWER": "sentido"
+        }
+      ]
     }
   ]
 }

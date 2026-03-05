@@ -7,8 +7,7 @@
         {
           "LOWER": "chespi"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Macoña",
@@ -22,8 +21,7 @@
             ]
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "SPA",
@@ -34,8 +32,7 @@
             "REGEX": "^spa$"
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
     }
   ]
 }

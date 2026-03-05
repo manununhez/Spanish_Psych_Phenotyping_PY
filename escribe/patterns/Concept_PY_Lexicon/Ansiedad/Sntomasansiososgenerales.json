@@ -1,17 +1,17 @@
 {
   "target_rules": [
     {
-      "literal": "Ganas de nada",
-      "category": "Abulia",
+      "literal": "nervios de punta",
+      "category": "Sntomasansiososgenerales",
       "pattern": [
         {
-          "LOWER": "ganas"
+          "LOWER": "nervios"
         },
         {
           "LOWER": "de"
         },
         {
-          "LOWER": "nada"
+          "LOWER": "punta"
         }
       ]
     }

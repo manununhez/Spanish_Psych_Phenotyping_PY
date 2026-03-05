@@ -1,4 +1,4 @@
-﻿term_original,variant,fenotipo_canonico,categoria_core,carpeta
+term_original,variant,fenotipo_canonico,categoria_core,carpeta
 Ahogo / Opresión,Ahogo,Somatización,SntomassomticosEjemplos,Ansiedad
 QTP / ALP / VNF,ALP,Benzodiacepina (Alprazolam),medication_anxiety,Ansiedad
 Argel / Argelado /a,Argel,Irritabilidad,Irritabilidad,Ansiedad
@@ -42,3 +42,13 @@ Todo me da igual,Todo me da igual,Apatía,Apata,Depresion
 QTP / ALP / VNF,VNF,Antidepresivo (Venlafaxina),medication_depression,Depresion
 Vy'a'ỹ,Vy'a'ỹ,Tristeza profunda,Animodeprimido,Depresion
 Ñembotavy,Ñembotavy,Apatía / Evasión,RetraimientosocialAislamiento,Depresion
+ya no le halla sentido,ya no le halla sentido,Anhedonia,Anhedonia,Depresion
+mal anímicamente,mal anímicamente,Estado de ánimo deprimido,Animodeprimido,Depresion
+cansancio extremo,cansancio extremo,Fatiga / pérdida de energía,Fatiga,Depresion
+duerme poco,duerme poco,Alteraciones del sueño,SueoAlterado,Depresion
+come poco,come poco,Disminución de apetito,Apetitodisminucinde,Depresion
+no tiene hambre,no tiene hambre,Disminución de apetito,Apetitodisminucinde,Depresion
+no quiere seguir viviendo,no quiere seguir viviendo,Ideación suicida,Ideacinsuicida,Depresion
+nervios de punta,nervios de punta,Ansiedad generalizada / nerviosismo,Sntomasansiososgenerales,Ansiedad
+preocupado por todo,preocupado por todo,Preocupación excesiva / rumiación,Rumiacin,Ansiedad
+se mueve mucho,se mueve mucho,Inquietud / tensión,Agitacinpsicomotora,Ansiedad

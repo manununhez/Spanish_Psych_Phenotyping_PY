@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal": "preocupado por todo",
+      "category": "Rumiacin",
+      "pattern": [
+        {
+          "LOWER": "preocupado"
+        },
+        {
+          "LOWER": "por"
+        },
+        {
+          "LOWER": "todo"
+        }
+      ]
+    }
+  ]
+}

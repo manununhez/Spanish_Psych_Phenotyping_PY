@@ -5,13 +5,50 @@
         {
           "LOWER": {
             "IN": [
-              "clonazepam",
-              "cnz",
-              "clonaz",
-              "clonazep",
+              "alprazolam",
               "diazepam",
               "dzp",
-              "diazepan",
+              "clonazepam",
+              "cnz",
+              "clz",
+              "clotiazepam",
+              "eszopiclona",
+              "zolpidem",
+              "zolpiden",
+              "zlp",
+              "zpd",
+              "fluoxetina",
+              "flx",
+              "fxt",
+              "sertralina",
+              "sertra",
+              "srt",
+              "paroxetina",
+              "pxt",
+              "escitalopram",
+              "talopram",
+              "venlafaxina",
+              "vfx",
+              "venla",
+              "vlf",
+              "amitriptilina",
+              "trazodona",
+              "trazo",
+              "trz",
+              "bupropion",
+              "mirtazapina",
+              "mrt",
+              "duloxetina",
+              "dlx",
+              "dulo",
+              "carbamazepina",
+              "cbz",
+              "arbamazepina",
+              "carbamezepina",
+              "oxcarbazepina",
+              "lamotrigina",
+              "lmt",
+              "litio",
               "quetiapina",
               "qtp",
               "qtt",
@@ -21,68 +58,78 @@
               "rsp",
               "olanzapina",
               "olz",
-              "oollzz",
-              "fluoxetina",
-              "flx",
-              "fxt",
-              "sertralina",
-              "srt",
-              "sertra",
-              "carbamazepina",
-              "cbz",
-              "litio",
-              "lith",
-              "valproato",
-              "vpa",
-              "acido valproico",
-              "lamotrigina",
-              "lmg",
-              "mirtazapina",
-              "mirt",
-              "venlafaxina",
-              "vfx",
-              "duloxetina",
-              "dlx",
-              "bupropion",
-              "bup",
-              "amitriptilina",
-              "ami",
-              "imipramina",
-              "imi",
-              "clomipramina",
-              "clm",
-              "citalopram",
-              "ctl",
-              "escitalopram",
-              "esctl",
-              "paroxetina",
-              "prx",
-              "fluvoxamina",
-              "flv",
-              "trazodona",
-              "trz",
-              "clorpromazina",
-              "cpz",
               "haloperidol",
-              "hlp",
-              "levomepromazina",
-              "lvp",
-              "lvp25",
-              "ziprasidona",
-              "zip",
-              "aripiprazol",
-              "ari",
               "clozapina",
-              "clz",
-              "clz2",
               "pregabalina",
-              "prg",
-              "gabapentina",
-              "gbp",
-              "buspirona",
-              "bsp"
+              "pregaba",
+              "pgl",
+              "biperideno",
+              "bpd",
+              "bipe",
+              "donepezilo",
+              "donepecilo",
+              "donepe",
+              "dnlp",
+              "levodopa",
+              "ldopa",
+              "nimodipina",
+              "fenobarbital",
+              "fnb",
+              "calmina",
+              "valproato",
+              "valp",
+              "valproico",
+              "aripiprazol",
+              "levomepromazina",
+              "metilfenidato"
             ]
           }
+        }
+      ],
+      "category": "medication_depression",
+      "literal": "med_depresion"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ácido",
+              "acido"
+            ]
+          }
+        },
+        {
+          "LOWER": "valproico"
+        }
+      ],
+      "category": "medication_depression",
+      "literal": "med_depresion"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "ácido",
+              "acido"
+            ]
+          }
+        },
+        {
+          "LOWER": "valproato"
+        }
+      ],
+      "category": "medication_depression",
+      "literal": "med_depresion"
+    },
+    {
+      "pattern": [
+        {
+          "LOWER": "difenil"
+        },
+        {
+          "LOWER": "hidantoinato"
         }
       ],
       "category": "medication_depression",

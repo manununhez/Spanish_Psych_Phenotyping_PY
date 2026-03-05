@@ -9,8 +9,7 @@
             "REGEX": "^oh$"
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "OH+",
@@ -21,8 +20,7 @@
             "REGEX": "^oh\\+?$"
           }
         }
-      ],
-      "source": "py_lexicon"
+      ]
     }
   ]
 }

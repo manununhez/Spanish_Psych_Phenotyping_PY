@@ -1,0 +1,19 @@
+{
+  "target_rules": [
+    {
+      "literal": "se mueve mucho",
+      "category": "Agitacinpsicomotora",
+      "pattern": [
+        {
+          "LOWER": "se"
+        },
+        {
+          "LOWER": "mueve"
+        },
+        {
+          "LOWER": "mucho"
+        }
+      ]
+    }
+  ]
+}

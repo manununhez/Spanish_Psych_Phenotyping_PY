@@ -10,8 +10,19 @@
         {
           "LOWER": "entrecortado"
         }
-      ],
-      "source": "py_lexicon"
+      ]
+    },
+    {
+      "literal": "duerme poco",
+      "category": "SueoAlterado",
+      "pattern": [
+        {
+          "LOWER": "duerme"
+        },
+        {
+          "LOWER": "poco"
+        }
+      ]
     }
   ]
 }

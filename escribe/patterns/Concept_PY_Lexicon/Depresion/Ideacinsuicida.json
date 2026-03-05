@@ -1,0 +1,22 @@
+{
+  "target_rules": [
+    {
+      "literal": "no quiere seguir viviendo",
+      "category": "Ideacinsuicida",
+      "pattern": [
+        {
+          "LOWER": "no"
+        },
+        {
+          "LOWER": "quiere"
+        },
+        {
+          "LOWER": "seguir"
+        },
+        {
+          "LOWER": "viviendo"
+        }
+      ]
+    }
+  ]
+}

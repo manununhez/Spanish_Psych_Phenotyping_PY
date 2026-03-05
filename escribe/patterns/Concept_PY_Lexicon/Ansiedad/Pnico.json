@@ -13,8 +13,7 @@
         {
           "LOWER": "nervios"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Susto (emocional)",
@@ -26,8 +25,7 @@
         {
           "LOWER": "(emocional)"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     }
   ]
 }

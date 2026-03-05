@@ -7,8 +7,7 @@
         {
           "LOWER": "kaigue"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Caigue",
@@ -17,8 +16,19 @@
         {
           "LOWER": "caigue"
         }
-      ],
-      "source": "py_lexicon"
+      ]
+    },
+    {
+      "literal": "cansancio extremo",
+      "category": "Fatiga",
+      "pattern": [
+        {
+          "LOWER": "cansancio"
+        },
+        {
+          "LOWER": "extremo"
+        }
+      ]
     }
   ]
 }

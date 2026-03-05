@@ -7,8 +7,7 @@
         {
           "LOWER": "tekorei"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     },
     {
       "literal": "Todo me da igual",
@@ -26,8 +25,7 @@
         {
           "LOWER": "igual"
         }
-      ],
-      "source": "py_lexicon"
+      ]
     }
   ]
 }

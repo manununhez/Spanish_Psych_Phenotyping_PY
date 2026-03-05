@@ -1,14 +1,15 @@
 {
   "target_rules": [
     {
-      "literal": "Ndavy'ái",
-      "category": "Soledad",
+      "literal": "atracones",
+      "category": "Apetitoaumentode",
       "pattern": [
         {
           "LOWER": {
             "IN": [
-              "ndavy'ai",
-              "ndavy'ái"
+              "atracon",
+              "atracón",
+              "atracones"
             ]
           }
         }
