@@ -2,7 +2,7 @@
   "target_rules": [
     {
       "literal": "OH",
-      "category": "Alcoholismo",
+      "category": "Alcohol",
       "pattern": [
         {
           "LOWER": {
@@ -13,7 +13,7 @@
     },
     {
       "literal": "OH+",
-      "category": "Alcoholismo",
+      "category": "Alcohol",
       "pattern": [
         {
           "LOWER": {

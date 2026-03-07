@@ -73,7 +73,6 @@
               "irritabilidad",
               "irritable",
               "irritablidad",
-              "malgeniado",
               "rabia"
             ]
           }
@@ -108,35 +107,6 @@
               "rabias",
               "rabiosa",
               "ira"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "literal": "mantengo malgeniada",
-      "category": "Irritabilidad",
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
-              "facil",
-              "fácil",
-              "irritabilidad",
-              "malgeniada",
-              "mantengo"
-            ]
-          }
-        },
-        {
-          "OP": "?"
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "malgeniada",
-              "fácil",
-              "facil"
             ]
           }
         }

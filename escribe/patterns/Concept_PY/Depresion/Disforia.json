@@ -1,15 +1,14 @@
 {
   "target_rules": [
     {
-      "literal": "desespero",
+      "literal": "desesperado",
       "category": "Disforia",
       "pattern": [
         {
           "LOWER": {
             "IN": [
               "desesperada",
-              "desesperado",
-              "desespero"
+              "desesperado"
             ]
           }
         }

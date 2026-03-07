@@ -356,47 +356,6 @@
       ]
     },
     {
-      "literal": "le da un desespero",
-      "category": "Agitacinpsicomotora",
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
-              "da",
-              "desepero",
-              "hablar",
-              "le",
-              "por",
-              "un"
-            ]
-          }
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "da"
-            ]
-          }
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "por",
-              "un"
-            ]
-          }
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "hablar",
-              "desepero"
-            ]
-          }
-        }
-      ]
-    },
-    {
       "literal": "muy inquieto",
       "category": "Agitacinpsicomotora",
       "pattern": [
@@ -424,46 +383,6 @@
               "inquieta",
               "inquieto",
               "hipetactiva"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "literal": "no se halla",
-      "category": "Agitacinpsicomotora",
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
-              "ha",
-              "halla",
-              "hallo",
-              "me",
-              "no",
-              "se"
-            ]
-          }
-        },
-        {
-          "OP": "?"
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "me",
-              "se"
-            ]
-          }
-        },
-        {
-          "OP": "?"
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "hallo",
-              "halla"
             ]
           }
         }

@@ -9,8 +9,7 @@
               "psicoactivas",
               "droga",
               "drogadicción",
-              "drogadicto",
-              "spa"
+              "drogadicto"
             ]
           }
         }
@@ -24,12 +23,10 @@
           "LOWER": {
             "IN": [
               "marihuana",
-              "macoña",
               "cannabis",
               "cocaina",
               "cocaína",
               "crack",
-              "chespi",
               "clorhidrato"
             ]
           }

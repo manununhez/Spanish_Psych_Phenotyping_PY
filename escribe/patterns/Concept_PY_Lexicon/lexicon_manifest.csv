@@ -1,6 +1,5 @@
 term_original,variant,fenotipo_canonico,categoria_core,carpeta
 Ahogo / Opresión,Ahogo,Somatización,SntomassomticosEjemplos,Ansiedad
-QTP / ALP / VNF,ALP,Benzodiacepina (Alprazolam),medication_anxiety,Ansiedad
 Argel / Argelado /a,Argel,Irritabilidad,Irritabilidad,Ansiedad
 Argel / Argelado /a,Argelada,Irritabilidad,Irritabilidad,Ansiedad
 Argel / Argelado,Argelado,Irritabilidad,Irritabilidad,Ansiedad
@@ -25,12 +24,11 @@ No da gusto,No da gusto,Anhedonia,Anhedonia,Depresion
 No rindo / No rinde,No rinde,Baja concentración,Bajaconcentracin,Depresion
 No rindo / No rinde,No rindo,Baja concentración,Bajaconcentracin,Depresion
 No se halla,No se halla,Inquietud / Angustia,AngustiaMiedoTemor,Ansiedad
-OH / OH+,OH,Alcoholismo,Alcoholismo,Contexto
-OH / OH+,OH+,Alcoholismo,Alcoholismo,Contexto
+OH / OH+,OH,Alcohol,Alcohol,Contexto
+OH / OH+,OH+,Alcohol,Alcohol,Contexto
 Ahogo / Opresión,Opresión,Somatización,SntomassomticosEjemplos,Ansiedad
 Pirĩ,Pirĩ,Somatización,SntomassomticosEjemplos,Ansiedad
 Desinterés / Pérdida,Pérdida,Anhedonia / Apatía,Anhedonia,Depresion
-QTP / ALP / VNF,QTP,Antipsicótico (Quetiapina),medication_depression,Depresion
 Se arma películas,Se arma películas,Catastrofización,Prospeccindesesperanzada,Ansiedad
 SPA,SPA,Uso de Sustancias,UsoSustancias,Contexto
 Susto (emocional),Susto (emocional),Pánico / Estrés,Pnico,Ansiedad
@@ -39,7 +37,6 @@ Temblo / Tiemblo,Temblo,Somatización,SntomassomticosEjemplos,Ansiedad
 Contractura / Tensión,Tensión,Somatización,SntomassomticosEjemplos,Ansiedad
 Temblo / Tiemblo,Tiemblo,Somatización,SntomassomticosEjemplos,Ansiedad
 Todo me da igual,Todo me da igual,Apatía,Apata,Depresion
-QTP / ALP / VNF,VNF,Antidepresivo (Venlafaxina),medication_depression,Depresion
 Vy'a'ỹ,Vy'a'ỹ,Tristeza profunda,Animodeprimido,Depresion
 Ñembotavy,Ñembotavy,Apatía / Evasión,RetraimientosocialAislamiento,Depresion
 ya no le halla sentido,ya no le halla sentido,Anhedonia,Anhedonia,Depresion

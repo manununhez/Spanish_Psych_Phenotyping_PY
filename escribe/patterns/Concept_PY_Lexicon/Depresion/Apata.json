@@ -8,24 +8,6 @@
           "LOWER": "tekorei"
         }
       ]
-    },
-    {
-      "literal": "Todo me da igual",
-      "category": "Apata",
-      "pattern": [
-        {
-          "LOWER": "todo"
-        },
-        {
-          "LOWER": "me"
-        },
-        {
-          "LOWER": "da"
-        },
-        {
-          "LOWER": "igual"
-        }
-      ]
     }
   ]
 }

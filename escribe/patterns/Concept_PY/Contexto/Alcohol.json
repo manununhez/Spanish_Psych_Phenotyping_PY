@@ -49,19 +49,6 @@
       ],
       "category": "Contexto",
       "literal": "Alcohol"
-    },
-    {
-      "pattern": [
-        {
-          "IS_PUNCT": false,
-          "OP": "?"
-        },
-        {
-          "LOWER": "oh"
-        }
-      ],
-      "category": "Contexto",
-      "literal": "Alcohol"
     }
   ]
 }
