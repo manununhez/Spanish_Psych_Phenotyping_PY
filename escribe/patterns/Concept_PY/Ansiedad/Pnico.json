@@ -1,21 +1,29 @@
 {
   "target_rules": [
     {
-      "literal": "crisis de ansiedad",
-      "category": "Pnico"
-    },
-    {
-      "literal": "pánico",
+      "literal": "Ataque de nervios",
       "category": "Pnico",
       "pattern": [
         {
-          "LOWER": {
-            "IN": [
-              "panico",
-              "pànico",
-              "pánico"
-            ]
-          }
+          "LOWER": "ataque"
+        },
+        {
+          "LOWER": "de"
+        },
+        {
+          "LOWER": "nervios"
+        }
+      ]
+    },
+    {
+      "literal": "Susto (emocional)",
+      "category": "Pnico",
+      "pattern": [
+        {
+          "LOWER": "susto"
+        },
+        {
+          "LOWER": "(emocional)"
         }
       ]
     }

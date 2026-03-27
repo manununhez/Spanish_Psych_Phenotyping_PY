@@ -1,0 +1,274 @@
+{
+  "target_rules": [
+    {
+      "literal": "alta distractibilidad",
+      "category": "Bajaconcentracin"
+    },
+    {
+      "literal": "atencion dispersa",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atencion",
+              "atención",
+              "concentracion",
+              "concentración",
+              "dispersa"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "dispersa"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "dificultad para concentrarse",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "concentracion",
+              "concentración",
+              "concentrarse",
+              "dificultad",
+              "dificultades",
+              "disminucion"
+            ]
+          }
+        },
+        {
+          "OP": "{,4}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "concentrarse",
+              "concentración",
+              "concentracion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "disprosexia",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disprosexia",
+              "disprosexica",
+              "disprosexico",
+              "disproséxica",
+              "disproséxico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "disprosexico",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "disprosexia",
+              "disprosexica",
+              "disprosexico",
+              "distraibilidad"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "distraída",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "desconcentracion",
+              "desconcentrada",
+              "distractil",
+              "distraida",
+              "distraída"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "déficit de atención",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atencion",
+              "atencional",
+              "atencionales",
+              "atención",
+              "baja",
+              "concentracion",
+              "déficit",
+              "fallas",
+              "falta",
+              "trastorno"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "atención",
+              "atencion",
+              "atencionales",
+              "concentracion",
+              "atencional"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "estoy como ida",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "estoy",
+              "ida",
+              "ido",
+              "siento"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "ida",
+              "ido"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "faltas de concentración",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atencion",
+              "atención",
+              "baja",
+              "concentracion",
+              "concentración",
+              "falta",
+              "faltas",
+              "pobre"
+            ]
+          }
+        },
+        {
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "atencion",
+              "atención",
+              "concentración",
+              "concentracion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipoprosexia",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipoprosexia",
+              "hipoprosexica",
+              "hipoprosexico",
+              "hipoproséxico"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "hipoproséxico",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "hipoprosexia",
+              "hipoprosexica",
+              "hipoprosexico",
+              "hipoproséxico",
+              "hipoproxesia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "literal": "no me concentro",
+      "category": "Bajaconcentracin",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "atencion",
+              "atención",
+              "concentro",
+              "no"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "NOT_IN": [
+              "permite"
+            ]
+          },
+          "OP": "{,2}"
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "concentro",
+              "atención",
+              "atencion"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

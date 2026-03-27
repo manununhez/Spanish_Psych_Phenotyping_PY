@@ -1,54 +1,26 @@
 {
   "target_rules": [
     {
+      "literal": "OH",
+      "category": "Alcohol",
       "pattern": [
         {
           "LOWER": {
-            "IN": [
-              "alcohol",
-              "alcoholismo",
-              "etilismo",
-              "etilista",
-              "bebedor",
-              "ebrio",
-              "borracho",
-              "embriaguez"
-            ]
+            "REGEX": "^oh$"
           }
         }
-      ],
-      "category": "Contexto",
-      "literal": "Alcohol"
+      ]
     },
     {
+      "literal": "OH+",
+      "category": "Alcohol",
       "pattern": [
         {
-          "LOWER": "consumo"
-        },
-        {
-          "LOWER": "de"
-        },
-        {
-          "LOWER": "bebidas"
+          "LOWER": {
+            "REGEX": "^oh\\+?$"
+          }
         }
-      ],
-      "category": "Contexto",
-      "literal": "Alcohol"
-    },
-    {
-      "pattern": [
-        {
-          "LOWER": "dependencia"
-        },
-        {
-          "LOWER": "al"
-        },
-        {
-          "LOWER": "alcohol"
-        }
-      ],
-      "category": "Contexto",
-      "literal": "Alcohol"
+      ]
     }
   ]
 }

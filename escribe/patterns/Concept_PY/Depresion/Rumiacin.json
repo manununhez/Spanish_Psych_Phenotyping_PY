@@ -1,56 +1,14 @@
 {
   "target_rules": [
     {
-      "literal": "estado pensativa",
+      "literal": "Darle vueltas",
       "category": "Rumiacin",
       "pattern": [
         {
-          "LOWER": {
-            "IN": [
-              "estado",
-              "pensativa",
-              "pensativo"
-            ]
-          }
+          "LOWER": "darle"
         },
         {
-          "OP": "{,2}"
-        },
-        {
-          "LOWER": {
-            "IN": [
-              "pensativa",
-              "pensativo"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "literal": "rumiaciones",
-      "category": "Rumiacin",
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
-              "rumiaciones",
-              "rumiación"
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "literal": "rumiación",
-      "category": "Rumiacin",
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
-              "rumiacion",
-              "rumiación"
-            ]
-          }
+          "LOWER": "vueltas"
         }
       ]
     }

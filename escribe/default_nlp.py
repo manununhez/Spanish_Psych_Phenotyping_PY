@@ -8,9 +8,9 @@ from medspacy import load as ms_load, ner
 HERE = Path(__file__).resolve().parent
 # Capas de reglas:
 #   - Concept_CO: baseline extraído del paper (DeLaHoz2015 / Colombia)
-#   - Concept_PY: "core" reproducible para IPS (baseline + fixes generales)
-#   - Concept_PY_Lexicon: adaptación paraguaya (léxico local + abreviaturas), se carga encima del core
-PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept_PY"  # default = core
+#   - Concept_Core: núcleo clínico depurado para IPS
+#   - Concept_PY: adaptación paraguaya, se carga encima del core
+PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept_Core"
 RUSH_RULES = HERE / "patterns" / "RuSH_ES.tsv"
 CONTEXT_RULES = HERE / "patterns" / "ConText_ES.json"
 
@@ -181,4 +181,3 @@ def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True, res
         print(f"Total target rules added: {total_added}")
 
     return nlp_obj
-

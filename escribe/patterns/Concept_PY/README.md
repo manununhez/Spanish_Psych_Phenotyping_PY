@@ -1,179 +1,31 @@
-# Patrones Adaptados para Paraguay (Concept_PY)
+# Capa regional paraguaya (`Concept_PY`)
 
-## 📋 Propósito
+Capa de **adaptación léxica paraguaya** (Paraguay-first) para el fenotipado psiquiátrico en EHR en español.
 
-Esta carpeta contiene los **patrones léxicos adaptados** para el español paraguayo. Inicialmente es una copia de los patrones unificados (Colombia), pero está destinada a evolucionar con términos locales identificados durante la validación.
+## Qué contiene
+- Reglas **léxicas** (variantes paraguayas / jopará / abreviaturas locales) derivadas del
+  **Diccionario Maestro Psiquiátrico Paraguayo** como fuente principal, y el diccionario fenotipado como complemento
+  (para verificación y deduplicación).
+- Cada entrada se mapea a un **fenotipo canónico ya existente en el CORE** (mismos nombres `rule_*`).
+- La carpeta **Mixto fue eliminada**: todos los términos quedaron asignados a las carpetas del CORE
+  (`Ansiedad/`, `Depresion/`, `Contexto/`) para que se carguen sin cambiar `fenotipos.yml`.
 
-## 🎯 Caso de Uso Principal
+## Estructura
+- `Ansiedad/` y `Depresion/`: términos que aportan directamente a los fenotipos clínicos.
+- `Contexto/`: marcadores de contexto (p.ej., sustancias) o categorías auxiliares. Si no querés estas features,
+  podés excluir columnas `rule_*` correspondientes en 07.
 
-**Clasificación binaria rule-based** de relatos clínicos en español para determinar presencia de:
-- **Ansiedad**: 18 fenotipos específicos
-- **Depresión**: 31 fenotipos específicos
-- **Compartidos**: 5 fenotipos
+## Cómo se usa
+- Se carga **junto al CORE** (profile `py`): `Concept_Core + Concept_PY`.
+- Recomendación metodológica:
+  1) Activar primero **en 09 (auditoría)** para inspeccionar `phenotype_support.csv` y `samples_by_phenotype/`.
+  2) Activar luego en **07 (features)**.
+  3) Mantener **03 (denoising)** con CORE hasta validar que no introduce ruido.
 
-
-## 📊 Ventajas sobre Corpus Separados
-
-### Comparación: CSJDM vs HOMO vs Unified
-
-| Aspecto | CSJDM | HOMO | **Unified** |
-|---------|-------|------|-------------|
-| **Cobertura** | Media | Media | **Alta** ✅ |
-| **Errores ortográficos** | Sí | No | **Sí** ✅ |
-| **Variantes formales** | No | Sí | **Sí** ✅ |
-| **Duplicados** | N/A | N/A | **Eliminados** ✅ |
-| **Mantenimiento** | 2 archivos | 2 archivos | **1 archivo** ✅ |
-
-### Ejemplo Práctico: "Ansiedad"
-
-**CSJDM solo**:
-```json
-["ansiedad", "anisiosa", "ansioso", "anisoa", "asnioso", "ansiad"]
-```
-
-**HOMO solo**:
-```json
-["ansiedad", "ansiosa", "ansioso", "ansiosas", "ansiosos"]
-```
-
-**Unified (RECOMENDADO)**:
-```json
-["anisiosa", "anisoa", "ansiad", "ansiedad", "ansiosa", "ansiosas", 
- "ansioso", "ansiosos", "asnioso"]
-```
-
-✅ Captura **errores + variantes correctas** = Máxima recall
-
-## 📁 Contenido
-
-### Fenotipos de Depresión (31)
-```
-Animodeprimido.json          - Ánimo deprimido, tristeza
-Anhedonia.json               - Pérdida de placer
-Sntomasdepresivosgenerales.json - Síntomas depresivos globales
-Bajaconcentracin.json        - Dificultad de concentración
-Culpa.json                   - Sentimientos de culpa
-Desesperanza.json            - Visión pesimista del futuro
-Rumiacin.json                - Pensamientos repetitivos negativos
-Prospeccindesesperanzada.json - Prospección negativa
-Apata.json                   - Falta de motivación
-Abulia.json                  - Ausencia de voluntad
-Bajaenerga.json              - Fatiga, cansancio
-Fatiga.json                  - Fatiga persistente
-Retrasopsicomotor.json       - Enlentecimiento motor/cognitivo
-Llantofcil.json              - Llanto frecuente
-Disforia.json                - Malestar emocional
-Irritabilidad.json           - Irritabilidad
-Hipotimia.json               - Ánimo bajo
-SueoInsomnio.json            - Insomnio
-SueoDespertartemprano.json   - Despertar precoz
-SueoHipersomnio.json         - Sueño excesivo
-SueoAlterado.json            - Patrón de sueño alterado
-Apetitodisminucinde.json     - Pérdida de apetito
-Apetitoaumentode.json        - Aumento de apetito
-PesoPrdida.json              - Pérdida de peso
-PesoIncremento.json          - Aumento de peso
-Ideacinsuicida.json          - Ideas suicidas
-Ideasdemuerte.json           - Preocupación por la muerte
-Intentosuicida.json          - Conducta suicida
-Autolesin.json               - Autolesiones
-RetraimientosocialAislamiento.json - Aislamiento social
-Soledad.json                 - Sentimiento de soledad
-```
-
-### Fenotipos de Ansiedad (18)
-```
-Ansiedad.json                - Ansiedad generalizada
-AngustiaMiedoTemor.json      - Angustia, miedo, ataques de nervios
-Sntomasansiososgenerales.json - Síntomas ansiosos globales
-Pnico.json                   - Ataques de pánico
-DespersonalizacinDesrealizacin.json - Síntomas disociativos
-Obsesiones.json              - Pensamientos obsesivos
-Compulsiones.json            - Comportamientos compulsivos
-SueoPesadillas.json          - Pesadillas
-SntomassomticosEjemplos.json - Manifestaciones somáticas
-Agitacinpsicomotora.json     - Inquietud motora
-Labilidademocional.json      - Variabilidad emocional
-Ideacinpersecutoria.json     - Ideas persecutorias
-Paranoia.json                - Paranoia
-```
-
-## 🔧 Uso en Modelo Rule-Based
-
-### Estrategia de Clasificación Binaria
-
-```python
-# Pseudocódigo para clasificación
-def classify_clinical_text(text):
-    # 1. Cargar patrones unificados
-    depression_phenotypes = load_unified_phenotypes("depression")
-    anxiety_phenotypes = load_unified_phenotypes("anxiety")
-    
-    # 2. Extraer menciones
-    depression_mentions = extract_mentions(text, depression_phenotypes)
-    anxiety_mentions = extract_mentions(text, anxiety_phenotypes)
-    
-    # 3. Calcular scores
-    depression_score = len(depression_mentions) / len(depression_phenotypes)
-    anxiety_score = len(anxiety_mentions) / len(anxiety_phenotypes)
-    
-    # 4. Clasificar
-    threshold = 0.15  # Ajustar según validación
-    
-    has_depression = depression_score >= threshold
-    has_anxiety = anxiety_score >= threshold
-    
-    return {
-        "depression": has_depression,
-        "anxiety": has_anxiety,
-        "comorbid": has_depression and has_anxiety,
-        "depression_score": depression_score,
-        "anxiety_score": anxiety_score,
-        "depression_phenotypes": depression_mentions,
-        "anxiety_phenotypes": anxiety_mentions
-    }
-```
-
-### Ventajas del Enfoque Rule-Based
-
-✅ **Interpretabilidad**: Cada predicción es explicable  
-✅ **Bajo costo computacional**: No requiere GPU  
-✅ **Adaptabilidad**: Fácil agregar/modificar patrones  
-✅ **Sin entrenamiento**: Funciona inmediatamente  
-✅ **Multilingüe**: Patrones en español nativo  
-
-## 🧪 Validación Recomendada
-
-### Antes de usar en producción:
-
-1. **Validación con corpus paraguayo**:
-   ```bash
-   # Anotar muestra de 100-200 relatos clínicos de Paraguay
-   # Calcular métricas: precision, recall, F1
-   ```
-
-2. **Ajuste de umbrales**:
-   - Validar threshold óptimo para clasificación binaria
-   - Considerar umbrales diferentes para ansiedad vs depresión
-
-3. **Análisis de falsos positivos/negativos**:
-   - Identificar patrones faltantes específicos de Paraguay
-   - Agregar reglas locales si es necesario
-
-4. **Comparación con anotadores humanos**:
-   - Inter-annotator agreement (Kappa)
-   - Concordancia con diagnósticos clínicos
-
-
-## 🔄 Actualización
-
-Estos archivos fueron generados automáticamente fusionando:
-- `escribe/patterns/Concept/CSJDM/*.json`
-- `escribe/patterns/Concept/HOMO/*.json`
-
-
-## 📚 Referencias
-
-- **Corpus origen**: Hospitales de Medellín, Colombia
-- **Códigos diagnósticos**: CIE-10 (F32, F33, F40, F41, F42)
-- **Criterios**: DSM-5 para trastornos depresivos y de ansiedad
+## Manifiesto
+`lexicon_manifest.csv` contiene el mapeo:
+- `term_original`: forma original en el diccionario
+- `variant`: variante generada/normalizada
+- `fenotipo_canonico`: etiqueta humana del fenotipo
+- `categoria_core`: nombre exacto del fenotipo (columna `rule_<categoria_core>`)
+- `carpeta`: carpeta destino (Ansiedad/Depresion/Contexto)

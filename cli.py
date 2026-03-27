@@ -15,7 +15,6 @@ from medspacy import ner
 
 BASE = pathlib.Path(__file__).parent
 
-
 def load_yaml(path: pathlib.Path) -> dict:
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
@@ -61,7 +60,7 @@ def load_concept_layer(
 ):
     base_dir = Path(base_dir)
 
-    # Auto-fix: si quedó anidada como Concept_PY_Lexicon/Concept_PY_Lexicon/...
+    # Auto-fix: si una capa quedó anidada accidentalmente dentro de una carpeta homónima.
     nested = base_dir / base_dir.name
     if not any(_iter_json_files(base_dir)) and nested.exists():
         if verbose:
@@ -197,9 +196,11 @@ def build_pipeline(profile: str, fenos_cfg: dict, profile_cfg: dict | None = Non
 
     reset = True
     for layer_name in layers:
+        layer_name = str(layer_name).strip()
         layer_dir = patterns_root / layer_name
         if not layer_dir.exists():
             raise FileNotFoundError(f"No existe capa '{layer_name}' en {layer_dir}")
+        print(f"[build_pipeline] capa={layer_name} | ruta={layer_dir}")
         nlp_obj = load_concept_layer(
             nlp_obj,
             base_dir=layer_dir,

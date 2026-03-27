@@ -14,19 +14,25 @@ cuánto mejora una adaptación local.
 
 ## Arquitectura por capas
 
+La nomenclatura activa del proyecto principal es:
+
+- `Concept_CO` = baseline histórico colombiano
+- `Concept_Core` = núcleo clínico depurado
+- `Concept_PY` = capa regional paraguaya
+
 ### 1) `Concept_CO/` — baseline (paper, Colombia)
 Conjunto congelado para reproducir el fenotipado publicado.
 
-### 2) `Concept_PY/` — core reproducible (IPS)
+### 2) `Concept_Core/` — núcleo clínico depurado
 Core estable para EHR en español con **fixes generales** (anclajes, correcciones técnicas,
 reducción de falsos positivos por estructura), pero sin depender de léxico cultural local.
 
-> Nota: si movés los términos paraguayos a `Concept_PY_Lexicon/`, el core puede quedar **muy
+> Nota: si concentrás los términos paraguayos en `Concept_PY/`, el core puede quedar **muy
 > parecido** al baseline, pero **no necesariamente idéntico**: es válido que el core contenga
 > correcciones técnicas y mejoras generalizables (p. ej. fixes `label→literal`, anclajes, ajustes
 > de ventanas) mientras que el léxico local quede en la capa de adaptación.
 
-### 3) `Concept_PY_Lexicon/` — adaptation layer (Paraguay)
+### 3) `Concept_PY/` — capa regional paraguaya
 Extensión opcional con **léxico paraguayo/jopará**, abreviaturas institucionales y variantes
 locales. Se carga **encima del core** (sin reset del matcher) para poder comparar:
 
@@ -50,8 +56,8 @@ Esto es normalización de formato de nota (muy común en EHR) y debe ocurrir **a
 ```
 escribe/patterns/
 ├─ Concept_CO/            # baseline (paper)
-├─ Concept_PY/            # core reproducible
-├─ Concept_PY_Lexicon/    # capa paraguaya (opcional)
+├─ Concept_Core/          # núcleo clínico depurado
+├─ Concept_PY/            # capa regional paraguaya
 ├─ ConText_ES.json
 └─ RuSH_ES.tsv
 
@@ -69,8 +75,8 @@ cli.py
 Perfiles:
 
 - `co`   → baseline Colombia (`Concept_CO/`)
-- `core` → core reproducible (`Concept_PY/`)
-- `py`   → core + adaptación (`Concept_PY/` + `Concept_PY_Lexicon/`)
+- `core` → `Concept_Core`
+- `py`   → `Concept_Core` + `Concept_PY`
 
 ```bash
 python cli.py --profile co   --config co_config.yml   --input data/ips_clean.csv --output outputs/rules_co.csv
@@ -89,16 +95,15 @@ BASE = Path("escribe/patterns")
 # Baseline (CO)
 nlp_co = select_concepts(nlp, json_dir=str(BASE / "Concept_CO"), concepts=("all",), reset=True)
 
-# Core (PY)
-nlp_core = select_concepts(nlp, json_dir=str(BASE / "Concept_PY"), concepts=("all",), reset=True)
+# Core
+nlp_core = select_concepts(nlp, json_dir=str(BASE / "Concept_Core"), concepts=("all",), reset=True)
 
-# Core + Adaptación (PY)
-nlp_py = select_concepts(nlp, json_dir=str(BASE / "Concept_PY"), concepts=("all",), reset=True)
-nlp_py = select_concepts(nlp_py, json_dir=str(BASE / "Concept_PY_Lexicon"), concepts=("all",), reset=False)
+# Core + Adaptación regional PY
+nlp_py = select_concepts(nlp, json_dir=str(BASE / "Concept_Core"), concepts=("all",), reset=True)
+nlp_py = select_concepts(nlp_py, json_dir=str(BASE / "Concept_PY"), concepts=("all",), reset=False)
 ```
 
 ## Configuración
 
 - `configs/fenotipos.yml` define qué carpetas cargar (por defecto: Ansiedad, Depresion, Contexto).
 - `configs/*_config.yml` define la columna de texto (`text_column`) y nombres de proyecto.
-
