@@ -1,31 +1,102 @@
-# Capa regional paraguaya (`Concept_PY`)
+# `Concept_PY`: adaptación regional paraguaya
 
-Capa de **adaptación léxica paraguaya** (Paraguay-first) para el fenotipado psiquiátrico en EHR en español.
+## Propósito
 
-## Qué contiene
-- Reglas **léxicas** (variantes paraguayas / jopará / abreviaturas locales) derivadas del
-  **Diccionario Maestro Psiquiátrico Paraguayo** como fuente principal, y el diccionario fenotipado como complemento
-  (para verificación y deduplicación).
-- Cada entrada se mapea a un **fenotipo canónico ya existente en el CORE** (mismos nombres `rule_*`).
-- La carpeta **Mixto fue eliminada**: todos los términos quedaron asignados a las carpetas del CORE
-  (`Ansiedad/`, `Depresion/`, `Contexto/`) para que se carguen sin cambiar `fenotipos.yml`.
+`Concept_PY` es la capa de adaptación regional paraguaya que se carga encima de `Concept_Core`. Su objetivo es ampliar cobertura léxica mediante variantes locales, jopará, abreviaturas institucionales y expresiones frecuentes en notas clínicas del IPS.
 
-## Estructura
-- `Ansiedad/` y `Depresion/`: términos que aportan directamente a los fenotipos clínicos.
-- `Contexto/`: marcadores de contexto (p.ej., sustancias) o categorías auxiliares. Si no querés estas features,
-  podés excluir columnas `rule_*` correspondientes en 07.
+No reemplaza al core: lo extiende.
 
-## Cómo se usa
-- Se carga **junto al CORE** (profile `py`): `Concept_Core + Concept_PY`.
-- Recomendación metodológica:
-  1) Activar primero **en 09 (auditoría)** para inspeccionar `phenotype_support.csv` y `samples_by_phenotype/`.
-  2) Activar luego en **07 (features)**.
-  3) Mantener **03 (denoising)** con CORE hasta validar que no introduce ruido.
+## Estructura activa del snapshot
+
+Folders presentes:
+
+- `Ansiedad/`
+- `Depresion/`
+- `Contexto/`
+
+Conteo actual de archivos JSON:
+
+- `Ansiedad`: `8`
+- `Depresion`: `13`
+- `Contexto`: `2`
+
+## Qué añade metodológicamente
+
+`Concept_PY` añade cobertura regional sobre tres frentes:
+
+- síntomas ansiosos y depresivos ya presentes en el dominio clínico del proyecto;
+- expresiones locales o abreviadas que el core no capturaba bien;
+- algunas categorías auxiliares de contexto útiles para consumo y entorno clínico.
+
+No cambia la tarea supervisada principal del proyecto, que sigue siendo binaria:
+
+- `ansiedad`
+- `depresion`
+
+## Cobertura actual
+
+### Ansiedad
+
+Archivos activos:
+
+- `Agitacinpsicomotora.json`
+- `AngustiaMiedoTemor.json`
+- `Irritabilidad.json`
+- `Pnico.json`
+- `Prospeccindesesperanzada.json`
+- `Rumiacin.json`
+- `Sntomasansiososgenerales.json`
+- `SntomassomticosEjemplos.json`
+
+### Depresión
+
+Archivos activos:
+
+- `Anhedonia.json`
+- `Animodeprimido.json`
+- `Apata.json`
+- `Apetitoaumentode.json`
+- `Apetitodisminucinde.json`
+- `Bajaconcentracin.json`
+- `Culpa.json`
+- `Fatiga.json`
+- `Ideacinsuicida.json`
+- `RetraimientosocialAislamiento.json`
+- `Rumiacin.json`
+- `Soledad.json`
+- `SueoAlterado.json`
+
+### Contexto
+
+Archivos activos:
+
+- `Alcohol.json`
+- `UsoSustancias.json`
+
+A diferencia del core, en esta capa las reglas de contexto actuales emiten categorías específicas (`Alcohol`, `UsoSustancias`) en lugar de colapsarse bajo `Contexto`.
 
 ## Manifiesto
-`lexicon_manifest.csv` contiene el mapeo:
-- `term_original`: forma original en el diccionario
-- `variant`: variante generada/normalizada
-- `fenotipo_canonico`: etiqueta humana del fenotipo
-- `categoria_core`: nombre exacto del fenotipo (columna `rule_<categoria_core>`)
-- `carpeta`: carpeta destino (Ansiedad/Depresion/Contexto)
+
+`lexicon_manifest.csv` documenta el mapeo de términos y variantes. Campos relevantes:
+
+- `term_original`
+- `variant`
+- `fenotipo_canonico`
+- `categoria_core`
+- `carpeta`
+
+## Cómo se usa
+
+Se carga como perfil `py`:
+
+- `Concept_Core` + `Concept_PY`
+
+Recomendación metodológica vigente:
+
+1. validar primero la cobertura con `05_brecha_lexica_co_core_py.ipynb`;
+2. generar luego features híbridas en `06_ingenieria_features_hibridas.ipynb`;
+3. usar el perfil `py` en entrenamiento y ablación cuando ya se quiera medir el aporte regional sobre el híbrido.
+
+## Qué no hace
+
+`Concept_PY` no redefine los labels supervisados del proyecto ni sustituye el núcleo clínico. Su rol es ampliar cobertura y auditabilidad regional.

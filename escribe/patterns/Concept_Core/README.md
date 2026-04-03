@@ -1,181 +1,163 @@
-# Núcleo Clínico Depurado (`Concept_Core`)
+# `Concept_Core`: núcleo clínico depurado
 
-## 📋 Propósito
+## Propósito
 
-Esta carpeta contiene el **núcleo clínico depurado** del proyecto. En la convención canónica del repositorio principal, esta capa se llama `Concept_Core`.
+`Concept_Core` es la capa clínica estable que el proyecto usa como base portable para extraer evidencia psiquiátrica sobre texto clínico en español. Su función es separar:
 
-Su función es reunir reglas más portables y menos dependientes de localismos, sobre las que luego puede cargarse la capa regional paraguaya (`Concept_PY`).
+- mejoras generales del recurso clínico;
+- control de ruido estructural y organización por carpetas clínicas;
+- adaptaciones regionales posteriores, que viven en `Concept_PY`.
 
-## 🎯 Caso de Uso Principal
+No debe interpretarse como un benchmark independiente ni como un clasificador binario completo por sí solo. En el proyecto principal funciona como recurso de extracción y soporte del pipeline híbrido.
 
-**Clasificación binaria rule-based** de relatos clínicos en español para determinar presencia de:
-- **Ansiedad**: 18 fenotipos específicos
-- **Depresión**: 31 fenotipos específicos
-- **Compartidos**: 5 fenotipos
+## Estructura activa del snapshot
 
+Folders clínicos presentes en este snapshot:
 
-## 📊 Ventajas sobre Corpus Separados
+- `Ansiedad/`
+- `Depresion/`
+- `Contexto/`
 
-### Comparación: CSJDM vs HOMO vs Unified
+Conteo actual de archivos JSON:
 
-| Aspecto | CSJDM | HOMO | **Unified** |
-|---------|-------|------|-------------|
-| **Cobertura** | Media | Media | **Alta** ✅ |
-| **Errores ortográficos** | Sí | No | **Sí** ✅ |
-| **Variantes formales** | No | Sí | **Sí** ✅ |
-| **Duplicados** | N/A | N/A | **Eliminados** ✅ |
-| **Mantenimiento** | 2 archivos | 2 archivos | **1 archivo** ✅ |
+- `Ansiedad`: `18`
+- `Depresion`: `34`
+- `Contexto`: `3`
 
-### Ejemplo Práctico: "Ansiedad"
+## Cómo se usa downstream
 
-**CSJDM solo**:
-```json
-["ansiedad", "anisiosa", "ansioso", "anisoa", "asnioso", "ansiad"]
-```
+Cada archivo `.json` aporta reglas `TargetRule` de medSpaCy. Los campos relevantes son:
 
-**HOMO solo**:
-```json
-["ansiedad", "ansiosa", "ansioso", "ansiosas", "ansiosos"]
-```
+- `category`: nombre técnico que emite la regla y que downstream se transforma en columnas `rule_<category>`;
+- `literal`: rótulo humano de la evidencia concreta;
+- `pattern`: patrón tokenizado o literal.
 
-**Unified (RECOMENDADO)**:
-```json
-["anisiosa", "anisoa", "ansiad", "ansiedad", "ansiosa", "ansiosas", 
- "ansioso", "ansiosos", "asnioso"]
-```
+Regla práctica:
 
-✅ Captura **errores + variantes correctas** = Máxima recall
+- en `Ansiedad/` y `Depresion/`, la mayoría de los archivos emiten una categoría específica propia;
+- en `Contexto/`, los archivos actuales emiten la categoría común `Contexto`, mientras que el detalle clínico de subtipos queda en `literal`.
 
-## 📁 Contenido
+## Cobertura clínica actual
 
-### Fenotipos de Depresión (31)
-```
-Animodeprimido.json          - Ánimo deprimido, tristeza
-Anhedonia.json               - Pérdida de placer
-Sntomasdepresivosgenerales.json - Síntomas depresivos globales
-Bajaconcentracin.json        - Dificultad de concentración
-Culpa.json                   - Sentimientos de culpa
-Desesperanza.json            - Visión pesimista del futuro
-Rumiacin.json                - Pensamientos repetitivos negativos
-Prospeccindesesperanzada.json - Prospección negativa
-Apata.json                   - Falta de motivación
-Abulia.json                  - Ausencia de voluntad
-Bajaenerga.json              - Fatiga, cansancio
-Fatiga.json                  - Fatiga persistente
-Retrasopsicomotor.json       - Enlentecimiento motor/cognitivo
-Llantofcil.json              - Llanto frecuente
-Disforia.json                - Malestar emocional
-Irritabilidad.json           - Irritabilidad
-Hipotimia.json               - Ánimo bajo
-SueoInsomnio.json            - Insomnio
-SueoDespertartemprano.json   - Despertar precoz
-SueoHipersomnio.json         - Sueño excesivo
-SueoAlterado.json            - Patrón de sueño alterado
-Apetitodisminucinde.json     - Pérdida de apetito
-Apetitoaumentode.json        - Aumento de apetito
-PesoPrdida.json              - Pérdida de peso
-PesoIncremento.json          - Aumento de peso
-Ideacinsuicida.json          - Ideas suicidas
-Ideasdemuerte.json           - Preocupación por la muerte
-Intentosuicida.json          - Conducta suicida
-Autolesin.json               - Autolesiones
-RetraimientosocialAislamiento.json - Aislamiento social
-Soledad.json                 - Sentimiento de soledad
-```
+### Ansiedad
 
-### Fenotipos de Ansiedad (18)
-```
-Ansiedad.json                - Ansiedad generalizada
-AngustiaMiedoTemor.json      - Angustia, miedo, ataques de nervios
-Sntomasansiososgenerales.json - Síntomas ansiosos globales
-Pnico.json                   - Ataques de pánico
-DespersonalizacinDesrealizacin.json - Síntomas disociativos
-Obsesiones.json              - Pensamientos obsesivos
-Compulsiones.json            - Comportamientos compulsivos
-SueoPesadillas.json          - Pesadillas
-SntomassomticosEjemplos.json - Manifestaciones somáticas
-Agitacinpsicomotora.json     - Inquietud motora
-Labilidademocional.json      - Variabilidad emocional
-Ideacinpersecutoria.json     - Ideas persecutorias
-Paranoia.json                - Paranoia
-```
+Archivos activos:
 
-## 🔧 Uso en Modelo Rule-Based
+- `Agitacinpsicomotora.json`
+- `AngustiaMiedoTemor.json`
+- `Ansiedad.json`
+- `Bajaconcentracin.json`
+- `Compulsiones.json`
+- `DespersonalizacinDesrealizacin.json`
+- `Fatiga.json`
+- `Ideacinpersecutoria.json`
+- `Irritabilidad.json`
+- `Obsesiones.json`
+- `Paranoia.json`
+- `Pnico.json`
+- `Sntomasansiososgenerales.json`
+- `SntomassomticosEjemplos.json`
+- `SueoAlterado.json`
+- `SueoInsomnio.json`
+- `SueoPesadillas.json`
+- `medication_anxiety.json`
 
-### Estrategia de Clasificación Binaria
+Qué aporta:
 
-```python
-# Pseudocódigo para clasificación
-def classify_clinical_text(text):
-    # 1. Cargar patrones unificados
-    depression_phenotypes = load_unified_phenotypes("depression")
-    anxiety_phenotypes = load_unified_phenotypes("anxiety")
-    
-    # 2. Extraer menciones
-    depression_mentions = extract_mentions(text, depression_phenotypes)
-    anxiety_mentions = extract_mentions(text, anxiety_phenotypes)
-    
-    # 3. Calcular scores
-    depression_score = len(depression_mentions) / len(depression_phenotypes)
-    anxiety_score = len(anxiety_mentions) / len(anxiety_phenotypes)
-    
-    # 4. Clasificar
-    threshold = 0.15  # Ajustar según validación
-    
-    has_depression = depression_score >= threshold
-    has_anxiety = anxiety_score >= threshold
-    
-    return {
-        "depression": has_depression,
-        "anxiety": has_anxiety,
-        "comorbid": has_depression and has_anxiety,
-        "depression_score": depression_score,
-        "anxiety_score": anxiety_score,
-        "depression_phenotypes": depression_mentions,
-        "anxiety_phenotypes": anxiety_mentions
-    }
-```
+- ansiedad general y síntomas ansiosos globales;
+- miedo/angustia y pánico;
+- somatización;
+- alteraciones de sueño;
+- obsesividad/compulsividad;
+- fenómenos persecutorios o de desrealización cuando aparecen explicitados en la nota;
+- evidencia farmacológica separada para el dominio ansioso.
 
-### Ventajas del Enfoque Rule-Based
+### Depresión
 
-✅ **Interpretabilidad**: Cada predicción es explicable  
-✅ **Bajo costo computacional**: No requiere GPU  
-✅ **Adaptabilidad**: Fácil agregar/modificar patrones  
-✅ **Sin entrenamiento**: Funciona inmediatamente  
-✅ **Multilingüe**: Patrones en español nativo  
+Archivos activos:
 
-## 🧪 Validación Recomendada
+- `Abulia.json`
+- `Anhedonia.json`
+- `Animodeprimido.json`
+- `Apata.json`
+- `Apetitoaumentode.json`
+- `Apetitodisminucinde.json`
+- `Autolesin.json`
+- `Bajaconcentracin.json`
+- `Bajaenerga.json`
+- `Culpa.json`
+- `Desesperanza.json`
+- `Disforia.json`
+- `Fatiga.json`
+- `Hipotimia.json`
+- `Ideacinsuicida.json`
+- `Ideasdemuerte.json`
+- `Intentosuicida.json`
+- `Irritabilidad.json`
+- `Labilidademocional.json`
+- `Llantofcil.json`
+- `Minusvala.json`
+- `PesoIncremento.json`
+- `PesoPrdida.json`
+- `Prospeccindesesperanzada.json`
+- `RetraimientosocialAislamiento.json`
+- `Retrasopsicomotor.json`
+- `Rumiacin.json`
+- `Sntomasdepresivosgenerales.json`
+- `Soledad.json`
+- `SueoAlterado.json`
+- `SueoDespertartemprano.json`
+- `SueoHipersomnio.json`
+- `SueoInsomnio.json`
+- `medication_depression.json`
 
-### Antes de usar en producción:
+Qué aporta:
 
-1. **Validación con corpus paraguayo**:
-   ```bash
-   # Anotar muestra de 100-200 relatos clínicos de Paraguay
-   # Calcular métricas: precision, recall, F1
-   ```
+- ánimo deprimido, anhedonia, apatía y abulia;
+- baja energía, fatiga y enlentecimiento;
+- culpa, desesperanza, prospección negativa y rumiación;
+- ideación suicida, ideas de muerte, intento y autolesión;
+- alteraciones vegetativas y del sueño;
+- evidencia farmacológica separada para el dominio depresivo.
 
-2. **Ajuste de umbrales**:
-   - Validar threshold óptimo para clasificación binaria
-   - Considerar umbrales diferentes para ansiedad vs depresión
+### Contexto
 
-3. **Análisis de falsos positivos/negativos**:
-   - Identificar patrones faltantes específicos de Paraguay
-   - Agregar reglas locales si es necesario
+Archivos activos:
 
-4. **Comparación con anotadores humanos**:
-   - Inter-annotator agreement (Kappa)
-   - Concordancia con diagnósticos clínicos
+- `Agresividad.json`
+- `Alcohol.json`
+- `Usodesustancias.json`
 
+En el snapshot actual estos archivos emiten `category = Contexto` y usan `literal` para distinguir la evidencia contextual específica.
 
-## 🔄 Actualización
+Qué aporta:
 
-Estos archivos fueron generados automáticamente fusionando:
-- `escribe/patterns/Concept/CSJDM/*.json`
-- `escribe/patterns/Concept/HOMO/*.json`
+- marcadores auxiliares de consumo y agresividad;
+- soporte para denoising, auditoría y análisis contextual;
+- no redefine por sí solo la tarea supervisada principal `ansiedad` vs `depresion`.
 
+## Medicación como evidencia separada
 
-## 📚 Referencias
+`medication_anxiety` y `medication_depression` se conservan como categorías independientes porque downstream el proyecto las trata como evidencia terapéutica separada. No se fusionan directamente con síntomas ni con LLM para decidir la tarea diferencial.
 
-- **Corpus origen**: Hospitales de Medellín, Colombia
-- **Códigos diagnósticos**: CIE-10 (F32, F33, F40, F41, F42)
-- **Criterios**: DSM-5 para trastornos depresivos y de ansiedad
+## Rol metodológico en el proyecto principal
+
+`Concept_Core` participa en:
+
+- `03_denoising_reglas_core.ipynb`: señal clínica mínima para conservar notas;
+- `05_brecha_lexica_co_core_py.ipynb`: comparación de cobertura entre perfiles;
+- `06_ingenieria_features_hibridas.ipynb`: construcción de `rule_*`, `niega_*` y `rule_medication_*`;
+- `07_entrenamiento_modelos_hibridos.ipynb`: base simbólica del híbrido;
+- `09b_cierre_modelos_dev.ipynb`: soporte indirecto para auditabilidad e interpretabilidad.
+
+## Qué no debe inferirse de esta carpeta
+
+`Concept_Core` por sí sola no define:
+
+- un umbral oficial de clasificación binaria;
+- un modelo final cerrado;
+- selección de backbone contextual;
+- la comparación con `TF-IDF`, `BETO` o `RoBERTa`;
+- la rúbrica multicriterio del cierre en `dev`.
+
+Esas decisiones viven en el repositorio principal.
