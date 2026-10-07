@@ -1,67 +1,25 @@
-# `Concept_CO`: baseline histórico colombiano
+# Concept_CO: referencia histórica colombiana
 
 ## Propósito
+Esta capa conserva la referencia histórica del recurso `Spanish_Psych_Phenotyping` para comparar con el núcleo depurado y la extensión paraguaya. El perfil `co` carga solo CO; no combina Core o PY ni selecciona un modelo clínico.
 
-`Concept_CO` conserva el baseline histórico colombiano del recurso original de fenotipado psiquiátrico en español. En el proyecto principal se mantiene como perfil de referencia para comparación y trazabilidad, no como capa operativa principal del híbrido vigente.
+## Inventario
+| Carpeta | Archivos JSON | Reglas declaradas |
+|---|---:|---:|
+| Ansiedad | 18 | 155 |
+| Depresion | 33 | 269 |
+| Total | 51 | 424 |
 
-## Estructura activa del snapshot
+Las reglas reúnen 46 categorías distintas. Archivos, reglas y categorías son unidades diferentes; una categoría puede repetirse entre carpetas. No hay carpeta `Contexto` en esta capa: la configuración común puede avisar de su ausencia sin que eso signifique que se cargó contexto de Core.
 
-Folders presentes en este snapshot:
+## Contenido y lectura
+Incluye patrones para ansiedad, ánimo, sueño, somatización, obsesiones/compulsiones, fenómenos persecutorios, ideación suicida y evidencia terapéutica `medication_anxiety`/`medication_depression`. Las carpetas organizan menciones, no diagnósticos exclusivos.
 
-- `Ansiedad/`
-- `Depresion/`
+Frente al snapshot Core, CO no tiene `Minusvala.json` como archivo separado ni los tres archivos de contexto. Esta comparación estructural no demuestra inferioridad clínica ni que todas sus expresiones sean colombianismos.
 
-Conteo actual de archivos JSON:
+## Reproducibilidad y límites
+Mantener CO como referencia versionada. Toda modificación requiere trazabilidad; no reemplazarlo por Core bajo el mismo nombre para obtener mayor cobertura.
 
-- `Ansiedad`: `18`
-- `Depresion`: `33`
-- `Contexto`: no aparece como carpeta versionada en este snapshot
+La carpeta no acredita validación clínica en Paraguay, procedencia individual de cada patrón ni rendimiento de clasificación. La negación y la temporalidad dependen de ConText y del orden efectivo de componentes; no basta con cargar las reglas.
 
-## Cobertura actual
-
-### Ansiedad
-
-Incluye el mismo bloque histórico de categorías ansiosas que hoy siguen presentes en el core, incluyendo:
-
-- ansiedad general;
-- pánico;
-- somatización;
-- alteraciones de sueño;
-- obsesiones/compulsiones;
-- ideación persecutoria/paranoia;
-- `medication_anxiety`.
-
-### Depresión
-
-Incluye la mayor parte del bloque depresivo hoy retenido en el core, incluyendo:
-
-- ánimo deprimido;
-- anhedonia;
-- apatía/abulia;
-- desesperanza, culpa y rumiación;
-- ideación suicida y autolesión;
-- sueño, apetito y peso;
-- `medication_depression`.
-
-Diferencias visibles respecto de `Concept_Core` en el snapshot actual:
-
-- no expone carpeta `Contexto/`;
-- no contiene `Minusvala.json` como archivo separado.
-
-## Rol metodológico
-
-En el proyecto principal, `Concept_CO` sirve para:
-
-- baseline histórico del perfil `co`;
-- comparación de cobertura frente a `core` y `py`;
-- trazabilidad de qué mejoras pertenecen al núcleo depurado y cuáles a la adaptación regional.
-
-## Qué no representa
-
-`Concept_CO` no debe interpretarse como:
-
-- mejor recurso clínico vigente del proyecto;
-- capa recomendada para el híbrido actual;
-- cierre metodológico final.
-
-Su valor es comparativo e histórico.
+Volver al [README principal](../../../README.md) para perfiles, ejemplo Python, limitaciones de carga y licencia.

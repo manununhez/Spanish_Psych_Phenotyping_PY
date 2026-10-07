@@ -1,102 +1,41 @@
-# `Concept_PY`: adaptación regional paraguaya
+# Concept_PY: extensión paraguaya
 
 ## Propósito
+PY añade al núcleo expresiones regionales, jopará y abreviaturas utilizadas como candidatos de extracción. El perfil `py` carga `Concept_Core + Concept_PY`; esta carpeta por sí sola no representa el perfil completo.
 
-`Concept_PY` es la capa de adaptación regional paraguaya que se carga encima de `Concept_Core`. Su objetivo es ampliar cobertura léxica mediante variantes locales, jopará, abreviaturas institucionales y expresiones frecuentes en notas clínicas del IPS.
+No todas sus expresiones son exclusivas de Paraguay. Su inclusión es una decisión léxica del recurso, no una equivalencia clínica universal ni una etiqueta de ansiedad/depresión.
 
-No reemplaza al core: lo extiende.
+## Inventario
+| Carpeta | Archivos JSON | Reglas declaradas |
+|---|---:|---:|
+| Ansiedad | 8 | 17 |
+| Depresion | 13 | 27 |
+| Contexto | 2 | 5 |
+| Total | 23 | 49 |
 
-## Estructura activa del snapshot
+La extensión reúne 22 categorías distintas. Core + PY reúne 50: reutiliza categorías sintomáticas y añade las categorías auxiliares `Alcohol` y `UsoSustancias`. A diferencia de los archivos de contexto de Core, estos no emiten solo `Contexto`. No cambian las dos etiquetas supervisadas del consumidor, pero sí pueden cambiar el esquema de variables.
 
-Folders presentes:
+## Ejemplos de mapeo
+| Expresión | Categoría del recurso | Interpretación |
+|---|---|---|
+| Bajoneado / bajoneada | `Animodeprimido` | Candidato de mención de ánimo |
+| Argel / argelado / argelada | `Irritabilidad` | Variante léxica |
+| Ataque de nervios | `Pnico` | Patrón explícito, no diagnóstico confirmado |
+| Vy'a'ỹ | `Animodeprimido` | Variante registrada en el JSON |
+| OH / OH+ | `Alcohol` | Abreviatura contextual |
 
-- `Ansiedad/`
-- `Depresion/`
-- `Contexto/`
+La detección depende de tokenización y patrón, no solo de que una expresión aparezca en esta tabla. Ambigüedad, sujeto, negación y temporalidad deben evaluarse por separado.
 
-Conteo actual de archivos JSON:
+## Manifiesto y procedencia
+[lexicon_manifest.csv](lexicon_manifest.csv) conserva 50 filas y los campos `term_original`, `variant`, `fenotipo_canonico`, `categoria_core` y `carpeta`. Es un mapeo de vocabulario, no un registro de autorización o validación clínica.
 
-- `Ansiedad`: `8`
-- `Depresion`: `13`
-- `Contexto`: `2`
+Las 50 filas no corresponden uno a uno a las 49 reglas: una regla puede cubrir alternativas y un literal no es necesariamente idéntico a la variante del manifiesto. La fuente ejecutable son los JSON, no la cantidad de filas de la planilla.
 
-## Qué añade metodológicamente
+El manifiesto no registra fuente individual, notas o subconjuntos consultados, responsable de aprobación, prompt/modelo LLM ni validación de cada expresión. El apoyo LLM descrito por el proyecto consumidor no permite afirmar que todas las entradas se generaron o filtraron con el mismo procedimiento. No se demuestra independencia inicial respecto del texto posteriormente asignado a prueba.
 
-`Concept_PY` añade cobertura regional sobre tres frentes:
+## Evaluación y límites
+Comparar primero cobertura con perfiles explícitos y el mismo universo; después, evaluar modelos sin cambiar la ontología congelada. Una mejora de cobertura significa más coincidencias bajo un criterio dado, no mayor precisión clínica ni mejora predictiva aislada.
 
-- síntomas ansiosos y depresivos ya presentes en el dominio clínico del proyecto;
-- expresiones locales o abreviadas que el core no capturaba bien;
-- algunas categorías auxiliares de contexto útiles para consumo y entorno clínico.
+El desempeño de un modelo Core + PY frente a otro Core + LLM cambia varios factores; no prueba el efecto causal de PY. La revisión clínica del mapeo debe quedar documentada antes de presentar el recurso como validado.
 
-No cambia la tarea supervisada principal del proyecto, que sigue siendo binaria:
-
-- `ansiedad`
-- `depresion`
-
-## Cobertura actual
-
-### Ansiedad
-
-Archivos activos:
-
-- `Agitacinpsicomotora.json`
-- `AngustiaMiedoTemor.json`
-- `Irritabilidad.json`
-- `Pnico.json`
-- `Prospeccindesesperanzada.json`
-- `Rumiacin.json`
-- `Sntomasansiososgenerales.json`
-- `SntomassomticosEjemplos.json`
-
-### Depresión
-
-Archivos activos:
-
-- `Anhedonia.json`
-- `Animodeprimido.json`
-- `Apata.json`
-- `Apetitoaumentode.json`
-- `Apetitodisminucinde.json`
-- `Bajaconcentracin.json`
-- `Culpa.json`
-- `Fatiga.json`
-- `Ideacinsuicida.json`
-- `RetraimientosocialAislamiento.json`
-- `Rumiacin.json`
-- `Soledad.json`
-- `SueoAlterado.json`
-
-### Contexto
-
-Archivos activos:
-
-- `Alcohol.json`
-- `UsoSustancias.json`
-
-A diferencia del core, en esta capa las reglas de contexto actuales emiten categorías específicas (`Alcohol`, `UsoSustancias`) en lugar de colapsarse bajo `Contexto`.
-
-## Manifiesto
-
-`lexicon_manifest.csv` documenta el mapeo de términos y variantes. Campos relevantes:
-
-- `term_original`
-- `variant`
-- `fenotipo_canonico`
-- `categoria_core`
-- `carpeta`
-
-## Cómo se usa
-
-Se carga como perfil `py`:
-
-- `Concept_Core` + `Concept_PY`
-
-Recomendación metodológica vigente:
-
-1. validar primero la cobertura con `05_brecha_lexica_co_core_py.ipynb`;
-2. generar luego features híbridas en `06_ingenieria_features_hibridas.ipynb`;
-3. usar el perfil `py` en entrenamiento y ablación cuando ya se quiera medir el aporte regional sobre el híbrido.
-
-## Qué no hace
-
-`Concept_PY` no redefine los labels supervisados del proyecto ni sustituye el núcleo clínico. Su rol es ampliar cobertura y auditabilidad regional.
+Volver al [README principal](../../../README.md) para ejemplo Python, limitaciones de carga, objetos compartidos y reproducibilidad.

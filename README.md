@@ -1,145 +1,125 @@
-# Spanish Psych Phenotyping — LATAM (`Concept_CO` + `Concept_Core` + `Concept_PY`)
+# Spanish Psych Phenotyping PY
 
-Este submódulo versiona el recurso clínico rule-based que usa el proyecto principal para extraer fenotipos psiquiátricos sobre texto clínico en español.
+Recurso de extracción de menciones psiquiátricas en español, basado en reglas explícitas de spaCy/medspaCy. Conserva una base histórica colombiana, un núcleo depurado y una extensión paraguaya. Se usa como dependencia clínica versionada del pipeline de investigación; **no diagnostica ansiedad o depresión ni entrena un clasificador**.
 
-Su punto de partida es el baseline histórico de `Spanish_Psych_Phenotyping` para Colombia, pero el snapshot actual reorganiza ese recurso en una arquitectura por capas para separar:
+## Qué es el diccionario
+El diccionario es un conjunto de archivos JSON que vinculan expresiones con categorías clínicas. No es una lista de pacientes, etiquetas de referencia ni respuestas de un LLM.
 
-- baseline histórico reproducible;
-- núcleo clínico depurado y portable;
-- adaptación regional paraguaya.
+Cada regla contiene:
 
-## Rol dentro del proyecto principal
+- `literal`: nombre legible de la expresión o del patrón.
+- `category`: categoría técnica emitida al detectar una coincidencia.
+- `pattern`: secuencia de condiciones sobre tokens, como `LOWER`, alternativas `IN` o condiciones morfológicas.
 
-En el repositorio principal este submódulo se usa como dependencia clínica reproducible para:
+Una regla puede cubrir varias variantes y varias reglas pueden emitir la misma categoría. Las carpetas organizan el recurso, pero no convierten una mención en diagnóstico: sueño, fatiga o irritabilidad pueden aparecer en más de un dominio.
 
-- denoising clínico en `03_denoising_reglas_core.ipynb`;
-- extracción de evidencia simbólica `rule_*` y `niega_*`;
-- evidencia terapéutica separada `rule_medication_*`;
-- comparación de perfiles `co`, `core` y `py`;
-- trazabilidad de la ontología clínica congelada.
+Ejemplo real de la capa PY, simplificado a una regla:
 
-No debe leerse solo como un clasificador rule-based autónomo. Su función principal en este proyecto es servir como base clínica versionada para el pipeline híbrido.
-
-## Arquitectura por capas
-
-La nomenclatura activa del proyecto principal es:
-
-- `Concept_CO` = baseline histórico colombiano congelado;
-- `Concept_Core` = núcleo clínico depurado y portable;
-- `Concept_PY` = capa regional paraguaya.
-
-### `Concept_CO/`
-Perfil histórico de referencia. Se conserva para comparación y trazabilidad.
-
-### `Concept_Core/`
-Núcleo clínico depurado con correcciones generales, mejor control de ruido estructural y organización estable por carpetas clínicas.
-
-### `Concept_PY/`
-Capa opcional de adaptación paraguaya que se carga encima del core. Amplía cobertura léxica regional y puede añadir algunas categorías auxiliares de contexto, pero no redefine la tarea supervisada principal del proyecto.
-
-## Estructura del recurso
-
-```text
-escribe/patterns/
-├─ Concept_CO/
-├─ Concept_Core/
-├─ Concept_PY/
-├─ ConText_ES.json
-└─ RuSH_ES.tsv
-
-configs/
-├─ fenotipos.yml
-├─ co_config.yml
-├─ core_config.yml
-└─ py_config.yml
-
-cli.py
+```json
+{
+  "target_rules": [
+    {
+      "literal": "Bajoneado",
+      "category": "Animodeprimido",
+      "pattern": [{"LOWER": "bajoneado"}]
+    }
+  ]
+}
 ```
 
-Folders clínicos activos:
+La coincidencia identifica una mención de `Animodeprimido`; no decide la clase de la nota ni confirma que el fenómeno esté vigente o afirmado.
 
-- `Ansiedad/`
-- `Depresion/`
-- `Contexto/`
+## Capas y perfiles
+| Capa | Papel | Perfil que la carga |
+|---|---|---|
+| `Concept_CO` | Base histórica colombiana de referencia | `co` |
+| `Concept_Core` | Núcleo depurado, con patrones generales y contexto | `core` y `py` |
+| `Concept_PY` | Variantes regionales y abreviaturas añadidas al núcleo | `py`, junto con Core |
 
-## Qué representa cada archivo JSON
+`co = Concept_CO`; `core = Concept_Core`; `py = Concept_Core + Concept_PY`. PY extiende Core, no lo reemplaza.
 
-Cada archivo `.json` contiene una o más `TargetRule` de medSpaCy.
+Inventario de las capas en este snapshot:
 
-Campos relevantes:
+| Capa | Archivos JSON | Reglas declaradas | Categorías distintas |
+|---|---:|---:|---:|
+| CO | 51 | 424 | 46 |
+| Core | 55 | 448 | 48 |
+| PY, solo extensión | 23 | 49 | 22 |
 
-- `category`: categoría emitida por la regla y usada downstream para construir columnas `rule_<category>`;
-- `literal`: etiqueta humana auxiliar del archivo o de la evidencia específica;
-- `pattern`: patrón tokenizado o literal a detectar.
+El perfil compuesto PY carga 497 reglas y reúne 50 categorías distintas. No son 497 features ni 497 conceptos independientes: hay categorías compartidas y patrones solapados. Estos conteos excluyen las reglas de ConText y de segmentación.
 
-Regla práctica:
+Detalle por capa: [CO](escribe/patterns/Concept_CO/README.md), [Core](escribe/patterns/Concept_Core/README.md) y [PY](escribe/patterns/Concept_PY/README.md).
 
-- en `Ansiedad/` y `Depresion/`, el nombre del archivo suele coincidir con la categoría emitida;
-- en `Contexto/`, varios archivos del core emiten la categoría común `Contexto` y usan `literal` para distinguir subtipos como `Alcohol`, `UsoSustancias` o `Agresividad`;
-- las reglas de medicación emiten categorías separadas como `medication_anxiety` y `medication_depression`.
+## Cómo se formó y qué se puede acreditar
+El historial conserva el recurso original `Spanish_Psych_Phenotyping` y su reorganización en capas. CO permite comparar con la referencia histórica; Core incorpora cambios de patrones y organización, una categoría separada de minusvalía y contexto; PY contiene expresiones regionales y sus mapeos a categorías.
 
-## Perfiles operativos
+Los JSON prueban qué patrones quedaron implementados. El manifiesto PY relaciona términos y variantes con categorías, pero no registra fuente individual, responsable de validación, corpus consultado, fecha de aprobación ni revisión clínica de cada expresión. No demuestra que cada variante sea exclusiva de Paraguay, que Core se obtuviera eliminando únicamente colombianismos ni que la ingeniería inicial fuera independiente del texto posteriormente asignado a prueba.
 
-La carga estándar usa estos perfiles:
+El proyecto consumidor describe apoyo del LLM para revisión léxica y otra operación distinta de extracción semántica. Este repositorio no contiene un procedimiento LLM reproducible de generación o filtrado de cada término. No debe atribuirse a todos los patrones un mismo prompt, modelo o validación que no estén acreditados. El congelamiento técnico permite reproducir un snapshot, no reconstruye por sí solo esa procedencia.
 
-- `co`   -> `Concept_CO`
-- `core` -> `Concept_Core`
-- `py`   -> `Concept_Core` + `Concept_PY`
+## Componentes y configuración
+`escribe/default_nlp.py` crea el objeto NLP y configura:
 
-El perfil `py` no reemplaza al core: lo extiende.
+1. Modelo español spaCy: intenta `es_core_news_md`; si falta, intenta `es_core_news_sm`.
+2. `medspacy_pyrush`: segmentación con [RuSH_ES.tsv](escribe/patterns/RuSH_ES.tsv).
+3. `medspacy_target_matcher`: coincidencias con los JSON seleccionados.
+4. `medspacy_context`: atributos de aseveración con [ConText_ES.json](escribe/patterns/ConText_ES.json).
 
-## Uso con CLI
+ConText debe ejecutarse **después** del matcher. Detectar una expresión y atribuirle negación, temporalidad o sujeto son operaciones distintas.
 
-```bash
-python cli.py --profile co   --config co_config.yml   --input data/ips_clean.csv --output outputs/rules_co.csv
-python cli.py --profile core --config core_config.yml --input data/ips_clean.csv --output outputs/rules_core.csv
-python cli.py --profile py   --config py_config.yml   --input data/ips_clean.csv --output outputs/rules_py.csv
-```
+Los [archivos de configuración](configs/) definen `concept_layers`, `concept_folders` y `patterns_root`. La selección por `concepts` se realiza por carpeta (`Ansiedad`, `Depresion`, `Contexto`), no por nombre de categoría. En `build_pipeline`, el argumento `fenos_cfg` no determina las carpetas efectivas: se leen de la configuración del perfil.
 
-## Uso desde Python
+## Entorno
+Usar el entorno fijado por el proyecto consumidor y el modelo español correspondiente. Son dependencias directas spaCy, medspaCy, pandas y PyYAML; medspaCy aporta también la segmentación utilizada. Este snapshot no dispone de un instalador de paquete ni de un lockfile propio: no presentar `pip install .` como una instalación soportada.
+
+El import de `escribe.default_nlp` carga el modelo y configura componentes, pero no carga automáticamente todas las reglas Core. No hay llamadas a un LLM en esta extracción local. Registrar versiones y modelo efectivo: el fallback a `sm` puede cambiar el comportamiento.
+
+## Ejemplo ejecutable desde Python
+Ejecutar desde la raíz de este repositorio, con sus dependencias instaladas. El texto siguiente es sintético:
 
 ```python
 from pathlib import Path
 from escribe.default_nlp import nlp, select_concepts
 
-BASE = Path("escribe/patterns")
+patterns = Path("escribe/patterns")
+folders = ("Ansiedad", "Depresion", "Contexto")
 
-nlp_co = select_concepts(nlp, json_dir=str(BASE / "Concept_CO"), concepts=("all",), reset=True)
-nlp_core = select_concepts(nlp, json_dir=str(BASE / "Concept_Core"), concepts=("all",), reset=True)
+pipeline = select_concepts(
+    nlp, json_dir=str(patterns / "Concept_Core"),
+    concepts=folders, reset=True,
+)
+pipeline = select_concepts(
+    pipeline, json_dir=str(patterns / "Concept_PY"),
+    concepts=folders, reset=False,
+)
 
-nlp_py = select_concepts(nlp, json_dir=str(BASE / "Concept_Core"), concepts=("all",), reset=True)
-nlp_py = select_concepts(nlp_py, json_dir=str(BASE / "Concept_PY"), concepts=("all",), reset=False)
+assert pipeline.pipe_names.index("medspacy_target_matcher") < (
+    pipeline.pipe_names.index("medspacy_context")
+)
+doc = pipeline("Paciente bajoneado. Niega ansiedad.")
+for entity in doc.ents:
+    print(entity.text, entity.label_, entity._.is_negated)
 ```
 
-## Configuración
+Con el entorno comprobado, detecta `bajoneado -> Animodeprimido` sin negación y `ansiedad -> Ansiedad` con negación. Para Core, omitir la segunda carga; para CO, cargar únicamente `Concept_CO` con `reset=True`.
 
-Archivos principales:
+**Objeto compartido:** ambas APIs modifican el NLP global. Construir otro perfil cambia las reglas del objeto anterior; asignarlo a otra variable no crea una copia. Comparar perfiles secuencialmente, procesando cada uno antes de cargar el siguiente, o aislarlos en procesos separados.
 
-- `configs/fenotipos.yml`: folders conceptuales activos.
-- `configs/co_config.yml`: perfil `co`.
-- `configs/core_config.yml`: perfil `core`.
-- `configs/py_config.yml`: perfil `py`.
+## Estado de cli.py y limitación de ConText
+[cli.py](cli.py) expone funciones Python como `build_pipeline` y `load_concept_layer`. Aunque importa `argparse`, no implementa parseo de argumentos ni un punto de entrada para exportar CSV. Los comandos `python cli.py --profile ... --input ... --output ...` no constituyen una interfaz funcional en este snapshot.
 
-La carga por capas la resuelve `cli.py`:
+Además, `build_pipeline` elimina el matcher y vuelve a añadirlo al final, detrás de ConText. En una prueba sintética del 6 de octubre de 2026, `Niega ansiedad` quedó con `is_negated=False` por esa vía, frente a `True` usando `select_concepts` con el orden correcto. No considerar equivalentes ambas APIs para aseveración. Los cargadores también pueden omitir reglas inválidas; revisar conteos y mensajes de carga.
 
-- la primera capa resetea el `target_matcher`;
-- las siguientes se cargan encima sin reset.
+El pipeline consumidor utiliza `build_pipeline` en etapas de denoising y features. Este hallazgo exige verificar el orden efectivo y los artefactos de cada ejecución; no cuantifica por sí solo el impacto histórico. Esta actualización es documental: no reordena componentes, no cambia patrones y no regenera resultados congelados.
 
-## Lectura recomendada
+## Integración y límites
+El subrepositorio aporta menciones y contexto. El proyecto consumidor implementa la elegibilidad de notas, la atribución de negación al paciente, las columnas `rule_*`/`niega_*`, el split, modelos y evaluación.
 
-Para entender el detalle clínico del snapshot actual, revisar además:
+La unión sintomática `feat_X = max(rule_X, llm_X)` se realiza fuera de este recurso. Los medicamentos siguen como evidencia terapéutica separada; ni una prescripción ni una coincidencia léxica acreditan diagnóstico. Más cobertura no demuestra mayor exactitud clínica, mejora predictiva ni aporte causal de PY. La revisión clínica formal del recurso y del filtro no debe inferirse de los JSON o del manifiesto.
 
-- `escribe/patterns/Concept_CO/README.md`
-- `escribe/patterns/Concept_Core/README.md`
-- `escribe/patterns/Concept_PY/README.md`
+## Reproducibilidad y licencia
+Conservar el commit del recurso, hashes de JSON/configuración, entorno, modelo spaCy, perfiles, carpetas y orden de componentes. Comprobar extracción y contexto con ejemplos sintéticos antes de procesar datos autorizados. Cambiar patrones, categorías o carga requiere nueva trazabilidad; no sobrescribir la evidencia del experimento congelado.
 
-## Alcance y límites
+Los cambios del subrepositorio requieren su propio commit. Después, el proyecto consumidor debe actualizar el puntero del submódulo; publicar solo ese puntero sin el commit accesible impide reproducir el cambio.
 
-Este submódulo define extracción clínica rule-based. No define por sí solo:
-
-- el `patient-level split`;
-- la selección del backbone contextual;
-- la fusión tardía con LLM;
-- el cierre formal del mejor híbrido.
-
-Esas decisiones pertenecen al repositorio principal.
+Licencia [MIT](LICENSE), con atribución original a `clarafrydman` (2024). La licencia del código no autoriza distribuir notas clínicas. No incorporar datos de pacientes, credenciales ni salidas individuales a este repositorio.
