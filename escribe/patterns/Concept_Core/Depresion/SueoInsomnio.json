@@ -237,6 +237,31 @@
           }
         }
       ]
+    },
+    {
+      "literal": "despertares precoces",
+      "category": "SueoInsomnio",
+      "pattern": [
+        {
+          "LOWER": {
+            "IN": [
+              "despertares",
+              "despertar",
+              "se despierta"
+            ]
+          }
+        },
+        {
+          "LOWER": {
+            "IN": [
+              "precoces",
+              "precoz",
+              "temprano",
+              "madrugada"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

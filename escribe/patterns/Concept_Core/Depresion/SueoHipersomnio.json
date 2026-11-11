@@ -42,20 +42,6 @@
       ]
     },
     {
-      "literal": "hipersomnio",
-      "category": "SueoHipersomnio",
-      "pattern": [
-        {
-          "LOWER": {
-            "IN": [
-              "hipersomnia",
-              "hipersomnio"
-            ]
-          }
-        }
-      ]
-    },
-    {
       "literal": "solo quería dormir",
       "category": "SueoHipersomnio",
       "pattern": [

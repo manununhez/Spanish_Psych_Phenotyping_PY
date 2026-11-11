@@ -8,10 +8,10 @@ El perfil `core` carga esta capa; `py` añade PY encima. La portabilidad es un o
 ## Inventario
 | Carpeta | Archivos JSON | Reglas declaradas |
 |---|---:|---:|
-| Ansiedad | 18 | 163 |
+| Ansiedad | 18 | 161 |
 | Depresion | 34 | 274 |
 | Contexto | 3 | 11 |
-| Total | 55 | 448 |
+| Total | 55 | 446 |
 
 Reúne 48 categorías distintas. La cantidad de archivos no equivale a categorías o features: por ejemplo, sueño, fatiga y concentración pueden compartir categoría entre carpetas.
 
@@ -25,7 +25,9 @@ Los archivos de contexto [Agresividad](Contexto/Agresividad.json), [Alcohol](Con
 ## Uso en el pipeline consumidor
 Core participa en la elegibilidad de notas, comparación de cobertura y extracción de variables. El consumidor transforma menciones en `rule_*` y negaciones del paciente en `niega_*`; esa política de retención no reside en esta carpeta.
 
-La carga léxica y la aseveración son operaciones diferentes. El orden requerido es matcher antes de ConText. La ruta `build_pipeline` actual altera ese orden; véase la [limitación documentada](../../../README.md). Por eso la presencia de reglas históricas, familiares o negadas en el recurso no demuestra que el filtro efectivo las haya tratado correctamente.
+La carga léxica y la aseveración son operaciones diferentes. El orden requerido es matcher antes de ConText. Hasta el commit `916c1d9` la ruta `build_pipeline` alteraba ese orden; se corrigió en 2.0.0 (véase el [README principal](../../../README.md) y [CHANGELOG](../../../CHANGELOG.md)). Los resultados generados con la versión anterior no aplicaron negación, antecedente ni familiar por esa vía.
+
+En 2.0.0 se quitaron 3 reglas repetidas (`TOC` en Compulsiones y Obsesiones, `hipersomnio` en SueoHipersomnio) y se sincronizó la copia de `SueoInsomnio` en `Depresion/` con la de `Ansiedad/`. Los conceptos compartidos entre carpetas deben mantenerse idénticos; las pruebas lo verifican.
 
 ## Límites
 Core no determina split, umbral, backbone, clasificador ni pesos del ensamble. Una entidad aceptada puede ser terapéutica/contextual y no suficiente para distinguir ansiedad de depresión. Más cobertura no acredita correctitud clínica; la auditoría experta requiere revisar menciones y notas retenidas/excluidas.

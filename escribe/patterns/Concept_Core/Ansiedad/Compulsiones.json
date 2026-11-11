@@ -1,10 +1,6 @@
 {
   "target_rules": [
     {
-      "literal": "TOC",
-      "category": "Compulsiones"
-    },
-    {
       "literal": "compulsiones",
       "category": "Compulsiones",
       "pattern": [

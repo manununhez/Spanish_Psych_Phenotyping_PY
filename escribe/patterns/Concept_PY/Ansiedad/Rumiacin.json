@@ -14,6 +14,18 @@
           "LOWER": "todo"
         }
       ]
+    },
+    {
+      "literal": "Darle vueltas",
+      "category": "Rumiacin",
+      "pattern": [
+        {
+          "LOWER": "darle"
+        },
+        {
+          "LOWER": "vueltas"
+        }
+      ]
     }
   ]
 }

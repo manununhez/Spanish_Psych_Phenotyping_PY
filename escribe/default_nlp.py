@@ -14,39 +14,52 @@ PATTERNS_DIR_DEFAULT = HERE / "patterns" / "Concept_Core"
 RUSH_RULES = HERE / "patterns" / "RuSH_ES.tsv"
 CONTEXT_RULES = HERE / "patterns" / "ConText_ES.json"
 
-# --- Carga spaCy/medspaCy con fallback de modelo ---
-try:
-    nlp = ms_load(
-        "es_core_news_md",
-        enable=["tok2vec", "morphologizer", "attribute_ruler", "lemmatizer"]
-    )
-except OSError:
-    # Fallback si el modelo md no está instalado
-    nlp = ms_load(
-        "es_core_news_sm",
-        enable=["tok2vec", "morphologizer", "attribute_ruler", "lemmatizer"]
-    )
+# --- Fábrica del pipeline base ---
+def make_nlp(verbose: bool = False):
+    """Crea un objeto NLP NUEVO (modelo español + RuSH + target matcher vacío + ConText).
 
-# --- Reemplazar componentes con reglas españolas ---
-sentencizer = nlp.replace_pipe(
-    "medspacy_pyrush",
-    "medspacy_pyrush",
-    config={"rules_path": str(RUSH_RULES)}
-)
-target_matcher = nlp.replace_pipe(
-    "medspacy_target_matcher",
-    "medspacy_target_matcher",
-    config={"rules": None}
-)
-context = nlp.replace_pipe(
-    "medspacy_context",
-    "medspacy_context",
-    config={"rules": str(CONTEXT_RULES)}
-)
+    Cada llamada devuelve un objeto independiente: cargar reglas en uno no modifica
+    otro. Usar un objeto por perfil (co, core, py). Orden garantizado:
+    medspacy_pyrush -> medspacy_target_matcher -> medspacy_context.
+    """
+    try:
+        obj = ms_load(
+            "es_core_news_md",
+            enable=["tok2vec", "morphologizer", "attribute_ruler", "lemmatizer"]
+        )
+    except OSError:
+        # Fallback si el modelo md no está instalado (registrar: puede cambiar el comportamiento)
+        obj = ms_load(
+            "es_core_news_sm",
+            enable=["tok2vec", "morphologizer", "attribute_ruler", "lemmatizer"]
+        )
+    # Reemplazar componentes con reglas españolas (replace_pipe conserva la posición)
+    obj.replace_pipe("medspacy_pyrush", "medspacy_pyrush", config={"rules_path": str(RUSH_RULES)})
+    obj.replace_pipe("medspacy_target_matcher", "medspacy_target_matcher", config={"rules": None})
+    obj.replace_pipe("medspacy_context", "medspacy_context", config={"rules": str(CONTEXT_RULES)})
+    check_order(obj)
+    if verbose:
+        print("Components in NLP pipeline:")
+        for name in obj.pipe_names:
+            print("\t-", name)
+    return obj
 
-print("Components in NLP pipeline:")
-for p in nlp.pipe_names:
-    print("\t-", p)
+
+def check_order(nlp_obj):
+    """Falla si el detector de términos no está antes de ConText (requisito de la aseveración)."""
+    names = list(nlp_obj.pipe_names)
+    if "medspacy_target_matcher" in names and "medspacy_context" in names:
+        if names.index("medspacy_target_matcher") > names.index("medspacy_context"):
+            raise RuntimeError(f"Orden inválido: el target matcher debe ir antes de ConText ({names})")
+    return nlp_obj
+
+
+# Objeto global, conservado por compatibilidad con código existente.
+# Para comparar perfiles, crear uno por perfil con make_nlp().
+nlp = make_nlp(verbose=True)
+sentencizer = nlp.get_pipe("medspacy_pyrush")
+target_matcher = nlp.get_pipe("medspacy_target_matcher")
+context = nlp.get_pipe("medspacy_context")
 
 def _iter_json_files(root: Path):
     """Recorre recursivamente y devuelve todos los .json válidos (evita ._ y ocultos)."""
@@ -128,7 +141,9 @@ def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True, res
     if concepts and (len(concepts) == 1 and concepts[0] == "all"):
         json_paths = list(_iter_json_files(base_dir))
     else:
-        wanted = {str(c).strip() for c in concepts}
+        # Orden de la configuración (no un set): el desempate entre categorías superpuestas
+        # depende del orden de carga y un set lo hacía variar entre ejecuciones.
+        wanted = list(dict.fromkeys(str(c).strip() for c in concepts))
         for c in wanted:
             sub = base_dir / c
             if sub.exists():
@@ -174,6 +189,7 @@ def select_concepts(nlp_obj, json_dir=None, concepts=("all",), verbose=True, res
             except Exception:
                 pass
 
+    check_order(nlp_obj)
     if verbose:
         print("Concepts included (by folder):", ", ".join(concepts if concepts else ["(default)"]))
         if cats_seen:

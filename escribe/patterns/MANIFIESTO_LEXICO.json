@@ -1,0 +1,611 @@
+{
+  "version": "2.0.0",
+  "fecha": "2026-11-04",
+  "commit_base": "916c1d97b8a9df947b2a457b95a5a05c123ea0ce",
+  "capas": {
+    "Concept_CO": {
+      "archivos": 51,
+      "reglas": 424,
+      "categorias": 46,
+      "carpetas": {
+        "Ansiedad": {
+          "archivos": 18,
+          "reglas": 155
+        },
+        "Depresion": {
+          "archivos": 33,
+          "reglas": 269
+        }
+      }
+    },
+    "Concept_Core": {
+      "archivos": 55,
+      "reglas": 446,
+      "categorias": 48,
+      "carpetas": {
+        "Ansiedad": {
+          "archivos": 18,
+          "reglas": 161
+        },
+        "Depresion": {
+          "archivos": 34,
+          "reglas": 274
+        },
+        "Contexto": {
+          "archivos": 3,
+          "reglas": 11
+        }
+      }
+    },
+    "Concept_PY": {
+      "archivos": 23,
+      "reglas": 51,
+      "categorias": 22,
+      "carpetas": {
+        "Ansiedad": {
+          "archivos": 8,
+          "reglas": 18
+        },
+        "Depresion": {
+          "archivos": 13,
+          "reglas": 28
+        },
+        "Contexto": {
+          "archivos": 2,
+          "reglas": 5
+        }
+      }
+    }
+  },
+  "perfiles": {
+    "co": {
+      "capas": [
+        "Concept_CO"
+      ],
+      "reglas_declaradas": 424,
+      "categorias": 46
+    },
+    "core": {
+      "capas": [
+        "Concept_Core"
+      ],
+      "reglas_declaradas": 446,
+      "categorias": 48
+    },
+    "py": {
+      "capas": [
+        "Concept_Core",
+        "Concept_PY"
+      ],
+      "reglas_declaradas": 497,
+      "categorias": 50
+    }
+  },
+  "archivos": {
+    "Concept_CO/Ansiedad/Agitacinpsicomotora.json": {
+      "sha256": "8d2e4e65bf3309e54c2505d5e24c2bad99765d81e6c72b2164291aec41762a66",
+      "reglas": 22
+    },
+    "Concept_CO/Ansiedad/AngustiaMiedoTemor.json": {
+      "sha256": "75c6215004738764816e1948f8ab78347cd3920b55698878f26c965f3bc3a6b5",
+      "reglas": 16
+    },
+    "Concept_CO/Ansiedad/Ansiedad.json": {
+      "sha256": "1332641141f9f35a1240122c00deaa0f7185ab15c916b9d0ab719ad63f4dcf9c",
+      "reglas": 1
+    },
+    "Concept_CO/Ansiedad/Bajaconcentracin.json": {
+      "sha256": "5fda93d0839ce7f86cb9b6deb878fe25db318cbe9bd503f2a54fc91afe449f68",
+      "reglas": 12
+    },
+    "Concept_CO/Ansiedad/Compulsiones.json": {
+      "sha256": "a48cc6762ed900d8491b0c97c967ad18bc2be6c7a7e4c6435654e442c713fc9c",
+      "reglas": 4
+    },
+    "Concept_CO/Ansiedad/DespersonalizacinDesrealizacin.json": {
+      "sha256": "3a89ef12e5d24fc2373efcaee32aa419865276c2834a157e67ab2465a3410f94",
+      "reglas": 5
+    },
+    "Concept_CO/Ansiedad/Fatiga.json": {
+      "sha256": "00bd5df97f3fd5569732e3db78207375a915745c5722f167565d6eda268d8e21",
+      "reglas": 7
+    },
+    "Concept_CO/Ansiedad/Ideacinpersecutoria.json": {
+      "sha256": "2ff017cd3b1ab1650ad6a899dde56cdc146b7ac49936d57be5c4cdaa3e45e123",
+      "reglas": 7
+    },
+    "Concept_CO/Ansiedad/Irritabilidad.json": {
+      "sha256": "062042aa0bcb6799929a63fec34de81e383b6a963e2a638c8191f03066f12591",
+      "reglas": 9
+    },
+    "Concept_CO/Ansiedad/Obsesiones.json": {
+      "sha256": "579d7394e299db800ec7cc71653c903cbacc7c2b24d4de574cc7123b28db6227",
+      "reglas": 6
+    },
+    "Concept_CO/Ansiedad/Paranoia.json": {
+      "sha256": "f05731ae383a6dd9f618b3b6d433c215394d08e7318d0bbbdfaaf639056a0dc9",
+      "reglas": 10
+    },
+    "Concept_CO/Ansiedad/Pnico.json": {
+      "sha256": "46a9d67c801e9c2a2e8debb8f4e51bd681e4e616b98205bd19d00896a41113c2",
+      "reglas": 2
+    },
+    "Concept_CO/Ansiedad/Sntomasansiososgenerales.json": {
+      "sha256": "a7036a3e75529971a0149ba19ced431aa02b4a3fa78b729840e24ba64a6afeba",
+      "reglas": 11
+    },
+    "Concept_CO/Ansiedad/SntomassomticosEjemplos.json": {
+      "sha256": "f17661c023cfac26a68275a0218b1cce1ece172ad1ea74e3a0472dc2b359f095",
+      "reglas": 17
+    },
+    "Concept_CO/Ansiedad/SueoAlterado.json": {
+      "sha256": "356495002904d3e4b8f10f1caad47c22389052a314b27a09b464f025ff5863fb",
+      "reglas": 17
+    },
+    "Concept_CO/Ansiedad/SueoInsomnio.json": {
+      "sha256": "e4f47ec07a710e22d9477a0b260afbc8741d9c90063cd63ae056d1516632933b",
+      "reglas": 6
+    },
+    "Concept_CO/Ansiedad/SueoPesadillas.json": {
+      "sha256": "7ad57304b68cb28616840f17dc47e7df1d18b5860419ccb0086e0125c0a214be",
+      "reglas": 2
+    },
+    "Concept_CO/Ansiedad/medication_anxiety.json": {
+      "sha256": "791205fb20fc2014c109dafe030e7a4a92eb1e053b3bce1e83850fda41d22826",
+      "reglas": 1
+    },
+    "Concept_CO/Depresion/Abulia.json": {
+      "sha256": "ab4bbb1a4d9b5a3dcc451b298071c36ad9bec672930b33a8e28020e4fa49b504",
+      "reglas": 7
+    },
+    "Concept_CO/Depresion/Anhedonia.json": {
+      "sha256": "3c899f19b68e1d9908ce3c959a7052e79b185d2d9705d9eb4f39ab713895a073",
+      "reglas": 8
+    },
+    "Concept_CO/Depresion/Animodeprimido.json": {
+      "sha256": "d274f5a7d47ce56ec15c49a819ab20f5ec5dca52df3887901dd8a93759183b6c",
+      "reglas": 17
+    },
+    "Concept_CO/Depresion/Apata.json": {
+      "sha256": "9a1960496ad68ac4fc52ba609afbabfb87fa62a896dfddea07ecf72440ac9fdd",
+      "reglas": 5
+    },
+    "Concept_CO/Depresion/Apetitoaumentode.json": {
+      "sha256": "83750bddadba7e8becb6f2b2af08cf91b580af036298ca869db4032a59185ea9",
+      "reglas": 6
+    },
+    "Concept_CO/Depresion/Apetitodisminucinde.json": {
+      "sha256": "62da4b5ea683cad55264c312aabb52f064ac55ba02be85200f75e95889827362",
+      "reglas": 8
+    },
+    "Concept_CO/Depresion/Autolesin.json": {
+      "sha256": "01e0e9bcef61a3e35a10975e1d07a13b239f8cf076ce540739087310fdbfb308",
+      "reglas": 15
+    },
+    "Concept_CO/Depresion/Bajaconcentracin.json": {
+      "sha256": "5fda93d0839ce7f86cb9b6deb878fe25db318cbe9bd503f2a54fc91afe449f68",
+      "reglas": 12
+    },
+    "Concept_CO/Depresion/Bajaenerga.json": {
+      "sha256": "c920b86e3ae7d81b6dfced8deced313fd3f47d1cae72ddb9fee323ad9d8b5119",
+      "reglas": 7
+    },
+    "Concept_CO/Depresion/Culpa.json": {
+      "sha256": "a8ea280f8ee5f501f286b427bcfc40b19ac3638b0fc9cd82ffd0aaf4838cca22",
+      "reglas": 8
+    },
+    "Concept_CO/Depresion/Desesperanza.json": {
+      "sha256": "181c20e466549d80cd865719bbef91b69c95ebde64459610559e9f88b38c9682",
+      "reglas": 4
+    },
+    "Concept_CO/Depresion/Disforia.json": {
+      "sha256": "97015d679fec81932dcad7f9f9926e7027117f055274ddd4faa5836cc19161ff",
+      "reglas": 4
+    },
+    "Concept_CO/Depresion/Fatiga.json": {
+      "sha256": "00bd5df97f3fd5569732e3db78207375a915745c5722f167565d6eda268d8e21",
+      "reglas": 7
+    },
+    "Concept_CO/Depresion/Hipotimia.json": {
+      "sha256": "97807dfbeef9ef7fb8f1a55020910b279be9827f33ffcb1b76272db40fc4f37d",
+      "reglas": 3
+    },
+    "Concept_CO/Depresion/Ideacinsuicida.json": {
+      "sha256": "999befc78ff31303d177d9b7dc169c6303ac8dfecabd1a7b364f5525f419ce03",
+      "reglas": 13
+    },
+    "Concept_CO/Depresion/Ideasdemuerte.json": {
+      "sha256": "ed1e992e6910cde4869b0dfc21f1058999efb7e064f4a92a277974657cd40f5f",
+      "reglas": 14
+    },
+    "Concept_CO/Depresion/Intentosuicida.json": {
+      "sha256": "693428355a328e1b23e856a2448a33cd2b0d43abbf58b57be683dd204f529ce0",
+      "reglas": 14
+    },
+    "Concept_CO/Depresion/Irritabilidad.json": {
+      "sha256": "062042aa0bcb6799929a63fec34de81e383b6a963e2a638c8191f03066f12591",
+      "reglas": 9
+    },
+    "Concept_CO/Depresion/Labilidademocional.json": {
+      "sha256": "84d963fbaeeb95bba396810fc2137a3706d8cf86e99194d748cbb6a9340d3e68",
+      "reglas": 9
+    },
+    "Concept_CO/Depresion/Llantofcil.json": {
+      "sha256": "c86ed277d4c6358042079f025707603f88c38fa3508884d71fa266d41cf0b9f2",
+      "reglas": 13
+    },
+    "Concept_CO/Depresion/PesoIncremento.json": {
+      "sha256": "7b52fb11651a27e5f479e8c7e705c2f21c8b7f4fb04419f826ac74de530db249",
+      "reglas": 3
+    },
+    "Concept_CO/Depresion/PesoPrdida.json": {
+      "sha256": "fd230a8e290a71081c0cb72e0f64c1bc6b73b3a07db3a0cc49666381d9312adb",
+      "reglas": 4
+    },
+    "Concept_CO/Depresion/Prospeccindesesperanzada.json": {
+      "sha256": "53ff822e17c0dff4220f49ed85b721355106acf5f59a58d3a580cc301423a1c8",
+      "reglas": 2
+    },
+    "Concept_CO/Depresion/RetraimientosocialAislamiento.json": {
+      "sha256": "55fb5344ef665fc79adbd14536ca561a51063a2bdd214d9dfda6690fd8b2f40a",
+      "reglas": 17
+    },
+    "Concept_CO/Depresion/Retrasopsicomotor.json": {
+      "sha256": "c05a1eebd3e63cb6f345343e04436e2dfe81591a2e6c52da5aca88f8583c73eb",
+      "reglas": 6
+    },
+    "Concept_CO/Depresion/Rumiacin.json": {
+      "sha256": "ce4f1d95bf025c752d2727107f782d6a1fb4ac5e5fe2df6db7d2bc8d7f157b25",
+      "reglas": 3
+    },
+    "Concept_CO/Depresion/Sntomasdepresivosgenerales.json": {
+      "sha256": "b305fbcbded4dafc027230736d2f5f48f96c54b28b8a69189c1a4fc076d45b3a",
+      "reglas": 11
+    },
+    "Concept_CO/Depresion/Soledad.json": {
+      "sha256": "66071f7c3769825623ebe59cc34efc1d94ecf8e94310be74b895311282394337",
+      "reglas": 4
+    },
+    "Concept_CO/Depresion/SueoAlterado.json": {
+      "sha256": "356495002904d3e4b8f10f1caad47c22389052a314b27a09b464f025ff5863fb",
+      "reglas": 17
+    },
+    "Concept_CO/Depresion/SueoDespertartemprano.json": {
+      "sha256": "87a8bda0102fccc16b1e9ce347d8d224d069d076721a1565e864d55f0ea25d4f",
+      "reglas": 8
+    },
+    "Concept_CO/Depresion/SueoHipersomnio.json": {
+      "sha256": "6d35985c5f7d406237aaf925be09ed53a4787ff7f49b3914425ee970f3e492f9",
+      "reglas": 4
+    },
+    "Concept_CO/Depresion/SueoInsomnio.json": {
+      "sha256": "e4f47ec07a710e22d9477a0b260afbc8741d9c90063cd63ae056d1516632933b",
+      "reglas": 6
+    },
+    "Concept_CO/Depresion/medication_depression.json": {
+      "sha256": "1aa9957cad9432f406fbd4bf7b676bb222381220fcfdb008f9585095c1c6f04e",
+      "reglas": 1
+    },
+    "Concept_Core/Ansiedad/Agitacinpsicomotora.json": {
+      "sha256": "f3d400c12b3294e86f53ebb9540f78986a532933f4f45ebe290c876eb4b78c3c",
+      "reglas": 20
+    },
+    "Concept_Core/Ansiedad/AngustiaMiedoTemor.json": {
+      "sha256": "75c6215004738764816e1948f8ab78347cd3920b55698878f26c965f3bc3a6b5",
+      "reglas": 16
+    },
+    "Concept_Core/Ansiedad/Ansiedad.json": {
+      "sha256": "c1a4b3765583c98c7336a74817e888de35203b58efad6c9d20e9ad922c5c1cc1",
+      "reglas": 9
+    },
+    "Concept_Core/Ansiedad/Bajaconcentracin.json": {
+      "sha256": "5fda93d0839ce7f86cb9b6deb878fe25db318cbe9bd503f2a54fc91afe449f68",
+      "reglas": 12
+    },
+    "Concept_Core/Ansiedad/Compulsiones.json": {
+      "sha256": "7468585ec3136be324ff13815900432aec46e7c78254a51d22e62c60142275c8",
+      "reglas": 3
+    },
+    "Concept_Core/Ansiedad/DespersonalizacinDesrealizacin.json": {
+      "sha256": "3a89ef12e5d24fc2373efcaee32aa419865276c2834a157e67ab2465a3410f94",
+      "reglas": 5
+    },
+    "Concept_Core/Ansiedad/Fatiga.json": {
+      "sha256": "00bd5df97f3fd5569732e3db78207375a915745c5722f167565d6eda268d8e21",
+      "reglas": 7
+    },
+    "Concept_Core/Ansiedad/Ideacinpersecutoria.json": {
+      "sha256": "2ff017cd3b1ab1650ad6a899dde56cdc146b7ac49936d57be5c4cdaa3e45e123",
+      "reglas": 7
+    },
+    "Concept_Core/Ansiedad/Irritabilidad.json": {
+      "sha256": "dc3c738971b9897b3d508d1220b1b57ed77ca5a003083cab956d5e4c1f4556b9",
+      "reglas": 8
+    },
+    "Concept_Core/Ansiedad/Obsesiones.json": {
+      "sha256": "31a69ae4fb8ad318cd61139b5c915662e23b97618ebafac34c0594b4376bd788",
+      "reglas": 5
+    },
+    "Concept_Core/Ansiedad/Paranoia.json": {
+      "sha256": "f05731ae383a6dd9f618b3b6d433c215394d08e7318d0bbbdfaaf639056a0dc9",
+      "reglas": 10
+    },
+    "Concept_Core/Ansiedad/Pnico.json": {
+      "sha256": "46a9d67c801e9c2a2e8debb8f4e51bd681e4e616b98205bd19d00896a41113c2",
+      "reglas": 2
+    },
+    "Concept_Core/Ansiedad/Sntomasansiososgenerales.json": {
+      "sha256": "f29d42990a87d7fae80bc78eb3b48780e2ea5f6ed0c4328fae1dca8996619621",
+      "reglas": 13
+    },
+    "Concept_Core/Ansiedad/SntomassomticosEjemplos.json": {
+      "sha256": "f17661c023cfac26a68275a0218b1cce1ece172ad1ea74e3a0472dc2b359f095",
+      "reglas": 17
+    },
+    "Concept_Core/Ansiedad/SueoAlterado.json": {
+      "sha256": "ae393c63ffd13aba7972aba61c19667740203d03fc3fce2d2dc0bdf31bdb39b5",
+      "reglas": 17
+    },
+    "Concept_Core/Ansiedad/SueoInsomnio.json": {
+      "sha256": "24673e35f382ed3c4eb4cb5a421599a3cf3b97f65000aa4882ef7c31fb8b807a",
+      "reglas": 7
+    },
+    "Concept_Core/Ansiedad/SueoPesadillas.json": {
+      "sha256": "7ad57304b68cb28616840f17dc47e7df1d18b5860419ccb0086e0125c0a214be",
+      "reglas": 2
+    },
+    "Concept_Core/Ansiedad/medication_anxiety.json": {
+      "sha256": "35a7d1d0bae4dcd4c9e70492ab0af6f7c669782607ead8c55930e0ec015f1912",
+      "reglas": 1
+    },
+    "Concept_Core/Depresion/Abulia.json": {
+      "sha256": "9c743565c8404a9d9a927bbcbc4ed84a383b8a1f01586b8a3b2f241d6e7d6bd3",
+      "reglas": 9
+    },
+    "Concept_Core/Depresion/Anhedonia.json": {
+      "sha256": "3c899f19b68e1d9908ce3c959a7052e79b185d2d9705d9eb4f39ab713895a073",
+      "reglas": 8
+    },
+    "Concept_Core/Depresion/Animodeprimido.json": {
+      "sha256": "d274f5a7d47ce56ec15c49a819ab20f5ec5dca52df3887901dd8a93759183b6c",
+      "reglas": 17
+    },
+    "Concept_Core/Depresion/Apata.json": {
+      "sha256": "9a1960496ad68ac4fc52ba609afbabfb87fa62a896dfddea07ecf72440ac9fdd",
+      "reglas": 5
+    },
+    "Concept_Core/Depresion/Apetitoaumentode.json": {
+      "sha256": "83750bddadba7e8becb6f2b2af08cf91b580af036298ca869db4032a59185ea9",
+      "reglas": 6
+    },
+    "Concept_Core/Depresion/Apetitodisminucinde.json": {
+      "sha256": "62da4b5ea683cad55264c312aabb52f064ac55ba02be85200f75e95889827362",
+      "reglas": 8
+    },
+    "Concept_Core/Depresion/Autolesin.json": {
+      "sha256": "01e0e9bcef61a3e35a10975e1d07a13b239f8cf076ce540739087310fdbfb308",
+      "reglas": 15
+    },
+    "Concept_Core/Depresion/Bajaconcentracin.json": {
+      "sha256": "5fda93d0839ce7f86cb9b6deb878fe25db318cbe9bd503f2a54fc91afe449f68",
+      "reglas": 12
+    },
+    "Concept_Core/Depresion/Bajaenerga.json": {
+      "sha256": "c920b86e3ae7d81b6dfced8deced313fd3f47d1cae72ddb9fee323ad9d8b5119",
+      "reglas": 7
+    },
+    "Concept_Core/Depresion/Culpa.json": {
+      "sha256": "a8ea280f8ee5f501f286b427bcfc40b19ac3638b0fc9cd82ffd0aaf4838cca22",
+      "reglas": 8
+    },
+    "Concept_Core/Depresion/Desesperanza.json": {
+      "sha256": "181c20e466549d80cd865719bbef91b69c95ebde64459610559e9f88b38c9682",
+      "reglas": 4
+    },
+    "Concept_Core/Depresion/Disforia.json": {
+      "sha256": "be807e99c0b4e3f57199c9817eb9aceacf7adfc1841986abe6b8d6ea2dac90f5",
+      "reglas": 4
+    },
+    "Concept_Core/Depresion/Fatiga.json": {
+      "sha256": "00bd5df97f3fd5569732e3db78207375a915745c5722f167565d6eda268d8e21",
+      "reglas": 7
+    },
+    "Concept_Core/Depresion/Hipotimia.json": {
+      "sha256": "97807dfbeef9ef7fb8f1a55020910b279be9827f33ffcb1b76272db40fc4f37d",
+      "reglas": 3
+    },
+    "Concept_Core/Depresion/Ideacinsuicida.json": {
+      "sha256": "999befc78ff31303d177d9b7dc169c6303ac8dfecabd1a7b364f5525f419ce03",
+      "reglas": 13
+    },
+    "Concept_Core/Depresion/Ideasdemuerte.json": {
+      "sha256": "ed1e992e6910cde4869b0dfc21f1058999efb7e064f4a92a277974657cd40f5f",
+      "reglas": 14
+    },
+    "Concept_Core/Depresion/Intentosuicida.json": {
+      "sha256": "693428355a328e1b23e856a2448a33cd2b0d43abbf58b57be683dd204f529ce0",
+      "reglas": 14
+    },
+    "Concept_Core/Depresion/Irritabilidad.json": {
+      "sha256": "dc3c738971b9897b3d508d1220b1b57ed77ca5a003083cab956d5e4c1f4556b9",
+      "reglas": 8
+    },
+    "Concept_Core/Depresion/Labilidademocional.json": {
+      "sha256": "84d963fbaeeb95bba396810fc2137a3706d8cf86e99194d748cbb6a9340d3e68",
+      "reglas": 9
+    },
+    "Concept_Core/Depresion/Llantofcil.json": {
+      "sha256": "c86ed277d4c6358042079f025707603f88c38fa3508884d71fa266d41cf0b9f2",
+      "reglas": 13
+    },
+    "Concept_Core/Depresion/Minusvala.json": {
+      "sha256": "009194003a8c2c1547bb2a31ba707b2f31f9e4958c789edea016a7f497f7c0e7",
+      "reglas": 2
+    },
+    "Concept_Core/Depresion/PesoIncremento.json": {
+      "sha256": "7b52fb11651a27e5f479e8c7e705c2f21c8b7f4fb04419f826ac74de530db249",
+      "reglas": 3
+    },
+    "Concept_Core/Depresion/PesoPrdida.json": {
+      "sha256": "fd230a8e290a71081c0cb72e0f64c1bc6b73b3a07db3a0cc49666381d9312adb",
+      "reglas": 4
+    },
+    "Concept_Core/Depresion/Prospeccindesesperanzada.json": {
+      "sha256": "53ff822e17c0dff4220f49ed85b721355106acf5f59a58d3a580cc301423a1c8",
+      "reglas": 2
+    },
+    "Concept_Core/Depresion/RetraimientosocialAislamiento.json": {
+      "sha256": "55fb5344ef665fc79adbd14536ca561a51063a2bdd214d9dfda6690fd8b2f40a",
+      "reglas": 17
+    },
+    "Concept_Core/Depresion/Retrasopsicomotor.json": {
+      "sha256": "c05a1eebd3e63cb6f345343e04436e2dfe81591a2e6c52da5aca88f8583c73eb",
+      "reglas": 6
+    },
+    "Concept_Core/Depresion/Rumiacin.json": {
+      "sha256": "ce4f1d95bf025c752d2727107f782d6a1fb4ac5e5fe2df6db7d2bc8d7f157b25",
+      "reglas": 3
+    },
+    "Concept_Core/Depresion/Sntomasdepresivosgenerales.json": {
+      "sha256": "b305fbcbded4dafc027230736d2f5f48f96c54b28b8a69189c1a4fc076d45b3a",
+      "reglas": 11
+    },
+    "Concept_Core/Depresion/Soledad.json": {
+      "sha256": "66071f7c3769825623ebe59cc34efc1d94ecf8e94310be74b895311282394337",
+      "reglas": 4
+    },
+    "Concept_Core/Depresion/SueoAlterado.json": {
+      "sha256": "ae393c63ffd13aba7972aba61c19667740203d03fc3fce2d2dc0bdf31bdb39b5",
+      "reglas": 17
+    },
+    "Concept_Core/Depresion/SueoDespertartemprano.json": {
+      "sha256": "707354f2a1627d0b49a0f6de72b379ca2e239599a5fa83f26b4b1eab0a01d052",
+      "reglas": 7
+    },
+    "Concept_Core/Depresion/SueoHipersomnio.json": {
+      "sha256": "0b2a2224fe5adb04a51ff7d1e921fdeac65c5567234577239bca2e6e61206745",
+      "reglas": 3
+    },
+    "Concept_Core/Depresion/SueoInsomnio.json": {
+      "sha256": "24673e35f382ed3c4eb4cb5a421599a3cf3b97f65000aa4882ef7c31fb8b807a",
+      "reglas": 7
+    },
+    "Concept_Core/Depresion/medication_depression.json": {
+      "sha256": "4ff4c9cb37ac4a320c600c390c658a7c0247597887ad8c0f0d5388d09235687c",
+      "reglas": 4
+    },
+    "Concept_Core/Contexto/Agresividad.json": {
+      "sha256": "ff026be56911e35abab3dce844290e6ccc08da06668a5e5b1b35b941f509675c",
+      "reglas": 4
+    },
+    "Concept_Core/Contexto/Alcohol.json": {
+      "sha256": "69191260bebccba34480c7963e1ca12df8262a760f34c6396d4bca0a41d87b9e",
+      "reglas": 3
+    },
+    "Concept_Core/Contexto/Usodesustancias.json": {
+      "sha256": "e4dabec69a210853b6c2c269e81a45e5d7a06e445af7b991d635f6ae7937b6f8",
+      "reglas": 4
+    },
+    "Concept_PY/Ansiedad/Agitacinpsicomotora.json": {
+      "sha256": "223638ee478a803d21e62b2673531251dc2f99dc1e88f1610120c13cfcbd3ee3",
+      "reglas": 1
+    },
+    "Concept_PY/Ansiedad/AngustiaMiedoTemor.json": {
+      "sha256": "b42aeab0702b63adaaaf312de5189497a921d261d477a3bde5c677c1588ffca3",
+      "reglas": 1
+    },
+    "Concept_PY/Ansiedad/Irritabilidad.json": {
+      "sha256": "f567c0a3ec58704c960c7a303fb9474f737ff0e2da592751f85ea5146dd7b467",
+      "reglas": 3
+    },
+    "Concept_PY/Ansiedad/Pnico.json": {
+      "sha256": "ff79d235b95db83853143dc0ef8d6cc6ad4cb2681aaf6baa04ee53453c89a484",
+      "reglas": 2
+    },
+    "Concept_PY/Ansiedad/Prospeccindesesperanzada.json": {
+      "sha256": "1de6e16602d3256b76fdbbc9c6714c250bbcde45cc5726328257bb4928670a0c",
+      "reglas": 1
+    },
+    "Concept_PY/Ansiedad/Rumiacin.json": {
+      "sha256": "e967d4bf30762fb504af71d688e4edaca0655af1ff0008b9d279082dfb728d66",
+      "reglas": 2
+    },
+    "Concept_PY/Ansiedad/Sntomasansiososgenerales.json": {
+      "sha256": "9ea4eb263eed40b006caf1eb70e977a3c70c19e302a0f141a7b3fe534795d7f1",
+      "reglas": 1
+    },
+    "Concept_PY/Ansiedad/SntomassomticosEjemplos.json": {
+      "sha256": "0015badd7eb192cf85762c3e9ce994a576d5d1d1d712069a6ee114cfe5ec3e1b",
+      "reglas": 7
+    },
+    "Concept_PY/Depresion/Anhedonia.json": {
+      "sha256": "b378600ce5389d13ffcab7b06ff1d6935762ba2dc7c6b3b2ac00462f0cbe74b0",
+      "reglas": 4
+    },
+    "Concept_PY/Depresion/Animodeprimido.json": {
+      "sha256": "4897960106f74ea8d7deda884937bc0988b5d02405aa19abd8f015a0c831d892",
+      "reglas": 4
+    },
+    "Concept_PY/Depresion/Apata.json": {
+      "sha256": "35c38930f331887012316278f673bcfc183219fe5cbd1fab3dd0620e2c55b24d",
+      "reglas": 1
+    },
+    "Concept_PY/Depresion/Apetitoaumentode.json": {
+      "sha256": "c30a72d5e90c8dda0bebec9a56d13d0326e7613e5cc7092e9bcdce2a03a31653",
+      "reglas": 1
+    },
+    "Concept_PY/Depresion/Apetitodisminucinde.json": {
+      "sha256": "60a72d175ed859d987f0553c609c50544f61e27b654f6c7afcefd331450f21c6",
+      "reglas": 2
+    },
+    "Concept_PY/Depresion/Bajaconcentracin.json": {
+      "sha256": "c4c7334bd0095e8aba30e2046e398b9dbebd7772844c564c1aa7c1f2a183eb7d",
+      "reglas": 4
+    },
+    "Concept_PY/Depresion/Culpa.json": {
+      "sha256": "a7515a60b525e531454939ca28ee50b96ba21ba1d8fe93260be033a00dc34cf4",
+      "reglas": 2
+    },
+    "Concept_PY/Depresion/Fatiga.json": {
+      "sha256": "4e6c8d152422a6392980e2228205a132e41e0b68c48b823f537cb526174e8c4b",
+      "reglas": 3
+    },
+    "Concept_PY/Depresion/Ideacinsuicida.json": {
+      "sha256": "6f0302a679055f99b0a0c8192c098fdbe00861ff915c33a8294a9d9d23e37813",
+      "reglas": 1
+    },
+    "Concept_PY/Depresion/RetraimientosocialAislamiento.json": {
+      "sha256": "3a2649e3c0bba189245f29c27a8268d55fb0dac32c219860e20d1ffed7725451",
+      "reglas": 1
+    },
+    "Concept_PY/Depresion/Rumiacin.json": {
+      "sha256": "e967d4bf30762fb504af71d688e4edaca0655af1ff0008b9d279082dfb728d66",
+      "reglas": 2
+    },
+    "Concept_PY/Depresion/Soledad.json": {
+      "sha256": "c22c56d974dd550629b881182a2409b7e570600c6f5d8d2f5e6cda5389846ee3",
+      "reglas": 1
+    },
+    "Concept_PY/Depresion/SueoAlterado.json": {
+      "sha256": "eb4ee2b54b7c3fab3426cbe4662ed8878d76ed2c69e467c8538bba9990d438cc",
+      "reglas": 2
+    },
+    "Concept_PY/Contexto/Alcohol.json": {
+      "sha256": "027a52f701acc467f0e9a6c47f50426f6e6e7b1ea05bbc0b9cd1a0b86eb1fd2f",
+      "reglas": 2
+    },
+    "Concept_PY/Contexto/UsoSustancias.json": {
+      "sha256": "a01354e8279d18e75910c88d229a688d257ba6055eaba6d7ebc1f7205dbee750",
+      "reglas": 3
+    }
+  },
+  "auxiliares_sha256": {
+    "ConText_ES.json": "66af6ce98c271e0082aef8b58b6254cbd31e9496842e86caf08b101cf1851d30",
+    "RuSH_ES.tsv": "57f60d228041abc241eb4f7e904529c1fb25452c94553c676d5d99d866c6b154",
+    "configs/co_config.yml": "31bee3342ea5b84d196792fd914a23e84a861859b0c8953c4eaf75ca902bcf88",
+    "configs/core_config.yml": "b843b1a0a0f67f46604e513df66d75beed1534e74eaa2822713615665ea27e88",
+    "configs/fenotipos.yml": "32061a75c35fa7ab816be35f6ef0518050eb15efa7b465533d13afd221afb3c4",
+    "configs/py_config.yml": "6a2e0394ac143d177128e8156882c26669ddc5fa698d6541121cdb62edc76f28"
+  },
+  "nota": "Congelado antes de procesar datos nuevos. Cambiar una regla exige nueva versión y nuevo manifiesto."
+}

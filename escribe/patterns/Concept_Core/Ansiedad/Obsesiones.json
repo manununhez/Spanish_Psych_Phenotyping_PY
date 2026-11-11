@@ -1,10 +1,6 @@
 {
   "target_rules": [
     {
-      "literal": "TOC",
-      "category": "Obsesiones"
-    },
-    {
       "literal": "ideas obsesivas",
       "category": "Obsesiones",
       "pattern": [

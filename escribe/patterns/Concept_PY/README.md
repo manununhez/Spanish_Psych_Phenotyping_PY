@@ -8,12 +8,12 @@ No todas sus expresiones son exclusivas de Paraguay. Su inclusión es una decisi
 ## Inventario
 | Carpeta | Archivos JSON | Reglas declaradas |
 |---|---:|---:|
-| Ansiedad | 8 | 17 |
-| Depresion | 13 | 27 |
+| Ansiedad | 8 | 18 |
+| Depresion | 13 | 28 |
 | Contexto | 2 | 5 |
-| Total | 23 | 49 |
+| Total | 23 | 51 |
 
-La extensión reúne 22 categorías distintas. Core + PY reúne 50: reutiliza categorías sintomáticas y añade las categorías auxiliares `Alcohol` y `UsoSustancias`. A diferencia de los archivos de contexto de Core, estos no emiten solo `Contexto`. No cambian las dos etiquetas supervisadas del consumidor, pero sí pueden cambiar el esquema de variables.
+La extensión reúne 22 categorías distintas. En 2.0.0, `Rumiacin` quedó con la misma copia en `Ansiedad/` y `Depresion/` («preocupado por todo» y «Darle vueltas»); antes cada carpeta tenía una sola de las dos. Core + PY reúne 50: reutiliza categorías sintomáticas y añade las categorías auxiliares `Alcohol` y `UsoSustancias`. A diferencia de los archivos de contexto de Core, estos no emiten solo `Contexto`. No cambian las dos etiquetas supervisadas del consumidor, pero sí pueden cambiar el esquema de variables.
 
 ## Ejemplos de mapeo
 | Expresión | Categoría del recurso | Interpretación |
@@ -29,7 +29,7 @@ La detección depende de tokenización y patrón, no solo de que una expresión 
 ## Manifiesto y procedencia
 [lexicon_manifest.csv](lexicon_manifest.csv) conserva 50 filas y los campos `term_original`, `variant`, `fenotipo_canonico`, `categoria_core` y `carpeta`. Es un mapeo de vocabulario, no un registro de autorización o validación clínica.
 
-Las 50 filas no corresponden uno a uno a las 49 reglas: una regla puede cubrir alternativas y un literal no es necesariamente idéntico a la variante del manifiesto. La fuente ejecutable son los JSON, no la cantidad de filas de la planilla.
+Las 50 filas no corresponden uno a uno a las 51 reglas: una regla puede cubrir alternativas y un literal no es necesariamente idéntico a la variante del manifiesto. La fuente ejecutable son los JSON, no la cantidad de filas de la planilla.
 
 El manifiesto no registra fuente individual, notas o subconjuntos consultados, responsable de aprobación, prompt/modelo LLM ni validación de cada expresión. El apoyo LLM descrito por el proyecto consumidor no permite afirmar que todas las entradas se generaron o filtraron con el mismo procedimiento. No se demuestra independencia inicial respecto del texto posteriormente asignado a prueba.
 

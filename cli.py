@@ -10,7 +10,7 @@ import pandas as pd
 import json
 from pathlib import Path
 
-from escribe.default_nlp import nlp  # pipeline base (medSpaCy + ConText + TM)
+from escribe.default_nlp import nlp, make_nlp, check_order  # pipeline base (medSpaCy + TM + ConText)
 from medspacy import ner
 
 BASE = pathlib.Path(__file__).parent
@@ -44,10 +44,20 @@ def _get_target_matcher(nlp_obj):
 
 
 def _reset_target_matcher(nlp_obj):
+    """Vacía las reglas del detector conservando su posición (antes de ConText).
+
+    Versión anterior (hasta 916c1d9): quitaba el componente y lo volvía a agregar al
+    final, después de ConText, de modo que ConText no veía las menciones y no marcaba
+    negación, antecedente ni familiar.
+    """
     nlp_lang = _as_language(nlp_obj)
     if "medspacy_target_matcher" in nlp_lang.pipe_names:
-        nlp_lang.remove_pipe("medspacy_target_matcher")
-    nlp_lang.add_pipe("medspacy_target_matcher")
+        nlp_lang.replace_pipe("medspacy_target_matcher", "medspacy_target_matcher", config={"rules": None})
+    elif "medspacy_context" in nlp_lang.pipe_names:
+        nlp_lang.add_pipe("medspacy_target_matcher", before="medspacy_context")
+    else:
+        nlp_lang.add_pipe("medspacy_target_matcher")
+    check_order(nlp_lang)
     return nlp_lang
 
 
@@ -97,7 +107,9 @@ def load_concept_layer(
         if len(json_paths) > 0:
             print(f"[load_concept_layer] Ejemplo JSON: {json_paths[0].name}")
 
-    # Diagnóstico duro si no hay json
+    # Diagnóstico duro si no hay json (falla siempre; el detalle solo con verbose)
+    if len(json_paths) == 0 and not verbose:
+        raise ValueError(f"No se encontraron JSON en {base_dir} para concepts={concepts}.")
     if verbose and len(json_paths) == 0:
         try:
             subdirs = [p.name for p in base_dir.iterdir() if p.is_dir()]
@@ -178,7 +190,17 @@ def load_concept_layer(
     return nlp_obj
 
 
-def build_pipeline(profile: str, fenos_cfg: dict, profile_cfg: dict | None = None):
+def build_pipeline(profile: str, fenos_cfg: dict | None = None, profile_cfg: dict | None = None,
+                   nlp_obj=None, verbose: bool = True):
+    """Construye el pipeline de un perfil (co, core o py) en un objeto NLP propio.
+
+    - Cada llamada crea un objeto nuevo con make_nlp(), salvo que se pase nlp_obj.
+      Construir otro perfil después ya no modifica el anterior (antes se reutilizaba
+      el objeto global).
+    - Orden garantizado: target matcher antes de ConText (se verifica al final).
+    - fenos_cfg se conserva por compatibilidad; las carpetas efectivas se leen de
+      configs/<perfil>_config.yml.
+    """
     if profile_cfg is None:
         p = BASE / "configs" / f"{profile}_config.yml"
         profile_cfg = load_yaml(p)
@@ -192,7 +214,8 @@ def build_pipeline(profile: str, fenos_cfg: dict, profile_cfg: dict | None = Non
 
     concepts = tuple(profile_cfg.get("concept_folders", ("all",)))
 
-    nlp_obj = nlp  # pipeline base singleton
+    if nlp_obj is None:
+        nlp_obj = make_nlp()  # un objeto por perfil
 
     reset = True
     for layer_name in layers:
@@ -200,14 +223,15 @@ def build_pipeline(profile: str, fenos_cfg: dict, profile_cfg: dict | None = Non
         layer_dir = patterns_root / layer_name
         if not layer_dir.exists():
             raise FileNotFoundError(f"No existe capa '{layer_name}' en {layer_dir}")
-        print(f"[build_pipeline] capa={layer_name} | ruta={layer_dir}")
+        if verbose:
+            print(f"[build_pipeline] capa={layer_name} | ruta={layer_dir}")
         nlp_obj = load_concept_layer(
             nlp_obj,
             base_dir=layer_dir,
             concepts=concepts,
             reset=reset,
-            verbose=True,
+            verbose=verbose,
         )
         reset = False
 
-    return nlp_obj
+    return check_order(_as_language(nlp_obj))
